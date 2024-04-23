@@ -25,6 +25,8 @@ size = Vector2(53, 34)
 y_sort_enabled = true
 script = ExtResource("1_26jxo")
 
+[node name="DayNightCycleScene" parent="." instance=ExtResource("16_82871")]
+
 [node name="World_Camera" parent="." instance=ExtResource("1_i1ktu")]
 position = Vector2(153, 200)
 zoom = Vector2(0.75, 0.75)
