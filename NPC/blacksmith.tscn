@@ -81,3 +81,5 @@ frame_progress = 0.787614
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(16, 57)
 shape = SubResource("CapsuleShape2D_on4h3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
