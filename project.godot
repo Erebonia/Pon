@@ -33,7 +33,7 @@ directories/dtl_directory={
 "Blacksmith Smithing": "res://Dialogue/Timelines/Blacksmith Smithing.dtl",
 "roy_talk_1": "res://Dialogue/Characters/roy_talk_1.dtl"
 }
-text/letter_speed=0.01
+text/letter_speed=0.02
 text/initial_text_reveal_skippable=false
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
@@ -53,6 +53,7 @@ text/autopauses={}
 variables={}
 layout/style_list=[]
 layout/default_style=""
+animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_or_out.gd"
 
 [display]
 
