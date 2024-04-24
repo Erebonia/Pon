@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ceolcwatpaicu"]
+[gd_scene load_steps=9 format=3 uid="uid://ceolcwatpaicu"]
 
 [ext_resource type="Script" path="res://World/Weather/weather/daynightcycle_ui.gd" id="1_altij"]
 [ext_resource type="Shader" path="res://World/Weather/weather/pixelperfect.gdshader" id="1_x3jdy"]
-[ext_resource type="FontFile" uid="uid://t4p3cemrauy1" path="res://World/Weather/weather/pixelmix.ttf" id="3_6qa0r"]
 [ext_resource type="Texture2D" uid="uid://bu7wdoopytrqk" path="res://World/Weather/weather/daynightcycle-ui.png" id="3_so0y8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qhbnj"]
@@ -54,8 +53,7 @@ scale = Vector2(0.5, 0.5)
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.898039, 0.576471, 0.419608, 1)
-theme_override_fonts/font = ExtResource("3_6qa0r")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 10
 text = "Day 13"
 metadata/_edit_lock_ = true
 
@@ -82,8 +80,7 @@ scale = Vector2(0.5, 0.5)
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.898039, 0.576471, 0.419608, 1)
-theme_override_fonts/font = ExtResource("3_6qa0r")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 10
 text = "12:00 am"
 metadata/_edit_lock_ = true
 
@@ -94,7 +91,7 @@ offset_top = -1.0
 offset_right = 41.0
 offset_bottom = 10.0
 theme_override_colors/font_color = Color(0.490196, 0.219608, 0.2, 1)
-theme_override_font_sizes/font_size = 9
+theme_override_font_sizes/font_size = 10
 text = "12:00 am"
 metadata/_edit_lock_ = true
 
