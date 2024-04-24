@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3o6yaosckeh8"]
+[gd_scene load_steps=20 format=3 uid="uid://d3o6yaosckeh8"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bkkl6qi4h8nwh" path="res://World/Environment/Rainbow_Cake.png" id="14_5qeg5"]
 [ext_resource type="PackedScene" uid="uid://cjn8wqs6tgy71" path="res://World/Weather/weather/daynightcycle_scene.tscn" id="16_82871"]
 [ext_resource type="PackedScene" uid="uid://cdo7umox44b64" path="res://Enemies/bat.tscn" id="17_sc0hh"]
+[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="18_kselo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iovvw"]
 size = Vector2(53, 34)
@@ -226,10 +227,13 @@ position = Vector2(-16.5, -120)
 shape = SubResource("RectangleShape2D_iovvw")
 
 [node name="Boss_Golem" parent="." instance=ExtResource("13_s14mq")]
+visible = false
 position = Vector2(594, 75)
 
 [node name="Bat" parent="." instance=ExtResource("17_sc0hh")]
 position = Vector2(276, 15)
+
+[node name="DefaultLayoutBase" parent="." instance=ExtResource("18_kselo")]
 
 [connection signal="time_tick" from="User Interface/DayNightCycle/CanvasModulate" to="Player" method="_on_check_time"]
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]
@@ -240,3 +244,4 @@ position = Vector2(276, 15)
 [editable path="Player"]
 [editable path="Player/Combat/HitboxPivot/SwordHitbox"]
 [editable path="Player/Combat/Hurtbox"]
+[editable path="DefaultLayoutBase"]
