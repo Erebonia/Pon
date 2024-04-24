@@ -59,7 +59,8 @@ func _ready() -> void:
 
 func _apply_export_overrides() -> void:
 	var history_subsystem: Node = DialogicUtil.autoload().get(&'History')
-	if history_subsystem != null:
+	#Change to != for history back
+	if history_subsystem == null:
 		get_show_history_button().visible = show_open_button and history_subsystem.get(&'simple_history_enabled')
 	else:
 		set(&'visible', false)
