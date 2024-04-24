@@ -25,11 +25,13 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"Blacksmith": "res://Dialogue/Characters/Blacksmith.dch"
+"Blacksmith": "res://Dialogue/Characters/Blacksmith.dch",
+"stephen": "res://Dialogue/Characters/stephen.dch"
 }
 directories/dtl_directory={
 "Blacksmith - Evil": "res://Dialogue/Timelines/Blacksmith - Evil.dtl",
-"Blacksmith Smithing": "res://Dialogue/Timelines/Blacksmith Smithing.dtl"
+"Blacksmith Smithing": "res://Dialogue/Timelines/Blacksmith Smithing.dtl",
+"roy_talk_1": "res://Dialogue/Characters/roy_talk_1.dtl"
 }
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=false

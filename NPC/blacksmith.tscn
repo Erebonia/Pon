@@ -72,7 +72,7 @@ radius = 8.0
 height = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6yj8v"]
-radius = 34.4819
+radius = 17.0294
 
 [node name="Blacksmith" type="StaticBody2D"]
 script = ExtResource("1_0wtob")

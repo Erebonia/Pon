@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3o6yaosckeh8"]
+[gd_scene load_steps=20 format=3 uid="uid://d3o6yaosckeh8"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c7xb0raqot3km" path="res://World/Environment/tree-mother.tscn" id="6_vdsp3"]
 [ext_resource type="PackedScene" uid="uid://bw6x38gtjukc2" path="res://NPC/blacksmith.tscn" id="8_2m8e1"]
 [ext_resource type="PackedScene" uid="uid://dux3q2gv1s8g4" path="res://UI/Health/health_ui.tscn" id="8_khgbn"]
+[ext_resource type="PackedScene" uid="uid://573ei0gs5ftg" path="res://NPC/roy.tscn" id="9_0dwxv"]
 [ext_resource type="TileSet" uid="uid://dehp76qcudo5q" path="res://World/Environment.tres" id="10_evtyf"]
 [ext_resource type="AudioStream" uid="uid://lgr7fwqk321e" path="res://Music and Sounds/Whispering_Woods.mp3" id="12_llom8"]
 [ext_resource type="PackedScene" uid="uid://dvbvyl1rsoiu6" path="res://Enemies/boss_golem.tscn" id="13_s14mq"]
@@ -128,6 +129,9 @@ y_sort_enabled = true
 
 [node name="Blacksmith" parent="Environment/NPCs" instance=ExtResource("8_2m8e1")]
 position = Vector2(16, 2)
+
+[node name="Fox" parent="Environment/NPCs" instance=ExtResource("9_0dwxv")]
+position = Vector2(-10, 30)
 
 [node name="Trees" type="Node2D" parent="Environment"]
 y_sort_enabled = true
