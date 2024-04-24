@@ -45,6 +45,13 @@ y_sort_enabled = true
 position = Vector2(153, 200)
 collision_mask = 1
 
+[node name="Light_Source" parent="Player/Misc" index="2"]
+visible = true
+position = Vector2(24, 37)
+color = Color(0.964706, 0.74902, 0.552941, 1)
+energy = 1.12
+texture_scale = 0.93
+
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../World_Camera")
 
@@ -223,5 +230,8 @@ position = Vector2(276, 15)
 [connection signal="body_exited" from="Boss Room Entrance" to="." method="_on_boss_transition_body_exited"]
 
 [editable path="World_Camera"]
+[editable path="Player"]
+[editable path="Player/Combat/HitboxPivot/SwordHitbox"]
+[editable path="Player/Combat/Hurtbox"]
 [editable path="User Interface/DayNightCycle"]
 [editable path="Environment/ParallaxBackground"]
