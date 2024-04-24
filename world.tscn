@@ -31,6 +31,9 @@ script = ExtResource("1_26jxo")
 [node name="CanvasModulate" parent="DayNightCycleScene" index="1"]
 color = Color(1, 0.870588, 0.866667, 1)
 
+[node name="CanvasLayer" parent="DayNightCycleScene" index="2"]
+layer = 0
+
 [node name="World_Camera" parent="." instance=ExtResource("1_i1ktu")]
 position = Vector2(153, 200)
 zoom = Vector2(0.75, 0.75)

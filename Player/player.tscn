@@ -9893,9 +9893,9 @@ texture = ExtResource("2_6k4r1")
 [node name="Healthbar" parent="." instance=ExtResource("29_b6em7")]
 visible = false
 offset_left = -6.0
-offset_top = -34.0
+offset_top = -28.0
 offset_right = 8.0
-offset_bottom = -32.0
+offset_bottom = -26.0
 
 [node name="Combat" type="Node2D" parent="."]
 
@@ -10032,6 +10032,7 @@ position = Vector2(0, -34)
 position = Vector2(-24, -46)
 
 [node name="Username" type="Label" parent="Misc"]
+visible = false
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 48.0
