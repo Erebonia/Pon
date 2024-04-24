@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://bw6x38gtjukc2"]
+
+[ext_resource type="Script" path="res://NPC/blacksmith.gd" id="1_0wtob"]
+[ext_resource type="Texture2D" uid="uid://jupu5t6lq023" path="res://NPC/Idle Working.png" id="1_6c8tn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4uqk"]
+atlas = ExtResource("1_6c8tn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hlpi"]
+atlas = ExtResource("1_6c8tn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap2wk"]
+atlas = ExtResource("1_6c8tn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l2kw"]
+atlas = ExtResource("1_6c8tn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfoah"]
+atlas = ExtResource("1_6c8tn")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edndx"]
+atlas = ExtResource("1_6c8tn")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn6eu"]
+atlas = ExtResource("1_6c8tn")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30eje"]
+atlas = ExtResource("1_6c8tn")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yujbr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4uqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hlpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap2wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7l2kw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfoah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edndx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn6eu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30eje")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_on4h3"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6yj8v"]
+radius = 34.4819
+
+[node name="Blacksmith" type="StaticBody2D"]
+script = ExtResource("1_0wtob")
+
+[node name="BlacksmithSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yujbr")
+autoplay = "default"
+frame_progress = 0.787614
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_on4h3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_6yj8v")
+debug_color = Color(0.933333, 0.176471, 0.470588, 0.419608)
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

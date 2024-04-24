@@ -1,3 +1,10 @@
 join Blacksmith 1
 Blacksmith: Hello, I am a demon known as Potato and I have taken over this poor man's soul.
 Blacksmith (Base): Before I decide to destroy the village how about you give me a taste of that sweet nectar boy..
+- Shop
+	Blacksmith: I'm a dog. How would I have a shop???
+	[signal arg="openShop"]
+- Go away
+	Blacksmith: Abandoned.
+- Feed him a snack
+	Blacksmith: EHE EHE

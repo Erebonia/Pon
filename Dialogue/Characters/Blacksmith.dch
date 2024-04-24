@@ -10,7 +10,7 @@
 },
 "default_portrait": "Base",
 "description": "The town's possessed blacksmith",
-"display_name": "Blacksmith",
+"display_name": "Posessed Blacksmith (Potato)",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
