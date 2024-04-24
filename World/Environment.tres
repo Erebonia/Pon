@@ -2052,6 +2052,7 @@ texture = ExtResource("4_65fhu")
 8:6/0 = 0
 6:2/size_in_atlas = Vector2i(2, 2)
 6:2/0 = 0
+0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ybap"]
 texture = ExtResource("5_48tvw")
