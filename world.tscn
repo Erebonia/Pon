@@ -25,14 +25,6 @@ size = Vector2(53, 95)
 y_sort_enabled = true
 script = ExtResource("1_26jxo")
 
-[node name="DayNightCycleScene" parent="." instance=ExtResource("16_82871")]
-
-[node name="CanvasModulate" parent="DayNightCycleScene" index="1"]
-color = Color(1, 0.870588, 0.866667, 1)
-
-[node name="CanvasLayer" parent="DayNightCycleScene" index="2"]
-layer = 0
-
 [node name="World_Camera" parent="." instance=ExtResource("1_i1ktu")]
 position = Vector2(153, 200)
 zoom = Vector2(0.75, 0.75)
@@ -51,11 +43,11 @@ position = Vector2(367, 271)
 
 [node name="DayNightCycle" parent="User Interface" instance=ExtResource("16_82871")]
 
+[node name="CanvasModulate" parent="User Interface/DayNightCycle" index="1"]
+color = Color(1, 0.870588, 0.866667, 1)
+
 [node name="CanvasLayer" parent="User Interface/DayNightCycle" index="2"]
 layer = 0
-visible = true
-
-[node name="DayNightCycleUI" parent="User Interface/DayNightCycle/CanvasLayer" index="0"]
 visible = false
 
 [node name="Status Screen" parent="User Interface" instance=ExtResource("2_q354b")]
@@ -224,6 +216,5 @@ position = Vector2(276, 15)
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]
 [connection signal="body_exited" from="Boss Room Entrance" to="." method="_on_boss_transition_body_exited"]
 
-[editable path="DayNightCycleScene"]
 [editable path="World_Camera"]
 [editable path="User Interface/DayNightCycle"]
