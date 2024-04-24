@@ -66,7 +66,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [gui]
 
-theme/custom_font="res://UI/Font/Ant Party.ttf"
+theme/custom_font="res://UI/Font/Abaddon-Bold.ttf"
 theme/default_font_subpixel_positioning=0
 
 [input]

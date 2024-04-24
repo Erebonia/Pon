@@ -27,6 +27,9 @@ script = ExtResource("1_26jxo")
 
 [node name="DayNightCycleScene" parent="." instance=ExtResource("16_82871")]
 
+[node name="CanvasModulate" parent="DayNightCycleScene" index="1"]
+color = Color(1, 0.870588, 0.866667, 1)
+
 [node name="World_Camera" parent="." instance=ExtResource("1_i1ktu")]
 position = Vector2(153, 200)
 zoom = Vector2(0.75, 0.75)
@@ -75,7 +78,7 @@ vertical_alignment = 1
 [node name="Player" parent="." instance=ExtResource("2_7prvd")]
 y_sort_enabled = true
 position = Vector2(153, 200)
-collision_layer = 3
+collision_mask = 1
 
 [node name="Light_Source" parent="Player/Misc" index="2"]
 position = Vector2(25, 39)
@@ -110,7 +113,7 @@ layer_4/name = "World (Player must be in front or behind)"
 layer_4/y_sort_enabled = true
 layer_4/tile_data = PackedInt32Array(-327684, 393221, 5, -131073, 327680, 6, -393216, 655365, 5, -196608, 393216, 6, -196607, 393216, 6, -196606, 393216, 6, -131070, 458752, 7, -65534, 458752, 8, -65537, 327680, 7, -1, 327680, 8, -131072, 131072, 10, -65536, 131072, 11, -131071, 196608, 10, -65535, 196608, 11, -65539, 393223, 2, -131076, 262151, 0, -131074, 196615, 1)
 layer_5/name = "World 2"
-layer_5/tile_data = PackedInt32Array(-131072, 393216, 9, -131071, 458752, 9, -65533, 0, 28, -65532, 65536, 28, -65531, 131072, 28, -4, 65536, 28, -3, 131072, 28, -2, 131072, 28, -5, 0, 28, -65530, 0, 28, -65529, 65536, 28, -65528, 131072, 28, -65527, 0, 28, -65526, 65536, 28, -65525, 0, 28, -65524, 65536, 28, -65523, 0, 28, -65522, 0, 28, -65521, 65536, 28, -65520, 131072, 28, -65519, 0, 28, -65518, 65536, 28, -65517, 131072, 28, -65516, 0, 28, -65515, 65536, 28, -65514, 131072, 28)
+layer_5/tile_data = PackedInt32Array(-131072, 393216, 9, -131071, 458752, 9)
 
 [node name="Collision Layer" type="StaticBody2D" parent="."]
 
@@ -239,6 +242,7 @@ position = Vector2(276, 15)
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]
 [connection signal="body_exited" from="Boss Room Entrance" to="." method="_on_boss_transition_body_exited"]
 
+[editable path="DayNightCycleScene"]
 [editable path="World_Camera"]
 [editable path="User Interface/DayNightCycle"]
 [editable path="Player"]

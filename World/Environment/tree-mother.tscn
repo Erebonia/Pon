@@ -9,6 +9,7 @@ height = 34.0
 [node name="Tree" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, -16)
 texture = ExtResource("2_xxh7a")
 
