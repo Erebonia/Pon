@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwaturk2bjfds"]
+[gd_scene load_steps=9 format=3 uid="uid://cwaturk2bjfds"]
 
 [ext_resource type="Script" path="res://boss_room.gd" id="1_tclx6"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_bdtix"]
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="3_i62hg"]
 [ext_resource type="AudioStream" uid="uid://b30d2271k7t4u" path="res://Music and Sounds/The_Forest_Foxs_Quest2.mp3" id="4_ffm5m"]
 [ext_resource type="TileSet" uid="uid://dehp76qcudo5q" path="res://World/Environment.tres" id="6_ygo55"]
+[ext_resource type="PackedScene" uid="uid://b7i18f46oewtr" path="res://Effects/fog shader.tscn" id="7_fxewm"]
 [ext_resource type="PackedScene" uid="uid://dvbvyl1rsoiu6" path="res://Enemies/boss_golem.tscn" id="10_sds0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bjk1"]
@@ -67,6 +68,8 @@ layer_2/name = "Collisions"
 layer_2/y_sort_enabled = true
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array()
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("7_fxewm")]
 
 [connection signal="body_entered" from="Exit to World" to="." method="_on_exit_to_world_body_entered"]
 [connection signal="body_exited" from="Exit to World" to="." method="_on_exit_to_world_body_exited"]

@@ -12,6 +12,7 @@ func _process(_delta):
 	change_scene()
 
 func _on_boss_transition_body_entered(body):
+	print("Player entered transition area.")
 	if body.has_method("player"):
 		global.transition_scene = true
 

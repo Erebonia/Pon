@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3o6yaosckeh8"]
+[gd_scene load_steps=20 format=3 uid="uid://d3o6yaosckeh8"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dyr164gbvcxrf" path="res://World/Environment/tree-birch-yellow.tscn" id="5_k7lfl"]
 [ext_resource type="PackedScene" uid="uid://wgf5hgrk43ew" path="res://World/Environment/grass.tscn" id="6_dcagb"]
 [ext_resource type="PackedScene" uid="uid://c7xb0raqot3km" path="res://World/Environment/tree-mother.tscn" id="6_vdsp3"]
+[ext_resource type="PackedScene" uid="uid://b7i18f46oewtr" path="res://Effects/fog shader.tscn" id="7_c4jo8"]
 [ext_resource type="PackedScene" uid="uid://bw6x38gtjukc2" path="res://NPC/blacksmith.tscn" id="8_2m8e1"]
 [ext_resource type="PackedScene" uid="uid://573ei0gs5ftg" path="res://NPC/roy.tscn" id="9_0dwxv"]
 [ext_resource type="TileSet" uid="uid://dehp76qcudo5q" path="res://World/Environment.tres" id="10_evtyf"]
@@ -39,6 +40,14 @@ position = Vector2(-80, -103)
 [node name="BottomRight" parent="World_Camera/Limits" index="1"]
 position = Vector2(367, 271)
 
+[node name="Player" parent="." instance=ExtResource("2_7prvd")]
+y_sort_enabled = true
+position = Vector2(153, 200)
+collision_mask = 1
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../World_Camera")
+
 [node name="User Interface" type="Node2D" parent="."]
 
 [node name="DayNightCycle" parent="User Interface" instance=ExtResource("16_82871")]
@@ -51,14 +60,6 @@ layer = 0
 visible = false
 
 [node name="Status Screen" parent="User Interface" instance=ExtResource("2_q354b")]
-
-[node name="Player" parent="." instance=ExtResource("2_7prvd")]
-y_sort_enabled = true
-position = Vector2(153, 200)
-collision_mask = 1
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../World_Camera")
 
 [node name="StartingMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -86,14 +87,13 @@ layer_4/tile_data = PackedInt32Array(-327684, 393221, 5, -131073, 327680, 6, -39
 layer_5/name = "World 2"
 layer_5/tile_data = PackedInt32Array(-131072, 393216, 9, -131071, 458752, 9)
 
-[node name="Collision Layer" type="StaticBody2D" parent="."]
-
-[node name="Collison Draw" type="CollisionPolygon2D" parent="Collision Layer"]
-visible = false
-polygon = PackedVector2Array(-79, -63, 92, -62, 91, -115, 188, -117, 193, -62, 366, -62, 369, 106, 397, 139, 369, 145, 366, 268, -76, 273, -77, 265, -81, -60, -137, 368, 294, 361, 521, 310, 466, -46, 360, -203, 75, -200, -80, -63, -79, -61, -81, -60)
-
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="ParallaxBackground" parent="Environment" instance=ExtResource("7_c4jo8")]
+
+[node name="ParallaxLayer" parent="Environment/ParallaxBackground" index="0"]
+position = Vector2(-178, -73)
 
 [node name="NPCs" type="Node2D" parent="Environment"]
 
@@ -195,14 +195,20 @@ position = Vector2(178, 45)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_5qeg5")
 
+[node name="Collision Layer" type="StaticBody2D" parent="."]
+
+[node name="Collison Draw" type="CollisionPolygon2D" parent="Collision Layer"]
+visible = false
+polygon = PackedVector2Array(-79, -63, 92, -62, 91, -115, 188, -117, 193, -62, 366, -62, 369, 106, 397, 139, 369, 145, 366, 268, -76, 273, -77, 265, -81, -60, -137, 368, 294, 361, 521, 310, 466, -46, 360, -203, 75, -200, -80, -63, -79, -61, -81, -60)
+
 [node name="BGM - Whispering Woods" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_llom8")
 
 [node name="Boss Room Entrance" type="Area2D" parent="."]
-position = Vector2(-8, 66)
+position = Vector2(-80, 212)
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boss Room Entrance"]
-position = Vector2(-100, 156.5)
 shape = SubResource("RectangleShape2D_iovvw")
 
 [node name="Boss_Golem" parent="." instance=ExtResource("13_s14mq")]
@@ -218,3 +224,4 @@ position = Vector2(276, 15)
 
 [editable path="World_Camera"]
 [editable path="User Interface/DayNightCycle"]
+[editable path="Environment/ParallaxBackground"]

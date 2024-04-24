@@ -56,7 +56,7 @@ var baseDMG = 0
 @onready var animationPlayer = $AnimationPlayer
 @onready var animationTree = $AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
-@onready var checkTime = get_parent().find_child("DayNightCycle").get_child(1)
+@onready var checkTime = null
 @onready var light_source = $Misc/Light_Source
 @onready var levelUpSound = $Misc/LevelUp
 
@@ -86,6 +86,8 @@ func _ready():
 	aimIndicator.visible = false
 	healthBar.max_value = stats.max_HP
 	healthBar.init_health(stats.HP)
+	if checkTime != null:
+		checkTime = get_parent().find_child("DayNightCycle").get_child(1)
 	
 func _physics_process(delta):
 	mouse_loc_from_player = get_global_mouse_position() - self.position

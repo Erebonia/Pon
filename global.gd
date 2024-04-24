@@ -3,8 +3,8 @@ extends Node2D
 var current_scene = "world"
 var transition_scene = false
 
-var player_exit_boss_posx = -4.974
-var player_exit_boss_posy = -7.052
+var player_exit_boss_posx = -31.161
+var player_exit_boss_posy = 224.935
 
 var player_start_posx = 153
 var player_start_posy = 200
