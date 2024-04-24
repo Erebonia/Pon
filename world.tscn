@@ -50,7 +50,7 @@ visible = true
 position = Vector2(24, 37)
 color = Color(0.964706, 0.74902, 0.552941, 1)
 energy = 1.12
-texture_scale = 0.93
+texture_scale = 1.0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../World_Camera")
