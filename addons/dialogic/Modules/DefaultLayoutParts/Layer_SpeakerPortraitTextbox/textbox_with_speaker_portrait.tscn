@@ -18,8 +18,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 96.0
+offset_top = 112.0
+offset_right = 96.0
+offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_7jt4d")
 box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/default_stylebox.tres"
 

@@ -4,3 +4,4 @@
 
 [node name="DefaultLayoutBase" type="CanvasLayer"]
 script = ExtResource("1_ifsho")
+global_font_size = 18

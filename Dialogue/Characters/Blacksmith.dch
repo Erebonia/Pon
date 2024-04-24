@@ -8,19 +8,28 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "New portrait",
+"default_portrait": "Base",
 "description": "The town's possessed blacksmith",
 "display_name": "Blacksmith",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"New portrait": {
+"Base": {
 "export_overrides": {
 "image": "\"res://Dialogue/Characters/demon.jpg\""
 },
 "mirror": false,
-"offset": Vector2(-100, -17),
+"offset": Vector2(-40, -17),
+"scale": 0.2,
+"scene": ""
+},
+"Happy": {
+"export_overrides": {
+"image": "\"res://Dialogue/Characters/happy.jpg\""
+},
+"mirror": false,
+"offset": Vector2(-40, -17),
 "scale": 0.2,
 "scene": ""
 }
