@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bbh4m23t6e35d" path="res://Overlap/hitbox.tscn" id="7_nbc5c"]
 [ext_resource type="PackedScene" uid="uid://bkf2a5dlqworv" path="res://Overlap/soft_collision.tscn" id="8_avnhu"]
 [ext_resource type="PackedScene" uid="uid://bhv1fd4uvlhpd" path="res://Enemies/wander_controller.tscn" id="9_kr26k"]
-[ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://healthbar_overhead.tscn" id="11_6yh7b"]
+[ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://UI/Health/healthbar_overhead.tscn" id="11_h4yej"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gugca"]
 resource_local_to_scene = true
@@ -195,7 +195,7 @@ libraries = {
 "": SubResource("AnimationLibrary_s7n6y")
 }
 
-[node name="Healthbar" parent="." instance=ExtResource("11_6yh7b")]
+[node name="Healthbar" parent="." instance=ExtResource("11_h4yej")]
 visible = false
 offset_left = -7.0
 offset_top = -24.0

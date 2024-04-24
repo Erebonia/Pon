@@ -140,7 +140,10 @@ func attack_combo():
 	if Input.is_action_just_pressed("attack") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		stayInPlace()
 		swordSprite.visible = true
-		Status.KNOCKOUT_SPEED = 75
+		if !activateSwordWave:
+			Status.KNOCKOUT_SPEED = 75
+		else: 
+			Status.KNOCKOUT_SPEED = 15
 		var bonusComboDMG = 4
 		calculateDmg(baseDMG + bonusComboDMG)
 		attackTimer.stop()
@@ -159,7 +162,10 @@ func attack_combo2():
 	if Input.is_action_just_pressed("attack") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		stayInPlace()
 		swordSprite.visible = true
-		Status.KNOCKOUT_SPEED = 150
+		if !activateSwordWave:
+			Status.KNOCKOUT_SPEED = 75
+		else: 
+			Status.KNOCKOUT_SPEED = 15
 		var bonusComboDMG2 = 10
 		calculateDmg(baseDMG + bonusComboDMG2)
 		attackTimer.stop()

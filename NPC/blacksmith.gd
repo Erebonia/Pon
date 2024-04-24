@@ -6,7 +6,7 @@ var conversationInProgress = false
 func _ready():
 	Dialogic.signal_event.connect(DialogicSignal)
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("talk") and playerInArea and not conversationInProgress:
 		
 		#TODO check time and run a different dialogue

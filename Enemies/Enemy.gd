@@ -78,6 +78,9 @@ func pick_random_state(state_list):
 func _on_hurtbox_area_entered(area):
 	var is_critical = false
 	var damage_taken
+	
+	hurtbox.start_invincibility(.4)
+	hurtbox.create_hit_effect()
 
 	if area.damage - stats.DEF > 0:
 		damage_taken = (area.damage - stats.DEF)
@@ -100,8 +103,6 @@ func _on_hurtbox_area_entered(area):
 	var direction = ( position - area.owner.position ).normalized()
 	var knockback = direction * Status.KNOCKOUT_SPEED
 	velocity = knockback
-	print(Status.KNOCKOUT_SPEED)
-	hurtbox.create_hit_effect()
 	
 	#Display visible Healthbar
 	if stats.health < stats.max_health:

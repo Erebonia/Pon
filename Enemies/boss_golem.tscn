@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Enemies/EnemyStateMachine.gd" id="3_r8xo2"]
 [ext_resource type="Script" path="res://Enemies/Idle.gd" id="4_ani6r"]
 [ext_resource type="Script" path="res://Overlap/hitbox.gd" id="4_f6wu1"]
-[ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://healthbar_overhead.tscn" id="5_jttkw"]
+[ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://UI/Health/healthbar_overhead.tscn" id="5_jttkw"]
 [ext_resource type="Script" path="res://Follow.gd" id="5_me4nw"]
 [ext_resource type="Script" path="res://Enemies/MeleeAttack.gd" id="6_kddo0"]
 [ext_resource type="Script" path="res://Enemies/HomingMissile.gd" id="7_uvbhh"]

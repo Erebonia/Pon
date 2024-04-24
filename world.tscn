@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d3o6yaosckeh8"]
+[gd_scene load_steps=19 format=3 uid="uid://d3o6yaosckeh8"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://wgf5hgrk43ew" path="res://World/Environment/grass.tscn" id="6_dcagb"]
 [ext_resource type="PackedScene" uid="uid://c7xb0raqot3km" path="res://World/Environment/tree-mother.tscn" id="6_vdsp3"]
 [ext_resource type="PackedScene" uid="uid://bw6x38gtjukc2" path="res://NPC/blacksmith.tscn" id="8_2m8e1"]
-[ext_resource type="PackedScene" uid="uid://dux3q2gv1s8g4" path="res://UI/Health/health_ui.tscn" id="8_khgbn"]
 [ext_resource type="PackedScene" uid="uid://573ei0gs5ftg" path="res://NPC/roy.tscn" id="9_0dwxv"]
 [ext_resource type="TileSet" uid="uid://dehp76qcudo5q" path="res://World/Environment.tres" id="10_evtyf"]
 [ext_resource type="AudioStream" uid="uid://lgr7fwqk321e" path="res://Music and Sounds/Whispering_Woods.mp3" id="12_llom8"]
@@ -20,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cdo7umox44b64" path="res://Enemies/bat.tscn" id="17_sc0hh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iovvw"]
-size = Vector2(53, 34)
+size = Vector2(53, 95)
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -59,36 +58,12 @@ visible = true
 [node name="DayNightCycleUI" parent="User Interface/DayNightCycle/CanvasLayer" index="0"]
 visible = false
 
-[node name="PlayerUI" type="CanvasLayer" parent="User Interface"]
-
-[node name="HealthUI" parent="User Interface/PlayerUI" instance=ExtResource("8_khgbn")]
-z_index = 1
-offset_top = 5.0
-offset_bottom = 45.0
-
-[node name="Username" type="Label" parent="User Interface/PlayerUI"]
-visible = false
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 41.0
-offset_bottom = 14.0
-theme_override_font_sizes/font_size = 8
-text = "Label"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Status Screen" parent="User Interface" instance=ExtResource("2_q354b")]
 
 [node name="Player" parent="." instance=ExtResource("2_7prvd")]
 y_sort_enabled = true
 position = Vector2(153, 200)
 collision_mask = 1
-
-[node name="Light_Source" parent="Player/Misc" index="2"]
-position = Vector2(25, 39)
-color = Color(0.917647, 0.619608, 0.435294, 0.670588)
-shadow_color = Color(0.0117647, 0.203922, 0.27451, 0)
-texture_scale = 1.3
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../World_Camera")
@@ -235,7 +210,7 @@ stream = ExtResource("12_llom8")
 position = Vector2(-8, 66)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boss Room Entrance"]
-position = Vector2(-16.5, -120)
+position = Vector2(-100, 156.5)
 shape = SubResource("RectangleShape2D_iovvw")
 
 [node name="Boss_Golem" parent="." instance=ExtResource("13_s14mq")]
@@ -252,6 +227,3 @@ position = Vector2(276, 15)
 [editable path="DayNightCycleScene"]
 [editable path="World_Camera"]
 [editable path="User Interface/DayNightCycle"]
-[editable path="Player"]
-[editable path="Player/Combat/HitboxPivot/SwordHitbox"]
-[editable path="Player/Combat/Hurtbox"]
