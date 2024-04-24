@@ -67,6 +67,7 @@ layer = 0
 visible = false
 
 [node name="Status Screen" parent="User Interface" instance=ExtResource("2_q354b")]
+layer = 0
 
 [node name="StartingMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -98,6 +99,7 @@ layer_5/tile_data = PackedInt32Array(-131072, 393216, 9, -131071, 458752, 9)
 y_sort_enabled = true
 
 [node name="ParallaxBackground" parent="Environment" instance=ExtResource("7_c4jo8")]
+layer = 0
 
 [node name="ParallaxLayer" parent="Environment/ParallaxBackground" index="0"]
 position = Vector2(-178, -73)
