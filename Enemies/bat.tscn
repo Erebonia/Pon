@@ -161,7 +161,6 @@ position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_neeqi")
 
 [node name="Stats" parent="." instance=ExtResource("5_n75ol")]
-max_health = 30
 
 [node name="PlayerDetection" parent="." instance=ExtResource("6_gpued")]
 collision_layer = 0

@@ -128,7 +128,7 @@ func _physics_process(delta):
 	
 func attack_state():
 	swordSprite.visible = true
-	Status.KNOCKOUT_SPEED = 50
+	Status.KNOCKOUT_SPEED = 75
 	calculateDmg(baseDMG)
 	slashFX.play("slash_animation")
 	stayInPlace()
@@ -165,7 +165,7 @@ func attack_combo2():
 		stayInPlace()
 		swordSprite.visible = true
 		if !activateSwordWave:
-			Status.KNOCKOUT_SPEED = 75
+			Status.KNOCKOUT_SPEED = 100
 		else: 
 			Status.KNOCKOUT_SPEED = 15
 		var bonusComboDMG2 = 10
@@ -283,8 +283,9 @@ func attack_combo2_animation_finished():
 	else:
 		state = State.MOVE
 		#Set the players stats back to default
-		animationTree.set("parameters/Attack_Combo/TimeScale/scale", 2.0)
-		animationTree.set("parameters/Attack_Combo2/TimeScale/scale", 1.3)
+		animationTree.set("parameters/Attack/TimeScale/scale", 2.0)
+		animationTree.set("parameters/Attack_Combo/TimeScale/scale", 1.6)
+		animationTree.set("parameters/Attack_Combo2/TimeScale/scale", 2.0)
 		MAX_SPEED = 80
 		
 	print("activateSwordWave:", activateSwordWave)

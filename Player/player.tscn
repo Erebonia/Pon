@@ -8435,7 +8435,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_yaptj"]
 resource_name = "swordStance"
-length = 1.5
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -9735,7 +9734,7 @@ _data = {
 }
 
 [sub_resource type="Gradient" id="Gradient_uusiu"]
-offsets = PackedFloat32Array(0, 0.67)
+offsets = PackedFloat32Array(0, 0.781591)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_m7mi1"]
@@ -9866,9 +9865,9 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Attack/BlendSpace2D/blend_position = Vector2(0, 0)
 parameters/Attack/TimeScale/scale = 2.0
 parameters/Attack_Combo/BlendSpace2D/blend_position = Vector2(0, 0)
-parameters/Attack_Combo/TimeScale/scale = 2.0
+parameters/Attack_Combo/TimeScale/scale = 1.6
 parameters/Attack_Combo2/BlendSpace2D/blend_position = Vector2(0, 0)
-parameters/Attack_Combo2/TimeScale/scale = 1.3
+parameters/Attack_Combo2/TimeScale/scale = 2.0
 parameters/Bow_Aim/BlendSpace2D/blend_position = Vector2(0, 0)
 parameters/Bow_Aim/TimeScale/scale = 2.0
 parameters/Bow_Fire/BlendSpace2D/blend_position = Vector2(0, 0)
@@ -9910,14 +9909,19 @@ speed_scale = 2.0
 
 [node name="SwordStanceLabel" type="Label" parent="Combat/SwordStanceAura"]
 visible = false
-offset_left = -29.2308
-offset_top = -38.4615
-offset_right = 31.7692
-offset_bottom = -15.4615
-theme_override_colors/font_color = Color(0.788235, 0.113725, 0.423529, 1)
+offset_left = -41.0
+offset_top = -35.0
+offset_right = 41.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(0.843137, 0, 0.0156863, 1)
+theme_override_colors/font_shadow_color = Color(0.341176, 0.341176, 0.341176, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
-theme_override_font_sizes/font_size = 5
-text = "Sword Stance Activated"
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 7
+text = "Stance Active!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
