@@ -15,13 +15,12 @@ func Enter():
 	player.UpdateAnimation("Roll")
 	
 func Exit():
-	pass
+	player.velocity = Vector2.ZERO
 	
 func Process(_delta : float) -> State:
 	return null
 	
 func Physics(_delta : float) -> State:
-	roll_vector = player.input_vector
 	player.velocity = roll_vector * ROLL_SPEED
 	player.move_and_slide()
 	
@@ -29,4 +28,4 @@ func Physics(_delta : float) -> State:
 	
 func roll_animation_finished():
 	player.blinkAnimationPlayer.play("Stop")
-	state_machine.current_state = idle
+	state_machine.ChangeState(idle)

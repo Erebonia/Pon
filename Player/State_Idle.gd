@@ -16,11 +16,14 @@ func Process(_delta : float) -> State:
 	
 func Physics(_delta : float) -> State:
 	
-	if player.input_vector != Vector2.ZERO:
-		return run
-		
 	if Input.is_action_pressed("attack"):
 		return attack
+		
+	if Input.is_action_just_pressed("roll"):
+		return roll
+	
+	if player.input_vector != Vector2.ZERO:
+		return run
 		 
 	#Stop Movement
 	player.velocity = Vector2.ZERO
