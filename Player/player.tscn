@@ -10112,8 +10112,8 @@ frame_progress = 1.0
 
 [connection signal="timeout" from="Combat/AttackTimer" to="StateMachine/Attack" method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="Combat/SwordWaveProjectile/swordWaveCooldown" to="StateMachine/Sword_Stance" method="_on_sword_wave_cooldown_timeout"]
-[connection signal="area_entered" from="Combat/Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="Combat/Hurtbox" to="." method="takeDamage"]
+[connection signal="area_entered" from="Combat/Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Combat/Hurtbox" to="." method="_on_hurtbox_invincibility_ended"]
 [connection signal="invincibility_started" from="Combat/Hurtbox" to="." method="_on_hurtbox_invincibility_started"]
 
