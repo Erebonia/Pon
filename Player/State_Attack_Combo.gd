@@ -6,6 +6,7 @@ class_name State_Attack_Combo
 
 var bonusDMG = 20
 var attack_combo_completed = false
+var attacking = false
 
 func Enter():
 	player.swordSprite.visible = true
@@ -14,9 +15,11 @@ func Enter():
 	player.calculateDmg(bonusDMG)
 	player.slashFX.play("slash_animation")
 	player.UpdateAnimation("Attack_Combo")
+	player.animationTree.animation_finished.connect(endAttack)
+	attacking = true
 	
 func Exit():
-	pass
+	player.animationTree.animation_finished.disconnect(endAttack)
 	
 func Physics( _delta : float) -> State:
 	
@@ -29,3 +32,7 @@ func Physics( _delta : float) -> State:
 
 func attack_combo_animation_finished():
 	attack_combo_completed = true
+	
+func endAttack(_newAnimName : String):
+	#When the signal ends we end the attack.
+	attacking = false

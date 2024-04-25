@@ -18,7 +18,9 @@ func Enter():
 	attacking = true
 	
 func Exit() -> void:
+	print("Leaving attack state.")
 	player.animationTree.animation_finished.disconnect(endAttack)
+	player.attackTimer.stop()
 	
 func Process(_delta : float) -> State:
 	return null
@@ -26,8 +28,11 @@ func Process(_delta : float) -> State:
 func Physics(_delta : float) -> State:
 	player.velocity = Vector2.ZERO
 
-	if Input.is_action_just_pressed("attack"):
-		return attack_combo
+	if !player.attackTimer.is_stopped():
+		if Input.is_action_pressed("attack") and !attacking:
+			return attack_combo
+		return
+		
 	if !attacking:
 		return idle
 	
@@ -35,7 +40,6 @@ func Physics(_delta : float) -> State:
 	
 func _on_attack_timer_timeout():
 	state_machine.ChangeState(idle)
-	pass
 	
 func endAttack(_newAnimName : String):
 	#When the signal ends we end the attack.

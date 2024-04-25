@@ -10007,7 +10007,7 @@ frame = 11
 frame_progress = 1.0
 
 [node name="AttackTimer" type="Timer" parent="Combat"]
-wait_time = 1.5
+wait_time = 5.0
 one_shot = true
 
 [node name="HitboxPivot" type="Marker2D" parent="Combat"]
