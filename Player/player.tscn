@@ -1,4 +1,4 @@
-[gd_scene load_steps=622 format=3 uid="uid://b1lifm57p7pvt"]
+[gd_scene load_steps=624 format=3 uid="uid://b1lifm57p7pvt"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_fjjot"]
 [ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Shadows/SmallShadow.png" id="2_6k4r1"]
@@ -16,7 +16,9 @@
 [ext_resource type="Script" path="res://Player/State_Attack_Combo.gd" id="7_g4l0n"]
 [ext_resource type="Texture2D" uid="uid://cgp0yakt4eb63" path="res://Player/weapon/weaponsv2.png" id="8_gqnm0"]
 [ext_resource type="Script" path="res://Player/State_Sword_Stance.gd" id="8_xg1yj"]
+[ext_resource type="Script" path="res://Player/State_Stay.gd" id="9_af0ex"]
 [ext_resource type="Texture2D" uid="uid://d3gw0acijlex8" path="res://Player/Pixivan MC/FrontSide Consecutive Slash.png" id="9_oo5a3"]
+[ext_resource type="Script" path="res://Player/State_Hurt.gd" id="9_yamvx"]
 [ext_resource type="Texture2D" uid="uid://bpkr2x0q55cyj" path="res://Player/Pixivan MC/Front ConsecutiveSlash.png" id="10_2146p"]
 [ext_resource type="Texture2D" uid="uid://cb4avkaep0ok1" path="res://Player/Pixivan MC/Side ConsecutiveSlash.png" id="11_tttdy"]
 [ext_resource type="Texture2D" uid="uid://6eb55uah0is2" path="res://Player/Pixivan MC/Front Movement.png" id="12_b453y"]
@@ -9880,11 +9882,13 @@ script = ExtResource("7_g4l0n")
 [node name="Sword_Stance" type="Node" parent="StateMachine"]
 script = ExtResource("8_xg1yj")
 
-[node name="Bow_Ready" type="Node" parent="StateMachine"]
+[node name="Bow_State" type="Node" parent="StateMachine"]
 
-[node name="Bow_Aim" type="Node" parent="StateMachine"]
+[node name="Hurt" type="Node" parent="StateMachine"]
+script = ExtResource("9_yamvx")
 
-[node name="Bow_Fire" type="Node" parent="StateMachine"]
+[node name="Stay" type="Node" parent="StateMachine"]
+script = ExtResource("9_af0ex")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_hi7q1")
@@ -9900,6 +9904,7 @@ libraries = {
 autoplay = "Crosshair"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
 reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_nmxgk")
@@ -10112,10 +10117,9 @@ frame_progress = 1.0
 
 [connection signal="timeout" from="Combat/AttackTimer" to="StateMachine/Attack" method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="Combat/SwordWaveProjectile/swordWaveCooldown" to="StateMachine/Sword_Stance" method="_on_sword_wave_cooldown_timeout"]
-[connection signal="area_entered" from="Combat/Hurtbox" to="." method="takeDamage"]
-[connection signal="area_entered" from="Combat/Hurtbox" to="." method="_on_hurtbox_area_entered"]
-[connection signal="invincibility_ended" from="Combat/Hurtbox" to="." method="_on_hurtbox_invincibility_ended"]
-[connection signal="invincibility_started" from="Combat/Hurtbox" to="." method="_on_hurtbox_invincibility_started"]
+[connection signal="area_entered" from="Combat/Hurtbox" to="StateMachine/Hurt" method="takeDamage"]
+[connection signal="invincibility_ended" from="Combat/Hurtbox" to="StateMachine/Hurt" method="_on_hurtbox_invincibility_ended"]
+[connection signal="invincibility_started" from="Combat/Hurtbox" to="StateMachine/Hurt" method="_on_hurtbox_invincibility_started"]
 
 [editable path="Combat/HitboxPivot/SwordHitbox"]
 [editable path="Combat/Hurtbox"]
