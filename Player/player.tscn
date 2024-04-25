@@ -8444,6 +8444,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_yaptj"]
 resource_name = "swordStance"
+length = 2.0
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -9893,8 +9894,7 @@ script = ExtResource("9_af0ex")
 material = SubResource("ShaderMaterial_hi7q1")
 position = Vector2(1, -9)
 sprite_frames = SubResource("SpriteFrames_6nvx4")
-animation = &"attack_sideways_combo"
-frame = 8
+animation = &"attack_downright_combo"
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -10019,7 +10019,7 @@ one_shot = true
 
 [node name="HitboxPivot" type="Marker2D" parent="Combat"]
 position = Vector2(0, -4)
-rotation = 3.14159
+rotation = 2.61799
 
 [node name="SwordHitbox" parent="Combat/HitboxPivot" instance=ExtResource("3_nnp8n")]
 position = Vector2(17, 0.999938)
