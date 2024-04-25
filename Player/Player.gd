@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name Player
 
 #General (Script)
-@onready var state_machine : PlayerStateMachine = $StateMachine
+@onready var stateMachine : PlayerStateMachine = $StateMachine
 @onready var animationPlayer = $AnimationPlayer
 @onready var animationTree = $AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
@@ -11,7 +11,7 @@ class_name Player
 #General (Game)
 @onready var stats = Status
 @onready var checkTime = null
-@onready var light_source = $Misc/Light_Source
+@onready var lightSource = $Misc/Light_Source
 
 #Combat
 @onready var baseCombatDMG = $Combat/HitboxPivot/SwordHitbox
@@ -28,7 +28,7 @@ var input_vector = Vector2.ZERO
 var aim_direction = null
 
 func _ready():
-	state_machine.Initialize(self)
+	stateMachine.Initialize(self)
 	animationTree.active = true
 	
 	if checkTime != null:
@@ -48,7 +48,7 @@ func UpdateAnimation(state: String):
 	animationState.travel(state)
 	
 func setMovementDirection():
-	debug.text = "State: " + state_machine.current_state.name
+	debug.text = "State: " + stateMachine.current_state.name
 	input_vector.x = Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left")
 	input_vector.y = Input.get_action_strength("Move_Down") - Input.get_action_strength("Move_Up")
 	input_vector = input_vector.normalized()
@@ -60,9 +60,9 @@ func calculateDmg(dmgBoostStat):
 func _on_check_time(_day, hour, _minute):
 	#military time
 	if (hour >= 19 and hour <= 23) or (hour >= 0 and hour < 5):
-		light_source.visible = true
+		lightSource.visible = true
 	else:
-		light_source.visible = false
+		lightSource.visible = false
 	
 func player():
 	pass

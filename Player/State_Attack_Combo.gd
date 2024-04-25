@@ -4,7 +4,7 @@ class_name State_Attack_Combo
 @onready var idle = $"../Idle"
 
 var bonusDMG = 20
-var attack_combo_completed = false
+var attackComboCompleted = false
 var attacking = false
 
 func Enter():
@@ -22,14 +22,14 @@ func Exit():
 func Physics( _delta : float) -> State:
 	
 	player.velocity = Vector2.ZERO
-	if attack_combo_completed:
-		attack_combo_completed = false
+	if attackComboCompleted:
+		attackComboCompleted = false
 		return idle
 
 	return null
 
 func attack_combo_animation_finished():
-	attack_combo_completed = true
+	attackComboCompleted = true
 	
 func endAttack(_newAnimName : String):
 	#When the signal ends we end the attack.

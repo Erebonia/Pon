@@ -4,7 +4,7 @@ class_name State_Hurt
 #Hurtbox
 @onready var hurtbox = $"../../Combat/Hurtbox"
 @onready var blinkAnimationPlayer = $"../../Combat/BlinkAnimationPlayer"
-@onready var damage_numbers_origin = $"../../Health_UI/DamageNumbersOrigin"
+@onready var damageNumbersOrigin = $"../../Health_UI/DamageNumbersOrigin"
 @onready var healthBar = $"../../Healthbar"
 @onready var stats = Status
 
@@ -39,10 +39,10 @@ func takeDamage(area):
 		is_critical = true
 		var critical_multiplier = randf_range(1.2, 2) # Crit chance between these values
 		stats.HP -= area.damage * critical_multiplier # Apply critical damage
-		DamageNumbers.display_number(area.damage * critical_multiplier, damage_numbers_origin.global_position, is_critical)
+		DamageNumbers.display_number(area.damage * critical_multiplier, damageNumbersOrigin.global_position, is_critical)
 	else:
 		stats.HP -= area.damage
-		DamageNumbers.display_number(area.damage, damage_numbers_origin.global_position, is_critical)
+		DamageNumbers.display_number(area.damage, damageNumbersOrigin.global_position, is_critical)
 	
 	healthBar.health = stats.HP
 	

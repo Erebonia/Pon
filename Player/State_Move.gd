@@ -43,4 +43,4 @@ func move_state(delta):
 			player.animationTree.set("parameters/Attack_Combo/BlendSpace2D/blend_position", player.aim_direction)
 			player.animationTree.set("parameters/Attack_Combo2/BlendSpace2D/blend_position", player.aim_direction)
 		else:
-			state_machine.ChangeState(idle)
+			StateMachine.ChangeState(idle)

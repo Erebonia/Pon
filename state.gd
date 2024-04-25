@@ -2,7 +2,7 @@ extends Node
 class_name State
 
 static var player : Player
-@onready var state_machine = $".."
+@onready var StateMachine = $".."
 
 func _ready():
 	pass

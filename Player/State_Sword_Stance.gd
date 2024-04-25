@@ -86,7 +86,7 @@ func toggle_attack_animation():
 
 func _on_sword_wave_cooldown_timeout():
 	isPerformingSwordWave = false
-	state_machine.ChangeState(idle)
+	StateMachine.ChangeState(idle)
 	print("Sword Wave is now on cooldown")
 	
 func swordStanceMoveState(delta):

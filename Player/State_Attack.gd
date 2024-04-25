@@ -38,7 +38,7 @@ func Physics(_delta : float) -> State:
 	return null
 	
 func _on_attack_timer_timeout():
-	state_machine.ChangeState(idle)
+	StateMachine.ChangeState(idle)
 	
 func endAttack(_newAnimName : String):
 	#When the signal ends we end the attack.

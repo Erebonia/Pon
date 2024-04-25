@@ -6,7 +6,6 @@ class_name Stats
 @export var DEF = 0
 @export var KNOCKOUT_SPEED = 0
 @onready var health = max_health:
-
 	get: 
 		return health
 	set(value): 
