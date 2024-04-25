@@ -32,7 +32,6 @@ func Physics(_delta : float) -> State:
 	return null
 	
 func takeDamage(area):
-	state_machine.ChangeState(hurt)
 	var is_critical = false
 	var critical_chance = randf()
 
@@ -65,7 +64,7 @@ func _on_hurtbox_area_entered(area):
 	get_tree().current_scene.add_child(playerHurtSound)
 		
 func _on_hurtbox_invincibility_started():
-		blinkAnimationPlayer.play("Start")
+	blinkAnimationPlayer.play("Start")
 
 func _on_hurtbox_invincibility_ended():
 	blinkAnimationPlayer.play("Stop")

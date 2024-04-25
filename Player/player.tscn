@@ -2980,10 +2980,10 @@ tracks/6/path = NodePath("Combat/Sword:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(14, 4), Vector2(11, 5), Vector2(3, 9), Vector2(-18, -7), Vector2(-10, -10), Vector2(-10, -11), Vector2(-10, -10)]
+"values": [Vector2(14, 4), Vector2(11, 5), Vector2(3, 9), Vector2(-13, -18), Vector2(-14, -18), Vector2(-12, -17)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -2992,10 +2992,10 @@ tracks/7/path = NodePath("Combat/Sword:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [1.57079, 2.09439, 3.66519, 3.40339]
+"values": [1.57079, 2.09439, 3.91671]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -3367,10 +3367,10 @@ tracks/6/path = NodePath("Combat/Sword:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(6, 7), Vector2(3, 7), Vector2(8, 7), Vector2(11, 7), Vector2(10, 7), Vector2(19, -5), Vector2(11, -13)]
+"values": [Vector2(6, 7), Vector2(3, 7), Vector2(8, 7), Vector2(11, 7), Vector2(10, 7), Vector2(16, -18)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -3379,10 +3379,10 @@ tracks/7/path = NodePath("Combat/Sword:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [1.83259, 1.309]
+"values": [1.83259, 0.775898]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -9850,7 +9850,6 @@ collision_mask = 3
 script = ExtResource("1_fjjot")
 
 [node name="debug" type="Label" parent="."]
-visible = false
 z_index = 5
 offset_left = -16.0
 offset_top = -40.0
@@ -9894,8 +9893,9 @@ script = ExtResource("9_af0ex")
 material = SubResource("ShaderMaterial_hi7q1")
 position = Vector2(1, -9)
 sprite_frames = SubResource("SpriteFrames_6nvx4")
-animation = &"attack_down"
-frame = 5
+animation = &"attack_sideways_combo"
+frame = 8
+flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -9987,7 +9987,6 @@ position = Vector2(4, -17)
 [node name="SwordSprite" type="Sprite2D" parent="Combat/Sword"]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_gqnm0")
-flip_h = true
 hframes = 9
 vframes = 20
 frame = 81
@@ -10015,12 +10014,12 @@ frame = 11
 frame_progress = 1.0
 
 [node name="AttackTimer" type="Timer" parent="Combat"]
-wait_time = 1.5
+wait_time = 0.5
 one_shot = true
 
 [node name="HitboxPivot" type="Marker2D" parent="Combat"]
 position = Vector2(0, -4)
-rotation = 1.5708
+rotation = 3.14159
 
 [node name="SwordHitbox" parent="Combat/HitboxPivot" instance=ExtResource("3_nnp8n")]
 position = Vector2(17, 0.999938)
@@ -10063,7 +10062,6 @@ collision_mask = 4
 collision_priority = 0.0
 
 [node name="CollisionShape2D" parent="Combat/Hurtbox" index="0"]
-visible = false
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_2ulq5")
 
@@ -10117,7 +10115,7 @@ frame_progress = 1.0
 
 [connection signal="timeout" from="Combat/AttackTimer" to="StateMachine/Attack" method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="Combat/SwordWaveProjectile/swordWaveCooldown" to="StateMachine/Sword_Stance" method="_on_sword_wave_cooldown_timeout"]
-[connection signal="area_entered" from="Combat/Hurtbox" to="StateMachine/Hurt" method="takeDamage"]
+[connection signal="area_entered" from="Combat/Hurtbox" to="StateMachine/Hurt" method="_on_hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Combat/Hurtbox" to="StateMachine/Hurt" method="_on_hurtbox_invincibility_ended"]
 [connection signal="invincibility_started" from="Combat/Hurtbox" to="StateMachine/Hurt" method="_on_hurtbox_invincibility_started"]
 

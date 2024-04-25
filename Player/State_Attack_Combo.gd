@@ -8,7 +8,6 @@ var attack_combo_completed = false
 var attacking = false
 
 func Enter():
-	player.swordSprite.visible = true
 	player.attackTimer.stop()
 	Status.KNOCKOUT_SPEED = 90
 	player.calculateDmg(bonusDMG)

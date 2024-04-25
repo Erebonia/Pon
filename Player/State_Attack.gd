@@ -8,7 +8,6 @@ var bonusDMG = 15
 var attacking = false
 
 func Enter():
-	player.swordSprite.visible = true
 	Status.KNOCKOUT_SPEED = 60
 	player.calculateDmg(bonusDMG)
 	player.slashFX.play("slash_animation")
