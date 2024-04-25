@@ -77,7 +77,6 @@ var Defense : int :
 func _ready():
 	XP_Table_Data = get_xp_data()
 	#print(XP_Table_Data)
- 
 	rpgClass = Warrior.new()
 	rpgClass.set_base_stat(self)
  
