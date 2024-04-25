@@ -28,16 +28,21 @@ var aim_direction = null
 
 func _ready():
 	state_machine.Initialize(self)
+	animationTree.active = true
 	
-func _process(delta):
+func _process(_delta):
 	pass
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	debug.text = "State: " + state_machine.current_state.name
 	input_vector.x = Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left")
 	input_vector.y = Input.get_action_strength("Move_Down") - Input.get_action_strength("Move_Up")
 	input_vector = input_vector.normalized()
 	aim_direction = (get_global_mouse_position() - global_position).normalized() # Make player face the mouse
+
+	animationTree.set("parameters/Attack/BlendSpace2D/blend_position", aim_direction)
+	animationTree.set("parameters/Attack_Combo/BlendSpace2D/blend_position", aim_direction)
+	animationTree.set("parameters/Attack_Combo2/BlendSpace2D/blend_position", aim_direction)
 	move_and_slide()
 		
 func UpdateAnimation(state: String):
@@ -45,4 +50,7 @@ func UpdateAnimation(state: String):
 
 func calculateDmg(dmgBoostStat):
 	swordHitbox.damage = dmgBoostStat
+	
+func player():
+	pass
 

@@ -35,11 +35,11 @@ func _process(delta: float) -> void:
 		
 func _recalculate_time() -> void:
 	var total_minutes = int(time / INGAME_TO_REAL_MINUTE_DURATION)
-	
+	@warning_ignore("integer_division") 
 	var day = int(total_minutes / MINUTES_PER_DAY)
 
 	var current_day_minutes = total_minutes % MINUTES_PER_DAY
-
+	@warning_ignore("integer_division") 
 	var hour = int(current_day_minutes / MINUTES_PER_HOUR)
 	var minute = int(current_day_minutes % MINUTES_PER_HOUR)
 	

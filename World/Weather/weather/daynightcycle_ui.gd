@@ -29,6 +29,7 @@ func _amfm_hour(hour:int) -> String:
 	return str(hour)
 
 func _minute_increment_10(minute:int) -> String:
+	@warning_ignore("integer_division") 
 	var rounded_minute = (minute / 10) * 10
 	if rounded_minute < 10:
 		return "0" + str(rounded_minute)

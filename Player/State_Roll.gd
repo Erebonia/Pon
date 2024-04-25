@@ -20,7 +20,7 @@ func Exit():
 func Process(_delta : float) -> State:
 	return null
 	
-func Physics(delta : float) -> State:
+func Physics(_delta : float) -> State:
 	roll_vector = player.input_vector
 	player.velocity = roll_vector * ROLL_SPEED
 	player.move_and_slide()

@@ -58,7 +58,9 @@ var Strength : int :
 var Vitality : int :
 	set(value):
 		Vitality = value
+		@warning_ignore("integer_division") 
 		HP += 10 * (Vitality/4)
+		@warning_ignore("integer_division") 
 		max_HP += 10 * (Vitality/4)
 		%Vitality.text = str(value)
  

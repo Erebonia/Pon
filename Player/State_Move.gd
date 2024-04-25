@@ -28,9 +28,10 @@ func Physics(delta : float) -> State:
 	if Input.is_action_just_pressed("attack"):
 		return attack
 
-	if player.input_vector != Vector2.ZERO:
-		player.animationTree.set("parameters/Run/blend_position", player.input_vector)
+	if player.input_vector != Vector2.ZERO: 
 		player.velocity = player.velocity.move_toward(player.input_vector * MAX_SPEED, ACCELERATION * delta) # This will be the direction we move to
+		player.animationTree.set("parameters/Run/blend_position", player.input_vector)
+		player.animationTree.set("parameters/Idle/blend_position", player.input_vector)
 	else:
 		return idle	
 		
