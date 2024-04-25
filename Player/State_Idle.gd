@@ -19,7 +19,7 @@ func Physics(_delta : float) -> State:
 	if player.input_vector != Vector2.ZERO:
 		return run
 		
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_pressed("attack"):
 		return attack
 		 
 	#Stop Movement

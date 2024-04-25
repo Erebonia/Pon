@@ -7,7 +7,7 @@ static var player : Player
 func _ready():
 	pass
 
-func Enter():
+func Enter() -> void:
 	pass
 	
 func Exit() -> void:

@@ -4,39 +4,40 @@ class_name State_Attack
 @onready var attack_combo = $"../Attack_Combo"
 @onready var run = $"../Run"
 @onready var idle = $"../Idle"
-var bonusDMG = 0
-
-# New flag to indicate if the attack is active
-var is_attacking = false
+var bonusDMG = 15
+var attacking = false
 
 func Enter():
 	player.swordSprite.visible = true
-	Status.KNOCKOUT_SPEED = 75
+	Status.KNOCKOUT_SPEED = 90
 	player.calculateDmg(bonusDMG)
 	player.slashFX.play("slash_animation")
 	player.UpdateAnimation("Attack")
 	player.attackTimer.start()
-	is_attacking = true  # Attack starts
+	player.animationTree.animation_finished.connect(endAttack)
+	attacking = true
 	
 func Exit() -> void:
-	is_attacking = false  # Reset when exiting state
-
+	player.animationTree.animation_finished.disconnect(endAttack)
+	
 func Process(_delta : float) -> State:
 	return null
 
 func Physics(_delta : float) -> State:
 	player.velocity = Vector2.ZERO
+
+	if Input.is_action_just_pressed("attack"):
+		return attack_combo
+	if !attacking:
+		return idle
 	
-	# Prevent transition to run state if attack is active
-	if not is_attacking:
-		if Input.is_action_just_pressed("Move_Right") or Input.is_action_just_pressed("Move_Left") or Input.is_action_just_pressed("Move_Down") or Input.is_action_just_pressed("Move_Up") or Input.is_action_pressed("Move_Down") or Input.is_action_pressed("Move_Right") or Input.is_action_pressed("Move_Left") or Input.is_action_pressed("Move_Up"):
-			return run
-		
 	return null
 	
 func _on_attack_timer_timeout():
-	is_attacking = false  # Attack ends when timer times out
-	state_machine.current_state = idle
+	state_machine.ChangeState(idle)
+	pass
+	
+func endAttack(_newAnimName : String):
+	#When the signal ends we end the attack.
+	attacking = false
 
-func attack_animation_finished():
-	is_attacking = false  # Ensure attack is marked as finished

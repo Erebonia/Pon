@@ -11,6 +11,7 @@ class_name Player
 #General (Game)
 @onready var checkTime = null
 @onready var light_source = $Misc/Light_Source
+const PlayerHurtSound = preload("res://Player/player_hurt_sound.tscn")
 
 #Hurtbox
 @onready var hurtbox = $Combat/Hurtbox
@@ -42,6 +43,7 @@ func _ready():
 	animationTree.active = true
 	healthBar.max_value = stats.max_HP
 	healthBar.init_health(stats.HP)
+	
 	if checkTime != null:
 		checkTime = get_parent().find_child("DayNightCycle").get_child(1)
 	
@@ -57,11 +59,6 @@ func _physics_process(_delta):
 	input_vector.x = Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left")
 	input_vector.y = Input.get_action_strength("Move_Down") - Input.get_action_strength("Move_Up")
 	input_vector = input_vector.normalized()
-	aim_direction = (get_global_mouse_position() - global_position).normalized() # Make player face the mouse
-
-	animationTree.set("parameters/Attack/BlendSpace2D/blend_position", aim_direction)
-	animationTree.set("parameters/Attack_Combo/BlendSpace2D/blend_position", aim_direction)
-	animationTree.set("parameters/Attack_Combo2/BlendSpace2D/blend_position", aim_direction)
 	move_and_slide()
 		
 func UpdateAnimation(state: String):
@@ -79,4 +76,42 @@ func _on_check_time(_day, hour, _minute):
 	
 func player():
 	pass
+	
+func takeDamage(area): #TODO make a hurt state later.
+	var is_critical = false
+	var critical_chance = randf()
+
+	if critical_chance <= 0.1:
+		is_critical = true
+		var critical_multiplier = randf_range(1.2, 2) # Crit chance between these values
+		stats.HP -= area.damage * critical_multiplier # Apply critical damage
+		DamageNumbers.display_number(area.damage * critical_multiplier, damage_numbers_origin.global_position, is_critical)
+	else:
+		stats.HP -= area.damage
+		DamageNumbers.display_number(area.damage, damage_numbers_origin.global_position, is_critical)
+	
+	healthBar.health = stats.HP
+	
+	if stats.HP < stats.max_HP:
+		healthBar.visible = true
+		
+func _on_hurtbox_area_entered(area):
+	takeDamage(area)
+	
+	if area.has_method("projectile"):
+		area.queue_free()
+	
+	#Invincibility and hit effect    
+	hurtbox.start_invincibility(.6)
+	hurtbox.create_hit_effect()
+
+	#Hurtbox Sound
+	var playerHurtSound = PlayerHurtSound.instantiate()
+	get_tree().current_scene.add_child(playerHurtSound)
+		
+func _on_hurtbox_invincibility_started():
+		blinkAnimationPlayer.play("Start")
+
+func _on_hurtbox_invincibility_ended():
+	blinkAnimationPlayer.play("Stop")
 
