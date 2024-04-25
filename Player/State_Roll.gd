@@ -9,7 +9,6 @@ var roll_vector = Vector2.DOWN
 
 func Enter():
 	player.animationTree.set("parameters/Roll/Blendspace2D/blend_position", player.input_vector)	
-	player.swordSprite.visible = false
 	player.blinkAnimationPlayer.play("Start")
 	player.hurtbox.start_invincibility(.6)
 	player.UpdateAnimation("Roll")

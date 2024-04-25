@@ -55,14 +55,17 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("Status"):
 		stats.visible = not stats.visible
 		
+	setMovementDirection()
+		
+func UpdateAnimation(state: String):
+	animationState.travel(state)
+	
+func setMovementDirection():
 	debug.text = "State: " + state_machine.current_state.name
 	input_vector.x = Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left")
 	input_vector.y = Input.get_action_strength("Move_Down") - Input.get_action_strength("Move_Up")
 	input_vector = input_vector.normalized()
 	move_and_slide()
-		
-func UpdateAnimation(state: String):
-	animationState.travel(state)
 
 func calculateDmg(dmgBoostStat):
 	swordHitbox.damage = dmgBoostStat

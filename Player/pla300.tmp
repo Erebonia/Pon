@@ -4175,7 +4175,7 @@ tracks/9/path = NodePath("StateMachine/Attack_Combo")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0.6),
+"times": PackedFloat32Array(0.8),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -5088,7 +5088,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id="Animation_ucvjq"]
 resource_name = "Attack_Upright"
-length = 0.5
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -5108,7 +5108,7 @@ tracks/1/path = NodePath("Combat/HitboxPivot/SwordHitbox/CollisionShape2D:disabl
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
+"times": PackedFloat32Array(0, 0.2, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -9848,7 +9848,6 @@ collision_mask = 3
 script = ExtResource("1_fjjot")
 
 [node name="debug" type="Label" parent="."]
-visible = false
 z_index = 5
 offset_left = -16.0
 offset_top = -40.0
@@ -9911,7 +9910,7 @@ parameters/Attack/TimeScale/scale = 1.5
 parameters/Attack_Combo/BlendSpace2D/blend_position = Vector2(0, 0)
 parameters/Attack_Combo/TimeScale/scale = 2.0
 parameters/Attack_Combo2/BlendSpace2D/blend_position = Vector2(0, 0)
-parameters/Attack_Combo2/TimeScale/scale = 2.0
+parameters/Attack_Combo2/TimeScale/scale = 1.0
 parameters/Bow_Aim/BlendSpace2D/blend_position = Vector2(0, 0)
 parameters/Bow_Aim/TimeScale/scale = 2.0
 parameters/Bow_Fire/BlendSpace2D/blend_position = Vector2(0, 0)
@@ -10032,7 +10031,7 @@ disabled = true
 modulate = Color(0, 0, 0, 1)
 
 [node name="swordWaveCooldown" type="Timer" parent="Combat/SwordWaveProjectile"]
-wait_time = 30.0
+wait_time = 5.0
 one_shot = true
 
 [node name="swordWaveStance" type="AudioStreamPlayer" parent="Combat/SwordWaveProjectile"]

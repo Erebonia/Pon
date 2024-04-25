@@ -2,7 +2,6 @@ extends State
 class_name State_Attack_Combo
 
 @onready var idle = $"../Idle"
-@onready var attack_combo2 = $"../Attack_Combo2"
 
 var bonusDMG = 20
 var attack_combo_completed = false
