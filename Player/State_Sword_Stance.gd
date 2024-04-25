@@ -62,7 +62,7 @@ func Physics(delta : float) -> State:
 func activateStance():
 	if !isPerformingSwordWave:
 		isPerformingSwordWave = true
-		var aim_direction = roll.roll_vector
+		var aim_direction = roll.rollVector
 		# Set the rotation of the sword wave projectile to match the character's facing direction
 		swordWaveProjectile.rotation = atan2(aim_direction.y, aim_direction.x)
 		toggle_attack_animation()
@@ -92,7 +92,7 @@ func _on_sword_wave_cooldown_timeout():
 func swordStanceMoveState(delta):
 		if player.input_vector != Vector2.ZERO: 
 			player.UpdateAnimation("Run")
-			roll.roll_vector = player.input_vector
+			roll.rollVector = player.input_vector
 			player.velocity = player.velocity.move_toward(player.input_vector * run.MAX_SPEED, run.ACCELERATION * delta) # This will be the direction we move to
 			player.animationTree.set("parameters/Run/blend_position", player.input_vector)
 			player.animationTree.set("parameters/Idle/blend_position", player.input_vector)

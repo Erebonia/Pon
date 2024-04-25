@@ -86,7 +86,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 11.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1if6m"]
@@ -104,8 +104,8 @@ rotation = 4.71239
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_bf5xt")
 autoplay = "default"
-frame = 5
-speed_scale = 2.5
+frame_progress = 0.533443
+speed_scale = 1.5
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 position = Vector2(0, 1.78814e-07)
