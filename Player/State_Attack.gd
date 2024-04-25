@@ -40,5 +40,3 @@ func _on_attack_timer_timeout():
 
 func attack_animation_finished():
 	is_attacking = false  # Ensure attack is marked as finished
-	if Input.is_action_just_pressed("attack"):
-		state_machine.current_state = attack_combo

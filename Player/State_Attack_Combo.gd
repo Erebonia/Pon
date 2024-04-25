@@ -7,9 +7,6 @@ class_name State_Attack_Combo
 var bonusDMG = 4
 
 func Enter():
-	if player.attackTimer.is_stopped():
-		player.attackTimer.start()
-		
 	player.swordSprite.visible = true
 	player.attackTimer.stop()
 	Status.KNOCKOUT_SPEED = 80
