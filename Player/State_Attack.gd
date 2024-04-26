@@ -17,7 +17,6 @@ func Enter():
 	attacking = true
 	
 func Exit() -> void:
-	print("Leaving attack state.")
 	player.animationTree.animation_finished.disconnect(endAttack)
 	player.attackTimer.stop()
 	
