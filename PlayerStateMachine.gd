@@ -5,9 +5,6 @@ var states: Array[State]
 var prev_state: State
 
 var current_state: State
-
-func _ready():
-	process_mode = Node2D.PROCESS_MODE_DISABLED
 	
 func _process(delta):
 	ChangeState(current_state.Process(delta))
@@ -28,7 +25,6 @@ func Initialize(_player: Player):
 	if states.size() > 0:
 		states[0].player = _player
 		ChangeState(states[0])
-		process_mode = Node2D.PROCESS_MODE_INHERIT
 	
 func ChangeState(new_state: State):
 	if new_state == null or new_state == current_state:

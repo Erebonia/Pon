@@ -8,9 +8,6 @@ class_name Enemy_Follow
 @onready var idle = $"../Idle"
 @onready var playerDetectionZone = $"../../PlayerDetection"
 
-func Enter():
-	animation_player.play("idle")
-
 func Physics(delta : float) -> EnemyState:
 	enemy.velocity = enemy.velocity.move_toward(Vector2.ZERO, enemy.FRICTION * delta)
 	
