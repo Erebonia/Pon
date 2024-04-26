@@ -8,14 +8,14 @@
 [ext_resource type="Script" path="res://Overlap/hitbox.gd" id="4_f6wu1"]
 [ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://UI/Health/healthbar_overhead.tscn" id="5_jttkw"]
 [ext_resource type="Script" path="res://Enemy_Follow.gd" id="5_me4nw"]
-[ext_resource type="Script" path="res://Enemies/Enemy_MeleeAttack.gd" id="6_kddo0"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Boss_MeleeAttack.gd" id="6_kddo0"]
 [ext_resource type="Script" path="res://Enemies/Enemy_StateMachine.gd" id="7_njdfh"]
-[ext_resource type="Script" path="res://Enemies/Enemy_HomingMissile.gd" id="7_uvbhh"]
 [ext_resource type="PackedScene" uid="uid://g21t8tducx7e" path="res://Enemies/bullet.tscn" id="8_qymu3"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Dash.gd" id="9_i565u"]
-[ext_resource type="Script" path="res://Enemies/Enemy_LaserBeam.gd" id="9_oqdmc"]
-[ext_resource type="Script" path="res://Enemies/Enemy_ArmorBuff.gd" id="10_nko3b"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Death.gd" id="12_fmiep"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Boss_HomingMissile.gd" id="10_utb4h"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Boss_LaserBeam.gd" id="12_p8xr8"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Boss_ArmorBuff.gd" id="13_16nwq"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Boss_Dash.gd" id="14_31jw8"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Boss_Death.gd" id="15_bbn2r"]
 [ext_resource type="Script" path="res://Overlap/hurtbox.gd" id="16_6uqi4"]
 [ext_resource type="PackedScene" uid="uid://dk7ckqq8mq2nr" path="res://Stats.tscn" id="18_f152u"]
 [ext_resource type="PackedScene" uid="uid://bhv1fd4uvlhpd" path="res://Enemies/wander_controller.tscn" id="19_08jca"]
@@ -546,20 +546,20 @@ shape = SubResource("CapsuleShape2D_g73up")
 disabled = true
 
 [node name="HomingMissile" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("7_uvbhh")
+script = ExtResource("10_utb4h")
 bullet_node = ExtResource("8_qymu3")
 
 [node name="LaserBeam" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("9_oqdmc")
+script = ExtResource("12_p8xr8")
 
 [node name="ArmorBuff" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("10_nko3b")
+script = ExtResource("13_16nwq")
 
 [node name="Dash" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("9_i565u")
+script = ExtResource("14_31jw8")
 
 [node name="Death" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("12_fmiep")
+script = ExtResource("15_bbn2r")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 0

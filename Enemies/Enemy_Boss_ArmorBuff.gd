@@ -7,6 +7,8 @@ var can_transition : bool = false
 func Enter():
 	animation_player.speed_scale = 0.8
 	canAttackBossCollision.set_deferred("disabled", true)
+	animation_player.play("block")
+	await animation_player.animation_finished
 	animation_player.play("armor_buff")
 	await animation_player.animation_finished
 	can_transition = true
