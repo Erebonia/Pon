@@ -7,9 +7,9 @@
 [ext_resource type="Script" path="res://Overlap/hitbox.gd" id="5_k4080"]
 [ext_resource type="Script" path="res://Enemies/Enemy_StateMachine.gd" id="6_h3268"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Idle.gd" id="7_r3t6u"]
-[ext_resource type="Script" path="res://Enemy_Follow.gd" id="8_fkbqt"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Follow.gd" id="8_d5c2s"]
 [ext_resource type="Script" path="res://Enemies/Enemy_MeleeAttack.gd" id="9_447wd"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Boss_Death.gd" id="15_6oi53"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Death.gd" id="15_6oi53"]
 [ext_resource type="Script" path="res://Overlap/hurtbox.gd" id="16_8tpba"]
 [ext_resource type="PackedScene" uid="uid://cms5nxy1iwkm2" path="res://Enemies/player_detection.tscn" id="17_kvbjh"]
 [ext_resource type="PackedScene" uid="uid://dk7ckqq8mq2nr" path="res://Stats.tscn" id="18_mo171"]
@@ -166,7 +166,7 @@ script = ExtResource("6_h3268")
 script = ExtResource("7_r3t6u")
 
 [node name="Follow" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("8_fkbqt")
+script = ExtResource("8_d5c2s")
 
 [node name="MeleeAttack" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("9_447wd")
@@ -195,7 +195,6 @@ script = ExtResource("16_8tpba")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 visible = false
 shape = SubResource("CapsuleShape2D_u4i7s")
-disabled = true
 
 [node name="Timer" type="Timer" parent="Hurtbox"]
 

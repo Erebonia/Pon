@@ -1,8 +1,4 @@
-extends EnemyState
- 
-@onready var stats = owner.get_parent().find_child("Stats")
-
-const EnemyDeathEffect = preload("res://Effects/enemy_death_effect.tscn")
+extends Enemy_Death
 
 func Enter():
 	var enemyDeathEffect = EnemyDeathEffect.instantiate()

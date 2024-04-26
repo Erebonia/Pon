@@ -3,6 +3,8 @@ extends EnemyState
 @onready var pivot = $"../../pivot"
 @onready var dash = $"../Dash"
 
+var can_transition: bool = false
+ 
 func Enter():
 	animation_player.speed_scale = 1
 	await play_animation("laser_cast")

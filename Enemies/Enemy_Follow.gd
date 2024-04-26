@@ -1,4 +1,5 @@
 extends EnemyState
+class_name Enemy_Follow
 
 @onready var follow = $"../Follow"
 @onready var melee = $"../MeleeAttack"
@@ -17,23 +18,11 @@ func Physics(delta : float) -> EnemyState:
 
 	accelerate_towards_point(enemy.playerPosition, delta)
 		
-	if distance > 50:
-		attackPlayerRanged()
-		pass
-	else:
+	if distance < 50:
 		return melee
-		pass
 		
 	enemy.move_and_slide()
 	return null
-	
-func attackPlayerRanged():
-	var chance = randi() % 2
-	match chance:
-		0:
-			StateMachine.ChangeState(homingMissile)
-		1:
-			StateMachine.ChangeState(laserBeam)
 			
 func accelerate_towards_point(point, delta):
 	var direction = (point - enemy.global_position).normalized()

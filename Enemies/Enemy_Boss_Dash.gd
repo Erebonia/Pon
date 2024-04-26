@@ -15,4 +15,4 @@ func Physics(_delta : float) -> EnemyState:
 	if owner.direction.length() < 30:
 		return follow
 		
-	return null
+	return follow

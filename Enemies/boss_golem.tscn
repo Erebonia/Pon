@@ -4,11 +4,11 @@
 [ext_resource type="Script" path="res://Enemies/Enemy_Boss.gd" id="1_ucatd"]
 [ext_resource type="Texture2D" uid="uid://ccrnr7jblswpx" path="res://Enemies/Laser_sheet.png" id="2_r0p6b"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="3_7n1b6"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Idle.gd" id="4_ani6r"]
 [ext_resource type="Script" path="res://Overlap/hitbox.gd" id="4_f6wu1"]
 [ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://UI/Health/healthbar_overhead.tscn" id="5_jttkw"]
-[ext_resource type="Script" path="res://Enemy_Follow.gd" id="5_me4nw"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Boss_Idle.gd" id="7_6aaru"]
 [ext_resource type="Script" path="res://Enemies/Enemy_StateMachine.gd" id="7_njdfh"]
+[ext_resource type="Script" path="res://Enemy_Boss_Follow.gd" id="8_d7gp6"]
 [ext_resource type="PackedScene" uid="uid://g21t8tducx7e" path="res://Enemies/bullet.tscn" id="8_qymu3"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Boss_MeleeAttack.gd" id="9_8gny1"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Boss_HomingMissile.gd" id="10_utb4h"]
@@ -525,10 +525,10 @@ disabled = true
 script = ExtResource("7_njdfh")
 
 [node name="Idle" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("4_ani6r")
+script = ExtResource("7_6aaru")
 
 [node name="Follow" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("5_me4nw")
+script = ExtResource("8_d7gp6")
 
 [node name="MeleeAttack" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("9_8gny1")
