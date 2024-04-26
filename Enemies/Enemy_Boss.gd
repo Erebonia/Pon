@@ -22,9 +22,6 @@ func _ready():
 	bossHealthbar.init_health(stats.health)
 
 func _process(_delta):
-	if player != null:
-		direction = player.position - position
- 
 	if direction.x < 0:
 		sprite.flip_h = true
 		meleeAttackDir.position.x = -31

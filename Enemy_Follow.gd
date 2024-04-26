@@ -10,6 +10,11 @@ func enter():
 func exit():
 	super.exit()
 	owner.set_physics_process(false)
+	
+func _physics_process(delta):
+		if player != null:
+			print("HI")
+			#player.direction = player.position - player.position
  
 func transition():
 	var distance = owner.direction.length()
