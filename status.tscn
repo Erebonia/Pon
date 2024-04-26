@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://diqmmlave2cdd"]
+[gd_scene load_steps=25 format=3 uid="uid://h541kkislped"]
 
 [ext_resource type="Script" path="res://Player/StatsPlayer.gd" id="1_og8wd"]
 [ext_resource type="Texture2D" uid="uid://6eb55uah0is2" path="res://Player/Pixivan MC/Front Movement.png" id="2_kg1rh"]

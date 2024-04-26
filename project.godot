@@ -31,7 +31,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "Blacksmith - Evil": "res://Dialogue/Timelines/Blacksmith - Evil.dtl",
 "Blacksmith Smithing": "res://Dialogue/Timelines/Blacksmith Smithing.dtl",
-"roy_talk_1": "res://Dialogue/Characters/roy_talk_1.dtl"
+"roy_talk_1": "res://Dialogue/Timelines/roy_talk_1.dtl"
 }
 text/letter_speed=0.02
 text/initial_text_reveal_skippable=true
@@ -54,6 +54,7 @@ variables={}
 layout/style_list=[]
 layout/default_style=""
 animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_or_out.gd"
+glossary/default_case_sensitive=true
 
 [display]
 

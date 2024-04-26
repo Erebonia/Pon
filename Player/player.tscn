@@ -9851,6 +9851,7 @@ collision_mask = 3
 script = ExtResource("1_fjjot")
 
 [node name="debug" type="Label" parent="."]
+visible = false
 z_index = 5
 offset_left = -16.0
 offset_top = -40.0
@@ -9894,8 +9895,7 @@ script = ExtResource("9_af0ex")
 material = SubResource("ShaderMaterial_hi7q1")
 position = Vector2(1, -9)
 sprite_frames = SubResource("SpriteFrames_6nvx4")
-animation = &"attack_downright_combo"
-flip_h = true
+animation = &"attack_down"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -9904,7 +9904,6 @@ libraries = {
 autoplay = "Crosshair"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_nmxgk")
@@ -9987,6 +9986,7 @@ position = Vector2(4, -17)
 [node name="SwordSprite" type="Sprite2D" parent="Combat/Sword"]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_gqnm0")
+flip_h = true
 hframes = 9
 vframes = 20
 frame = 81
@@ -10019,7 +10019,7 @@ one_shot = true
 
 [node name="HitboxPivot" type="Marker2D" parent="Combat"]
 position = Vector2(0, -4)
-rotation = 2.61799
+rotation = 1.5708
 
 [node name="SwordHitbox" parent="Combat/HitboxPivot" instance=ExtResource("3_nnp8n")]
 position = Vector2(17, 0.999938)
