@@ -1,7 +1,7 @@
 extends Node2D
 class_name EnemyState
 
-@export var enemy = get_parent()
+static var enemy : EnemyBoss
 @onready var StateMachine = $".."
 @onready var animation_player = owner.find_child("AnimationPlayer")
 @onready var player = get_parent().get_parent().find_child("player")

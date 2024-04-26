@@ -8,7 +8,7 @@ func Enter():
 	print("DASH TIME")
 	animation_player.play("glowing")
 	var tween = create_tween()
-	tween.tween_property(owner, "position", enemy.player.position, DASH_SPEED)
+	tween.tween_property(owner, "position", enemy.playerPosition, DASH_SPEED)
 	await tween.finished
  
 func Physics(_delta : float) -> EnemyState:
