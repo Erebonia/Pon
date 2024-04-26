@@ -2,20 +2,25 @@ extends CharacterBody2D
 
 const EnemyDeathEffect = preload("res://Effects/enemy_death_effect.tscn")
 
+#Speed 
 @export var ACCELERATION = 300
 @export var MAX_SPEED = 50
 @export var FRICTION = 200
+
+#Combat
+@onready var stats = $Stats
 @export var WANDER_TARGET_RANGE = 4
 @onready var hurtbox = $Hurtbox
+@onready var healthBar = $Healthbar
+@onready var damage_numbers_origin = $DamageNumbersOrigin
+
+#General
 @onready var softCollision = $SoftCollision
 @onready var animationPlayer = $AnimationPlayer
 @onready var sprite = $AnimatedSprite
-@onready var stats = $Stats
 @onready var playerDetectionZone = $PlayerDetection
 @onready var startPosition = get_global_transform().origin
 @onready var wanderController = $WanderController
-@onready var healthBar = $Healthbar
-@onready var damage_numbers_origin = $DamageNumbersOrigin
 
 enum {
 	IDLE,

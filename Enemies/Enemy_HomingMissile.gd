@@ -2,9 +2,9 @@ extends EnemyState
  
 @export var bullet_node: PackedScene
 var can_transition: bool = false
+@onready var follow = $"../Follow"
  
-func enter():
-	super.enter()
+func Enter():
 	animation_player.speed_scale = 0.75
 	animation_player.play("ranged_attack")
 	await animation_player.animation_finished
@@ -17,7 +17,9 @@ func shoot():
 	bullet.position = owner.position
 	get_tree().current_scene.add_child(bullet)
  
-func transition():
+func Physics(_delta : float) -> EnemyState:
 	if can_transition:
 		can_transition = false
-		get_parent().change_state("Follow")
+		return follow
+		
+	return null

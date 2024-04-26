@@ -9862,33 +9862,33 @@ text = "State: Idle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource("2_nsk5u")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node2D" parent="StateMachine"]
 script = ExtResource("3_l2iho")
 
-[node name="Run" type="Node" parent="StateMachine"]
+[node name="Run" type="Node2D" parent="StateMachine"]
 script = ExtResource("4_m08hb")
 
-[node name="Roll" type="Node" parent="StateMachine"]
+[node name="Roll" type="Node2D" parent="StateMachine"]
 script = ExtResource("5_gajw7")
 
-[node name="Attack" type="Node" parent="StateMachine"]
+[node name="Attack" type="Node2D" parent="StateMachine"]
 script = ExtResource("6_w1ud3")
 
-[node name="Attack_Combo" type="Node" parent="StateMachine"]
+[node name="Attack_Combo" type="Node2D" parent="StateMachine"]
 script = ExtResource("7_g4l0n")
 
-[node name="Sword_Stance" type="Node" parent="StateMachine"]
+[node name="Sword_Stance" type="Node2D" parent="StateMachine"]
 script = ExtResource("8_xg1yj")
 
-[node name="Bow_State" type="Node" parent="StateMachine"]
+[node name="Bow_State" type="Node2D" parent="StateMachine"]
 
-[node name="Hurt" type="Node" parent="StateMachine"]
+[node name="Hurt" type="Node2D" parent="StateMachine"]
 script = ExtResource("9_yamvx")
 
-[node name="Stay" type="Node" parent="StateMachine"]
+[node name="Stay" type="Node2D" parent="StateMachine"]
 script = ExtResource("9_af0ex")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]

@@ -28,6 +28,7 @@ var input_vector = Vector2.ZERO
 var aim_direction = null
 
 func _ready():
+	randomize()
 	stateMachine.Initialize(self)
 	animationTree.active = true
 	

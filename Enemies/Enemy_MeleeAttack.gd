@@ -1,12 +1,17 @@
 extends EnemyState
+
+@onready var follow = $"../Follow"
+@onready var idle = $"../Idle"
  
-func enter():
-	super.enter()
-	animation_player.speed_scale = 2
+func Enter():
 	animation_player.play("melee_attack")
 	await animation_player.animation_finished
-	animation_player.speed_scale = 1
  
-func transition():
-	if owner.direction.length() > 50:
-		get_parent().change_state("Follow")
+func Exit():
+	pass
+	
+func Physics(_delta : float) -> EnemyState:
+	if owner.direction.length() > 10:
+		return idle 
+	
+	return null

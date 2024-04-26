@@ -1,14 +1,19 @@
 extends EnemyState
  
 var can_transition : bool = false
- 
-func enter():
-	super.enter()
+@onready var follow = $"../Follow"
+
+func Enter():
 	animation_player.play("armor_buff")
 	await animation_player.animation_finished
 	can_transition = true
+	
+func Exit():
+	pass
  
-func transition():
+func Physics(_delta : float) -> EnemyState:
 	if can_transition:
 		can_transition = false
-		get_parent().change_state("Follow")
+		return follow
+		
+	return null

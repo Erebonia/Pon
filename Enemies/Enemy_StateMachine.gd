@@ -1,10 +1,10 @@
 extends Node2D
-class_name PlayerStateMachine
+class_name EnemyStateMachine
 
-var states: Array[State]
-var prev_state: State
+var states: Array[EnemyState]
+var prev_state: EnemyState
 
-var current_state: State
+var current_state: EnemyState
 
 func _ready():
 	process_mode = Node2D.PROCESS_MODE_DISABLED
@@ -18,19 +18,19 @@ func _physics_process(delta):
 func _unhandled_input(event):
 	ChangeState(current_state.HandleInput(event))
 	
-func Initialize(_player: Player):
+func Initialize(_enemy: EnemyBoss):
 	states = []
 	
 	for c in get_children():
-		if c is State:
+		if c is EnemyState:
 			states.append(c)
 			
 	if states.size() > 0:
-		states[0].player = _player
+		states[0].enemy = _enemy
 		ChangeState(states[0])
 		process_mode = Node2D.PROCESS_MODE_INHERIT
 	
-func ChangeState(new_state: State):
+func ChangeState(new_state: EnemyState):
 	if new_state == null or new_state == current_state:
 		return
 		

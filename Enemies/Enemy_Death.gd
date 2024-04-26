@@ -4,11 +4,10 @@ extends EnemyState
 
 const EnemyDeathEffect = preload("res://Effects/enemy_death_effect.tscn")
 
-func enter():
-	super.enter()
+func Enter():
 	var enemyDeathEffect = EnemyDeathEffect.instantiate()
 	get_parent().add_child(enemyDeathEffect)
-	enemyDeathEffect.global_position = global_position
+	enemyDeathEffect.global_position = enemy.global_position
 	animation_player.play("death")
 	await animation_player.animation_finished
 	animation_player.play("boss_slain")

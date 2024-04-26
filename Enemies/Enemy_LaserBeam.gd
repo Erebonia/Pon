@@ -1,10 +1,11 @@
 extends EnemyState
  
 @onready var pivot = $"../../pivot"
+@onready var dash = $"../Dash"
+
 var can_transition: bool = false
  
-func enter():
-	super.enter()
+func Enter():
 	animation_player.speed_scale = 1.5
 	await play_animation("laser_cast")
 	animation_player.speed_scale = 1
@@ -18,7 +19,8 @@ func play_animation(anim_name):
 func set_target():
 	pivot.rotation = (owner.direction - pivot.position).angle()
  
-func transition():
+func Physics(_delta : float) -> EnemyState:
 	if can_transition:
 		can_transition = false
-		get_parent().change_state("Dash")
+		return dash
+	return null

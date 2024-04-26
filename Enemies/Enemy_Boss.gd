@@ -1,37 +1,55 @@
 extends CharacterBody2D
+class_name EnemyBoss
 
-@onready var player = get_parent().find_child("Player")
+#General
 @onready var sprite = $Sprite2D
 @onready var animationPlayer = $AnimationPlayer
+
+#Combat
+@onready var stats = $Stats
 @onready var hurtbox = $Hurtbox
 @onready var meleeAttackDir = $FiniteStateMachine/MeleeAttack/MeleeAOE
 @onready var bossHealthbar = $UI/BossHealthbar
 @onready var healthbar = $Healthbar
 @onready var damage_numbers_origin = $DamageNumbersOrigin
 @onready var blinkAnimationPlayer = $BlinkAnimationPlayer
-@onready var stats = $Stats
+@onready var armorBuff = $FiniteStateMachine/ArmorBuff
+@onready var death = $FiniteStateMachine/Death
+@onready var softCollision = $SoftCollision
 
+#Direction
 var direction : Vector2
-@export var ACCELERATION = 30
+@export var ACCELERATION = 300
+@export var MAX_SPEED = 50
+@export var FRICTION = 200
+@onready var startPosition = get_global_transform().origin
+
+#Debug
+@onready var debug = $Debug
+@onready var stateMachine = $FiniteStateMachine
  
 func _ready():
-	set_physics_process(false)
+	stateMachine.Initialize(self)
 	healthbar.max_value = stats.health
 	bossHealthbar.max_value = stats.health
 	healthbar.init_health(stats.health)  # Corrected function name
 	bossHealthbar.init_health(stats.health)
 
 func _process(_delta):
+	pass
+ 
+func _physics_process(delta):
+	debug.text = "State: " + stateMachine.current_state.name
+	
 	if direction.x < 0:
 		sprite.flip_h = true
 		meleeAttackDir.position.x = -31
 	else:
 		sprite.flip_h = false
 		meleeAttackDir.position.x = 17
- 
-func _physics_process(delta):
-	velocity = direction.normalized() * ACCELERATION
-	move_and_collide(velocity * delta)
+		
+	if softCollision.is_colliding():
+		velocity += softCollision.get_push_vector() * delta * 400
  
 func take_damage(area):
 	var is_critical = false
@@ -59,11 +77,11 @@ func _on_hurtbox_area_entered(area):
 		take_damage(area)
 		healthbar.health = stats.health 
 		bossHealthbar.health = stats.health 
-	if stats.health < 0 and find_child("FiniteStateMachine").current_state != find_child("FiniteStateMachine").find_child("Death"):
-		find_child("FiniteStateMachine").change_state("Death")
+	if stats.health < 0:
+		stateMachine.ChangeState(death)
 	elif stats.health <= stats.max_health / 2  and stats.DEF == 0:  # Phase two of the fight he gets tankier
 		stats.DEF = 5
-		find_child("FiniteStateMachine").change_state("ArmorBuff") 
+		stateMachine.ChangeState(armorBuff)
 	#Knockback
 	var newDirection = ( position - area.owner.position ).normalized()
 	var knockback = newDirection * Status.KNOCKOUT_SPEED
@@ -74,3 +92,5 @@ func _on_hurtbox_invincibility_started():
 
 func _on_hurtbox_invincibility_ended():
 	blinkAnimationPlayer.play("Stop")
+	
+	

@@ -226,7 +226,7 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_iovvw")
 
 [node name="Boss_Golem" parent="." instance=ExtResource("13_s14mq")]
-position = Vector2(128, 64)
+position = Vector2(24, 56)
 
 [node name="Bat" parent="." instance=ExtResource("17_sc0hh")]
 position = Vector2(-38, -32)

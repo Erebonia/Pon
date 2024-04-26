@@ -483,6 +483,9 @@ radius = 73.7564
 [node name="Boss_Golem" type="CharacterBody2D"]
 collision_layer = 16
 script = ExtResource("1_ucatd")
+ACCELERATION = null
+MAX_SPEED = null
+FRICTION = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -590,6 +593,8 @@ debug_color = Color(0.627451, 0.529412, 0.133333, 0.419608)
 position = Vector2(0, -27)
 
 [node name="WanderController" parent="." instance=ExtResource("19_08jca")]
+position = Vector2(249.083, 88.3566)
+wander_range = 4
 
 [node name="UI" type="CanvasLayer" parent="."]
 

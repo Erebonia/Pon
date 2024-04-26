@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dvbvyl1rsoiu6"]
+[gd_scene load_steps=42 format=3 uid="uid://dvbvyl1rsoiu6"]
 
 [ext_resource type="Texture2D" uid="uid://ccpgsksdod8id" path="res://Enemies/golem_spritesheet.png" id="1_ckc57"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Boss.gd" id="1_ucatd"]
@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://Enemy_Follow.gd" id="5_me4nw"]
 [ext_resource type="Script" path="res://Enemies/Enemy_MeleeAttack.gd" id="6_kddo0"]
 [ext_resource type="Script" path="res://Enemies/Enemy_StateMachine.gd" id="7_njdfh"]
-[ext_resource type="Script" path="res://Enemies/Enemy_HomingMissile.gd" id="7_uvbhh"]
+[ext_resource type="Script" path="res://Enemies/EnemyHomingMissile.gd" id="7_uvbhh"]
 [ext_resource type="PackedScene" uid="uid://g21t8tducx7e" path="res://Enemies/bullet.tscn" id="8_qymu3"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Dash.gd" id="9_i565u"]
 [ext_resource type="Script" path="res://Enemies/Enemy_LaserBeam.gd" id="9_oqdmc"]
@@ -20,7 +20,17 @@
 [ext_resource type="PackedScene" uid="uid://dk7ckqq8mq2nr" path="res://Stats.tscn" id="18_f152u"]
 [ext_resource type="PackedScene" uid="uid://bhv1fd4uvlhpd" path="res://Enemies/wander_controller.tscn" id="19_08jca"]
 [ext_resource type="PackedScene" uid="uid://cms5nxy1iwkm2" path="res://Enemies/player_detection.tscn" id="20_bq1px"]
-[ext_resource type="PackedScene" uid="uid://bkf2a5dlqworv" path="res://Overlap/soft_collision.tscn" id="21_bdf6k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_58gw5"]
+shader = ExtResource("3_7n1b6")
+shader_parameter/active = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0cag4"]
+shader = ExtResource("3_7n1b6")
+shader_parameter/active = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eygyy"]
+size = Vector2(256.5, 16)
 
 [sub_resource type="Animation" id="Animation_6psl0"]
 length = 0.001
@@ -419,6 +429,15 @@ _data = {
 "ranged_attack": SubResource("Animation_n8kwp")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g73up"]
+height = 36.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u4i7s"]
+radius = 26.0
+height = 52.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2rsni"]
+
 [sub_resource type="Animation" id="Animation_ksfqm"]
 resource_name = "Start"
 length = 0.2
@@ -457,43 +476,16 @@ _data = {
 "Stop": SubResource("Animation_p5r0p")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_58gw5"]
-shader = ExtResource("3_7n1b6")
-shader_parameter/active = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0cag4"]
-shader = ExtResource("3_7n1b6")
-shader_parameter/active = false
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eygyy"]
-size = Vector2(256.5, 16)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g73up"]
-height = 36.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u4i7s"]
-radius = 26.0
-height = 52.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ddof4"]
-radius = 73.7564
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2rsni"]
-
 [node name="Boss_Golem" type="CharacterBody2D"]
-collision_layer = 16
+collision_layer = 18
 script = ExtResource("1_ucatd")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_dx7up")
-}
-autoplay = "idle"
-
-[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_yvvgn")
-}
+[node name="Healthbar" parent="." instance=ExtResource("5_jttkw")]
+visible = false
+offset_left = -9.0
+offset_top = -30.0
+offset_right = 9.0
+offset_bottom = -28.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_58gw5")
@@ -521,6 +513,46 @@ position = Vector2(119.75, 0)
 shape = SubResource("RectangleShape2D_eygyy")
 disabled = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dx7up")
+}
+autoplay = "idle"
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Defeated Text" type="Label" parent="UI"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.5
+offset_top = -11.5
+offset_right = 55.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Boss Defeated"
+
+[node name="BossHealthbar" parent="UI" instance=ExtResource("5_jttkw")]
+visible = false
+offset_left = 56.0
+offset_top = 161.0
+offset_right = 256.0
+offset_bottom = 165.0
+size_flags_vertical = 8
+
+[node name="Name" type="Label" parent="UI/BossHealthbar"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = -9.0
+offset_right = 113.0
+offset_bottom = 2.0
+theme_override_font_sizes/font_size = 6
+text = "DIT Helpdesk"
+
 [node name="FiniteStateMachine" type="Node2D" parent="."]
 script = ExtResource("7_njdfh")
 
@@ -530,7 +562,11 @@ script = ExtResource("4_ani6r")
 [node name="Follow" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("5_me4nw")
 
+[node name="WanderController" parent="FiniteStateMachine/Follow" instance=ExtResource("19_08jca")]
+position = Vector2(249.083, 88.3566)
+
 [node name="MeleeAttack" type="Node2D" parent="FiniteStateMachine"]
+position = Vector2(9, 4)
 script = ExtResource("6_kddo0")
 
 [node name="MeleeAOE" type="Area2D" parent="FiniteStateMachine/MeleeAttack"]
@@ -574,63 +610,9 @@ disabled = true
 
 [node name="Timer" type="Timer" parent="Hurtbox"]
 
-[node name="PlayerDetection" parent="." instance=ExtResource("20_bq1px")]
-position = Vector2(249.083, 88.3566)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" parent="PlayerDetection" index="0"]
-position = Vector2(-249.083, -88.3566)
-shape = SubResource("CircleShape2D_ddof4")
-debug_color = Color(0.627451, 0.529412, 0.133333, 0.419608)
-
-[node name="Stats" parent="." instance=ExtResource("18_f152u")]
-
-[node name="DamageNumbersOrigin" type="Node2D" parent="."]
-position = Vector2(0, -27)
-
-[node name="WanderController" parent="." instance=ExtResource("19_08jca")]
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Defeated Text" type="Label" parent="UI"]
-self_modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -55.5
-offset_top = -11.5
-offset_right = 55.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Boss Defeated"
-
-[node name="BossHealthbar" parent="UI" instance=ExtResource("5_jttkw")]
-visible = false
-offset_left = 56.0
-offset_top = 161.0
-offset_right = 256.0
-offset_bottom = 165.0
-size_flags_vertical = 8
-
-[node name="Name" type="Label" parent="UI/BossHealthbar"]
-layout_mode = 0
-offset_left = 81.0
-offset_top = -9.0
-offset_right = 113.0
-offset_bottom = 2.0
-theme_override_font_sizes/font_size = 6
-text = "DIT Helpdesk"
-
-[node name="Healthbar" parent="." instance=ExtResource("5_jttkw")]
-visible = false
-offset_left = -9.0
-offset_top = -30.0
-offset_right = 9.0
-offset_bottom = -28.0
+[node name="Base Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_2rsni")
 
 [node name="Debug" type="Label" parent="."]
 offset_left = -23.0
@@ -642,17 +624,22 @@ text = "Debug"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Base Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_2rsni")
+[node name="DamageNumbersOrigin" type="Node2D" parent="."]
+position = Vector2(0, -27)
 
-[node name="SoftCollision" parent="." instance=ExtResource("21_bdf6k")]
+[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yvvgn")
+}
+
+[node name="Stats" parent="." instance=ExtResource("18_f152u")]
+
+[node name="WanderController" parent="." instance=ExtResource("19_08jca")]
+
+[node name="PlayerDetection" parent="." instance=ExtResource("20_bq1px")]
+position = Vector2(249.083, 88.3566)
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_hurtbox_invincibility_ended"]
 [connection signal="invincibility_started" from="Hurtbox" to="." method="_on_hurtbox_invincibility_started"]
 [connection signal="timeout" from="Hurtbox/Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_entered"]
-[connection signal="body_exited" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_exited"]
-
-[editable path="PlayerDetection"]
