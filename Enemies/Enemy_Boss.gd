@@ -23,6 +23,7 @@ var direction : Vector2
 @export var MAX_SPEED = 50
 @export var FRICTION = 200
 @onready var startPosition = get_global_transform().origin
+@onready var player = get_parent().find_child("Player")
 
 #Debug
 @onready var debug = $Debug
@@ -40,6 +41,8 @@ func _process(_delta):
  
 func _physics_process(delta):
 	debug.text = "State: " + stateMachine.current_state.name
+	
+	direction = player.position - position
 	
 	if direction.x < 0:
 		sprite.flip_h = true

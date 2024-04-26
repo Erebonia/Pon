@@ -31,8 +31,6 @@ func Enter():
 func Physics(delta : float) -> EnemyState:
 	enemy.velocity = enemy.velocity.move_toward(Vector2.ZERO, enemy.FRICTION * delta)
 	
-	print(state)
-	
 	match state:
 		IDLE:
 			enemy.velocity = enemy.velocity.move_toward(Vector2.ZERO, enemy.FRICTION * delta)

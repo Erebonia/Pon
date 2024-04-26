@@ -1,7 +1,7 @@
 extends EnemyState
 
 @onready var follow = $"../Follow"
-@onready var idle = $"../Idle"
+@onready var dash = $"../Dash"
  
 func Enter():
 	animation_player.play("melee_attack")
@@ -11,7 +11,7 @@ func Exit():
 	pass
 	
 func Physics(_delta : float) -> EnemyState:
-	if owner.direction.length() > 10:
-		return idle 
+	if owner.direction.length() > 30:
+		return dash 
 	
 	return null
