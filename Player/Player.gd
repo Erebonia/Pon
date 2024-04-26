@@ -10,6 +10,7 @@ class_name Player
 
 #General (Game)
 @onready var stats = Status
+@onready var levelUpSound = $Misc/LevelUp
 @onready var checkTime = null
 @onready var lightSource = $Misc/Light_Source
 
@@ -31,6 +32,8 @@ func _ready():
 	randomize()
 	stateMachine.Initialize(self)
 	animationTree.active = true
+	stats.connect("no_HP", Callable(self, "playerDead"))
+	stats.connect("level_up", Callable(self, "_on_level_up"))
 	
 	if checkTime != null:
 		checkTime = get_parent().find_child("DayNightCycle").get_child(1)
@@ -64,9 +67,16 @@ func _on_check_time(_day, hour, _minute):
 		lightSource.visible = true
 	else:
 		lightSource.visible = false
+		
+func _on_level_up():
+	levelUpSound.play("level_up")
+	
+func playerDead():
+	queue_free()
 	
 func player():
 	pass
+	
 		
 
 

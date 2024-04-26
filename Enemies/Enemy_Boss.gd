@@ -19,6 +19,7 @@ class_name EnemyBoss
 
 #Direction
 var direction : Vector2
+var playerPosition
 @export var ACCELERATION = 300
 @export var MAX_SPEED = 50
 @export var FRICTION = 200
@@ -41,8 +42,12 @@ func _process(_delta):
  
 func _physics_process(delta):
 	debug.text = "State: " + stateMachine.current_state.name
+	if stats.health < 0:
+		stateMachine.ChangeState(death)
 	
-	direction = player.position - position
+	if player != null:
+		direction = player.position - position
+		playerPosition = player.position
 	
 	if direction.x < 0:
 		sprite.flip_h = true
@@ -76,15 +81,14 @@ func take_damage(area):
 	DamageNumbers.display_number(damage_taken, damage_numbers_origin.global_position, is_critical)
 
 func _on_hurtbox_area_entered(area):
+	if stats.health <= stats.max_health / 2  and stats.DEF == 0:  # Phase two of the fight he gets tankier
+		stats.DEF = 5
+		stateMachine.ChangeState(armorBuff)
+	
 	if stats.health > 0:
 		take_damage(area)
 		healthbar.health = stats.health 
 		bossHealthbar.health = stats.health 
-	if stats.health < 0:
-		stateMachine.ChangeState(death)
-	elif stats.health <= stats.max_health / 2  and stats.DEF == 0:  # Phase two of the fight he gets tankier
-		stats.DEF = 5
-		stateMachine.ChangeState(armorBuff)
 	#Knockback
 	var newDirection = ( position - area.owner.position ).normalized()
 	var knockback = newDirection * Status.KNOCKOUT_SPEED

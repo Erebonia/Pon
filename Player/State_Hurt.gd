@@ -15,13 +15,11 @@ class_name State_Hurt
 const PlayerHurtSound = preload("res://Player/player_hurt_sound.tscn")
 
 func Enter():
-	stats.connect("no_HP", Callable(self, "playerDead"))
-	stats.connect("level_up", Callable(self, "_on_level_up"))
 	healthBar.max_value = stats.max_HP
 	healthBar.init_health(stats.HP)
 	
 func Exit():
-	pass
+	stats.disconnect("no_HP", Callable(self, "playerDead"))
 	
 func Process(_delta : float) -> State:
 	return null
@@ -46,7 +44,7 @@ func takeDamage(area):
 	
 	healthBar.health = stats.HP
 	
-	if player.stats.HP < stats.max_HP:
+	if stats.HP < stats.max_HP:
 		healthBar.visible = true
 		
 func _on_hurtbox_area_entered(area):

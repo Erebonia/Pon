@@ -9851,7 +9851,6 @@ collision_mask = 3
 script = ExtResource("1_fjjot")
 
 [node name="debug" type="Label" parent="."]
-visible = false
 z_index = 5
 offset_left = -16.0
 offset_top = -40.0
@@ -10112,6 +10111,7 @@ sprite_frames = SubResource("SpriteFrames_qwt8f")
 animation = &"level_up"
 frame = 11
 frame_progress = 1.0
+speed_scale = 0.7
 
 [connection signal="timeout" from="Combat/AttackTimer" to="StateMachine/Attack" method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="Combat/SwordWaveProjectile/swordWaveCooldown" to="StateMachine/Sword_Stance" method="_on_sword_wave_cooldown_timeout"]
