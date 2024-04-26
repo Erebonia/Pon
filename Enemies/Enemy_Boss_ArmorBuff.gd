@@ -13,9 +13,6 @@ func Enter():
 	await animation_player.animation_finished
 	can_transition = true
 	animation_player.speed_scale = 1
-	
-func Exit():
-	pass
  
 func Physics(_delta : float) -> EnemyState:
 	if can_transition:

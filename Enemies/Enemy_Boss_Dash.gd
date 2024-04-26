@@ -1,8 +1,8 @@
 extends EnemyState
  
-var can_transition: bool = false
 @export var DASH_SPEED = 0.8
 @onready var follow = $"../Follow"
+@onready var dash = $"../Dash"
  
 func Enter():
 	print("DASH TIME")
@@ -10,11 +10,9 @@ func Enter():
 	var tween = create_tween()
 	tween.tween_property(owner, "position", enemy.player.position, DASH_SPEED)
 	await tween.finished
-func Exit():
-	pass
  
 func Physics(_delta : float) -> EnemyState:
-	if owner.direction.length() > 30:
+	if owner.direction.length() < 30:
 		return follow
 		
 	return null

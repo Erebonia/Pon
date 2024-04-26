@@ -36,9 +36,6 @@ func _ready():
 	bossHealthbar.max_value = stats.health
 	healthbar.init_health(stats.health)  # Corrected function name
 	bossHealthbar.init_health(stats.health)
-
-func _process(_delta):
-	pass
  
 func _physics_process(delta):
 	debug.text = "State: " + stateMachine.current_state.name
