@@ -1,7 +1,8 @@
-extends Stats
+extends Node
 
 const XP_DATABASE = "res://Player/LevelDatabase.json"
 const MAX_LEVEL = 4
+var KNOCKOUT_SPEED = 0
  
 var XP_Table_Data = {}
 
