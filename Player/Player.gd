@@ -42,7 +42,7 @@ func _ready():
 	verifySaveDirectory(save_file_path)
 	
 	if checkTime != null:
-		checkTime = get_parent().find_child("DayNightCycle").get_child(1)
+		checkTime = DayAndNight.get_child(0)
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("Save"):
