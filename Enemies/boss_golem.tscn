@@ -556,8 +556,9 @@ script = ExtResource("12_p8xr8")
 [node name="ArmorBuff" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("13_16nwq")
 
-[node name="Dash" type="Node2D" parent="FiniteStateMachine"]
+[node name="Dash" type="Node2D" parent="FiniteStateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("14_31jw8")
+enemy = NodePath("../..")
 
 [node name="Death" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("15_bbn2r")
@@ -634,6 +635,7 @@ offset_right = 9.0
 offset_bottom = -28.0
 
 [node name="Debug" type="Label" parent="."]
+visible = false
 offset_left = -23.0
 offset_top = -42.0
 offset_right = 26.0

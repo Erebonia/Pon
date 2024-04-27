@@ -48,7 +48,7 @@ func _physics_process(delta):
 		meleeAttackDir.position.x = 17
 		
 	if softCollision.is_colliding():
-		velocity += softCollision.get_push_vector() * delta * 400
+		velocity += softCollision.get_push_vector() * delta
  
 func take_damage(area):
 	var is_critical = false
