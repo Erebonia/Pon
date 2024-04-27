@@ -233,13 +233,14 @@ shape = SubResource("RectangleShape2D_iovvw")
 
 [node name="Boss_Golem" parent="." instance=ExtResource("13_s14mq")]
 position = Vector2(16, 88)
-ACCELERATION = 300
-MAX_SPEED = 50
-FRICTION = 200
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_0isge")
 position = Vector2(56, 224)
+
+[node name="Enemy_Bat2" parent="." instance=ExtResource("18_unihb")]
+material = SubResource("ShaderMaterial_0isge")
+position = Vector2(0, 224)
 
 [connection signal="time_tick" from="User Interface/DayNightCycle/CanvasModulate" to="Player" method="_on_check_time"]
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]

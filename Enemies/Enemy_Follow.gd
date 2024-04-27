@@ -13,7 +13,7 @@ func Physics(delta : float) -> EnemyState:
 	
 	accelerate_towards_point(enemy.playerPosition, delta)
 		
-	if distance < 10:
+	if distance <= 5:
 		return melee
 		
 	enemy.move_and_slide()

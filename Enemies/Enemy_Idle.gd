@@ -27,14 +27,15 @@ func Physics(delta : float) -> EnemyState:
 	
 	match state:
 		IDLE:
+			print("idling")
 			enemy.velocity = enemy.velocity.move_toward(Vector2.ZERO, enemy.FRICTION * delta)
 			if wanderController.get_time_left() == 0:
 				update_wander()
 		WANDER:
+			print("wandering")
 			if wanderController.get_time_left() == 0:
 				update_wander()
-			if player != null:
-				accelerate_towards_point(wanderController.target_position, delta)
+			accelerate_towards_point(wanderController.target_position, delta)
 			if global_position.distance_to(wanderController.target_position) <= WANDER_TARGET_RANGE:
 				update_wander()
 	

@@ -69,6 +69,21 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_bq1a0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite:material:shader_parameter/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_ksfqm"]
 resource_name = "Start"
 length = 0.2
@@ -88,21 +103,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_p5r0p"]
 resource_name = "Stop"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite:material:shader_parameter/active")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_bq1a0"]
-length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -238,7 +238,6 @@ shape = SubResource("CapsuleShape2D_2rsni")
 [connection signal="invincibility_started" from="Hurtbox" to="." method="_on_hurtbox_invincibility_started"]
 [connection signal="timeout" from="Hurtbox/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_entered"]
-[connection signal="body_exited" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_exited"]
 [connection signal="health_changed" from="Stats" to="FiniteStateMachine/Idle" method="_on_stats_health_changed"]
 
 [editable path="PlayerDetection"]

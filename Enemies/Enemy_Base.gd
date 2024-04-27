@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Enemy_Base
 
+const EnemyScene = preload("res://Enemies/enemy_bat.tscn")
+
 #Combat
 @onready var stats = $Stats
 @onready var hurtbox = $Hurtbox
@@ -88,5 +90,4 @@ func _on_hurtbox_invincibility_ended():
 func _on_stats_no_health():
 	print("NO HP TIME TO DIE")
 	stateMachine.ChangeState(deathState)
-	
 	
