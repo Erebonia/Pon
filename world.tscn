@@ -261,27 +261,27 @@ position = Vector2(16, 88)
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_0isge")
-position = Vector2(56, 224)
+position = Vector2(8, 232)
 
 [node name="Enemy_Bat2" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_i6fys")
-position = Vector2(32, 216)
+position = Vector2(-16, 224)
 
 [node name="Enemy_Bat3" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_akx05")
-position = Vector2(40, 216)
+position = Vector2(-8, 224)
 
 [node name="Enemy_Bat4" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_8300g")
-position = Vector2(40, 216)
+position = Vector2(-8, 224)
 
 [node name="Enemy_Bat5" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_tgxgg")
-position = Vector2(48, 216)
+position = Vector2(0, 224)
 
 [node name="Enemy_Bat6" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_82sbw")
-position = Vector2(32, 216)
+position = Vector2(-16, 224)
 
 [connection signal="time_tick" from="User Interface/DayNightCycle/CanvasModulate" to="Player" method="_on_check_time"]
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]

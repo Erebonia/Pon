@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dvbvyl1rsoiu6"]
+[gd_scene load_steps=45 format=3 uid="uid://dvbvyl1rsoiu6"]
 
 [ext_resource type="Texture2D" uid="uid://ccpgsksdod8id" path="res://Enemies/golem_spritesheet.png" id="1_ckc57"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Boss.gd" id="1_ucatd"]
@@ -481,6 +481,8 @@ radius = 73.7564
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2rsni"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_r77o4"]
+
 [node name="Boss_Golem" type="CharacterBody2D"]
 collision_layer = 16
 script = ExtResource("1_ucatd")
@@ -582,6 +584,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
+visible = false
 position = Vector2(-249.083, -88.3566)
 shape = SubResource("CircleShape2D_ddof4")
 debug_color = Color(0.627451, 0.529412, 0.133333, 0.419608)
@@ -645,10 +648,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Base Collision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_2rsni")
 
 [node name="SoftCollision" parent="." instance=ExtResource("21_bdf6k")]
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+visible = false
+shape = SubResource("CircleShape2D_r77o4")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_hurtbox_invincibility_ended"]
