@@ -585,6 +585,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
+visible = false
 position = Vector2(-249.083, -88.3566)
 shape = SubResource("CircleShape2D_ddof4")
 debug_color = Color(0.627451, 0.529412, 0.133333, 0.419608)
