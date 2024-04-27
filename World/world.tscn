@@ -228,14 +228,11 @@ position = Vector2(178, 45)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_5qeg5")
 
-[node name="Collision Layer" type="StaticBody2D" parent="."]
+[node name="Map Collision (Borders)" type="StaticBody2D" parent="."]
 
-[node name="Collison Draw" type="CollisionPolygon2D" parent="Collision Layer"]
+[node name="Collison Draw" type="CollisionPolygon2D" parent="Map Collision (Borders)"]
 visible = false
 polygon = PackedVector2Array(-79, -63, 92, -62, 91, -115, 188, -117, 193, -62, 366, -62, 369, 106, 397, 139, 369, 145, 366, 268, -76, 273, -77, 265, -81, -60, -137, 368, 294, 361, 521, 310, 466, -46, 360, -203, 75, -200, -80, -63, -79, -61, -81, -60)
-
-[node name="BGM - Whispering Woods" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_llom8")
 
 [node name="Boss Room Entrance" type="Area2D" parent="."]
 position = Vector2(-80, 212)
@@ -243,6 +240,9 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boss Room Entrance"]
 shape = SubResource("RectangleShape2D_iovvw")
+
+[node name="BGM - Whispering Woods" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_llom8")
 
 [node name="Boss_Golem" parent="." instance=ExtResource("13_s14mq")]
 position = Vector2(16, 88)
