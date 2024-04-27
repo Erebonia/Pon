@@ -17,11 +17,10 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 [autoload]
 
 global="*res://global.gd"
-DamageNumbers="*res://Overlap/DamageNumbers.gd"
-PlayerStats="*res://Overlap/Stats.gd"
 Status="*res://Player/status.tscn"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 DayAndNight="*res://World/Weather/weather/daynightcycle_scene.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+DamageNumbers="*res://Overlap/DamageNumbers.gd"
 
 [dialogic]
 

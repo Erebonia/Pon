@@ -102,7 +102,7 @@ func loadSaveData():
 	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
 	gameStarted()
 	print("Save Loaded")
-	
+
 func gameStarted():
 	#Load the data we saved in.
 	self.position = playerData.savedPosition

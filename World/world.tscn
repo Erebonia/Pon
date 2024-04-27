@@ -76,7 +76,6 @@ position = Vector2(153, 200)
 collision_mask = 1
 
 [node name="Light_Source" parent="Player/Misc" index="1"]
-visible = true
 position = Vector2(24, 37)
 color = Color(0.964706, 0.74902, 0.552941, 1)
 energy = 1.12
@@ -229,9 +228,9 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_5qeg5")
 
 [node name="Map Collision (Borders)" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="Collison Draw" type="CollisionPolygon2D" parent="Map Collision (Borders)"]
-visible = false
 polygon = PackedVector2Array(-79, -63, 92, -62, 91, -115, 188, -117, 193, -62, 366, -62, 369, 106, 397, 139, 369, 145, 366, 268, -76, 273, -77, 265, -81, -60, -137, 368, 294, 361, 521, 310, 466, -46, 360, -203, 75, -200, -80, -63, -79, -61, -81, -60)
 
 [node name="Boss Room Entrance" type="Area2D" parent="."]
@@ -271,6 +270,7 @@ position = Vector2(0, 224)
 material = SubResource("ShaderMaterial_82sbw")
 position = Vector2(-16, 224)
 
+[connection signal="gameFinishedLoad" from="Player" to="Status Screen" method="_on_player_game_finished_load"]
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]
 [connection signal="body_exited" from="Boss Room Entrance" to="." method="_on_boss_transition_body_exited"]
 

@@ -1,10 +1,10 @@
 extends Node
 
-const XP_DATABASE = "res://Player/LevelDatabase.json"
 const MAX_LEVEL = 4
-var KNOCKOUT_SPEED = 0
- 
+const XP_DATABASE = "res://Player/LevelDatabase.json"
 var XP_Table_Data = {}
+var KNOCKOUT_SPEED = 0
+
 
 signal level_up
 var Level : int = 1:
