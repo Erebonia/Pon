@@ -85,9 +85,7 @@ texture_scale = 1.0
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../World_Camera")
 
-[node name="User Interface" type="Node2D" parent="."]
-
-[node name="Status Screen" parent="User Interface" instance=ExtResource("2_q354b")]
+[node name="Status Screen" parent="." instance=ExtResource("2_q354b")]
 layer = 0
 
 [node name="StartingMap" type="TileMap" parent="."]
