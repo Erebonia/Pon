@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwx17fvtvo8kv"]
 
-[ext_resource type="PackedScene" uid="uid://dk7ckqq8mq2nr" path="res://Stats.tscn" id="1_12543"]
+[ext_resource type="PackedScene" uid="uid://dk7ckqq8mq2nr" path="res://Overlap/Stats.tscn" id="1_12543"]
 
 [node name="PlayerStats" instance=ExtResource("1_12543")]

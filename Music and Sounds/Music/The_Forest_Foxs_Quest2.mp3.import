@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b30d2271k7t4u"
+path="res://.godot/imported/The_Forest_Foxs_Quest2.mp3-dce849b87c1f05e0e9935ed87d993c82.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/Music/The_Forest_Foxs_Quest2.mp3"
+dest_files=["res://.godot/imported/The_Forest_Foxs_Quest2.mp3-dce849b87c1f05e0e9935ed87d993c82.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

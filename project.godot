@@ -11,22 +11,22 @@ config_version=5
 [application]
 
 config/name="Potato the Traveler"
-run/main_scene="res://world.tscn"
+run/main_scene="res://World/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
 
 global="*res://global.gd"
-DamageNumbers="*res://DamageNumbers.gd"
-PlayerStats="*res://Stats.gd"
-Status="*res://status.tscn"
+DamageNumbers="*res://Overlap/DamageNumbers.gd"
+PlayerStats="*res://Overlap/Stats.gd"
+Status="*res://Player/status.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
-"Blacksmith": "res://Dialogue/Characters/Blacksmith.dch",
-"stephen": "res://Dialogue/Characters/stephen.dch"
+"Blacksmith": "res://Dialogue/Characters/Blacksmith/Blacksmith.dch",
+"stephen": "res://Dialogue/Characters/Roy/stephen.dch"
 }
 directories/dtl_directory={
 "Blacksmith - Evil": "res://Dialogue/Timelines/Blacksmith - Evil.dtl",

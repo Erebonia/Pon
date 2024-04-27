@@ -1,6 +1,6 @@
 extends Area2D
 
-const HitEffect = preload("res://Effects/hit_effect.tscn")
+const HitEffect = preload("res://Effects/Scenes/hit_effect.tscn")
 
 @export var invincible:bool = false
 

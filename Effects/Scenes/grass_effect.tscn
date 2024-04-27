@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://b26xw7jxx654k"]
+
+[ext_resource type="Texture2D" uid="uid://b33pw1qx0crgs" path="res://World/Environment/Asset Pack - Pixivan/Animated/Effects/Bush Fx.png" id="1_yhvc1"]
+[ext_resource type="Script" path="res://Effects/Scripts/Effect.gd" id="1_ysn0x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efqn8"]
+atlas = ExtResource("1_yhvc1")
+region = Rect2(0, 0, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enmdh"]
+atlas = ExtResource("1_yhvc1")
+region = Rect2(24, 0, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yedip"]
+atlas = ExtResource("1_yhvc1")
+region = Rect2(48, 0, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnlb1"]
+atlas = ExtResource("1_yhvc1")
+region = Rect2(72, 0, 24, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tgbdn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efqn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enmdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yedip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnlb1")
+}],
+"loop": false,
+"name": &"Animate",
+"speed": 8.0
+}]
+
+[node name="GrassEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_tgbdn")
+animation = &"Animate"
+frame = 3
+frame_progress = 1.0
+centered = false
+offset = Vector2(-8, -8)
+script = ExtResource("1_ysn0x")

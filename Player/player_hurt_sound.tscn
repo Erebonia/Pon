@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxn51i7602v4n"]
 
-[ext_resource type="AudioStream" uid="uid://3fbw5pkyvvgg" path="res://Music and Sounds/Hurt.wav" id="1_fyc8l"]
+[ext_resource type="AudioStream" uid="uid://3fbw5pkyvvgg" path="res://Music and Sounds/General/Hurt.wav" id="1_fyc8l"]
 [ext_resource type="Script" path="res://Player/PlayerHurtSound.gd" id="2_sng3d"]
 
 [node name="PlayerHurtSound" type="AudioStreamPlayer"]
