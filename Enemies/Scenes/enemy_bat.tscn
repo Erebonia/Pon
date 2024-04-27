@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cceqxqy5ulef0"]
+[gd_scene load_steps=35 format=3 uid="uid://cceqxqy5ulef0"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Base.gd" id="1_143xm"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="2_ngi5j"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_MeleeAttack.gd" id="9_447wd"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Death.gd" id="15_6oi53"]
 [ext_resource type="Script" path="res://Overlap/hurtbox.gd" id="16_8tpba"]
+[ext_resource type="PackedScene" uid="uid://bbh4m23t6e35d" path="res://Overlap/hitbox.tscn" id="16_rlhr6"]
 [ext_resource type="PackedScene" uid="uid://cms5nxy1iwkm2" path="res://Enemies/Scenes/player_detection.tscn" id="17_kvbjh"]
 [ext_resource type="PackedScene" uid="uid://dk7ckqq8mq2nr" path="res://Overlap/Stats.tscn" id="18_mo171"]
 [ext_resource type="PackedScene" uid="uid://bhv1fd4uvlhpd" path="res://Enemies/Scenes/wander_controller.tscn" id="19_knn8k"]
@@ -138,6 +139,9 @@ radius = 73.7564
 [sub_resource type="CircleShape2D" id="CircleShape2D_g5lp4"]
 radius = 8.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_iiyu1"]
+radius = 5.0
+
 [node name="Enemy_Bat" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_gesaw")
 collision_layer = 16
@@ -243,6 +247,14 @@ shape = SubResource("CapsuleShape2D_2rsni")
 visible = false
 shape = SubResource("CircleShape2D_g5lp4")
 
+[node name="Hitbox" parent="." instance=ExtResource("16_rlhr6")]
+collision_layer = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+visible = false
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_iiyu1")
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_hurtbox_invincibility_ended"]
 [connection signal="invincibility_started" from="Hurtbox" to="." method="_on_hurtbox_invincibility_started"]
@@ -252,3 +264,4 @@ shape = SubResource("CircleShape2D_g5lp4")
 
 [editable path="PlayerDetection"]
 [editable path="SoftCollision"]
+[editable path="Hitbox"]

@@ -24,6 +24,11 @@ class_name Player
 #Debug
 @onready var debug = $debug
 
+#Save System
+const save_file_path = "user://save/"
+const save_file_name = "Player.tres"
+var playerData = PlayerData.new()
+
 #Directional
 var input_vector = Vector2.ZERO
 var aim_direction = null
@@ -34,15 +39,19 @@ func _ready():
 	animationTree.active = true
 	stats.connect("no_HP", Callable(self, "playerDead"))
 	stats.connect("level_up", Callable(self, "_on_level_up"))
+	verifySaveDirectory(save_file_path)
 	
 	if checkTime != null:
 		checkTime = get_parent().find_child("DayNightCycle").get_child(1)
 	
 func _process(_delta):
-	pass
+	if Input.is_action_just_pressed("Save"):
+		saveData()
+	if Input.is_action_just_pressed("Load"):
+		loadSaveData()
+	playerData.loadSavedPosition(self.position)	
 	
 func _physics_process(_delta):
-	
 	if Input.is_action_just_pressed("Status"):
 		stats.visible = not stats.visible
 		
@@ -77,6 +86,20 @@ func playerDead():
 func player():
 	pass
 	
-		
+func saveData():
+	ResourceSaver.save(playerData, save_file_path + save_file_name)
+	print("Game Saved")
+	
+func loadSaveData():
+	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	gameStarted()
+	print("Save Loaded")
+	
+func gameStarted():
+	self.position = playerData.savedPosition
+	
+func verifySaveDirectory(path: String):
+	DirAccess.make_dir_absolute(path)
+			
 
 

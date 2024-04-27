@@ -520,6 +520,7 @@ script = ExtResource("4_f6wu1")
 damage = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pivot/LaserAOE"]
+visible = false
 position = Vector2(119.75, 0)
 shape = SubResource("RectangleShape2D_eygyy")
 disabled = true
@@ -584,7 +585,6 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
-visible = false
 position = Vector2(-249.083, -88.3566)
 shape = SubResource("CircleShape2D_ddof4")
 debug_color = Color(0.627451, 0.529412, 0.133333, 0.419608)

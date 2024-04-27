@@ -1,7 +1,5 @@
 extends Node
 
-const save_file_path = "user://save/"
-const save_file_name = "Player.tres"
 const XP_DATABASE = "res://Player/LevelDatabase.json"
 const MAX_LEVEL = 4
 var KNOCKOUT_SPEED = 0
@@ -82,7 +80,7 @@ func _ready():
 	#print(XP_Table_Data)
 	rpgClass = Warrior.new()
 	rpgClass.set_base_stat(self)
- 
+
 func get_xp_data() -> Dictionary:
 	var file = FileAccess.open(XP_DATABASE, FileAccess.READ)
 	var data = JSON.parse_string(file.get_as_text())
