@@ -657,3 +657,4 @@ shape = SubResource("CapsuleShape2D_2rsni")
 [connection signal="body_exited" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_exited"]
 
 [editable path="PlayerDetection"]
+[editable path="SoftCollision"]

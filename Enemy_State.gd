@@ -1,16 +1,16 @@
 extends Node2D
 class_name EnemyState
 
-var enemy : Enemy_Base
+@export var enemy : Enemy_Base
 @onready var StateMachine = $".."
 @onready var animation_player = owner.find_child("AnimationPlayer")
-@onready var player = get_parent().get_parent().find_child("player")
+var player: CharacterBody2D
 
 func _ready():
 	pass
 
 func Enter() -> void:
-	pass
+	player = get_node("/root/World/Player")
 	
 func Exit() -> void:
 	pass

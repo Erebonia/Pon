@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cceqxqy5ulef0"]
+[gd_scene load_steps=33 format=3 uid="uid://cceqxqy5ulef0"]
 
 [ext_resource type="Script" path="res://Enemies/Enemy_Base.gd" id="1_143xm"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="2_ngi5j"]
@@ -127,13 +127,16 @@ _data = {
 height = 36.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u4i7s"]
-radius = 26.0
-height = 52.0
+radius = 8.0
+height = 48.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ddof4"]
 radius = 73.7564
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2rsni"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5lp4"]
+radius = 8.0
 
 [node name="Enemy_Bat" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_gesaw")
@@ -160,8 +163,9 @@ script = ExtResource("6_h3268")
 [node name="Idle" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("7_r3t6u")
 
-[node name="Follow" type="Node2D" parent="FiniteStateMachine"]
+[node name="Follow" type="Node2D" parent="FiniteStateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("8_d5c2s")
+enemy = NodePath("../..")
 
 [node name="MeleeAttack" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("9_447wd")
@@ -233,6 +237,9 @@ shape = SubResource("CapsuleShape2D_2rsni")
 
 [node name="SoftCollision" parent="." instance=ExtResource("21_14vnn")]
 
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+shape = SubResource("CircleShape2D_g5lp4")
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_hurtbox_invincibility_ended"]
 [connection signal="invincibility_started" from="Hurtbox" to="." method="_on_hurtbox_invincibility_started"]
@@ -241,3 +248,4 @@ shape = SubResource("CapsuleShape2D_2rsni")
 [connection signal="health_changed" from="Stats" to="FiniteStateMachine/Idle" method="_on_stats_health_changed"]
 
 [editable path="PlayerDetection"]
+[editable path="SoftCollision"]

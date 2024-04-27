@@ -7,23 +7,23 @@ class_name Enemy_Follow
 @onready var playerDetectionZone = $"../../PlayerDetection"
 @onready var softCollision = $"../../SoftCollision"
 
+func Enter():
+	player = get_node("/root/World/Player")
+	
 func Physics(delta : float) -> EnemyState:
 	
-	var distance = owner.direction.length()
-	
-	var playerDir = playerDetectionZone.player
-	
-	if playerDir != null:
-		enemy.velocity = enemy.move_toward(Vector2.ZERO, enemy.FRICTION * delta)
-		accelerate_towards_point(player.global_position, delta)
-		enemy.move_and_slide()
-
 	if softCollision.is_colliding():
 		enemy.velocity += softCollision.get_push_vector() * delta * 400
 		
+	if player != null:
+		enemy.velocity = enemy.velocity.move_toward(Vector2.ZERO, enemy.FRICTION * delta)
+		accelerate_towards_point(player.global_position, delta)
+		
+	var distance = owner.direction.length()	
 	if distance <= 5:
 		return melee
 	
+	enemy.move_and_slide()
 	return null
 			
 func accelerate_towards_point(point, delta):
