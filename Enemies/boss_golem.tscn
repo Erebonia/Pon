@@ -635,7 +635,6 @@ offset_right = 9.0
 offset_bottom = -28.0
 
 [node name="Debug" type="Label" parent="."]
-visible = false
 offset_left = -23.0
 offset_top = -42.0
 offset_right = 26.0
