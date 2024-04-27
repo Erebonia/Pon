@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d3o6yaosckeh8"]
+[gd_scene load_steps=23 format=3 uid="uid://d3o6yaosckeh8"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
@@ -24,6 +24,11 @@
 size = Vector2(53, 95)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0isge"]
+resource_local_to_scene = true
+shader = ExtResource("19_p8hbm")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6fys"]
 resource_local_to_scene = true
 shader = ExtResource("19_p8hbm")
 shader_parameter/active = true
@@ -239,8 +244,24 @@ material = SubResource("ShaderMaterial_0isge")
 position = Vector2(56, 224)
 
 [node name="Enemy_Bat2" parent="." instance=ExtResource("18_unihb")]
-material = SubResource("ShaderMaterial_0isge")
+material = SubResource("ShaderMaterial_i6fys")
 position = Vector2(0, 224)
+
+[node name="Enemy_Bat3" parent="." instance=ExtResource("18_unihb")]
+material = SubResource("ShaderMaterial_i6fys")
+position = Vector2(64, 248)
+
+[node name="Enemy_Bat4" parent="." instance=ExtResource("18_unihb")]
+material = SubResource("ShaderMaterial_i6fys")
+position = Vector2(24, 232)
+
+[node name="Enemy_Bat5" parent="." instance=ExtResource("18_unihb")]
+material = SubResource("ShaderMaterial_i6fys")
+position = Vector2(40, 208)
+
+[node name="Enemy_Bat6" parent="." instance=ExtResource("18_unihb")]
+material = SubResource("ShaderMaterial_i6fys")
+position = Vector2(32, 200)
 
 [connection signal="time_tick" from="User Interface/DayNightCycle/CanvasModulate" to="Player" method="_on_check_time"]
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]

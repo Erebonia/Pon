@@ -55,7 +55,7 @@ func pick_random_state(state_list):
 	return state_list.pop_front()
 	
 func accelerate_towards_point(point, delta):
-	var direction = (point - enemy.global_position).normalized()
+	var direction = global_position.direction_to(point)
 	enemy.velocity = enemy.velocity.move_toward(direction * enemy.MAX_SPEED, enemy.ACCELERATION * delta)
 
 func _on_player_detection_body_entered(body):
