@@ -238,6 +238,7 @@ shape = SubResource("CapsuleShape2D_2rsni")
 [connection signal="invincibility_started" from="Hurtbox" to="." method="_on_hurtbox_invincibility_started"]
 [connection signal="timeout" from="Hurtbox/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_entered"]
+[connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Follow" method="_on_player_detection_body_entered"]
 [connection signal="health_changed" from="Stats" to="FiniteStateMachine/Idle" method="_on_stats_health_changed"]
 
 [editable path="PlayerDetection"]
