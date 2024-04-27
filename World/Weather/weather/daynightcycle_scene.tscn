@@ -16,6 +16,7 @@ script = ExtResource("3_m7ybu")
 gradient_texture = ExtResource("8_q68bt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="DayNightCycleUI" parent="CanvasLayer" instance=ExtResource("9_6s66b")]
 offset_left = 7.0
