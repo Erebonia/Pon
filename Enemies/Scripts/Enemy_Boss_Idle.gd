@@ -13,8 +13,4 @@ func _on_player_detection_body_entered(body):
 	if body.has_method("player"):
 		player_entered = true
 		player_entered_boss = true
-		
-func Physics(delta : float) -> EnemyState:
-	super.Physics(delta) 
-	return null
 	
