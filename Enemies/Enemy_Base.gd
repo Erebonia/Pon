@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy_Base
 
-const EnemyScene = preload("res://Enemies/enemy_bat.tscn")
+const EnemyDeathEffect = preload("res://Effects/enemy_death_effect.tscn")
 
 #Combat
 @onready var stats = $Stats
@@ -88,6 +88,9 @@ func _on_hurtbox_invincibility_ended():
 	blinkAnimationPlayer.play("Stop")
 	
 func _on_stats_no_health():
-	print("NO HP TIME TO DIE")
 	stateMachine.ChangeState(deathState)
+	var enemyDeathEffect = EnemyDeathEffect.instantiate()
+	get_parent().add_child(enemyDeathEffect)
+	enemyDeathEffect.global_position = global_position
+	queue_free()
 	

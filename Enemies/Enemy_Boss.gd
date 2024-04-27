@@ -43,3 +43,9 @@ func _on_hurtbox_area_entered(area):
 	var newDirection = ( position - area.owner.position ).normalized()
 	var knockback = newDirection * Status.KNOCKOUT_SPEED
 	velocity = knockback
+
+func _on_stats_no_health():
+	stateMachine.ChangeState(deathState)
+	var enemyDeathEffect = EnemyDeathEffect.instantiate()
+	get_parent().add_child(enemyDeathEffect)
+	enemyDeathEffect.global_position = global_position
