@@ -1,5 +1,7 @@
 extends Enemy_MeleeAttack
 
+@onready var dash = $"../Dash"
+
 func Enter():
 	animation_player.speed_scale = 1.5
 	animation_player.play("melee_attack")

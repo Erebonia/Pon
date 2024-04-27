@@ -1,9 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://cceqxqy5ulef0"]
+[gd_scene load_steps=32 format=3 uid="uid://cceqxqy5ulef0"]
 
 [ext_resource type="Script" path="res://Enemies/Enemy_Base.gd" id="1_143xm"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="2_ngi5j"]
 [ext_resource type="Texture2D" uid="uid://cntv0vvjoyf86" path="res://Enemies/Bat.png" id="3_8wp0l"]
-[ext_resource type="Texture2D" uid="uid://ccrnr7jblswpx" path="res://Enemies/Laser_sheet.png" id="4_vx8ug"]
 [ext_resource type="Script" path="res://Overlap/hitbox.gd" id="5_k4080"]
 [ext_resource type="Script" path="res://Enemies/Enemy_StateMachine.gd" id="6_h3268"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Idle.gd" id="7_r3t6u"]
@@ -16,6 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://bhv1fd4uvlhpd" path="res://Enemies/wander_controller.tscn" id="19_knn8k"]
 [ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://UI/Health/healthbar_overhead.tscn" id="20_l8fcu"]
 [ext_resource type="PackedScene" uid="uid://bkf2a5dlqworv" path="res://Overlap/soft_collision.tscn" id="21_14vnn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gesaw"]
+resource_local_to_scene = true
+shader = ExtResource("2_ngi5j")
+shader_parameter/active = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mucev"]
 resource_local_to_scene = true
@@ -71,7 +75,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:material:shader_parameter/active")
+tracks/0/path = NodePath("AnimatedSprite:material:shader_parameter/active")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -87,7 +91,22 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:material:shader_parameter/active")
+tracks/0/path = NodePath("AnimatedSprite:material:shader_parameter/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bq1a0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite:material:shader_parameter/active")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -99,16 +118,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yvvgn"]
 _data = {
+"RESET": SubResource("Animation_bq1a0"),
 "Start": SubResource("Animation_ksfqm"),
 "Stop": SubResource("Animation_p5r0p")
 }
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0cag4"]
-shader = ExtResource("2_ngi5j")
-shader_parameter/active = false
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eygyy"]
-size = Vector2(256.5, 16)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g73up"]
 height = 36.0
@@ -123,6 +136,7 @@ radius = 73.7564
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2rsni"]
 
 [node name="Enemy_Bat" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_gesaw")
 collision_layer = 16
 script = ExtResource("1_143xm")
 
@@ -131,33 +145,14 @@ material = SubResource("ShaderMaterial_mucev")
 sprite_frames = SubResource("SpriteFrames_pkr3t")
 animation = &"fly"
 autoplay = "fly"
-frame_progress = 0.84126
+frame = 2
+frame_progress = 0.930489
 offset = Vector2(0, -12)
 
 [node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_yvvgn")
 }
-
-[node name="pivot" type="Node2D" parent="."]
-position = Vector2(0, -17)
-
-[node name="Sprite2D" type="Sprite2D" parent="pivot"]
-material = SubResource("ShaderMaterial_0cag4")
-position = Vector2(98, 17)
-texture = ExtResource("4_vx8ug")
-vframes = 15
-
-[node name="LaserAOE" type="Area2D" parent="pivot"]
-collision_layer = 4
-collision_mask = 0
-script = ExtResource("5_k4080")
-damage = 10
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pivot/LaserAOE"]
-position = Vector2(119.75, 0)
-shape = SubResource("RectangleShape2D_eygyy")
-disabled = true
 
 [node name="FiniteStateMachine" type="Node2D" parent="."]
 script = ExtResource("6_h3268")
@@ -244,5 +239,6 @@ shape = SubResource("CapsuleShape2D_2rsni")
 [connection signal="timeout" from="Hurtbox/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_exited"]
+[connection signal="health_changed" from="Stats" to="FiniteStateMachine/Idle" method="_on_stats_health_changed"]
 
 [editable path="PlayerDetection"]

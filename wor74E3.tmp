@@ -23,7 +23,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iovvw"]
 size = Vector2(53, 95)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0isge"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aucg5"]
 resource_local_to_scene = true
 shader = ExtResource("19_p8hbm")
 shader_parameter/active = true
@@ -232,14 +232,14 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_iovvw")
 
 [node name="Boss_Golem" parent="." instance=ExtResource("13_s14mq")]
-position = Vector2(16, 88)
+position = Vector2(24, 56)
 ACCELERATION = 300
 MAX_SPEED = 50
 FRICTION = 200
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("18_unihb")]
-material = SubResource("ShaderMaterial_0isge")
-position = Vector2(56, 224)
+material = SubResource("ShaderMaterial_aucg5")
+position = Vector2(160, 112)
 
 [connection signal="time_tick" from="User Interface/DayNightCycle/CanvasModulate" to="Player" method="_on_check_time"]
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]

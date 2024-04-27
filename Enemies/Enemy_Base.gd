@@ -1,10 +1,6 @@
 extends CharacterBody2D
 class_name Enemy_Base
 
-#General
-@onready var sprite = $AnimatedSprite
-@onready var animationPlayer = $AnimationPlayer
-
 #Combat
 @onready var stats = $Stats
 @onready var hurtbox = $Hurtbox
@@ -12,9 +8,8 @@ class_name Enemy_Base
 @onready var healthbar = $Healthbar
 @onready var damage_numbers_origin = $DamageNumbersOrigin
 @onready var blinkAnimationPlayer = $BlinkAnimationPlayer
-@onready var armorBuff = $FiniteStateMachine/ArmorBuff
-@onready var death = $FiniteStateMachine/Death
 @onready var softCollision = $SoftCollision
+@onready var deathState = $FiniteStateMachine/Death
 
 #Direction
 var direction : Vector2
@@ -31,18 +26,18 @@ var playerPosition
  
 func _ready():
 	stateMachine.Initialize(self)
+	stats.connect("no_health", Callable(self, "_on_stats_no_health"))
 	healthbar.max_value = stats.health
 	healthbar.init_health(stats.health)  # Corrected function name
  
 func _physics_process(delta):
 	debug.text = "State: " + stateMachine.current_state.name
-	if stats.health < 0:
-		stateMachine.ChangeState(death)
 	
 	if player != null:
 		direction = player.position - position
 		playerPosition = player.position
-	
+		
+	var sprite = $AnimatedSprite
 	if direction.x < 0:
 		sprite.flip_h = true
 		meleeAttackDir.position.x = -31
@@ -75,14 +70,10 @@ func take_damage(area):
 	DamageNumbers.display_number(damage_taken, damage_numbers_origin.global_position, is_critical)
 
 func _on_hurtbox_area_entered(area):
-	if stats.health <= stats.max_health / 2  and stats.DEF == 0:  # Phase two of the fight he gets tankier
-		stats.DEF = 5
-		stateMachine.ChangeState(armorBuff)
-	
 	if stats.health > 0:
 		take_damage(area)
 		healthbar.health = stats.health 
-		#bossHealthbar.health = stats.health 
+		
 	#Knockback
 	var newDirection = ( position - area.owner.position ).normalized()
 	var knockback = newDirection * Status.KNOCKOUT_SPEED
@@ -93,5 +84,9 @@ func _on_hurtbox_invincibility_started():
 
 func _on_hurtbox_invincibility_ended():
 	blinkAnimationPlayer.play("Stop")
+	
+func _on_stats_no_health():
+	print("NO HP TIME TO DIE")
+	stateMachine.ChangeState(deathState)
 	
 	

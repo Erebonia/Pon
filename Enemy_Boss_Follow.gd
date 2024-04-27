@@ -1,5 +1,8 @@
 extends Enemy_Follow
 
+@onready var homingMissile = $"../HomingMissile"
+@onready var laserBeam = $"../LaserBeam"
+
 func Enter():
 	animation_player.play("idle")
 
@@ -8,7 +11,6 @@ func Physics(_delta : float) -> EnemyState:
 	
 	if distance > 50:
 		attackPlayerRanged()
-		pass
 	else:
 		return melee
 		

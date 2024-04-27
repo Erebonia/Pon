@@ -3,19 +3,17 @@ class_name Enemy_Follow
 
 @onready var follow = $"../Follow"
 @onready var melee = $"../MeleeAttack"
-@onready var homingMissile = $"../HomingMissile"
-@onready var laserBeam = $"../LaserBeam"
 @onready var idle = $"../Idle"
 @onready var playerDetectionZone = $"../../PlayerDetection"
 
 func Physics(delta : float) -> EnemyState:
-	enemy.velocity = enemy.velocity.move_toward(Vector2.ZERO, enemy.FRICTION * delta)
+	#enemy.velocity = enemy.velocity.move_toward(Vector2.ZERO, enemy.FRICTION * delta)
 	
 	var distance = owner.direction.length()
-
+	
 	accelerate_towards_point(enemy.playerPosition, delta)
 		
-	if distance < 50:
+	if distance < 10:
 		return melee
 		
 	enemy.move_and_slide()
