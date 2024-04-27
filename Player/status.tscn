@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://h541kkislped"]
+[gd_scene load_steps=26 format=3 uid="uid://h541kkislped"]
 
 [ext_resource type="Script" path="res://Player/PlayerStats.gd" id="1_og8wd"]
 [ext_resource type="Texture2D" uid="uid://6eb55uah0is2" path="res://Player/Pixivan MC/Front Movement.png" id="2_kg1rh"]
 [ext_resource type="Texture2D" uid="uid://44ock017fba4" path="res://Effects/Sprites/LevelUp.png" id="2_p1igg"]
 [ext_resource type="AudioStream" uid="uid://cqggtqsqcugk5" path="res://Music and Sounds/General/potatoscream.mp3" id="4_6vid8"]
+[ext_resource type="Texture2D" uid="uid://cbwoxp5xax18m" path="res://Player/Pixivan MC/Portrait/Character Portrait Enlarged.png" id="5_p588l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dptxe"]
 atlas = ExtResource("2_p1igg")
@@ -285,12 +286,17 @@ autoplay = "level_up"
 frame = 11
 
 [node name="Character" type="AnimatedSprite2D" parent="."]
-position = Vector2(177, 102)
+position = Vector2(298, 131)
 sprite_frames = SubResource("SpriteFrames_aynyr")
 autoplay = "default"
 frame_progress = 0.237556
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_6vid8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(168.5, 98.0625)
+scale = Vector2(0.326389, 0.287664)
+texture = ExtResource("5_p588l")
 
 [connection signal="pressed" from="GainXP" to="." method="_on_gain_xp_pressed"]

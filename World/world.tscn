@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d3o6yaosckeh8"]
+[gd_scene load_steps=26 format=3 uid="uid://d3o6yaosckeh8"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://dvbvyl1rsoiu6" path="res://Enemies/Scenes/boss_golem.tscn" id="13_s14mq"]
 [ext_resource type="PackedScene" uid="uid://0hxcd2qn0qv8" path="res://World/Environment/tree-birch-green.tscn" id="13_tl4gk"]
 [ext_resource type="Texture2D" uid="uid://bkkl6qi4h8nwh" path="res://World/Environment/Rainbow_Cake.png" id="14_5qeg5"]
-[ext_resource type="PackedScene" uid="uid://cjn8wqs6tgy71" path="res://World/Weather/weather/daynightcycle_scene.tscn" id="16_82871"]
 [ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="18_unihb"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="19_p8hbm"]
 
@@ -87,15 +86,6 @@ texture_scale = 1.0
 remote_path = NodePath("../../World_Camera")
 
 [node name="User Interface" type="Node2D" parent="."]
-
-[node name="DayNightCycle" parent="User Interface" instance=ExtResource("16_82871")]
-
-[node name="CanvasModulate" parent="User Interface/DayNightCycle" index="1"]
-color = Color(1, 0.870588, 0.866667, 1)
-
-[node name="CanvasLayer" parent="User Interface/DayNightCycle" index="2"]
-layer = 0
-visible = false
 
 [node name="Status Screen" parent="User Interface" instance=ExtResource("2_q354b")]
 layer = 0
@@ -283,7 +273,6 @@ position = Vector2(0, 224)
 material = SubResource("ShaderMaterial_82sbw")
 position = Vector2(-16, 224)
 
-[connection signal="time_tick" from="User Interface/DayNightCycle/CanvasModulate" to="Player" method="_on_check_time"]
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]
 [connection signal="body_exited" from="Boss Room Entrance" to="." method="_on_boss_transition_body_exited"]
 
@@ -291,5 +280,4 @@ position = Vector2(-16, 224)
 [editable path="Player"]
 [editable path="Player/Combat/HitboxPivot/SwordHitbox"]
 [editable path="Player/Combat/Hurtbox"]
-[editable path="User Interface/DayNightCycle"]
 [editable path="Environment/ParallaxBackground"]

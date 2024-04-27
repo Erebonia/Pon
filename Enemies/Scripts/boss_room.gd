@@ -8,7 +8,7 @@ func change_scene():
 		print(global.current_scene)
 		if global.current_scene == "boss_room":
 			print("test2")
-			get_tree().change_scene_to_file("res://world.tscn")
+			get_tree().change_scene_to_file("res://World/world.tscn")
 			global.finish_changescenes()
 
 func _on_exit_to_world_body_entered(body):

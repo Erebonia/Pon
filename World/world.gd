@@ -23,6 +23,6 @@ func _on_boss_transition_body_exited(body):
 func change_scene():
 	if global.transition_scene == true:
 		if global.current_scene == "world":
-			get_tree().change_scene_to_file("res://boss_room.tscn")
+			get_tree().change_scene_to_file("res://Enemies/Scenes/boss_room.tscn")
 			global.game_first_loadin = false
 			global.finish_changescenes()
