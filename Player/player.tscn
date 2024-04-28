@@ -9897,7 +9897,8 @@ script = ExtResource("9_af0ex")
 material = SubResource("ShaderMaterial_hi7q1")
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_6nvx4")
-animation = &"idle"
+animation = &"attack_down"
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -9981,6 +9982,7 @@ position = Vector2(4, -17)
 
 [node name="SwordSprite" type="Sprite2D" parent="Combat/Sword"]
 texture = ExtResource("36_qva3l")
+flip_h = true
 
 [node name="Sword_Stance_FX" type="AnimatedSprite2D" parent="Combat/Sword/SwordSprite"]
 position = Vector2(-6.66667, 5.33333)
@@ -10022,7 +10024,6 @@ damage = 3
 [node name="CollisionShape2D" parent="Combat/HitboxPivot/SwordHitbox" index="0"]
 scale = Vector2(1.2, 1.2)
 shape = SubResource("CapsuleShape2D_bqrgj")
-disabled = true
 
 [node name="SwordWaveProjectile" type="Marker2D" parent="Combat"]
 modulate = Color(0, 0, 0, 1)

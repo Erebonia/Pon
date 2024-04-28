@@ -1,5 +1,7 @@
 extends Node2D
 
+var checkTime = DayAndNight.get_child(1)
+
 func _ready():
 	if global.game_first_loadin == true:
 		$Player.position.x = global.player_start_posx
@@ -7,6 +9,7 @@ func _ready():
 	else:
 		$Player.position.x = global.player_exit_boss_posx
 		$Player.position.y = global.player_exit_boss_posy
+	checkTime.connect("time_tick", Callable(self, "_on_check_time"))
 	
 func _process(_delta):
 	change_scene()
@@ -28,5 +31,11 @@ func change_scene():
 			global.finish_changescenes()
 
 
-func _on_player_game_loaded():
-	pass # Replace with function body.
+func _on_check_time(_day, hour, _minute):
+	#24 hour Clock
+	if (hour >= 19 and hour <= 23) or (hour >= 0 and hour < 5):
+		$"Day Godrays".visible = true
+		$"Night Godrays".visible = false
+	else:
+		$"Day Godrays".visible = false
+		$"Night Godrays".visible = true

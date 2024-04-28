@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d3o6yaosckeh8"]
+[gd_scene load_steps=29 format=3 uid="uid://d3o6yaosckeh8"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
@@ -16,9 +16,26 @@
 [ext_resource type="PackedScene" uid="uid://dvbvyl1rsoiu6" path="res://Enemies/Scenes/boss_golem.tscn" id="13_s14mq"]
 [ext_resource type="PackedScene" uid="uid://0hxcd2qn0qv8" path="res://World/Environment/tree-birch-green.tscn" id="13_tl4gk"]
 [ext_resource type="Texture2D" uid="uid://bkkl6qi4h8nwh" path="res://World/Environment/Rainbow_Cake.png" id="14_5qeg5"]
+[ext_resource type="Shader" path="res://World/godrays.gdshader" id="15_n7swr"]
 [ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="18_unihb"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="19_p8hbm"]
 [ext_resource type="Script" path="res://World/DayAndNight (Editor Only).gd" id="19_u2x26"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rgn5p"]
+shader = ExtResource("15_n7swr")
+shader_parameter/angle = -0.3
+shader_parameter/position = -0.2
+shader_parameter/spread = 1.0
+shader_parameter/cutoff = 0.1
+shader_parameter/falloff = 1.0
+shader_parameter/edge_fade = 0.15
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 1.0
+shader_parameter/color = Color(1, 1, 1, 0.960784)
+shader_parameter/hdr = false
+shader_parameter/seed = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iovvw"]
 size = Vector2(53, 95)
@@ -56,6 +73,24 @@ shader_parameter/active = true
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_26jxo")
+
+[node name="Day Godrays" type="ColorRect" parent="."]
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_rgn5p")
+offset_left = -80.0
+offset_top = -144.0
+offset_right = 368.0
+offset_bottom = 128.0
+
+[node name="Night Godrays" type="ColorRect" parent="."]
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_rgn5p")
+offset_left = -80.0
+offset_top = -112.0
+offset_right = 368.0
+offset_bottom = 128.0
 
 [node name="World_Camera" parent="." instance=ExtResource("1_i1ktu")]
 position = Vector2(153, 200)
@@ -122,10 +157,10 @@ layer_6/tile_data = PackedInt32Array(-65524, 0, 31, 12, 0, 32, 65548, 0, 33, 131
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="ParallaxBackground" parent="Environment" instance=ExtResource("7_c4jo8")]
+[node name="FogShader" parent="Environment" instance=ExtResource("7_c4jo8")]
 layer = 0
 
-[node name="ParallaxLayer" parent="Environment/ParallaxBackground" index="0"]
+[node name="ParallaxLayer" parent="Environment/FogShader" index="0"]
 position = Vector2(-178, -73)
 
 [node name="NPCs" type="Node2D" parent="Environment"]
@@ -249,30 +284,30 @@ position = Vector2(-312, 40)
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_0isge")
-position = Vector2(80, 88)
+position = Vector2(-280, 96)
 
 [node name="Enemy_Bat2" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_i6fys")
-position = Vector2(56, 80)
+position = Vector2(-304, 88)
 
 [node name="Enemy_Bat3" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_akx05")
-position = Vector2(64, 80)
+position = Vector2(-296, 88)
 
 [node name="Enemy_Bat4" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_8300g")
-position = Vector2(64, 80)
+position = Vector2(-296, 88)
 
 [node name="Enemy_Bat5" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_tgxgg")
-position = Vector2(72, 80)
+position = Vector2(-288, 88)
 
 [node name="Enemy_Bat6" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_82sbw")
-position = Vector2(56, 80)
+position = Vector2(-304, 88)
 
 [node name="DayAndNight (Editor Only)" type="CanvasModulate" parent="."]
-color = Color(1, 0.870588, 0.866667, 1)
+color = Color(0.0470588, 0.184314, 0.427451, 1)
 script = ExtResource("19_u2x26")
 
 [connection signal="gameLoaded" from="Player" to="." method="_on_player_game_loaded"]
@@ -284,4 +319,4 @@ script = ExtResource("19_u2x26")
 [editable path="Player"]
 [editable path="Player/Combat/HitboxPivot/SwordHitbox"]
 [editable path="Player/Combat/Hurtbox"]
-[editable path="Environment/ParallaxBackground"]
+[editable path="Environment/FogShader"]
