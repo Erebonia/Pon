@@ -41,10 +41,8 @@ func _ready():
 	stats.connect("no_HP", Callable(self, "playerDead"))
 	stats.connect("level_up", Callable(self, "_on_level_up"))
 	verifySaveDirectory(save_file_path)
-	#DayAndNight.connect("time_tick", Callable(self, "on_check_time"))
-	
-	if checkTime != null:
-		checkTime = DayAndNight.get_child(0)
+	checkTime = DayAndNight.get_child(1)
+	checkTime.connect("time_tick", Callable(self, "_on_check_time"))
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("Save"):
