@@ -83,7 +83,6 @@ func calculateDmg(dmgBoostStat):
 	baseCombatDMG.damage = dmgBoostStat
 	
 func _on_check_time(_day, hour, _minute):
-	print("test")
 	#24 hour Clock
 	if (hour >= 19 and hour <= 23) or (hour >= 0 and hour < 5):
 		lightSource.visible = true

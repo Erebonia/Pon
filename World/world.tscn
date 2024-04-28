@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d3o6yaosckeh8"]
+[gd_scene load_steps=27 format=3 uid="uid://d3o6yaosckeh8"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bkkl6qi4h8nwh" path="res://World/Environment/Rainbow_Cake.png" id="14_5qeg5"]
 [ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="18_unihb"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="19_p8hbm"]
+[ext_resource type="Script" path="res://World/DayAndNight (Editor Only).gd" id="19_u2x26"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iovvw"]
 size = Vector2(53, 95)
@@ -269,6 +270,10 @@ position = Vector2(72, 80)
 [node name="Enemy_Bat6" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_82sbw")
 position = Vector2(56, 80)
+
+[node name="DayAndNight (Editor Only)" type="CanvasModulate" parent="."]
+color = Color(1, 0.870588, 0.866667, 1)
+script = ExtResource("19_u2x26")
 
 [connection signal="gameLoaded" from="Player" to="." method="_on_player_game_loaded"]
 [connection signal="gameLoaded" from="Player" to="Status Screen" method="_on_player_game_loaded"]
