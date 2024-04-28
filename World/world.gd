@@ -34,8 +34,10 @@ func change_scene():
 func _on_check_time(_day, hour, _minute):
 	#24 hour Clock
 	if (hour >= 19 and hour <= 23) or (hour >= 0 and hour < 5):
-		$"Day Godrays".visible = true
-		$"Night Godrays".visible = false
+		$"Environment/Day Godrays".visible = false
+		$"Environment/Night Godrays".visible = true
+		$Environment/FogShader.visible = true
 	else:
-		$"Day Godrays".visible = false
-		$"Night Godrays".visible = true
+		$"Environment/Day Godrays".visible = true
+		$"Environment/Night Godrays".visible = false
+		$Environment/FogShader.visible = false

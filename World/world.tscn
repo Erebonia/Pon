@@ -32,7 +32,7 @@ shader_parameter/edge_fade = 0.15
 shader_parameter/speed = 1.0
 shader_parameter/ray1_density = 8.0
 shader_parameter/ray2_density = 30.0
-shader_parameter/ray2_intensity = 1.0
+shader_parameter/ray2_intensity = 0.4
 shader_parameter/color = Color(1, 1, 1, 0.960784)
 shader_parameter/hdr = false
 shader_parameter/seed = 5.0
@@ -73,24 +73,6 @@ shader_parameter/active = true
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_26jxo")
-
-[node name="Day Godrays" type="ColorRect" parent="."]
-visible = false
-z_index = 100
-material = SubResource("ShaderMaterial_rgn5p")
-offset_left = -80.0
-offset_top = -144.0
-offset_right = 368.0
-offset_bottom = 128.0
-
-[node name="Night Godrays" type="ColorRect" parent="."]
-visible = false
-z_index = 100
-material = SubResource("ShaderMaterial_rgn5p")
-offset_left = -80.0
-offset_top = -112.0
-offset_right = 368.0
-offset_bottom = 128.0
 
 [node name="World_Camera" parent="." instance=ExtResource("1_i1ktu")]
 position = Vector2(153, 200)
@@ -157,8 +139,27 @@ layer_6/tile_data = PackedInt32Array(-65524, 0, 31, 12, 0, 32, 65548, 0, 33, 131
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="Day Godrays" type="ColorRect" parent="Environment"]
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_rgn5p")
+offset_left = -80.0
+offset_top = -144.0
+offset_right = 368.0
+offset_bottom = 128.0
+
+[node name="Night Godrays" type="ColorRect" parent="Environment"]
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_rgn5p")
+offset_left = -80.0
+offset_top = -112.0
+offset_right = 368.0
+offset_bottom = 128.0
+
 [node name="FogShader" parent="Environment" instance=ExtResource("7_c4jo8")]
 layer = 0
+visible = false
 
 [node name="ParallaxLayer" parent="Environment/FogShader" index="0"]
 position = Vector2(-178, -73)
@@ -307,7 +308,7 @@ material = SubResource("ShaderMaterial_82sbw")
 position = Vector2(-304, 88)
 
 [node name="DayAndNight (Editor Only)" type="CanvasModulate" parent="."]
-color = Color(0.0470588, 0.184314, 0.427451, 1)
+color = Color(1, 0.870588, 0.866667, 1)
 script = ExtResource("19_u2x26")
 
 [connection signal="gameLoaded" from="Player" to="." method="_on_player_game_loaded"]
