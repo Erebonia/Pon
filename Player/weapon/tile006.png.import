@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c55rp3x4nabpa"
-path="res://.godot/imported/Iicon_32_08.png-7459cabf6d162ec3ca616f3e2160f6e9.ctex"
+uid="uid://cwm46ndoyau1f"
+path="res://.godot/imported/tile006.png-3c19d84cb146239136d69cec085aa2c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/weapon/Iicon_32_08.png"
-dest_files=["res://.godot/imported/Iicon_32_08.png-7459cabf6d162ec3ca616f3e2160f6e9.ctex"]
+source_file="res://Player/weapon/tile006.png"
+dest_files=["res://.godot/imported/tile006.png-3c19d84cb146239136d69cec085aa2c5.ctex"]
 
 [params]
 

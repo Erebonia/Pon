@@ -14,7 +14,6 @@
 [ext_resource type="Script" path="res://Player/State_Roll.gd" id="5_gajw7"]
 [ext_resource type="Script" path="res://Player/State_Attack.gd" id="6_w1ud3"]
 [ext_resource type="Script" path="res://Player/State_Attack_Combo.gd" id="7_g4l0n"]
-[ext_resource type="Texture2D" uid="uid://cgp0yakt4eb63" path="res://Player/weapon/weaponsv2.png" id="8_gqnm0"]
 [ext_resource type="Script" path="res://Player/State_Sword_Stance.gd" id="8_xg1yj"]
 [ext_resource type="Script" path="res://Player/State_Stay.gd" id="9_af0ex"]
 [ext_resource type="Texture2D" uid="uid://d3gw0acijlex8" path="res://Player/Pixivan MC/FrontSide Consecutive Slash.png" id="9_oo5a3"]
@@ -46,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://44ock017fba4" path="res://Effects/Sprites/LevelUp.png" id="32_blh2b"]
 [ext_resource type="AudioStream" uid="uid://c7yhdcbx7s00" path="res://Music and Sounds/Skill FX/swordStance.wav" id="33_yreqn"]
 [ext_resource type="AudioStream" uid="uid://cereuq4i6jmah" path="res://Music and Sounds/Skill FX/swordWave.wav" id="34_sscdg"]
+[ext_resource type="Texture2D" uid="uid://bx3joqrke1h2g" path="res://Player/weapon/tile014.png" id="36_qva3l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hi7q1"]
 shader = ExtResource("4_ivow2")
@@ -9895,6 +9895,7 @@ material = SubResource("ShaderMaterial_hi7q1")
 position = Vector2(1, -9)
 sprite_frames = SubResource("SpriteFrames_6nvx4")
 animation = &"attack_down"
+frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -9903,6 +9904,7 @@ libraries = {
 autoplay = "Crosshair"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
 reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_nmxgk")
@@ -9957,9 +9959,9 @@ speed_scale = 2.0
 [node name="SwordStanceLabel" type="Label" parent="Combat/SwordStanceAura"]
 visible = false
 offset_left = -41.0
-offset_top = -35.0
+offset_top = -45.0
 offset_right = 41.0
-offset_bottom = -12.0
+offset_bottom = -22.0
 theme_override_colors/font_color = Color(0.843137, 0, 0.0156863, 1)
 theme_override_colors/font_shadow_color = Color(0.341176, 0.341176, 0.341176, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -9983,12 +9985,8 @@ z_index = -1
 position = Vector2(4, -17)
 
 [node name="SwordSprite" type="Sprite2D" parent="Combat/Sword"]
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("8_gqnm0")
+texture = ExtResource("36_qva3l")
 flip_h = true
-hframes = 9
-vframes = 20
-frame = 81
 
 [node name="Sword_Stance_FX" type="AnimatedSprite2D" parent="Combat/Sword/SwordSprite"]
 position = Vector2(-6.66667, 5.33333)
@@ -10002,6 +10000,7 @@ frame_progress = 1.0
 sprite_frames = SubResource("SpriteFrames_sku4v")
 animation = &"slash_animation"
 frame = 5
+frame_progress = 1.0
 speed_scale = 2.0
 
 [node name="Sword_Glowing" type="AnimatedSprite2D" parent="Combat/Sword/SwordSprite"]
