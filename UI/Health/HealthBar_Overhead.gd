@@ -55,11 +55,3 @@ func checkHealth():
 		theme_stylebox.bg_color = Color("#00FF00")  # Green color
 		add_theme_stylebox_override("fill", theme_stylebox)
 
-func _on_hp_recovery_timeout():
-	var player = get_tree().current_scene.find_child("Player")
-	var stateMachine = player.find_child("StateMachine")
-	$"../HpRecovery".start()
-	if stateMachine.current_state.name == "Idle" and Status.HP < Status.max_HP:
-		print("Recovering")
-		Status.HP += 1
-

@@ -20,6 +20,7 @@ class_name Player
 @onready var swordHitbox = $Combat/HitboxPivot/SwordHitbox
 @onready var slashFX = $Combat/Sword/SwordSprite/Slash_FX
 @onready var attackTimer = $Combat/AttackTimer
+@onready var healthBar = $Combat_UI/Healthbar
 
 #Debug
 @onready var debug = $debug
@@ -40,6 +41,7 @@ func _ready():
 	stats.connect("no_HP", Callable(self, "playerDead"))
 	stats.connect("level_up", Callable(self, "_on_level_up"))
 	verifySaveDirectory(save_file_path)
+	#DayAndNight.connect("time_tick", Callable(self, "on_check_time"))
 	
 	if checkTime != null:
 		checkTime = DayAndNight.get_child(0)
@@ -60,6 +62,8 @@ func _process(_delta):
 	playerData.updateAGI(Status.Agility)
 	playerData.updateMAG(Status.Magic)
 	playerData.updateDEF(Status.Defense)
+	
+	updateHealthBarUI()
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("Status"):
@@ -81,6 +85,7 @@ func calculateDmg(dmgBoostStat):
 	baseCombatDMG.damage = dmgBoostStat
 	
 func _on_check_time(_day, hour, _minute):
+	print("test")
 	#24 hour Clock
 	if (hour >= 19 and hour <= 23) or (hour >= 0 and hour < 5):
 		lightSource.visible = true
@@ -121,4 +126,10 @@ func gameStarted():
 	
 func verifySaveDirectory(path: String):
 	DirAccess.make_dir_absolute(path)
+	
+func updateHealthBarUI():
+	healthBar.health = stats.HP
+	healthBar.max_value = stats.max_HP
+	if healthBar.health == stats.max_HP:
+		healthBar.visible = false
 			
