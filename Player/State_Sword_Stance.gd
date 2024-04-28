@@ -33,7 +33,7 @@ func Enter():
 	player.animationPlayer.play("swordStance")
 	
 	#Stat Bonus
-	run.MAX_SPEED = 110
+	run.MAX_SPEED = 100
 	Status.KNOCKOUT_SPEED = 30
 	player.animationTree.set("parameters/Attack_Combo/TimeScale/scale", 5)
 	player.animationTree.set("parameters/Attack_Combo2/TimeScale/scale", 5)

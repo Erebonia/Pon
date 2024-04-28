@@ -9851,12 +9851,11 @@ collision_mask = 3
 script = ExtResource("1_fjjot")
 
 [node name="debug" type="Label" parent="."]
-visible = false
 z_index = 5
-offset_left = -18.0
-offset_top = -33.0
-offset_right = 22.0
-offset_bottom = -22.0
+offset_left = -16.0
+offset_top = -40.0
+offset_right = 24.0
+offset_bottom = -29.0
 theme_override_font_sizes/font_size = 7
 text = "State: Idle"
 horizontal_alignment = 1
@@ -9870,9 +9869,6 @@ script = ExtResource("3_l2iho")
 
 [node name="Run" type="Node2D" parent="StateMachine"]
 script = ExtResource("4_m08hb")
-
-[node name="Footsteps" type="AudioStreamPlayer2D" parent="StateMachine/Run"]
-volume_db = -10.0
 
 [node name="Roll" type="Node2D" parent="StateMachine"]
 script = ExtResource("5_gajw7")
@@ -9896,9 +9892,10 @@ script = ExtResource("9_af0ex")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_hi7q1")
-position = Vector2(0, -9)
+position = Vector2(1, -9)
 sprite_frames = SubResource("SpriteFrames_6nvx4")
-animation = &"idle"
+animation = &"attack_down"
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -9961,13 +9958,13 @@ speed_scale = 2.0
 
 [node name="SwordStanceLabel" type="Label" parent="Combat/SwordStanceAura"]
 visible = false
-offset_left = -40.0
-offset_top = -36.9231
-offset_right = 42.0
-offset_bottom = -13.9231
-theme_override_colors/font_color = Color(0.580392, 0, 0.00784314, 1)
+offset_left = -41.0
+offset_top = -45.0
+offset_right = 41.0
+offset_bottom = -22.0
+theme_override_colors/font_color = Color(0.843137, 0, 0.0156863, 1)
 theme_override_colors/font_shadow_color = Color(0.341176, 0.341176, 0.341176, 1)
-theme_override_colors/font_outline_color = Color(0.698039, 0.698039, 0.698039, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 1
@@ -9989,6 +9986,7 @@ position = Vector2(4, -17)
 
 [node name="SwordSprite" type="Sprite2D" parent="Combat/Sword"]
 texture = ExtResource("36_qva3l")
+flip_h = true
 
 [node name="Sword_Stance_FX" type="AnimatedSprite2D" parent="Combat/Sword/SwordSprite"]
 position = Vector2(-6.66667, 5.33333)
@@ -10019,6 +10017,7 @@ one_shot = true
 
 [node name="HitboxPivot" type="Marker2D" parent="Combat"]
 position = Vector2(0, -4)
+rotation = 1.5708
 
 [node name="SwordHitbox" parent="Combat/HitboxPivot" instance=ExtResource("3_nnp8n")]
 position = Vector2(17, 0.999938)
@@ -10027,6 +10026,7 @@ script = ExtResource("4_ghg0u")
 damage = 3
 
 [node name="CollisionShape2D" parent="Combat/HitboxPivot/SwordHitbox" index="0"]
+visible = false
 scale = Vector2(1.2, 1.2)
 shape = SubResource("CapsuleShape2D_bqrgj")
 disabled = true

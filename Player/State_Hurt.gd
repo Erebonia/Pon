@@ -43,6 +43,7 @@ func takeDamage(area):
 		DamageNumbers.display_number(area.damage, damageNumbersOrigin.global_position, is_critical)
 	
 	healthBar.health = stats.HP
+	healthBar.max_value = stats.max_HP
 	
 	if stats.HP < stats.max_HP:
 		healthBar.visible = true

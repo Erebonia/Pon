@@ -9,7 +9,7 @@ var Agility : int
 var Defense : int
  
 func _init():
-	HP = 90
+	HP = 10
 	max_HP = HP
 	Strength = 7
 	Magic = 7
@@ -25,8 +25,8 @@ func set_base_stat(target):
 	target.Defense = Defense
  
 func stat_growth(target):
-	target.HP += 20
-	target.max_HP += 20
+	target.HP += 10
+	target.max_HP += 10
 	target.Strength += 4
 	target.Magic += 4
 	target.Agility += 1

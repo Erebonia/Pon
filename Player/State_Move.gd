@@ -3,8 +3,8 @@ class_name State_Move
 
 #Speed
 @export var ACCELERATION = 500
-@export var MAX_SPEED = 100
-@export var ROLL_SPEED = 125
+@export var MAX_SPEED = 70
+@export var ROLL_SPEED = 80
 @export var Friction = 500
 
 @onready var idle : State = $"../Idle"
@@ -13,9 +13,10 @@ class_name State_Move
 
 func Enter():
 	player.UpdateAnimation("Run")
+	$Footsteps.play()
 	
 func Exit():
-	pass
+	$Footsteps.stop()
 	
 func Process(_delta : float) -> State:
 	return null

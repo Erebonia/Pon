@@ -20,11 +20,6 @@ func gain_experience(amount):
 	current_xp += amount
 	check_level_up()
 	emit_signal("experience_gained", amount, current_xp, get_required_experience(Level))
-	%TotalXP.text = str(current_xp) + "/" + str(get_required_experience(Level))
-	if get_required_experience(Level) == -1:
-		%TotalXP.text = str(current_xp) + "/" + "MAX"
-	%ProgressBar.max_value = get_required_experience(Level)
-	%ProgressBar.value = current_xp
 
 func check_level_up():
 	while current_xp >= get_required_experience(Level) and Level < MAX_LEVEL:
@@ -32,7 +27,7 @@ func check_level_up():
 		set_level(Level + 1)
 		emit_signal("level_up")
 		$AnimatedSprite2D.play("level_up")
-		$AudioStreamPlayer.play()
+		#$AudioStreamPlayer.play()
 		rpgClass.stat_growth(self)
 
 func get_required_experience(level):
@@ -81,6 +76,14 @@ func _ready():
 	load_xp_data()
 	rpgClass = Warrior.new()
 	rpgClass.set_base_stat(self)
+	
+func _process(_delta):
+	#Update the progress bar realtime since the setter doesn't account for player loading.
+	%ProgressBar.max_value = get_required_experience(Level)
+	%ProgressBar.value = current_xp
+	%TotalXP.text = str(current_xp) + "/" + str(get_required_experience(Level))
+	if get_required_experience(Level) == -1:
+		%TotalXP.text = "MAX"
 
 func load_xp_data():
 	var file = FileAccess.open("res://Player/LevelDatabase.json", FileAccess.READ)
@@ -90,3 +93,11 @@ func load_xp_data():
 # Example usage when gaining XP from an action
 func _on_gain_xp_pressed():
 	gain_experience(50)  # Gain 50 XP
+	
+func _on_hp_recovery_timeout():
+	var player = get_tree().current_scene.find_child("Player")
+	var stateMachine = player.find_child("StateMachine")
+	$HPRecovery.start()
+	if stateMachine.current_state.name == "Idle" and HP < max_HP:
+		print("Recovering")
+		HP += 1

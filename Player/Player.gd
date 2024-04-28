@@ -49,7 +49,6 @@ func _process(_delta):
 		saveData()
 	if Input.is_action_just_pressed("Load"):
 		loadSaveData()
-	
 	#Extract and save these.
 	playerData.loadSavedPosition(self.position)	
 	playerData.updateHP(Status.HP)
@@ -61,7 +60,7 @@ func _process(_delta):
 	playerData.updateAGI(Status.Agility)
 	playerData.updateMAG(Status.Magic)
 	playerData.updateDEF(Status.Defense)
-	print(Status.current_xp)
+
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("Status"):
 		stats.visible = not stats.visible
@@ -82,7 +81,7 @@ func calculateDmg(dmgBoostStat):
 	baseCombatDMG.damage = dmgBoostStat
 	
 func _on_check_time(_day, hour, _minute):
-	#military time
+	#24 hour Clock
 	if (hour >= 19 and hour <= 23) or (hour >= 0 and hour < 5):
 		lightSource.visible = true
 	else:
@@ -123,5 +122,3 @@ func gameStarted():
 func verifySaveDirectory(path: String):
 	DirAccess.make_dir_absolute(path)
 			
-
-
