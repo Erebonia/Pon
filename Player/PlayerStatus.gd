@@ -94,10 +94,3 @@ func load_xp_data():
 func _on_gain_xp_pressed():
 	gain_experience(50)  # Gain 50 XP
 	
-func _on_hp_recovery_timeout():
-	var player = get_tree().current_scene.find_child("Player")
-	var stateMachine = player.find_child("StateMachine")
-	$HPRecovery.start()
-	if stateMachine.current_state.name == "Idle" and HP < max_HP:
-		print("Recovering")
-		HP += 1

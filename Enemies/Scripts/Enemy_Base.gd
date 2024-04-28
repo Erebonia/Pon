@@ -30,7 +30,7 @@ func _ready():
 	stateMachine.Initialize(self)
 	stats.connect("no_health", Callable(self, "_on_stats_no_health"))
 	healthbar.max_value = stats.health
-	healthbar.init_health(stats.health)  # Corrected function name
+	#healthbar.init_health(stats.health)  # Corrected function name
  
 func _physics_process(delta):
 	debug.text = "State: " + stateMachine.current_state.name

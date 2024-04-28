@@ -4,8 +4,8 @@ class_name State_Hurt
 #Hurtbox
 @onready var hurtbox = $"../../Combat/Hurtbox"
 @onready var blinkAnimationPlayer = $"../../Combat/BlinkAnimationPlayer"
-@onready var damageNumbersOrigin = $"../../Health_UI/DamageNumbersOrigin"
-@onready var healthBar = $"../../Healthbar"
+@onready var damageNumbersOrigin = $"../../Combat_UI/DamageNumbersOrigin"
+@onready var healthBar = $"../../Combat_UI/Healthbar"
 @onready var stats = Status
 
 # States
