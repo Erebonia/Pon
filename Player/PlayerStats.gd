@@ -13,7 +13,7 @@ var Level : int = 1:
 		%Label.text = "Level: " + str(value)
 		emit_signal("level_up")
 		$AnimatedSprite2D.play("level_up")
-		$AudioStreamPlayer.play()
+		#$AudioStreamPlayer.play()
 		rpgClass.stat_growth(self)
  
 var rpgClass 

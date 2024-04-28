@@ -270,7 +270,6 @@ position = Vector2(0, 224)
 material = SubResource("ShaderMaterial_82sbw")
 position = Vector2(-16, 224)
 
-[connection signal="gameFinishedLoad" from="Player" to="Status Screen" method="_on_player_game_finished_load"]
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]
 [connection signal="body_exited" from="Boss Room Entrance" to="." method="_on_boss_transition_body_exited"]
 
