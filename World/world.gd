@@ -26,3 +26,7 @@ func change_scene():
 			get_tree().change_scene_to_file("res://Enemies/Scenes/boss_room.tscn")
 			global.game_first_loadin = false
 			global.finish_changescenes()
+
+
+func _on_player_game_loaded():
+	pass # Replace with function body.

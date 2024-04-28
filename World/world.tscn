@@ -244,32 +244,34 @@ shape = SubResource("RectangleShape2D_iovvw")
 stream = ExtResource("12_llom8")
 
 [node name="Boss_Golem" parent="." instance=ExtResource("13_s14mq")]
-position = Vector2(16, 88)
+position = Vector2(-312, 40)
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_0isge")
-position = Vector2(8, 232)
+position = Vector2(80, 88)
 
 [node name="Enemy_Bat2" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_i6fys")
-position = Vector2(-16, 224)
+position = Vector2(56, 80)
 
 [node name="Enemy_Bat3" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_akx05")
-position = Vector2(-8, 224)
+position = Vector2(64, 80)
 
 [node name="Enemy_Bat4" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_8300g")
-position = Vector2(-8, 224)
+position = Vector2(64, 80)
 
 [node name="Enemy_Bat5" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_tgxgg")
-position = Vector2(0, 224)
+position = Vector2(72, 80)
 
 [node name="Enemy_Bat6" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_82sbw")
-position = Vector2(-16, 224)
+position = Vector2(56, 80)
 
+[connection signal="gameLoaded" from="Player" to="." method="_on_player_game_loaded"]
+[connection signal="gameLoaded" from="Player" to="Status Screen" method="_on_player_game_loaded"]
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]
 [connection signal="body_exited" from="Boss Room Entrance" to="." method="_on_boss_transition_body_exited"]
 

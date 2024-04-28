@@ -57,7 +57,11 @@ func _process(_delta):
 	playerData.updateEXP(Status.current_xp)
 	playerData.updateLevel(Status.Level)
 	playerData.updateDMG(swordHitbox.damage)
-	
+	playerData.updateSTR(Status.Strength)
+	playerData.updateAGI(Status.Agility)
+	playerData.updateMAG(Status.Magic)
+	playerData.updateDEF(Status.Defense)
+	print(Status.current_xp)
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("Status"):
 		stats.visible = not stats.visible
@@ -97,8 +101,8 @@ func saveData():
 	ResourceSaver.save(playerData, save_file_path + save_file_name)
 	print("Game Saved")
 
+signal gameLoaded
 func loadSaveData():
-	stats.disconnect("level_up", Callable(self, "_on_level_up"))
 	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
 	gameStarted()
 	print("Save Loaded")
@@ -111,7 +115,10 @@ func gameStarted():
 	stats.current_xp = playerData.EXP
 	stats.Level = playerData.level
 	swordHitbox.damage = playerData.damage
-	stats.connect("level_up", Callable(self, "_on_level_up"))
+	stats.Strength = playerData.strength
+	stats.Agility = playerData.agility
+	stats.Magic = playerData.magic
+	stats.Defense = playerData.defense
 	
 func verifySaveDirectory(path: String):
 	DirAccess.make_dir_absolute(path)

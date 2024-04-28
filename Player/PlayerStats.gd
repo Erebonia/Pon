@@ -1,43 +1,49 @@
 extends Node
 
 const MAX_LEVEL = 4
-const XP_DATABASE = "res://Player/LevelDatabase.json"
 var XP_Table_Data = {}
+
+# Define new signals
+signal level_up
+signal experience_gained(exp_gained, total_exp, next_level_exp)
+
+# RPG Class for handling stats growth
+var rpgClass
+
+#General
 var KNOCKOUT_SPEED = 0
 
+var current_xp = 0
+func gain_experience(amount):
+	if Level >= MAX_LEVEL:
+		return
+	current_xp += amount
+	check_level_up()
+	emit_signal("experience_gained", amount, current_xp, get_required_experience(Level))
+	%TotalXP.text = str(current_xp) + "/" + str(get_required_experience(Level))
+	if get_required_experience(Level) == -1:
+		%TotalXP.text = str(current_xp) + "/" + "MAX"
+	%ProgressBar.max_value = get_required_experience(Level)
+	%ProgressBar.value = current_xp
 
-signal level_up
-var Level : int = 1:
-	set(value):
-		Level = value
-		%Label.text = "Level: " + str(value)
+func check_level_up():
+	while current_xp >= get_required_experience(Level) and Level < MAX_LEVEL:
+		current_xp -= get_required_experience(Level)
+		set_level(Level + 1)
 		emit_signal("level_up")
 		$AnimatedSprite2D.play("level_up")
-		#$AudioStreamPlayer.play()
+		$AudioStreamPlayer.play()
 		rpgClass.stat_growth(self)
- 
-var rpgClass 
- 
-var current_xp = 0:
-	set(value):
-		current_xp = value
-		var max_xp = get_max_xp_at(Level)
-		if current_xp >= max_xp and Level < MAX_LEVEL:
-			Level += 1
-			current_xp -= max_xp
-		elif Level == MAX_LEVEL:
-			current_xp = 0
-			
-		var total = min( (XP_Table_Data[str(Level)]["total"] + current_xp),
-						 XP_Table_Data[str(MAX_LEVEL)]["total"] )
-		%TotalXP.text = str(current_xp) + "/" + str(get_max_xp_at(Level))
-		
-		if get_max_xp_at(Level) == -1:
-			%TotalXP.text = str(total) + "/" + "MAX"
-			
-		%ProgressBar.max_value = get_max_xp_at(Level)
-		%ProgressBar.value = current_xp
-		
+
+func get_required_experience(level):
+	return XP_Table_Data[str(level)]["need"]
+
+var Level : int = 1: set = set_level
+func set_level(value):
+	if value != Level and value <= MAX_LEVEL:
+		Level = value
+		%Label.text = "Level: " + str(Level)
+
 signal no_HP
 var HP : int :
 	set(value):
@@ -50,20 +56,16 @@ var max_HP : int :
 	set(value):
 		max_HP = value
 		%HP.text = str(HP) + "/" + str(max_HP)
-		
+	
 var Strength : int :
 	set(value):
 		Strength = value
 		%Strength.text = str(value)
  
-var Vitality : int :
+var Magic : int :
 	set(value):
-		Vitality = value
-		@warning_ignore("integer_division") 
-		HP += 10 * (Vitality/4)
-		@warning_ignore("integer_division") 
-		max_HP += 10 * (Vitality/4)
-		%Vitality.text = str(value)
+		Magic = value
+		%Magic.text = str(value)
  
 var Agility : int :
 	set(value):
@@ -74,19 +76,17 @@ var Defense : int :
 	set(value):
 		Defense = value
 		%Defense.text = str(value)
- 
+
 func _ready():
-	XP_Table_Data = get_xp_data()
+	load_xp_data()
 	rpgClass = Warrior.new()
 	rpgClass.set_base_stat(self)
 
-func get_xp_data() -> Dictionary:
-	var file = FileAccess.open(XP_DATABASE, FileAccess.READ)
+func load_xp_data():
+	var file = FileAccess.open("res://Player/LevelDatabase.json", FileAccess.READ)
 	var data = JSON.parse_string(file.get_as_text())
-	return data
- 
-func get_max_xp_at(level):
-	return XP_Table_Data[str(level)]["need"]
- 
+	XP_Table_Data = data
+
+# Example usage when gaining XP from an action
 func _on_gain_xp_pressed():
-	current_xp += 100
+	gain_experience(50)  # Gain 50 XP

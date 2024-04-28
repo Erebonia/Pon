@@ -211,10 +211,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "STR"
 
-[node name="Vitality" type="Label" parent="Stats/Attribute"]
+[node name="Magic" type="Label" parent="Stats/Attribute"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
-text = "VIT"
+text = "MAG"
 
 [node name="Agility" type="Label" parent="Stats/Attribute"]
 layout_mode = 2
@@ -253,7 +253,7 @@ theme_override_font_sizes/font_size = 8
 text = "1"
 horizontal_alignment = 2
 
-[node name="Vitality" type="Label" parent="Stats/Value"]
+[node name="Magic" type="Label" parent="Stats/Value"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
