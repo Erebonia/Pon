@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://celpsp4adxcrb"]
+[gd_resource type="Resource" script_class="HealthItem" load_steps=3 format=3 uid="uid://celpsp4adxcrb"]
 
-[ext_resource type="Script" path="res://Player/Inventory/InventoryItem.gd" id="1_ofexw"]
+[ext_resource type="Script" path="res://Player/Inventory/Items/health_item.gd" id="1_rx4ha"]
 [ext_resource type="Texture2D" uid="uid://bplwlbgroptv1" path="res://Player/Inventory/Items/HP_Potion.png" id="2_j6tv6"]
 
 [resource]
-script = ExtResource("1_ofexw")
+script = ExtResource("1_rx4ha")
+health_increase = 5
 name = "lifepot"
 texture = ExtResource("2_j6tv6")
 maxAmountPrStack = 10

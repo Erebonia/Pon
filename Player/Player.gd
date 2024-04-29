@@ -36,6 +36,7 @@ var input_vector = Vector2.ZERO
 var aim_direction = null
 
 func _ready():
+	inventory.use_item.connect(use_item)
 	randomize()
 	stateMachine.Initialize(self)
 	animationTree.active = true
@@ -135,3 +136,13 @@ func updateHealthBarUI():
 func _on_area_2d_area_entered(area):
 	if area.has_method("collect"):
 		area.collect(inventory)
+		
+func increase_health(amount: int) -> void:
+	stats.HP += amount
+	
+	#currentHealth += amount
+	#currentHealth = min(maxHealth, currentHealth)
+	#healthChanged.emit(currentHealth)
+	
+func use_item(item: InventoryItem) -> void:
+	item.use(self)
