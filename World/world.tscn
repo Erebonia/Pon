@@ -340,6 +340,12 @@ position = Vector2(-11, 216)
 [node name="Sword" parent="." instance=ExtResource("25_fb58y")]
 position = Vector2(41, 222)
 
+[node name="HP_Potion2" parent="." instance=ExtResource("24_ruj4i")]
+position = Vector2(-15, 244)
+
+[node name="Sword2" parent="." instance=ExtResource("25_fb58y")]
+position = Vector2(37, 250)
+
 [connection signal="gameLoaded" from="Player" to="." method="_on_player_game_loaded"]
 [connection signal="gameLoaded" from="Player" to="Status Screen" method="_on_player_game_loaded"]
 [connection signal="closed" from="Inventory_UI/InventoryGui" to="." method="_on_inventory_gui_closed"]
@@ -351,4 +357,5 @@ position = Vector2(41, 222)
 [editable path="Player"]
 [editable path="Player/Combat/HitboxPivot/SwordHitbox"]
 [editable path="Player/Combat/Hurtbox"]
+[editable path="Inventory_UI/InventoryGui"]
 [editable path="Environment/FogShader"]

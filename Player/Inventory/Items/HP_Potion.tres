@@ -7,3 +7,4 @@
 script = ExtResource("1_ofexw")
 name = "lifepot"
 texture = ExtResource("2_j6tv6")
+maxAmountPrStack = 10

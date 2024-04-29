@@ -7,3 +7,4 @@
 script = ExtResource("1_qtt4u")
 name = "Sword"
 texture = ExtResource("2_htnte")
+maxAmountPrStack = 1
