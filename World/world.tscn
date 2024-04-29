@@ -1,10 +1,12 @@
-[gd_scene load_steps=29 format=3 uid="uid://d3o6yaosckeh8"]
+[gd_scene load_steps=31 format=3 uid="uid://d3o6yaosckeh8"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="2_7prvd"]
 [ext_resource type="PackedScene" uid="uid://h541kkislped" path="res://Player/status.tscn" id="2_q354b"]
 [ext_resource type="PackedScene" uid="uid://dr31cgvo6r8ds" path="res://World/Environment/bush.tscn" id="2_qhdct"]
+[ext_resource type="PackedScene" uid="uid://xgwv4syylx7" path="res://Player/Inventory/inventory_gui.tscn" id="5_34a6t"]
+[ext_resource type="Script" path="res://World/Inventory_UI.gd" id="5_bxi8m"]
 [ext_resource type="PackedScene" uid="uid://dyr164gbvcxrf" path="res://World/Environment/tree-birch-yellow.tscn" id="5_k7lfl"]
 [ext_resource type="PackedScene" uid="uid://wgf5hgrk43ew" path="res://World/Environment/grass.tscn" id="6_dcagb"]
 [ext_resource type="PackedScene" uid="uid://c7xb0raqot3km" path="res://World/Environment/tree-mother.tscn" id="6_vdsp3"]
@@ -104,6 +106,23 @@ remote_path = NodePath("../../World_Camera")
 
 [node name="Status Screen" parent="." instance=ExtResource("2_q354b")]
 layer = 0
+
+[node name="Inventory_UI" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("5_bxi8m")
+
+[node name="InventoryGui" parent="Inventory_UI" instance=ExtResource("5_34a6t")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -40.0
+offset_right = 66.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="StartingMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -313,6 +332,8 @@ script = ExtResource("19_u2x26")
 
 [connection signal="gameLoaded" from="Player" to="." method="_on_player_game_loaded"]
 [connection signal="gameLoaded" from="Player" to="Status Screen" method="_on_player_game_loaded"]
+[connection signal="closed" from="Inventory_UI/InventoryGui" to="." method="_on_inventory_gui_closed"]
+[connection signal="opened" from="Inventory_UI/InventoryGui" to="." method="_on_inventory_gui_opened"]
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]
 [connection signal="body_exited" from="Boss Room Entrance" to="." method="_on_boss_transition_body_exited"]
 

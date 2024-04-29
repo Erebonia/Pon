@@ -41,3 +41,10 @@ func _on_check_time(_day, hour, _minute):
 		$"Environment/Day Godrays".visible = true
 		$"Environment/Night Godrays".visible = false
 		$Environment/FogShader.visible = false
+
+
+func _on_inventory_gui_opened():
+	get_tree().paused = true
+
+func _on_inventory_gui_closed():
+	get_tree().paused = false
