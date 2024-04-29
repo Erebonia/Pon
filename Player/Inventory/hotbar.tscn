@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://msq4a5r2qp8n"]
+
+[ext_resource type="Script" path="res://Player/Inventory/hotbar.gd" id="1_a54be"]
+[ext_resource type="PackedScene" uid="uid://cbgm478fym8c8" path="res://Player/Inventory/hotbar_slot.tscn" id="1_inogu"]
+
+[node name="Hotbar" type="HBoxContainer"]
+offset_right = 116.0
+offset_bottom = 20.0
+script = ExtResource("1_a54be")
+
+[node name="Slot" parent="." instance=ExtResource("1_inogu")]
+layout_mode = 2
+
+[node name="Slot2" parent="." instance=ExtResource("1_inogu")]
+layout_mode = 2
+
+[node name="Slot3" parent="." instance=ExtResource("1_inogu")]
+layout_mode = 2
+
+[node name="Slot4" parent="." instance=ExtResource("1_inogu")]
+layout_mode = 2
+
+[node name="Slot5" parent="." instance=ExtResource("1_inogu")]
+layout_mode = 2
