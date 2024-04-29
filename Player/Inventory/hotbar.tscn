@@ -11,6 +11,7 @@ offset_bottom = 20.0
 script = ExtResource("1_a54be")
 
 [node name="Container" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_right = 116.0
 offset_bottom = 20.0
 

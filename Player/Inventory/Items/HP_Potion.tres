@@ -9,3 +9,4 @@ health_increase = 5
 name = "lifepot"
 texture = ExtResource("2_j6tv6")
 maxAmountPrStack = 10
+isConsumable = true

@@ -34,6 +34,9 @@ func insertSlot(index: int, inventorySlot: InventorySlot):
 	updated.emit()
 
 func use_item_at_index(index: int) -> void:
+	if !slots[index].item.isConsumable:
+		return
+		
 	if index < 0 or index >= slots.size() or !slots[index].item: return
 	
 	var slot = slots[index]
