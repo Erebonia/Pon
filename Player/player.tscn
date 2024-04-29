@@ -9931,7 +9931,10 @@ parameters/Roll/BlendSpace2D/blend_position = Vector2(-0.00043726, 0)
 parameters/Roll/TimeScale/scale = 2.0
 parameters/Run/blend_position = Vector2(-0.358596, 0.178095)
 
-[node name="Base Collision" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="Base Collision" type="CollisionShape2D" parent="Area2D"]
 visible = false
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_av4qi")
@@ -10117,6 +10120,7 @@ frame = 11
 frame_progress = 1.0
 speed_scale = 0.7
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Combat/AttackTimer" to="StateMachine/Attack" method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="Combat/SwordWaveProjectile/swordWaveCooldown" to="StateMachine/Sword_Stance" method="_on_sword_wave_cooldown_timeout"]
 [connection signal="area_entered" from="Combat/Hurtbox" to="StateMachine/Hurt" method="_on_hurtbox_area_entered"]

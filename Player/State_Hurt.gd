@@ -1,6 +1,8 @@
 extends State
 class_name State_Hurt
 
+@onready var inventory: Inventory = preload("res://Player/Inventory/PlayerInventory.tres")
+
 #Hurtbox
 @onready var hurtbox = $"../../Combat/Hurtbox"
 @onready var blinkAnimationPlayer = $"../../Combat/BlinkAnimationPlayer"

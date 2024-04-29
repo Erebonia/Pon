@@ -1,10 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://d3o6yaosckeh8"]
+[gd_scene load_steps=34 format=3 uid="uid://d3o6yaosckeh8"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="2_7prvd"]
 [ext_resource type="PackedScene" uid="uid://h541kkislped" path="res://Player/status.tscn" id="2_q354b"]
 [ext_resource type="PackedScene" uid="uid://dr31cgvo6r8ds" path="res://World/Environment/bush.tscn" id="2_qhdct"]
+[ext_resource type="Resource" uid="uid://d3vnqfvl3cwhn" path="res://Player/Inventory/PlayerInventory.tres" id="4_nuoag"]
 [ext_resource type="PackedScene" uid="uid://xgwv4syylx7" path="res://Player/Inventory/inventory_gui.tscn" id="5_34a6t"]
 [ext_resource type="Script" path="res://World/Inventory_UI.gd" id="5_bxi8m"]
 [ext_resource type="PackedScene" uid="uid://dyr164gbvcxrf" path="res://World/Environment/tree-birch-yellow.tscn" id="5_k7lfl"]
@@ -22,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="18_unihb"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="19_p8hbm"]
 [ext_resource type="Script" path="res://World/DayAndNight (Editor Only).gd" id="19_u2x26"]
+[ext_resource type="PackedScene" uid="uid://qwygywl07m00" path="res://Player/Inventory/Items/hp_potion.tscn" id="24_ruj4i"]
+[ext_resource type="PackedScene" uid="uid://d33af0kyesbm8" path="res://Player/Inventory/Items/sword.tscn" id="25_fb58y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rgn5p"]
 shader = ExtResource("15_n7swr")
@@ -94,6 +97,7 @@ position = Vector2(367, 271)
 y_sort_enabled = true
 position = Vector2(153, 200)
 collision_mask = 1
+inventory = ExtResource("4_nuoag")
 
 [node name="Light_Source" parent="Player/Misc" index="1"]
 position = Vector2(24, 37)
@@ -329,6 +333,12 @@ position = Vector2(-304, 88)
 [node name="DayAndNight (Editor Only)" type="CanvasModulate" parent="."]
 color = Color(1, 0.870588, 0.866667, 1)
 script = ExtResource("19_u2x26")
+
+[node name="HP_Potion" parent="." instance=ExtResource("24_ruj4i")]
+position = Vector2(-11, 216)
+
+[node name="Sword" parent="." instance=ExtResource("25_fb58y")]
+position = Vector2(41, 222)
 
 [connection signal="gameLoaded" from="Player" to="." method="_on_player_game_loaded"]
 [connection signal="gameLoaded" from="Player" to="Status Screen" method="_on_player_game_loaded"]

@@ -9,6 +9,7 @@ class_name Player
 @onready var animationState = animationTree.get("parameters/playback")
 
 #General (Game)
+@export var inventory: Inventory
 @onready var stats = Status
 @onready var levelUpSound = $Misc/LevelUp
 @onready var checkTime = null
@@ -130,3 +131,7 @@ func updateHealthBarUI():
 	if healthBar.health == stats.max_HP:
 		healthBar.visible = false
 			
+
+func _on_area_2d_area_entered(area):
+	if area.has_method("collect"):
+		area.collect(inventory)
