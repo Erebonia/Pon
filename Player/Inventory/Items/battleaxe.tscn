@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxi06x36o4qhe"]
+
+[ext_resource type="Script" path="res://Player/Inventory/collectable.gd" id="1_vlvfo"]
+[ext_resource type="Resource" uid="uid://by0fvah5madx6" path="res://Player/Inventory/Items/axe.tres" id="2_jq5nh"]
+[ext_resource type="Texture2D" uid="uid://btupwe0jjd37a" path="res://Player/weapon/battleaxe.png" id="3_ocp8w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gim2v"]
+
+[node name="Battleaxe" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_vlvfo")
+itemRes = ExtResource("2_jq5nh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gim2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_ocp8w")

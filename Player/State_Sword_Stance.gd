@@ -48,10 +48,11 @@ func Exit():
 	player.animationTree.set("parameters/Attack_Combo2/TimeScale/scale", 2)
 	
 func Process(_delta : float) -> State:
+	super.Process(_delta)
 	return null
 	
 func Physics(delta : float) -> State:
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_pressed("attack") and weaponEquipped:
 		player.velocity = Vector2.ZERO
 		activateStance()
 	elif !isPerformingSwordWave:

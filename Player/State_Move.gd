@@ -19,6 +19,7 @@ func Exit():
 	$Footsteps.stop()
 	
 func Process(_delta : float) -> State:
+	super.Process(_delta)
 	return null
 	
 func Physics(delta : float) -> State:
@@ -26,7 +27,8 @@ func Physics(delta : float) -> State:
 	if Input.is_action_just_pressed("roll"):
 		return roll
 	
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_pressed("attack") and weaponEquipped:
+		print('attack during move')
 		return attack
 		
 	move_state(delta)

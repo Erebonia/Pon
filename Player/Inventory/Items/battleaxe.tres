@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://yrr101byvnjs"]
+
+[ext_resource type="Script" path="res://Player/Inventory/InventoryItem.gd" id="1_jym5m"]
+[ext_resource type="Texture2D" uid="uid://btupwe0jjd37a" path="res://Player/weapon/battleaxe.png" id="2_8yatp"]
+
+[resource]
+script = ExtResource("1_jym5m")
+name = "Axe"
+texture = ExtResource("2_8yatp")
+maxAmountPrStack = 1
+isConsumable = false
+isWeapon = true
