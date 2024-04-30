@@ -32,16 +32,12 @@ func checkSelectedWeapon():
 	if currently_selected_index < hotbar_instance.inventory.slots.size():
 		var inventory_slot = hotbar_instance.inventory.slots[currently_selected_index]
 		
-		if inventory_slot.item != null and inventory_slot.item.isWeapon:
-			#set sprite
+		if inventory_slot.item != null:
+			#Set the item texture and equip weapon status
+			if inventory_slot.item.isWeapon: weaponEquipped = true
+			else: weaponEquipped = false
 			handSprite.texture = inventory_slot.item.texture
-			weaponEquipped = true
-			print("Currently selected item is a weapon")
 		else:
-			if inventory_slot.item != null:
-				handSprite.texture = inventory_slot.item.texture
-			weaponEquipped = false
-			print("Currently selected item is not a weapon")
-	else:
-		handSprite.texture = null
-		print("No item selected in the hotbar")
+			handSprite.texture = null
+		
+
