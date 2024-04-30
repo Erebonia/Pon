@@ -142,6 +142,7 @@ offset_right = 85.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+currently_selected = null
 
 [node name="StartingMap" type="TileMap" parent="."]
 y_sort_enabled = true

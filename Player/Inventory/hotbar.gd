@@ -7,11 +7,13 @@ class_name Hotbar
 @onready var selector: Sprite2D = $Selector
 
 @export var currently_selected: int = 0
+@onready var player = $"../../Player"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	update()
+	player.connect("inventoryLoaded", Callable(self, "update"))
 	inventory.updated.connect(update)
+	update()
 
 func update() -> void:
 	for i in range(slots.size()):

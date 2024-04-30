@@ -1,5 +1,7 @@
 extends Control
 
+class_name Inventory_gui
+
 var isOpen: bool = false
 
 signal opened
@@ -9,6 +11,7 @@ signal closed
 @onready var ItemStackGuiClass = preload("res://Player/Inventory/itemStackGui.tscn")
 @onready var hotbar_slots: Array = $NinePatchRect/HBoxContainer.get_children()
 @onready var slots: Array = hotbar_slots + $NinePatchRect/GridContainer.get_children()
+@onready var player = $"../../Player"
 
 var itemInHand: ItemStackGui
 var oldIndex: int = -1
@@ -17,6 +20,7 @@ var locked: bool = false
 func _ready():
 	connectSlots()
 	inventory.updated.connect(update)
+	player.connect("inventoryLoaded", Callable(self, "update"))
 	update()
 	
 func connectSlots():

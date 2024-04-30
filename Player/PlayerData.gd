@@ -10,8 +10,12 @@ class_name PlayerData
 @export var magic: int
 @export var agility: int
 @export var defense: int
+@export var slots: Array[InventorySlot] = []
 
 @export var savedPosition: Vector2
+
+func updateInventory(value: Array[InventorySlot]):
+	slots = value.duplicate()
 
 func loadSavedPosition(value: Vector2):
 	savedPosition = value

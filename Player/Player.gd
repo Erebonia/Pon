@@ -9,7 +9,6 @@ class_name Player
 @onready var animationState = animationTree.get("parameters/playback")
 
 #General (Game)
-@export var inventory: Inventory
 @onready var stats = Status
 @onready var levelUpSound = $Misc/LevelUp
 @onready var checkTime = null
@@ -30,6 +29,7 @@ class_name Player
 const save_file_path = "user://save/"
 const save_file_name = "Player.tres"
 var playerData = PlayerData.new()
+var inventory = preload("res://Player/Inventory/PlayerInventory.tres")
 
 #Directional
 var input_vector = Vector2.ZERO
@@ -62,6 +62,7 @@ func _process(_delta):
 	playerData.updateAGI(Status.Agility)
 	playerData.updateMAG(Status.Magic)
 	playerData.updateDEF(Status.Defense)
+	playerData.updateInventory(inventory.slots)
 	
 	updateHealthBarUI()
 
@@ -104,14 +105,16 @@ func saveData():
 	ResourceSaver.save(playerData, save_file_path + save_file_name)
 	print("Game Saved")
 
-signal gameLoaded
 func loadSaveData():
 	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
 	gameStarted()
 	print("Save Loaded")
 
+signal inventoryLoaded
 func gameStarted():
 	#Load the data we saved in.
+	inventory.slots = playerData.slots
+	emit_signal("inventoryLoaded")
 	self.position = playerData.savedPosition
 	stats.HP = playerData.HP
 	stats.max_HP = playerData.max_HP
@@ -132,7 +135,6 @@ func updateHealthBarUI():
 	if healthBar.health == stats.max_HP:
 		healthBar.visible = false
 			
-
 func _on_area_2d_area_entered(area):
 	if area.has_method("collect"):
 		area.collect(inventory)

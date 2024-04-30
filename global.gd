@@ -17,4 +17,3 @@ func finish_changescenes():
 		current_scene = "boss_room"
 	else:
 		current_scene = "world"
- 
