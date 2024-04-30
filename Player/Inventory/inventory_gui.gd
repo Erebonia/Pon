@@ -10,17 +10,23 @@ signal closed
 @onready var inventory: Inventory = preload("res://Player/Inventory/PlayerInventory.tres")
 @onready var ItemStackGuiClass = preload("res://Player/Inventory/itemStackGui.tscn")
 @onready var hotbar_slots: Array = $NinePatchRect/HBoxContainer.get_children()
-@onready var slots: Array = hotbar_slots + $NinePatchRect/GridContainer.get_children()
+@onready var trash: Array = $Trash.get_children()
+@onready var slots: Array = hotbar_slots + $NinePatchRect/GridContainer.get_children() + trash
 @onready var player = $"../../Player"
+
 
 var itemInHand: ItemStackGui
 var oldIndex: int = -1
 var locked: bool = false
+var trashCanIndex = 23
 
 func _ready():
 	connectSlots()
 	inventory.updated.connect(update)
 	player.connect("updateInventoryUI", Callable(self, "update"))
+	update()
+	
+func _process(delta):
 	update()
 	
 func connectSlots():
@@ -38,6 +44,11 @@ func update():
 		
 		if !inventorySlot.item:
 			slots[i].clear()
+			continue
+			
+		if i == trashCanIndex:
+			print("Trash detected")
+			inventorySlot.item = null
 			continue
 		
 		var itemStackGui: ItemStackGui = slots[i].itemStackGui

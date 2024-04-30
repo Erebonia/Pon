@@ -35,6 +35,9 @@ scale = Vector2(0.9, 0.9)
 [node name="Slot" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_7yodu")]
 layout_mode = 2
 
+[node name="Slot1" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
 [node name="Slot2" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_7yodu")]
 layout_mode = 2
 
@@ -48,9 +51,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Slot6" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_7yodu")]
-layout_mode = 2
-
-[node name="Slot7" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_7yodu")]
 layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
@@ -68,6 +68,18 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
 columns = 4
+
+[node name="Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
 
 [node name="Slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
 layout_mode = 2
@@ -105,19 +117,17 @@ layout_mode = 2
 [node name="Slot22" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
 layout_mode = 2
 
-[node name="Slot23" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
-layout_mode = 2
-
-[node name="Slot24" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
-layout_mode = 2
-
-[node name="Slot25" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
-layout_mode = 2
-
-[node name="Slot26" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
-layout_mode = 2
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(44.2857, 67.1429)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_goi0s")
+
+[node name="Trash" type="Node2D" parent="."]
+
+[node name="Slot23" parent="Trash" instance=ExtResource("2_7yodu")]
+modulate = Color(0.266667, 0.266667, 0.266667, 1)
+offset_left = 62.8571
+offset_top = 32.8572
+offset_right = 82.8571
+offset_bottom = 52.8572
