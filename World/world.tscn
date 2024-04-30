@@ -131,6 +131,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Hotbar" parent="Inventory_UI" instance=ExtResource("8_b73m7")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

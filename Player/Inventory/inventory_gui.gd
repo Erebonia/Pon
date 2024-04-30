@@ -20,7 +20,7 @@ var locked: bool = false
 func _ready():
 	connectSlots()
 	inventory.updated.connect(update)
-	player.connect("inventoryLoaded", Callable(self, "update"))
+	player.connect("updateInventoryUI", Callable(self, "update"))
 	update()
 	
 func connectSlots():

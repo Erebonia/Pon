@@ -110,11 +110,11 @@ func loadSaveData():
 	gameStarted()
 	print("Save Loaded")
 
-signal inventoryLoaded
+signal updateInventoryUI
 func gameStarted():
 	#Load the data we saved in.
 	inventory.slots = playerData.slots
-	emit_signal("inventoryLoaded")
+	emit_signal("updateInventoryUI")
 	self.position = playerData.savedPosition
 	stats.HP = playerData.HP
 	stats.max_HP = playerData.max_HP

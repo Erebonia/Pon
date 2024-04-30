@@ -11,7 +11,7 @@ class_name Hotbar
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player.connect("inventoryLoaded", Callable(self, "update"))
+	player.connect("updateInventoryUI", Callable(self, "update"))
 	inventory.updated.connect(update)
 	update()
 
