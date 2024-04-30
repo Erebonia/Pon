@@ -3,6 +3,7 @@ class_name Inventory
 
 signal updated
 signal use_item
+signal inventory_full
 
 #Inventory stored here. TODO save it to player and load it later.
 @export var slots: Array[InventorySlot]
@@ -14,8 +15,13 @@ func insert(item: InventoryItem):
 	else:
 		var emptySlots = slots.filter(func(slot): return slot.item == null)
 		if !emptySlots.is_empty():
+			emit_signal("inventory_full", false)
 			emptySlots[0].item = item
 			emptySlots[0].amount = 1
+		else:
+			emit_signal("inventory_full", true)
+			print("FULL")
+			return
 			
 	updated.emit()
 

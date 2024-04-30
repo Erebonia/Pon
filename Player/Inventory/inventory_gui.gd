@@ -46,10 +46,10 @@ func update():
 			slots[i].clear()
 			continue
 			
-		if i == trashCanIndex:
-			print("Trash detected")
-			inventorySlot.item = null
-			continue
+		#if i == trashCanIndex:
+			#print("Trash detected")
+			#inventorySlot.item = null
+			#continue
 		
 		var itemStackGui: ItemStackGui = slots[i].itemStackGui
 		if !itemStackGui:

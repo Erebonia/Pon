@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://World/world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="2_7prvd"]
-[ext_resource type="PackedScene" uid="uid://h541kkislped" path="res://Player/status.tscn" id="2_q354b"]
+[ext_resource type="PackedScene" path="res://Player/status.tscn" id="2_q354b"]
 [ext_resource type="PackedScene" uid="uid://dr31cgvo6r8ds" path="res://World/Environment/bush.tscn" id="2_qhdct"]
 [ext_resource type="PackedScene" uid="uid://xgwv4syylx7" path="res://Player/Inventory/inventory_gui.tscn" id="5_34a6t"]
 [ext_resource type="Script" path="res://World/Inventory_UI.gd" id="5_bxi8m"]
@@ -361,6 +361,54 @@ position = Vector2(70, 221)
 
 [node name="Battleaxe" parent="." instance=ExtResource("28_f4dgn")]
 position = Vector2(56, 245)
+
+[node name="HP_Potion2" parent="." instance=ExtResource("24_ruj4i")]
+position = Vector2(24, 207)
+
+[node name="Sword2" parent="." instance=ExtResource("25_fb58y")]
+position = Vector2(55, 206)
+
+[node name="Axe2" parent="." instance=ExtResource("27_vtid3")]
+position = Vector2(84, 205)
+
+[node name="Battleaxe2" parent="." instance=ExtResource("28_f4dgn")]
+position = Vector2(70, 229)
+
+[node name="HP_Potion3" parent="." instance=ExtResource("24_ruj4i")]
+position = Vector2(108, 222)
+
+[node name="Sword3" parent="." instance=ExtResource("25_fb58y")]
+position = Vector2(139, 221)
+
+[node name="Axe3" parent="." instance=ExtResource("27_vtid3")]
+position = Vector2(168, 220)
+
+[node name="Battleaxe3" parent="." instance=ExtResource("28_f4dgn")]
+position = Vector2(154, 244)
+
+[node name="HP_Potion4" parent="." instance=ExtResource("24_ruj4i")]
+position = Vector2(-17, 200)
+
+[node name="Sword4" parent="." instance=ExtResource("25_fb58y")]
+position = Vector2(14, 199)
+
+[node name="Axe4" parent="." instance=ExtResource("27_vtid3")]
+position = Vector2(43, 198)
+
+[node name="Battleaxe4" parent="." instance=ExtResource("28_f4dgn")]
+position = Vector2(29, 222)
+
+[node name="HP_Potion5" parent="." instance=ExtResource("24_ruj4i")]
+position = Vector2(-8, 225)
+
+[node name="Sword5" parent="." instance=ExtResource("25_fb58y")]
+position = Vector2(23, 224)
+
+[node name="Axe5" parent="." instance=ExtResource("27_vtid3")]
+position = Vector2(52, 223)
+
+[node name="Battleaxe5" parent="." instance=ExtResource("28_f4dgn")]
+position = Vector2(38, 247)
 
 [connection signal="closed" from="Inventory_UI/InventoryGui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="Inventory_UI/InventoryGui" to="." method="_on_inventory_gui_opened"]

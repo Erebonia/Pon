@@ -30,6 +30,7 @@ const save_file_path = "user://save/"
 const save_file_name = "Player.tres"
 var playerData = PlayerData.new()
 var inventory = preload("res://Player/Inventory/PlayerInventory.tres")
+var inventoryIsFull: bool
 
 #Directional
 var input_vector = Vector2.ZERO
@@ -37,6 +38,7 @@ var aim_direction = null
 
 func _ready():
 	inventory.use_item.connect(use_item)
+	inventory.inventory_full.connect(inventoryCheck)
 	randomize()
 	stateMachine.Initialize(self)
 	animationTree.active = true
@@ -136,7 +138,7 @@ func updateHealthBarUI():
 		healthBar.visible = false
 			
 func _on_area_2d_area_entered(area):
-	if area.has_method("collect"):
+	if area.has_method("collect") and !inventoryIsFull:
 		area.collect(inventory)
 		
 func increase_health(amount: int) -> void:
@@ -148,3 +150,9 @@ func increase_health(amount: int) -> void:
 	
 func use_item(item: InventoryItem) -> void:
 	item.use(self)
+	
+func inventoryCheck(full):
+	if full:
+		inventoryIsFull = true
+	else:
+		inventoryIsFull = false
