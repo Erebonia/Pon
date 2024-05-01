@@ -13,8 +13,12 @@ func insert(item: InventoryItem):
 	if !itemSlots.is_empty() and itemSlots[0].amount + 1 <= item.maxAmountPrStack:
 		itemSlots[0].amount += 1
 	else:
-		var emptySlots = slots.filter(func(slot): return slot.item == null)
-		if !emptySlots.is_empty():
+		var emptySlots = []
+		for i in range(slots.size() - 1):  # Exclude the last slot
+			if slots[i].item == null:
+				emptySlots.append(slots[i])
+
+		if emptySlots.size() > 0:
 			emit_signal("inventory_full", false)
 			emptySlots[0].item = item
 			emptySlots[0].amount = 1
@@ -22,17 +26,22 @@ func insert(item: InventoryItem):
 			emit_signal("inventory_full", true)
 			print("FULL")
 			return
-			
+
 	updated.emit()
 
 func removeSlot(inventorySlot: InventorySlot):
 	var index = slots.find(inventorySlot)
 	if index < 0: return
-	
 	remove_at_index(index)
 	
 func remove_at_index(index: int) -> void:
 	slots[index] = InventorySlot.new()
+	updated.emit()
+	
+func remove_trash(index: int) -> void:
+	slots[index] = InventorySlot.new()
+	print("Inventory space is now available")
+	emit_signal("inventory_full", false)
 	updated.emit()
 	
 func insertSlot(index: int, inventorySlot: InventorySlot):

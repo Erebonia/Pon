@@ -37,7 +37,8 @@ func connectSlots():
 		var callable = Callable(onSlotClicked)
 		callable = callable.bind(slot)
 		slot.pressed.connect(callable)
-		
+
+signal inventory_full		
 func update():
 	for i in range(min(inventory.slots.size(), slots.size())):
 		var inventorySlot: InventorySlot = inventory.slots[i]
@@ -46,10 +47,10 @@ func update():
 			slots[i].clear()
 			continue
 			
-		#if i == trashCanIndex:
-			#print("Trash detected")
-			#inventorySlot.item = null
-			#continue
+		if i == trashCanIndex:
+			print("Trash detected")
+			inventory.remove_trash(23)
+			continue
 		
 		var itemStackGui: ItemStackGui = slots[i].itemStackGui
 		if !itemStackGui:
