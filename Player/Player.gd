@@ -153,3 +153,11 @@ func inventoryCheck(full):
 		inventoryIsFull = true
 	else:
 		inventoryIsFull = false
+
+func _on_hp_recovery_timeout():
+	print(stats.HP)
+	print(stats.max_HP)
+	if stats.HP < stats.max_HP:
+		$Combat/HpRecovery.start()
+		print("HP TIME")
+		stats.HP += 1

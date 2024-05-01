@@ -9975,12 +9975,6 @@ text = "Stance Active!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Equipment" type="Node2D" parent="Combat"]
-
-[node name="TODO Armor" type="Sprite2D" parent="Combat/Equipment"]
-position = Vector2(1, -6)
-scale = Vector2(0.6875, 0.6875)
-
 [node name="Sword" type="Node2D" parent="Combat"]
 z_index = -1
 position = Vector2(4, -17)
@@ -10076,6 +10070,10 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Combat"]
 volume_db = -20.0
 
+[node name="HpRecovery" type="Timer" parent="Combat"]
+wait_time = 3.0
+autostart = true
+
 [node name="Combat_UI" type="Node2D" parent="."]
 
 [node name="DamageNumbersOrigin" type="Node2D" parent="Combat_UI"]
@@ -10136,6 +10134,7 @@ disabled = true
 [connection signal="area_entered" from="Combat/Hurtbox" to="StateMachine/Hurt" method="_on_hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Combat/Hurtbox" to="StateMachine/Hurt" method="_on_hurtbox_invincibility_ended"]
 [connection signal="invincibility_started" from="Combat/Hurtbox" to="StateMachine/Hurt" method="_on_hurtbox_invincibility_started"]
+[connection signal="timeout" from="Combat/HpRecovery" to="." method="_on_hp_recovery_timeout"]
 
 [editable path="Combat/HitboxPivot/SwordHitbox"]
 [editable path="Combat/Hurtbox"]

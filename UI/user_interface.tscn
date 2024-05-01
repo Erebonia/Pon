@@ -26,16 +26,16 @@ grow_vertical = 2
 offset_left = -4.0
 
 [node name="HBoxContainer" parent="InventoryGui/NinePatchRect" index="0"]
-offset_left = 21.1429
-offset_top = 7.14286
-offset_right = 186.142
-offset_bottom = 28.1428
+offset_left = 9.71429
+offset_right = 174.713
+scale = Vector2(1, 1)
 
 [node name="GridContainer" parent="InventoryGui/NinePatchRect" index="1"]
-offset_left = 22.5
-offset_top = -13.7857
-offset_right = 92.5
-offset_bottom = 56.2143
+offset_left = 19.6429
+offset_top = -18.0714
+offset_right = 89.6429
+offset_bottom = 51.9286
+scale = Vector2(0.9, 0.9)
 
 [node name="Trash" parent="InventoryGui" index="2"]
 offset_left = 175.714
@@ -76,14 +76,15 @@ scale = Vector2(0.3, 0.3)
 theme_override_font_sizes/font_size = 16
 
 [node name="Stats" parent="Status Screen" index="2"]
-offset_left = 102.0
-offset_top = 82.0
-offset_right = 168.0
-offset_bottom = 159.0
-scale = Vector2(0.5, 0.5)
+offset_left = 101.0
+offset_top = 81.0
+offset_right = 167.0
+offset_bottom = 158.0
+scale = Vector2(0.55, 0.55)
 
 [node name="AnimatedSprite2D" parent="Status Screen" index="3"]
 position = Vector2(155, 82)
+autoplay = ""
 frame_progress = 1.0
 
 [node name="Character" parent="Status Screen" index="4"]
@@ -92,7 +93,7 @@ position = Vector2(152, 93)
 
 [node name="Sprite2D" parent="Status Screen" index="6"]
 visible = true
-position = Vector2(154, 94)
+position = Vector2(154, 90)
 scale = Vector2(0.178819, 0.150519)
 
 [editable path="InventoryGui"]
