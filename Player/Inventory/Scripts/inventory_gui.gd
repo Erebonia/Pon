@@ -18,7 +18,7 @@ signal closed
 var itemInHand: ItemStackGui
 var oldIndex: int = -1
 var locked: bool = false
-var trashCanIndex = 23
+var trashCanIndex = 16
 
 func _ready():
 	connectSlots()

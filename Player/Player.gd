@@ -10,7 +10,6 @@ class_name Player
 
 #General (Game)
 @onready var stats = Status
-@onready var statsUI = get_parent().find_child("Status Screen")
 @onready var levelUpSound = $Misc/LevelUp
 @onready var checkTime = null
 @onready var lightSource = $Misc/Light_Source
@@ -70,9 +69,6 @@ func _process(_delta):
 	updateHealthBarUI()
 
 func _physics_process(_delta):
-	if Input.is_action_just_pressed("Status"):
-		statsUI.visible = not statsUI.visible
-		
 	setMovementDirection()
 		
 func UpdateAnimation(state: String):

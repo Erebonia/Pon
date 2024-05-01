@@ -1,18 +1,15 @@
-[gd_scene load_steps=36 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=33 format=3 uid="uid://jpnitqgvchnd"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="2_7prvd"]
-[ext_resource type="PackedScene" uid="uid://h541kkislped" path="res://Player/status.tscn" id="2_q354b"]
 [ext_resource type="PackedScene" uid="uid://dr31cgvo6r8ds" path="res://World/Environment/bush.tscn" id="2_qhdct"]
-[ext_resource type="PackedScene" uid="uid://xgwv4syylx7" path="res://Player/Inventory/Scene/inventory_gui.tscn" id="5_34a6t"]
-[ext_resource type="Script" path="res://World/Inventory_UI.gd" id="5_bxi8m"]
+[ext_resource type="PackedScene" uid="uid://dx4gc50eoqluo" path="res://UI/user_interface.tscn" id="4_gmpnl"]
 [ext_resource type="PackedScene" uid="uid://dyr164gbvcxrf" path="res://World/Environment/tree-birch-yellow.tscn" id="5_k7lfl"]
 [ext_resource type="PackedScene" uid="uid://wgf5hgrk43ew" path="res://World/Environment/grass.tscn" id="6_dcagb"]
 [ext_resource type="PackedScene" uid="uid://c7xb0raqot3km" path="res://World/Environment/tree-mother.tscn" id="6_vdsp3"]
 [ext_resource type="PackedScene" uid="uid://b7i18f46oewtr" path="res://Effects/Scenes/fog shader.tscn" id="7_c4jo8"]
 [ext_resource type="PackedScene" uid="uid://bw6x38gtjukc2" path="res://NPC/BlackSmith/blacksmith.tscn" id="8_2m8e1"]
-[ext_resource type="PackedScene" uid="uid://msq4a5r2qp8n" path="res://Player/Inventory/Scene/hotbar.tscn" id="8_b73m7"]
 [ext_resource type="PackedScene" uid="uid://573ei0gs5ftg" path="res://NPC/Roy/roy.tscn" id="9_0dwxv"]
 [ext_resource type="TileSet" uid="uid://dehp76qcudo5q" path="res://World/Environment.tres" id="10_evtyf"]
 [ext_resource type="AudioStream" uid="uid://lgr7fwqk321e" path="res://Music and Sounds/Music/Whispering_Woods.mp3" id="12_llom8"]
@@ -109,40 +106,7 @@ texture_scale = 1.0
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../World_Camera")
 
-[node name="Status Screen" parent="." instance=ExtResource("2_q354b")]
-layer = 0
-
-[node name="Inventory_UI" type="CanvasLayer" parent="."]
-process_mode = 3
-script = ExtResource("5_bxi8m")
-
-[node name="InventoryGui" parent="Inventory_UI" instance=ExtResource("5_34a6t")]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.0
-offset_top = -46.0
-offset_right = 116.0
-offset_bottom = 73.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Hotbar" parent="Inventory_UI" instance=ExtResource("8_b73m7")]
-visible = false
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -55.0
-offset_top = -19.0
-offset_right = 85.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="User_Interface" parent="." instance=ExtResource("4_gmpnl")]
 
 [node name="StartingMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -410,8 +374,8 @@ position = Vector2(52, 223)
 [node name="Battleaxe5" parent="." instance=ExtResource("28_f4dgn")]
 position = Vector2(38, 247)
 
-[connection signal="closed" from="Inventory_UI/InventoryGui" to="." method="_on_inventory_gui_closed"]
-[connection signal="opened" from="Inventory_UI/InventoryGui" to="." method="_on_inventory_gui_opened"]
+[connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
+[connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]
 [connection signal="body_exited" from="Boss Room Entrance" to="." method="_on_boss_transition_body_exited"]
 
@@ -419,4 +383,7 @@ position = Vector2(38, 247)
 [editable path="Player"]
 [editable path="Player/Combat/HitboxPivot/SwordHitbox"]
 [editable path="Player/Combat/Hurtbox"]
+[editable path="User_Interface"]
+[editable path="User_Interface/InventoryGui"]
+[editable path="User_Interface/Status Screen"]
 [editable path="Environment/FogShader"]

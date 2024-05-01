@@ -28,4 +28,5 @@ func _update_xp_ui(exp_gained, total_exp, next_level_exp):
 	if next_level_exp == -1:
 		next_level_exp = "MAX"
 	%TotalXP.text = str(total_exp) + "/" + str(next_level_exp)
+	
 

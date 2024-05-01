@@ -66,7 +66,3 @@ func load_xp_data():
 
 func update_ui():
 	emit_signal("update_stats", HP, max_HP, Strength, Magic, Agility, Defense)
-
-# Example usage when gaining XP from an action
-func _on_gain_xp_pressed():
-	gain_experience(50)  # Gain 50 XP
