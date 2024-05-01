@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://World/world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="2_7prvd"]
-[ext_resource type="PackedScene" path="res://Player/status.tscn" id="2_q354b"]
+[ext_resource type="PackedScene" uid="uid://h541kkislped" path="res://Player/status.tscn" id="2_q354b"]
 [ext_resource type="PackedScene" uid="uid://dr31cgvo6r8ds" path="res://World/Environment/bush.tscn" id="2_qhdct"]
 [ext_resource type="PackedScene" uid="uid://xgwv4syylx7" path="res://Player/Inventory/inventory_gui.tscn" id="5_34a6t"]
 [ext_resource type="Script" path="res://World/Inventory_UI.gd" id="5_bxi8m"]

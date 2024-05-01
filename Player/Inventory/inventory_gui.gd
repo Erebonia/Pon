@@ -49,7 +49,7 @@ func update():
 			
 		if i == trashCanIndex:
 			print("Trash detected")
-			inventory.remove_trash(23)
+			inventory.remove_trash()
 			continue
 		
 		var itemStackGui: ItemStackGui = slots[i].itemStackGui
