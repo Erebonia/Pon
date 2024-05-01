@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://xgwv4syylx7"]
+[gd_scene load_steps=6 format=3 uid="uid://xgwv4syylx7"]
 
-[ext_resource type="Script" path="res://Player/Inventory/inventory_gui.gd" id="1_1tk7e"]
-[ext_resource type="Texture2D" uid="uid://cxka0cb605hnd" path="res://Player/Inventory/InventoryRect.png" id="1_50gxy"]
-[ext_resource type="PackedScene" uid="uid://h8e8jin0vdvx" path="res://Player/Inventory/slot_gui.tscn" id="2_7yodu"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/inventory_gui.gd" id="1_1tk7e"]
+[ext_resource type="Texture2D" uid="uid://cxka0cb605hnd" path="res://Player/Inventory/Art/InventoryRect.png" id="1_50gxy"]
+[ext_resource type="PackedScene" uid="uid://h8e8jin0vdvx" path="res://Player/Inventory/Scene/slot_gui.tscn" id="2_7yodu"]
 [ext_resource type="Texture2D" uid="uid://uc0brcwd8h78" path="res://Player/Pixivan MC/Portrait/Side Portrait Large.png" id="4_goi0s"]
+[ext_resource type="Texture2D" uid="uid://cwobirwylpo77" path="res://Player/Inventory/Art/icon147.png" id="5_pyphc"]
 
 [node name="InventoryGui" type="Control"]
 custom_minimum_size = Vector2(128, 80)
@@ -123,11 +124,14 @@ position = Vector2(44.2857, 67.1429)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_goi0s")
 
-[node name="Trash" type="Node2D" parent="."]
-
-[node name="Slot23" parent="Trash" instance=ExtResource("2_7yodu")]
-modulate = Color(0.266667, 0.266667, 0.266667, 1)
+[node name="Trash" parent="." instance=ExtResource("2_7yodu")]
 offset_left = 62.8571
 offset_top = 32.8572
 offset_right = 82.8571
 offset_bottom = 52.8572
+
+[node name="Sprite2D2" type="Sprite2D" parent="Trash"]
+self_modulate = Color(0.603922, 0.603922, 0.603922, 1)
+position = Vector2(10, 9.99994)
+scale = Vector2(1, 1)
+texture = ExtResource("5_pyphc")

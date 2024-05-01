@@ -8,9 +8,9 @@ signal opened
 signal closed
 
 @onready var inventory: Inventory = preload("res://Player/Inventory/PlayerInventory.tres")
-@onready var ItemStackGuiClass = preload("res://Player/Inventory/itemStackGui.tscn")
+@onready var ItemStackGuiClass = preload("res://Player/Inventory/Scene/itemStackGui.tscn")
 @onready var hotbar_slots: Array = $NinePatchRect/HBoxContainer.get_children()
-@onready var trash: Array = $Trash.get_children()
+@onready var trash: Array = [$Trash]
 @onready var slots: Array = hotbar_slots + $NinePatchRect/GridContainer.get_children() + trash
 @onready var player = $"../../Player"
 

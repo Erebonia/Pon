@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://dadwitama48h1"]
 
-[ext_resource type="Script" path="res://Player/Inventory/itemStackGui.gd" id="1_y1jlr"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/itemStackGui.gd" id="1_nnfv8"]
 
 [node name="Panel" type="Panel"]
-script = ExtResource("1_y1jlr")
+script = ExtResource("1_nnfv8")
 
 [node name="item" type="Sprite2D" parent="."]
 

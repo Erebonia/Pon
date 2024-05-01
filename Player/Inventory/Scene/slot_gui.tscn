@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://h8e8jin0vdvx"]
 
-[ext_resource type="Script" path="res://Player/Inventory/slot_gui.gd" id="1_kph7r"]
-[ext_resource type="Texture2D" uid="uid://bgkes0tmge725" path="res://Player/Inventory/inventorySlot.png" id="1_wa32j"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/slot_gui.gd" id="1_8hjvf"]
+[ext_resource type="Texture2D" uid="uid://bgkes0tmge725" path="res://Player/Inventory/Art/inventorySlot.png" id="1_wa32j"]
 
 [node name="Slot" type="Button"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(20, 20)
 offset_right = 20.0
 offset_bottom = 20.0
-script = ExtResource("1_kph7r")
+script = ExtResource("1_8hjvf")
 
 [node name="background" type="Sprite2D" parent="."]
 texture = ExtResource("1_wa32j")

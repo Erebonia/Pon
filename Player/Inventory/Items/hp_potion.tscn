@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://qwygywl07m00"]
 
-[ext_resource type="Script" path="res://Player/Inventory/collectable.gd" id="1_dbv8m"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/collectable.gd" id="1_dbv8m"]
 [ext_resource type="Resource" uid="uid://celpsp4adxcrb" path="res://Player/Inventory/Items/HP_Potion.tres" id="2_heorv"]
 [ext_resource type="Texture2D" uid="uid://bplwlbgroptv1" path="res://Player/Inventory/Items/HP_Potion.png" id="3_epxdn"]
 
