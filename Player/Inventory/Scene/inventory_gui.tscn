@@ -125,6 +125,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_goi0s")
 
 [node name="Trash" parent="." instance=ExtResource("2_7yodu")]
+layout_mode = 0
 offset_left = 62.8571
 offset_top = 32.8572
 offset_right = 82.8571
@@ -133,5 +134,4 @@ offset_bottom = 52.8572
 [node name="Sprite2D2" type="Sprite2D" parent="Trash"]
 self_modulate = Color(0.603922, 0.603922, 0.603922, 1)
 position = Vector2(10, 9.99994)
-scale = Vector2(1, 1)
 texture = ExtResource("5_pyphc")

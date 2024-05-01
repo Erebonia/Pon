@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://h541kkislped"]
 
-[ext_resource type="Script" path="res://Player/PlayerStatus.gd" id="1_1uhqq"]
+[ext_resource type="Script" path="res://Player/PlayerStatusUI.gd" id="1_3ecaw"]
 [ext_resource type="Texture2D" uid="uid://6eb55uah0is2" path="res://Player/Pixivan MC/Front Movement.png" id="2_kg1rh"]
 [ext_resource type="Texture2D" uid="uid://44ock017fba4" path="res://Effects/Sprites/LevelUp.png" id="2_p1igg"]
 [ext_resource type="AudioStream" uid="uid://cqggtqsqcugk5" path="res://Music and Sounds/General/potatoscream.mp3" id="4_6vid8"]
@@ -149,8 +149,7 @@ animations = [{
 }]
 
 [node name="Status Screen" type="CanvasLayer"]
-visible = false
-script = ExtResource("1_1uhqq")
+script = ExtResource("1_3ecaw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 36.0

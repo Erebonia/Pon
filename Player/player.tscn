@@ -10028,9 +10028,9 @@ script = ExtResource("4_ghg0u")
 damage = 3
 
 [node name="CollisionShape2D" parent="Combat/HitboxPivot/SwordHitbox" index="0"]
-visible = false
 scale = Vector2(1.2, 1.2)
 shape = SubResource("CapsuleShape2D_bqrgj")
+disabled = true
 
 [node name="SwordWaveProjectile" type="Marker2D" parent="Combat"]
 modulate = Color(0, 0, 0, 1)
@@ -10128,6 +10128,7 @@ speed_scale = 0.7
 visible = false
 position = Vector2(1, -6)
 shape = SubResource("CircleShape2D_5gkre")
+disabled = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Combat/AttackTimer" to="StateMachine/Attack" method="_on_attack_timer_timeout"]

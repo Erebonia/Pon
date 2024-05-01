@@ -10,6 +10,7 @@ class_name Player
 
 #General (Game)
 @onready var stats = Status
+@onready var statsUI = get_parent().find_child("Status Screen")
 @onready var levelUpSound = $Misc/LevelUp
 @onready var checkTime = null
 @onready var lightSource = $Misc/Light_Source
@@ -70,7 +71,7 @@ func _process(_delta):
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("Status"):
-		stats.visible = not stats.visible
+		statsUI.visible = not statsUI.visible
 		
 	setMovementDirection()
 		
@@ -94,7 +95,7 @@ func _on_check_time(_day, hour, _minute):
 	else:
 		lightSource.visible = false
 		
-func _on_level_up():
+func _on_level_up(Level):
 	levelUpSound.play("level_up")
 	
 func playerDead():
