@@ -17,7 +17,7 @@
 "portraits": {
 "Base": {
 "export_overrides": {
-"image": "\"res://Dialogue/Characters/demon.jpg\""
+"image": "\"res://Dialogue/Characters/Blacksmith/demon.jpg\""
 },
 "mirror": false,
 "offset": Vector2(-40, -17),

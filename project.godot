@@ -19,8 +19,8 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 global="*res://global.gd"
 DayAndNight="*res://World/Weather/weather/daynightcycle_scene.tscn"
 DamageNumbers="*res://Overlap/DamageNumbers.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Status="*res://Player/PlayerStatus.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 

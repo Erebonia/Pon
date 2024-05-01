@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="2_7prvd"]
 [ext_resource type="PackedScene" uid="uid://dr31cgvo6r8ds" path="res://World/Environment/bush.tscn" id="2_qhdct"]
-[ext_resource type="PackedScene" uid="uid://dx4gc50eoqluo" path="res://UI/user_interface.tscn" id="4_gmpnl"]
+[ext_resource type="PackedScene" path="res://UI/user_interface.tscn" id="4_gmpnl"]
 [ext_resource type="PackedScene" uid="uid://dyr164gbvcxrf" path="res://World/Environment/tree-birch-yellow.tscn" id="5_k7lfl"]
 [ext_resource type="PackedScene" uid="uid://wgf5hgrk43ew" path="res://World/Environment/grass.tscn" id="6_dcagb"]
 [ext_resource type="PackedScene" uid="uid://c7xb0raqot3km" path="res://World/Environment/tree-mother.tscn" id="6_vdsp3"]
@@ -107,6 +107,12 @@ texture_scale = 1.0
 remote_path = NodePath("../../World_Camera")
 
 [node name="User_Interface" parent="." instance=ExtResource("4_gmpnl")]
+
+[node name="InventoryGui" parent="User_Interface" index="0"]
+visible = false
+
+[node name="Status Screen" parent="User_Interface" index="2"]
+visible = false
 
 [node name="StartingMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -288,27 +294,27 @@ position = Vector2(-312, 40)
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_0isge")
-position = Vector2(14, 91)
+position = Vector2(-297, 98)
 
 [node name="Enemy_Bat2" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_i6fys")
-position = Vector2(-10, 83)
+position = Vector2(-321, 90)
 
 [node name="Enemy_Bat3" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_akx05")
-position = Vector2(-2, 83)
+position = Vector2(-313, 90)
 
 [node name="Enemy_Bat4" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_8300g")
-position = Vector2(-2, 83)
+position = Vector2(-313, 90)
 
 [node name="Enemy_Bat5" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_tgxgg")
-position = Vector2(6, 83)
+position = Vector2(-305, 90)
 
 [node name="Enemy_Bat6" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_82sbw")
-position = Vector2(-10, 83)
+position = Vector2(-321, 90)
 
 [node name="DayAndNight (Editor Only)" type="CanvasModulate" parent="."]
 color = Color(1, 0.870588, 0.866667, 1)
