@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cceqxqy5ulef0"]
+[gd_scene load_steps=36 format=3 uid="uid://cceqxqy5ulef0"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Base.gd" id="1_143xm"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="2_ngi5j"]
@@ -11,8 +11,9 @@
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Death.gd" id="15_6oi53"]
 [ext_resource type="Script" path="res://Overlap/hurtbox.gd" id="16_8tpba"]
 [ext_resource type="PackedScene" uid="uid://bbh4m23t6e35d" path="res://Overlap/hitbox.tscn" id="16_rlhr6"]
+[ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Shadows/SmallShadow.png" id="17_185gh"]
 [ext_resource type="PackedScene" uid="uid://cms5nxy1iwkm2" path="res://Enemies/Scenes/player_detection.tscn" id="17_kvbjh"]
-[ext_resource type="PackedScene" uid="uid://dk7ckqq8mq2nr" path="res://Overlap/Stats.tscn" id="18_mo171"]
+[ext_resource type="PackedScene" path="res://Overlap/Stats.tscn" id="18_mo171"]
 [ext_resource type="PackedScene" uid="uid://bhv1fd4uvlhpd" path="res://Enemies/Scenes/wander_controller.tscn" id="19_knn8k"]
 [ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://UI/Health/healthbar_overhead.tscn" id="20_l8fcu"]
 [ext_resource type="PackedScene" uid="uid://bkf2a5dlqworv" path="res://Overlap/soft_collision.tscn" id="21_14vnn"]
@@ -127,9 +128,8 @@ _data = {
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g73up"]
 height = 36.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u4i7s"]
-radius = 8.0
-height = 48.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_12m0g"]
+radius = 7.07107
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ddof4"]
 radius = 73.7564
@@ -196,8 +196,7 @@ monitorable = false
 script = ExtResource("16_8tpba")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-visible = false
-shape = SubResource("CapsuleShape2D_u4i7s")
+shape = SubResource("CircleShape2D_12m0g")
 
 [node name="Timer" type="Timer" parent="Hurtbox"]
 
@@ -255,6 +254,9 @@ collision_layer = 4
 visible = false
 position = Vector2(0, -16)
 shape = SubResource("CircleShape2D_iiyu1")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture = ExtResource("17_185gh")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_hurtbox_invincibility_ended"]
