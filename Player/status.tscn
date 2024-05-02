@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://h541kkislped"]
+[gd_scene load_steps=26 format=3 uid="uid://teppcsgloipc"]
 
 [ext_resource type="Script" path="res://Player/PlayerStatusUI.gd" id="1_3ecaw"]
 [ext_resource type="Texture2D" uid="uid://6eb55uah0is2" path="res://Player/Pixivan MC/Front Movement.png" id="2_kg1rh"]
@@ -171,24 +171,39 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 8
 max_value = 240.0
 
+[node name="HP_Text" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 57.0
+offset_right = 68.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 8
+text = "HP"
+
+[node name="HP" type="Label" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+offset_left = 64.0
+offset_top = 57.0
+offset_right = 104.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 8
+text = "100/100"
+
 [node name="Stats" type="HBoxContainer" parent="."]
 offset_left = 51.0
 offset_top = 66.0
-offset_right = 154.0
-offset_bottom = 143.0
+offset_right = 111.0
+offset_bottom = 108.0
 
 [node name="Attribute" type="VBoxContainer" parent="Stats"]
 layout_mode = 2
+theme_override_constants/separation = 2
 
 [node name="TotalXP" type="Label" parent="Stats/Attribute"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "EXP"
-
-[node name="HP" type="Label" parent="Stats/Attribute"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 8
-text = "HP"
 
 [node name="Strength" type="Label" parent="Stats/Attribute"]
 layout_mode = 2
@@ -212,22 +227,15 @@ text = "DEF"
 
 [node name="Value" type="VBoxContainer" parent="Stats"]
 layout_mode = 2
+theme_override_constants/separation = 2
 
 [node name="TotalXP" type="Label" parent="Stats/Value"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "0/240"
-horizontal_alignment = 2
-
-[node name="HP" type="Label" parent="Stats/Value"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 8
-text = "100/100"
-horizontal_alignment = 2
 
 [node name="Strength" type="Label" parent="Stats/Value"]
 unique_name_in_owner = true
@@ -235,7 +243,6 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "1"
-horizontal_alignment = 2
 
 [node name="Magic" type="Label" parent="Stats/Value"]
 unique_name_in_owner = true
@@ -243,7 +250,6 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "1"
-horizontal_alignment = 2
 
 [node name="Agility" type="Label" parent="Stats/Value"]
 unique_name_in_owner = true
@@ -251,7 +257,6 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "1"
-horizontal_alignment = 2
 
 [node name="Defense" type="Label" parent="Stats/Value"]
 unique_name_in_owner = true
@@ -259,7 +264,6 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "1"
-horizontal_alignment = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(177, 83)

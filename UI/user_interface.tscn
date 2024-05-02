@@ -1,9 +1,157 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx4gc50eoqluo"]
+[gd_scene load_steps=31 format=3 uid="uid://dx4gc50eoqluo"]
 
 [ext_resource type="Script" path="res://World/Inventory_UI.gd" id="1_0y4l0"]
 [ext_resource type="PackedScene" uid="uid://xgwv4syylx7" path="res://Player/Inventory/Scene/inventory_gui.tscn" id="2_6d6xj"]
 [ext_resource type="PackedScene" uid="uid://msq4a5r2qp8n" path="res://Player/Inventory/Scene/hotbar.tscn" id="3_268fo"]
-[ext_resource type="PackedScene" uid="uid://h541kkislped" path="res://Player/status.tscn" id="4_1b58v"]
+[ext_resource type="Texture2D" uid="uid://44ock017fba4" path="res://Effects/Sprites/LevelUp.png" id="4_eg32x"]
+[ext_resource type="Script" path="res://Player/PlayerStatusUI.gd" id="4_huemg"]
+[ext_resource type="Texture2D" uid="uid://6eb55uah0is2" path="res://Player/Pixivan MC/Front Movement.png" id="5_0tvey"]
+[ext_resource type="Texture2D" uid="uid://bldievrlq0s0x" path="res://Player/Inventory/Art/GUI_1x_sliced.png" id="5_ych27"]
+[ext_resource type="AudioStream" uid="uid://cqggtqsqcugk5" path="res://Music and Sounds/General/potatoscream.mp3" id="6_8jchq"]
+[ext_resource type="Texture2D" uid="uid://cbwoxp5xax18m" path="res://Player/Pixivan MC/Portrait/Character Portrait Enlarged.png" id="7_nigos"]
+[ext_resource type="Texture2D" uid="uid://bgkes0tmge725" path="res://Player/Inventory/Art/inventorySlot.png" id="9_npnqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dptxe"]
+atlas = ExtResource("4_eg32x")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttbvt"]
+atlas = ExtResource("4_eg32x")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21jpn"]
+atlas = ExtResource("4_eg32x")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pabsd"]
+atlas = ExtResource("4_eg32x")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpero"]
+atlas = ExtResource("4_eg32x")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg5fv"]
+atlas = ExtResource("4_eg32x")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4skp"]
+atlas = ExtResource("4_eg32x")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cslqt"]
+atlas = ExtResource("4_eg32x")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj6s6"]
+atlas = ExtResource("4_eg32x")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq2dr"]
+atlas = ExtResource("4_eg32x")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkub5"]
+atlas = ExtResource("4_eg32x")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eytri"]
+atlas = ExtResource("4_eg32x")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7cyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dptxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttbvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21jpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pabsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpero")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kg5fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4skp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cslqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj6s6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq2dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkub5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eytri")
+}],
+"loop": false,
+"name": &"level_up",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f76fp"]
+atlas = ExtResource("5_0tvey")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjw7a"]
+atlas = ExtResource("5_0tvey")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a6fe"]
+atlas = ExtResource("5_0tvey")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhsid"]
+atlas = ExtResource("5_0tvey")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_865e4"]
+atlas = ExtResource("5_0tvey")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c372e"]
+atlas = ExtResource("5_0tvey")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2x6x6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f76fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjw7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a6fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhsid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_865e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c372e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="User_Interface" type="CanvasLayer"]
 process_mode = 3
@@ -23,25 +171,30 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NinePatchRect" parent="InventoryGui" index="0"]
-offset_left = -4.0
+offset_left = -33.0
+offset_top = -10.0
+offset_right = 200.0
+offset_bottom = 134.0
 
 [node name="HBoxContainer" parent="InventoryGui/NinePatchRect" index="0"]
-offset_left = 9.71429
-offset_right = 174.713
+offset_left = 35.8571
+offset_top = 10.0
+offset_right = 200.856
+offset_bottom = 31.0
 scale = Vector2(1, 1)
 
 [node name="GridContainer" parent="InventoryGui/NinePatchRect" index="1"]
-offset_left = 19.6429
-offset_top = -18.0714
-offset_right = 89.6429
-offset_bottom = 51.9286
+offset_left = 39.3571
+offset_top = -24.8571
+offset_right = 109.357
+offset_bottom = 45.1429
 scale = Vector2(0.9, 0.9)
 
 [node name="Trash" parent="InventoryGui" index="2"]
-offset_left = 175.714
-offset_top = 97.1429
-offset_right = 195.714
-offset_bottom = 117.143
+offset_left = 200.0
+offset_top = 111.429
+offset_right = 220.0
+offset_bottom = 131.429
 
 [node name="Hotbar" parent="." instance=ExtResource("3_268fo")]
 visible = false
@@ -57,44 +210,210 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Status Screen" parent="." instance=ExtResource("4_1b58v")]
+[node name="Status Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_huemg")
 
-[node name="Label" parent="Status Screen" index="0"]
+[node name="ProgressBar" type="ProgressBar" parent="Status Screen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 74.0
+offset_top = 15.0
+offset_right = 237.0
+offset_bottom = 37.0
+
+[node name="Level" type="Label" parent="Status Screen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 141.0
+offset_top = 62.0
+offset_right = 168.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 8
+text = "Level: 1"
+
+[node name="HP_Text" type="Label" parent="Status Screen"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 69.0
+offset_right = 108.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 8
+text = "HP"
+
+[node name="HP" type="Label" parent="Status Screen"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 0
 offset_left = 106.0
-offset_top = 66.0
-offset_right = 133.0
-offset_bottom = 75.0
-scale = Vector2(0.7, 0.7)
+offset_top = 69.0
+offset_right = 146.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 8
+text = "100/100"
 
-[node name="ProgressBar" parent="Status Screen" index="1"]
-custom_minimum_size = Vector2(10, 1)
-offset_left = 102.0
-offset_top = 73.0
-offset_right = 202.0
-offset_bottom = 95.0
-scale = Vector2(0.3, 0.3)
-theme_override_font_sizes/font_size = 16
+[node name="Stats" type="HBoxContainer" parent="Status Screen"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 80.0
+offset_right = 152.0
+offset_bottom = 122.0
 
-[node name="Stats" parent="Status Screen" index="2"]
-offset_left = 101.0
-offset_top = 81.0
-offset_right = 167.0
-offset_bottom = 158.0
-scale = Vector2(0.55, 0.55)
+[node name="Attribute" type="VBoxContainer" parent="Status Screen/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 2
 
-[node name="AnimatedSprite2D" parent="Status Screen" index="3"]
-position = Vector2(155, 82)
-autoplay = ""
-frame_progress = 1.0
-
-[node name="Character" parent="Status Screen" index="4"]
+[node name="TotalXP" type="Label" parent="Status Screen/Stats/Attribute"]
 visible = false
-position = Vector2(152, 93)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "EXP"
 
-[node name="Sprite2D" parent="Status Screen" index="6"]
-visible = true
-position = Vector2(154, 90)
-scale = Vector2(0.178819, 0.150519)
+[node name="Strength" type="Label" parent="Status Screen/Stats/Attribute"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "STR"
+
+[node name="Magic" type="Label" parent="Status Screen/Stats/Attribute"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "MAG"
+
+[node name="Agility" type="Label" parent="Status Screen/Stats/Attribute"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "AGI"
+
+[node name="Defense" type="Label" parent="Status Screen/Stats/Attribute"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DEF"
+
+[node name="Value" type="VBoxContainer" parent="Status Screen/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TotalXP" type="Label" parent="Status Screen/Stats/Value"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0/240"
+
+[node name="Strength" type="Label" parent="Status Screen/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "1"
+
+[node name="Magic" type="Label" parent="Status Screen/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "1"
+
+[node name="Agility" type="Label" parent="Status Screen/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "1"
+
+[node name="Defense" type="Label" parent="Status Screen/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "1"
+
+[node name="Hat_Slot" type="Sprite2D" parent="Status Screen"]
+position = Vector2(141, 126)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_npnqy")
+vframes = 2
+
+[node name="Body_Slot" type="Sprite2D" parent="Status Screen"]
+position = Vector2(156, 126)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_npnqy")
+vframes = 2
+
+[node name="Accessory_Slot" type="Sprite2D" parent="Status Screen"]
+position = Vector2(171, 126)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_npnqy")
+vframes = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Status Screen"]
+position = Vector2(177, 83)
+scale = Vector2(0.65625, 0.65625)
+sprite_frames = SubResource("SpriteFrames_u7cyo")
+animation = &"level_up"
+autoplay = "level_up"
+frame = 11
+
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="Status Screen"]
+visible = false
+position = Vector2(148, 112)
+sprite_frames = SubResource("SpriteFrames_2x6x6")
+autoplay = "default"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Status Screen"]
+stream = ExtResource("6_8jchq")
+
+[node name="CharacterPortrait" type="Sprite2D" parent="Status Screen"]
+position = Vector2(155, 94)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_nigos")
+
+[node name="HP_Icon" type="Sprite2D" parent="Status Screen"]
+position = Vector2(86, 73)
+texture = ExtResource("5_ych27")
+hframes = 8
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 136, 71, 17)
+
+[node name="STR_Icon" type="Sprite2D" parent="Status Screen"]
+position = Vector2(86, 84)
+texture = ExtResource("5_ych27")
+hframes = 8
+vframes = 2
+frame = 2
+region_enabled = true
+region_rect = Rect2(0, 136, 71, 17)
+
+[node name="MAG_Icon2" type="Sprite2D" parent="Status Screen"]
+position = Vector2(86, 95)
+texture = ExtResource("5_ych27")
+hframes = 8
+vframes = 2
+frame = 5
+region_enabled = true
+region_rect = Rect2(0, 136, 71, 17)
+
+[node name="AGI_Icon" type="Sprite2D" parent="Status Screen"]
+position = Vector2(86, 106)
+texture = ExtResource("5_ych27")
+hframes = 8
+vframes = 2
+frame = 1
+region_enabled = true
+region_rect = Rect2(0, 136, 71, 17)
+
+[node name="DEF_Icon" type="Sprite2D" parent="Status Screen"]
+position = Vector2(86, 117)
+texture = ExtResource("5_ych27")
+hframes = 8
+vframes = 2
+frame = 6
+region_enabled = true
+region_rect = Rect2(0, 136, 71, 17)
 
 [editable path="InventoryGui"]
-[editable path="Status Screen"]

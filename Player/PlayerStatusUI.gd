@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 class_name PlayerStatusUI
 
@@ -20,7 +20,7 @@ func _update_stats_ui(hp, max_hp, strength, magic, agility, defense):
 	%Defense.text = str(defense)
 
 func _update_level_ui(level):
-	%Label.text = "Level: " + str(level)
+	%Level.text = "Level: " + str(level)
 
 func _update_xp_ui(exp_gained, total_exp, next_level_exp):
 	%ProgressBar.max_value = next_level_exp
