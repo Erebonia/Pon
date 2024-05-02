@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgu36cpnxvspy"]
 
 [ext_resource type="Script" path="res://Player/Inventory/Scripts/collectable.gd" id="1_4i73p"]
-[ext_resource type="Resource" uid="uid://yrr101byvnjs" path="res://Player/Inventory/Items/battleaxe.tres" id="2_fhavf"]
+[ext_resource type="Resource" uid="uid://yrr101byvnjs" path="res://Player/Inventory/Items/weapon/battleaxe.tres" id="2_fhavf"]
 [ext_resource type="Texture2D" uid="uid://cdnskjn7h6c32" path="res://Player/weapon/axe.png" id="3_ls2pl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gim2v"]

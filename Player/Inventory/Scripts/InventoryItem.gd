@@ -7,15 +7,15 @@ class_name InventoryItem
 @export var maxAmountPrStack: int
 @export var isConsumable: bool = false
 @export var isWeapon: bool = false
-@export var isHelmet = false
-@export var isBody = false
-@export var isAccessory = false
+@export var isHelmet: bool = false
+@export var isBody: bool = false
+@export var isAccessory: bool = false
+@export var attackBonus: int = 0
+@export var defBonus: int = 0
 
 func use(player: Player) -> void:
 	pass
 	
-# In InventoryItem.gd
-
 func getType():
 	if isHelmet:
 		return "Helmet"

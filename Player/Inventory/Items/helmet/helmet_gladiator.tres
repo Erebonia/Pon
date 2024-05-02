@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://y6710q38b5nj"]
+
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/InventoryItem.gd" id="1_yhpl1"]
+[ext_resource type="Texture2D" uid="uid://cn3bwwm7pvyt3" path="res://Player/armor/helmet_gladiator.png" id="2_6p85w"]
+
+[resource]
+script = ExtResource("1_yhpl1")
+name = "Helmet"
+texture = ExtResource("2_6p85w")
+maxAmountPrStack = 1
+isConsumable = false
+isWeapon = false
+isHelmet = true
+isBody = false
+isAccessory = false
+attackBonus = 0
+defBonus = 2

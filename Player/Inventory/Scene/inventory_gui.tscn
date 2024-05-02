@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://xgwv4syylx7"]
+[gd_scene load_steps=7 format=3 uid="uid://xgwv4syylx7"]
 
 [ext_resource type="Script" path="res://Player/Inventory/Scripts/inventory_gui.gd" id="1_1tk7e"]
 [ext_resource type="Texture2D" uid="uid://cxka0cb605hnd" path="res://Player/Inventory/Art/InventoryRect.png" id="1_50gxy"]
 [ext_resource type="PackedScene" uid="uid://h8e8jin0vdvx" path="res://Player/Inventory/Scene/slot_gui.tscn" id="2_7yodu"]
 [ext_resource type="Texture2D" uid="uid://uc0brcwd8h78" path="res://Player/Pixivan MC/Portrait/Side Portrait Large.png" id="4_goi0s"]
+[ext_resource type="Texture2D" uid="uid://phuhntykfq2j" path="res://Player/Inventory/Art/_equipment_sheet.png" id="5_cht7g"]
 [ext_resource type="Texture2D" uid="uid://cwobirwylpo77" path="res://Player/Inventory/Art/icon147.png" id="5_pyphc"]
 
 [node name="InventoryGui" type="Control"]
@@ -110,10 +111,13 @@ offset_top = 92.8571
 offset_right = 60.0
 offset_bottom = 112.857
 
-[node name="Sprite2D2" type="Sprite2D" parent="Hat_Slot"]
-self_modulate = Color(0.603922, 0.603922, 0.603922, 1)
-position = Vector2(10, 9.99994)
-texture = ExtResource("5_pyphc")
+[node name="Hat_Slot_BG" type="Sprite2D" parent="Hat_Slot/background" index="0"]
+position = Vector2(9.99999, 9.99993)
+scale = Vector2(1, 1)
+texture = ExtResource("5_cht7g")
+hframes = 11
+vframes = 4
+frame = 6
 
 [node name="Body_Slot" parent="." instance=ExtResource("2_7yodu")]
 layout_mode = 0
@@ -122,10 +126,13 @@ offset_top = 92.8571
 offset_right = 82.8571
 offset_bottom = 112.857
 
-[node name="Sprite2D2" type="Sprite2D" parent="Body_Slot"]
-self_modulate = Color(0.603922, 0.603922, 0.603922, 1)
-position = Vector2(10, 9.99994)
-texture = ExtResource("5_pyphc")
+[node name="Body_Slot_BG" type="Sprite2D" parent="Body_Slot/background" index="0"]
+position = Vector2(9.99999, 9.99993)
+scale = Vector2(1, 1)
+texture = ExtResource("5_cht7g")
+hframes = 11
+vframes = 4
+frame = 1
 
 [node name="Accessory_Slot" parent="." instance=ExtResource("2_7yodu")]
 layout_mode = 0
@@ -134,10 +141,13 @@ offset_top = 92.8571
 offset_right = 104.286
 offset_bottom = 112.857
 
-[node name="Sprite2D2" type="Sprite2D" parent="Accessory_Slot"]
-self_modulate = Color(0.603922, 0.603922, 0.603922, 1)
-position = Vector2(10, 9.99994)
-texture = ExtResource("5_pyphc")
+[node name="Accessory_Slot_BG" type="Sprite2D" parent="Accessory_Slot/background" index="0"]
+position = Vector2(9.99999, 9.99993)
+scale = Vector2(1, 1)
+texture = ExtResource("5_cht7g")
+hframes = 11
+vframes = 4
+frame = 2
 
 [node name="Trash" parent="." instance=ExtResource("2_7yodu")]
 layout_mode = 0
@@ -150,3 +160,7 @@ offset_bottom = 52.8572
 self_modulate = Color(0.603922, 0.603922, 0.603922, 1)
 position = Vector2(10, 9.99994)
 texture = ExtResource("5_pyphc")
+
+[editable path="Hat_Slot"]
+[editable path="Body_Slot"]
+[editable path="Accessory_Slot"]

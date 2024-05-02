@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=36 format=3 uid="uid://jpnitqgvchnd"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_26jxo"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
@@ -20,10 +20,13 @@
 [ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="18_unihb"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="19_p8hbm"]
 [ext_resource type="Script" path="res://World/DayAndNight (Editor Only).gd" id="19_u2x26"]
-[ext_resource type="PackedScene" uid="uid://qwygywl07m00" path="res://Player/Inventory/Items/hp_potion.tscn" id="24_ruj4i"]
-[ext_resource type="PackedScene" uid="uid://d33af0kyesbm8" path="res://Player/Inventory/Items/sword.tscn" id="25_fb58y"]
-[ext_resource type="PackedScene" uid="uid://bgu36cpnxvspy" path="res://Player/Inventory/Items/axe.tscn" id="27_vtid3"]
-[ext_resource type="PackedScene" uid="uid://cxi06x36o4qhe" path="res://Player/Inventory/Items/battleaxe.tscn" id="28_f4dgn"]
+[ext_resource type="PackedScene" uid="uid://qwygywl07m00" path="res://Player/Inventory/Items/general/hp_potion.tscn" id="24_ruj4i"]
+[ext_resource type="PackedScene" uid="uid://d33af0kyesbm8" path="res://Player/Inventory/Items/weapon/sword.tscn" id="25_fb58y"]
+[ext_resource type="PackedScene" uid="uid://casaldp7h1lce" path="res://Player/Inventory/Items/helmet/helmet_gladiator.tscn" id="25_x8uix"]
+[ext_resource type="PackedScene" uid="uid://d0d3pxcumfshs" path="res://Player/Inventory/Items/armor/armor_traveler_robe.tscn" id="26_cffuj"]
+[ext_resource type="PackedScene" uid="uid://dekowggjojorb" path="res://Player/Inventory/Items/accessory/accessory_royal_cape.tscn" id="27_o5yve"]
+[ext_resource type="PackedScene" uid="uid://bgu36cpnxvspy" path="res://Player/Inventory/Items/weapon/axe.tscn" id="27_vtid3"]
+[ext_resource type="PackedScene" uid="uid://cxi06x36o4qhe" path="res://Player/Inventory/Items/weapon/battleaxe.tscn" id="28_f4dgn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rgn5p"]
 shader = ExtResource("15_n7swr")
@@ -379,6 +382,15 @@ position = Vector2(52, 223)
 
 [node name="Battleaxe5" parent="." instance=ExtResource("28_f4dgn")]
 position = Vector2(38, 247)
+
+[node name="Helmet" parent="." instance=ExtResource("25_x8uix")]
+position = Vector2(121, 112)
+
+[node name="Armor" parent="." instance=ExtResource("26_cffuj")]
+position = Vector2(149, 112)
+
+[node name="Accessory" parent="." instance=ExtResource("27_o5yve")]
+position = Vector2(176, 112)
 
 [connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]
