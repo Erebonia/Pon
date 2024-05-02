@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=22 format=3 uid="uid://d3vnqfvl3cwhn"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=25 format=3 uid="uid://d3vnqfvl3cwhn"]
 
 [ext_resource type="Script" path="res://Player/Inventory/Scripts/InventorySlot.gd" id="2_5unuu"]
 [ext_resource type="Resource" uid="uid://dpd31dsdqwcss" path="res://Player/Inventory/Items/sword.tres" id="2_e0knq"]
@@ -75,6 +75,18 @@ amount = 0
 script = ExtResource("2_5unuu")
 amount = 0
 
+[sub_resource type="Resource" id="Resource_w5s30"]
+script = ExtResource("2_5unuu")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_s7fxu"]
+script = ExtResource("2_5unuu")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_si6lg"]
+script = ExtResource("2_5unuu")
+amount = 0
+
 [resource]
 script = ExtResource("3_gxdqr")
-slots = Array[ExtResource("2_5unuu")]([SubResource("Resource_d7s3d"), SubResource("Resource_at6lm"), SubResource("Resource_ttxic"), SubResource("Resource_qc02b"), SubResource("Resource_8wxol"), SubResource("Resource_a2225"), SubResource("Resource_qljrc"), SubResource("Resource_kh1p4"), SubResource("Resource_dqi2b"), SubResource("Resource_jmkr5"), SubResource("Resource_ajl17"), SubResource("Resource_fsyly"), SubResource("Resource_78vlo"), SubResource("Resource_s73gq"), SubResource("Resource_rw6vs"), SubResource("Resource_rpgr7"), SubResource("Resource_1faqo")])
+slots = Array[ExtResource("2_5unuu")]([SubResource("Resource_d7s3d"), SubResource("Resource_at6lm"), SubResource("Resource_ttxic"), SubResource("Resource_qc02b"), SubResource("Resource_8wxol"), SubResource("Resource_a2225"), SubResource("Resource_qljrc"), SubResource("Resource_kh1p4"), SubResource("Resource_dqi2b"), SubResource("Resource_jmkr5"), SubResource("Resource_ajl17"), SubResource("Resource_fsyly"), SubResource("Resource_78vlo"), SubResource("Resource_s73gq"), SubResource("Resource_rw6vs"), SubResource("Resource_rpgr7"), SubResource("Resource_1faqo"), SubResource("Resource_w5s30"), SubResource("Resource_s7fxu"), SubResource("Resource_si6lg")])

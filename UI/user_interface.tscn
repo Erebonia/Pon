@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dx4gc50eoqluo"]
+[gd_scene load_steps=30 format=3 uid="uid://dx4gc50eoqluo"]
 
 [ext_resource type="Script" path="res://World/Inventory_UI.gd" id="1_0y4l0"]
 [ext_resource type="PackedScene" uid="uid://xgwv4syylx7" path="res://Player/Inventory/Scene/inventory_gui.tscn" id="2_6d6xj"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bldievrlq0s0x" path="res://Player/Inventory/Art/GUI_1x_sliced.png" id="5_ych27"]
 [ext_resource type="AudioStream" uid="uid://cqggtqsqcugk5" path="res://Music and Sounds/General/potatoscream.mp3" id="6_8jchq"]
 [ext_resource type="Texture2D" uid="uid://cbwoxp5xax18m" path="res://Player/Pixivan MC/Portrait/Character Portrait Enlarged.png" id="7_nigos"]
-[ext_resource type="Texture2D" uid="uid://bgkes0tmge725" path="res://Player/Inventory/Art/inventorySlot.png" id="9_npnqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dptxe"]
 atlas = ExtResource("4_eg32x")
@@ -190,10 +189,28 @@ offset_right = 109.357
 offset_bottom = 45.1429
 scale = Vector2(0.9, 0.9)
 
-[node name="Trash" parent="InventoryGui" index="2"]
-offset_left = 200.0
+[node name="Hat_Slot" parent="InventoryGui" index="2"]
+offset_left = 50.0
+offset_top = 107.143
+offset_right = 70.0
+offset_bottom = 127.143
+
+[node name="Body_Slot" parent="InventoryGui" index="3"]
+offset_left = 72.8571
+offset_top = 107.143
+offset_right = 92.8571
+offset_bottom = 127.143
+
+[node name="Accessory_Slot" parent="InventoryGui" index="4"]
+offset_left = 94.2857
+offset_top = 107.143
+offset_right = 114.286
+offset_bottom = 127.143
+
+[node name="Trash" parent="InventoryGui" index="5"]
+offset_left = 198.571
 offset_top = 111.429
-offset_right = 220.0
+offset_right = 218.571
 offset_bottom = 131.429
 
 [node name="Hotbar" parent="." instance=ExtResource("3_268fo")]
@@ -331,24 +348,6 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "1"
-
-[node name="Hat_Slot" type="Sprite2D" parent="Status Screen"]
-position = Vector2(141, 126)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("9_npnqy")
-vframes = 2
-
-[node name="Body_Slot" type="Sprite2D" parent="Status Screen"]
-position = Vector2(156, 126)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("9_npnqy")
-vframes = 2
-
-[node name="Accessory_Slot" type="Sprite2D" parent="Status Screen"]
-position = Vector2(171, 126)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("9_npnqy")
-vframes = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Status Screen"]
 position = Vector2(177, 83)

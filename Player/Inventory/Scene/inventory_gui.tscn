@@ -103,6 +103,42 @@ position = Vector2(44.2857, 67.1429)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_goi0s")
 
+[node name="Hat_Slot" parent="." instance=ExtResource("2_7yodu")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 92.8571
+offset_right = 60.0
+offset_bottom = 112.857
+
+[node name="Sprite2D2" type="Sprite2D" parent="Hat_Slot"]
+self_modulate = Color(0.603922, 0.603922, 0.603922, 1)
+position = Vector2(10, 9.99994)
+texture = ExtResource("5_pyphc")
+
+[node name="Body_Slot" parent="." instance=ExtResource("2_7yodu")]
+layout_mode = 0
+offset_left = 62.8571
+offset_top = 92.8571
+offset_right = 82.8571
+offset_bottom = 112.857
+
+[node name="Sprite2D2" type="Sprite2D" parent="Body_Slot"]
+self_modulate = Color(0.603922, 0.603922, 0.603922, 1)
+position = Vector2(10, 9.99994)
+texture = ExtResource("5_pyphc")
+
+[node name="Accessory_Slot" parent="." instance=ExtResource("2_7yodu")]
+layout_mode = 0
+offset_left = 84.2857
+offset_top = 92.8571
+offset_right = 104.286
+offset_bottom = 112.857
+
+[node name="Sprite2D2" type="Sprite2D" parent="Accessory_Slot"]
+self_modulate = Color(0.603922, 0.603922, 0.603922, 1)
+position = Vector2(10, 9.99994)
+texture = ExtResource("5_pyphc")
+
 [node name="Trash" parent="." instance=ExtResource("2_7yodu")]
 layout_mode = 0
 offset_left = 62.8571

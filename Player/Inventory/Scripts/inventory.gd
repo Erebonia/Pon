@@ -11,7 +11,7 @@ signal inventory_full
 func insert(item: InventoryItem):
 	# Filter out the trash can slot when checking for empty slots
 	var emptySlots = []
-	for i in range(slots.size() - 1):  # Exclude the last slot (trash can)
+	for i in range(slots.size() - 4):  # Exclude the last slot (trash can)
 		if slots[i].item == null:
 			emptySlots.append(slots[i])
 
@@ -20,7 +20,7 @@ func insert(item: InventoryItem):
 		print("FULL")
 		return
 
-	var itemSlots = slots.filter(func(slot): return slot.item == item and slot != slots[slots.size() - 1])
+	var itemSlots = slots.filter(func(slot): return slot.item == item and slot != slots[slots.size() - 4])
 	if !itemSlots.is_empty() and itemSlots[0].amount + 1 <= item.maxAmountPrStack:
 		itemSlots[0].amount += 1
 	else:
@@ -60,7 +60,7 @@ func insertSlot(index: int, inventorySlot: InventorySlot):
 	
 func check_inventory_full():
 	var is_full = true
-	for i in range(slots.size() - 1):  # Exclude the last slot (trash can)
+	for i in range(slots.size() - 4):  # Exclude the last slot (trash can)
 		if slots[i].item == null:
 			is_full = false
 			break

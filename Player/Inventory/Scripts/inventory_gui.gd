@@ -10,15 +10,15 @@ signal closed
 @onready var inventory: Inventory = preload("res://Player/Inventory/PlayerInventory.tres")
 @onready var ItemStackGuiClass = preload("res://Player/Inventory/Scene/itemStackGui.tscn")
 @onready var hotbar_slots: Array = $NinePatchRect/HBoxContainer.get_children()
-@onready var trash: Array = [$Trash]
-@onready var slots: Array = hotbar_slots + $NinePatchRect/GridContainer.get_children() + trash
+@onready var extraSlots: Array = [$Hat_Slot, $Body_Slot, $Accessory_Slot, $Trash]
+@onready var slots: Array = hotbar_slots + $NinePatchRect/GridContainer.get_children() + extraSlots
 @onready var player = $"../../Player"
 
 
 var itemInHand: ItemStackGui
 var oldIndex: int = -1
 var locked: bool = false
-var trashCanIndex = 16
+var trashCanIndex = 19
 
 func _ready():
 	connectSlots()
