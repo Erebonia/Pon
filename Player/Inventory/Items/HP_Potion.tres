@@ -10,3 +10,7 @@ name = "lifepot"
 texture = ExtResource("2_j6tv6")
 maxAmountPrStack = 10
 isConsumable = true
+isWeapon = false
+isHelmet = true
+isBody = false
+isAccessory = false
