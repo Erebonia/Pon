@@ -60,11 +60,13 @@ func insertSlot(index: int, inventorySlot: InventorySlot):
 	
 func check_inventory_full():
 	var is_full = true
-	for i in range(slots.size() - 4):  # Exclude the last slot (trash can)
+	# Check all regular slots excluding equipment and trash can slots.
+	for i in range(slots.size() - 4):  # Assuming the last 4 slots are not regular item slots.
 		if slots[i].item == null:
 			is_full = false
 			break
 	emit_signal("inventory_full", is_full)
+
 
 
 func use_item_at_index(index: int) -> void:

@@ -128,6 +128,8 @@ func insertItemInSlot(slot):
 	elif slot.index == 18:  # Accessory slot
 		$Accessory_Slot/background/Accessory_Slot_BG.visible = false
 		Status.Strength += item.inventorySlot.item.attackBonus
+		
+	inventory.check_inventory_full()
 
 func takeItemFromSlot(slot):
 	itemInHand = slot.takeItem()
@@ -146,7 +148,7 @@ func takeItemFromSlot(slot):
 	elif slot.index == 18:  # Accessory slot
 		$Accessory_Slot/background/Accessory_Slot_BG.visible = true
 		Status.Strength -= itemInHand.inventorySlot.item.attackBonus
-
+	inventory.check_inventory_full()
 	
 func swapItems(slot):
 	var tempItem = slot.takeItem()

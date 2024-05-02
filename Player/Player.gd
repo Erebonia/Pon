@@ -113,6 +113,7 @@ signal updateInventoryUI
 func gameStarted():
 	#Load the data we saved in.
 	inventory.slots = playerData.slots
+	inventory.check_inventory_full()
 	emit_signal("updateInventoryUI")
 	self.position = playerData.savedPosition
 	stats.HP = playerData.HP
