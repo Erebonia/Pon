@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://w7duyvpfxemc"]
 
-[ext_resource type="Script" path="res://Player/Inventory/Scripts/InventoryItem.gd" id="1_xhkin"]
-[ext_resource type="Texture2D" uid="uid://dj5ae46x7cvem" path="res://Player/armor/armor_traveler_robe.png" id="2_wnh7o"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/InventoryItem.gd" id="1_uafj5"]
+[ext_resource type="Texture2D" uid="uid://dj5ae46x7cvem" path="res://Player/armor/armor_traveler_robe.png" id="2_byj4n"]
 
 [resource]
-script = ExtResource("1_xhkin")
+script = ExtResource("1_uafj5")
 name = "Traveler Robe"
-texture = ExtResource("2_wnh7o")
+texture = ExtResource("2_byj4n")
 maxAmountPrStack = 1
 isConsumable = false
 isWeapon = false
@@ -14,4 +14,5 @@ isHelmet = false
 isBody = true
 isAccessory = false
 attackBonus = 0
-defBonus = 2
+defBonus = 0
+hpBonus = 20

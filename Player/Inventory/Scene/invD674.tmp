@@ -1,0 +1,166 @@
+[gd_scene load_steps=7 format=3 uid="uid://xgwv4syylx7"]
+
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/inventory_gui.gd" id="1_1tk7e"]
+[ext_resource type="Texture2D" uid="uid://cxka0cb605hnd" path="res://Player/Inventory/Art/InventoryRect.png" id="1_50gxy"]
+[ext_resource type="PackedScene" uid="uid://h8e8jin0vdvx" path="res://Player/Inventory/Scene/slot_gui.tscn" id="2_7yodu"]
+[ext_resource type="Texture2D" uid="uid://uc0brcwd8h78" path="res://Player/Pixivan MC/Portrait/Side Portrait Large.png" id="4_goi0s"]
+[ext_resource type="Texture2D" uid="uid://phuhntykfq2j" path="res://Player/Inventory/Art/_equipment_sheet.png" id="5_cht7g"]
+[ext_resource type="Texture2D" uid="uid://cwobirwylpo77" path="res://Player/Inventory/Art/icon147.png" id="5_pyphc"]
+
+[node name="InventoryGui" type="Control"]
+custom_minimum_size = Vector2(128, 80)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 179.0
+offset_bottom = 119.0
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_1tk7e")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 179.0
+offset_bottom = 119.0
+texture = ExtResource("1_50gxy")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 18.5714
+offset_top = 8.57143
+offset_right = 183.571
+offset_bottom = 29.5714
+scale = Vector2(0.9, 0.9)
+
+[node name="Slot" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot1" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot2" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot3" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot4" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot5" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot6" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0714
+offset_top = -22.3571
+offset_right = 90.0714
+offset_bottom = 47.6429
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+columns = 3
+
+[node name="Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("2_7yodu")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(44.2857, 67.1429)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_goi0s")
+
+[node name="Hat_Slot" parent="." instance=ExtResource("2_7yodu")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 92.8571
+offset_right = 60.0
+offset_bottom = 112.857
+
+[node name="Hat_Slot_BG" type="Sprite2D" parent="Hat_Slot/background" index="0"]
+position = Vector2(9.99999, 9.99993)
+scale = Vector2(1, 1)
+texture = ExtResource("5_cht7g")
+hframes = 11
+vframes = 4
+frame = 6
+
+[node name="Body_Slot" parent="." instance=ExtResource("2_7yodu")]
+layout_mode = 0
+offset_left = 62.8571
+offset_top = 92.8571
+offset_right = 82.8571
+offset_bottom = 112.857
+
+[node name="Body_Slot_BG" type="Sprite2D" parent="Body_Slot/background" index="0"]
+position = Vector2(9.99999, 9.99993)
+scale = Vector2(1, 1)
+texture = ExtResource("5_cht7g")
+hframes = 11
+vframes = 4
+frame = 1
+
+[node name="Accessory_Slot" parent="." instance=ExtResource("2_7yodu")]
+layout_mode = 0
+offset_left = 84.2857
+offset_top = 92.8571
+offset_right = 104.286
+offset_bottom = 112.857
+
+[node name="Accessory_Slot_BG" type="Sprite2D" parent="Accessory_Slot/background" index="0"]
+position = Vector2(9.99999, 9.99993)
+scale = Vector2(1, 1)
+texture = ExtResource("5_cht7g")
+hframes = 11
+vframes = 4
+frame = 2
+
+[node name="Trash" parent="." instance=ExtResource("2_7yodu")]
+layout_mode = 0
+offset_left = 62.8571
+offset_top = 32.8572
+offset_right = 82.8571
+offset_bottom = 52.8572
+
+[node name="Sprite2D2" type="Sprite2D" parent="Trash"]
+self_modulate = Color(0.603922, 0.603922, 0.603922, 1)
+position = Vector2(10, 9.99994)
+texture = ExtResource("5_pyphc")
+
+[editable path="Hat_Slot"]
+[editable path="Body_Slot"]
+[editable path="Accessory_Slot"]

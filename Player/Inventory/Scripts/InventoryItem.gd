@@ -12,6 +12,7 @@ class_name InventoryItem
 @export var isAccessory: bool = false
 @export var attackBonus: int = 0
 @export var defBonus: int = 0
+@export var hpBonus: int = 0
 
 func use(player: Player) -> void:
 	pass

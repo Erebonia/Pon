@@ -116,12 +116,36 @@ func insertItemInSlot(slot):
 	itemInHand = null
 	slot.insert(item)
 	oldIndex = -1
+	
+	# Apply stat changes based on the type of slot
+	if slot.index == 16:  # Assuming 16 is the helmet slot
+		$Hat_Slot/background/Hat_Slot_BG.visible = false
+		Status.Defense += item.inventorySlot.item.defBonus
+	elif slot.index == 17:  # Body slot
+		$Body_Slot/background/Body_Slot_BG.visible = false
+		Status.HP += item.inventorySlot.item.hpBonus
+		Status.max_HP += item.inventorySlot.item.hpBonus
+	elif slot.index == 18:  # Accessory slot
+		$Accessory_Slot/background/Accessory_Slot_BG.visible = false
+		Status.Strength += item.inventorySlot.item.attackBonus
 
 func takeItemFromSlot(slot):
 	itemInHand = slot.takeItem()
 	add_child(itemInHand)
 	updateItemInHand()
 	oldIndex = slot.index
+	
+	# Apply stat changes based on the type of slot
+	if slot.index == 16:  # Assuming 16 is the helmet slot
+		$Hat_Slot/background/Hat_Slot_BG.visible = true
+		Status.Defense -= itemInHand.inventorySlot.item.defBonus
+	elif slot.index == 17:  # Body slot
+		$Body_Slot/background/Body_Slot_BG.visible = true
+		Status.HP -= itemInHand.inventorySlot.item.hpBonus
+		Status.max_HP -= itemInHand.inventorySlot.item.hpBonus
+	elif slot.index == 18:  # Accessory slot
+		$Accessory_Slot/background/Accessory_Slot_BG.visible = true
+		Status.Strength -= itemInHand.inventorySlot.item.attackBonus
 
 	
 func swapItems(slot):
