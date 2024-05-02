@@ -13,3 +13,15 @@ class_name InventoryItem
 
 func use(player: Player) -> void:
 	pass
+	
+# In InventoryItem.gd
+
+func getType():
+	if isHelmet:
+		return "Helmet"
+	elif isBody:
+		return "Body"
+	elif isAccessory:
+		return "Accessory"
+	return "None"
+

@@ -71,37 +71,58 @@ func close():
 	closed.emit()
 
 func onSlotClicked(slot):
-	if locked: return
-	
-	if slot.isEmpty():
-		if !itemInHand: return
-		
-		insertItemInSlot(slot)
+	if locked:
 		return
-		
-	if !itemInHand:
+
+	# Check if there's an item in hand and the slot clicked corresponds to a specific type
+	if itemInHand:
+		if slot.index == 16 and itemInHand.inventorySlot.item.isHelmet:
+			handleEquipmentSlot(slot, itemInHand)
+		elif slot.index == 17 and itemInHand.inventorySlot.item.isBody:
+			handleEquipmentSlot(slot, itemInHand)
+		elif slot.index == 18 and itemInHand.inventorySlot.item.isAccessory:
+			handleEquipmentSlot(slot, itemInHand)
+		elif slot.index < 16 or slot.index > 18:
+			handleNormalSlot(slot)
+	elif not itemInHand and not slot.isEmpty():
+		# Handle taking an item from a slot
 		takeItemFromSlot(slot)
-		return
-		
-	if slot.itemStackGui.inventorySlot.item.name == itemInHand.inventorySlot.item.name:
-		stackItems(slot)
-		return
-		
-	swapItems(slot)
-	
-func takeItemFromSlot(slot):
-	itemInHand = slot.takeItem()
-	add_child(itemInHand)
-	updateItemInHand()
-	
-	oldIndex = slot.index
-	
+
+func handleEquipmentSlot(slot, itemInHand):
+	# Check if the slot is empty or needs swapping
+	if not slot.isEmpty():
+		if slot.itemStackGui.inventorySlot.item.getType() == itemInHand.inventorySlot.item.getType():
+			swapItems(slot)  # Swap if same type
+		else:
+			print("Cannot swap: Item types do not match.")
+	else:
+		insertItemInSlot(slot)
+
+func handleNormalSlot(slot):
+	# Standard handling for non-equipment slots
+	if slot.isEmpty():
+		insertItemInSlot(slot)
+	else:
+		if not itemInHand:
+			takeItemFromSlot(slot)
+		elif slot.itemStackGui.inventorySlot.item.name == itemInHand.inventorySlot.item.name:
+			stackItems(slot)
+		else:
+			swapItems(slot)
+
 func insertItemInSlot(slot):
 	var item = itemInHand
 	remove_child(itemInHand)
 	itemInHand = null
 	slot.insert(item)
 	oldIndex = -1
+
+func takeItemFromSlot(slot):
+	itemInHand = slot.takeItem()
+	add_child(itemInHand)
+	updateItemInHand()
+	oldIndex = slot.index
+
 	
 func swapItems(slot):
 	var tempItem = slot.takeItem()
