@@ -39,5 +39,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Selector" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+scale = Vector2(1, 1)
 texture = ExtResource("3_mxuoa")
 centered = false
