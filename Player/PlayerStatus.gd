@@ -32,7 +32,7 @@ func gain_experience(amount):
 		return
 	current_xp += amount
 	check_level_up()
-	emit_signal("experience_gained", amount, current_xp, get_required_experience(Level))
+	emit_signal("experience_gained", current_xp, get_required_experience(Level))
 	update_ui()
 
 func check_level_up():

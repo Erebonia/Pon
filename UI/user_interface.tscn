@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Player/PlayerStatusUI.gd" id="4_huemg"]
 [ext_resource type="Texture2D" uid="uid://6eb55uah0is2" path="res://Player/Pixivan MC/Front Movement.png" id="5_0tvey"]
 [ext_resource type="Texture2D" uid="uid://bldievrlq0s0x" path="res://Player/Inventory/Art/GUI_1x_sliced.png" id="5_ych27"]
-[ext_resource type="AudioStream" uid="uid://cqggtqsqcugk5" path="res://Music and Sounds/General/potatoscream.mp3" id="6_8jchq"]
+[ext_resource type="AudioStream" uid="uid://ccwev0ttpjs0c" path="res://Music and Sounds/UI/Level up Pickup (Rpg).wav" id="7_jd5fw"]
 [ext_resource type="Texture2D" uid="uid://cbwoxp5xax18m" path="res://Player/Pixivan MC/Portrait/Character Portrait Enlarged.png" id="7_nigos"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kjcbx"]
@@ -419,7 +419,8 @@ sprite_frames = SubResource("SpriteFrames_2x6x6")
 autoplay = "default"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Status Screen"]
-stream = ExtResource("6_8jchq")
+stream = ExtResource("7_jd5fw")
+volume_db = -5.0
 
 [node name="CharacterPortrait" type="Sprite2D" parent="Status Screen"]
 position = Vector2(-6, 6)

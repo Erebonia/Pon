@@ -110,7 +110,6 @@ texture_scale = 1.0
 remote_path = NodePath("../../World_Camera")
 
 [node name="User_Interface" parent="." instance=ExtResource("4_gmpnl")]
-visible = false
 
 [node name="StartingMap" type="TileMap" parent="."]
 y_sort_enabled = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=631 format=3 uid="uid://b1lifm57p7pvt"]
+[gd_scene load_steps=632 format=3 uid="uid://b1lifm57p7pvt"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_fjjot"]
 [ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Shadows/SmallShadow.png" id="2_6k4r1"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://3ffwnmt30anw" path="res://Effects/Sword FX/slash_effect_anim_spritesheet.png" id="34_saooa"]
 [ext_resource type="AudioStream" uid="uid://cereuq4i6jmah" path="res://Music and Sounds/Skill FX/swordWave.wav" id="34_sscdg"]
 [ext_resource type="Texture2D" uid="uid://bx3joqrke1h2g" path="res://Player/weapon/tile014.png" id="36_qva3l"]
+[ext_resource type="AudioStream" uid="uid://ccwev0ttpjs0c" path="res://Music and Sounds/UI/Level up Pickup (Rpg).wav" id="49_ajb3w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hi7q1"]
 shader = ExtResource("4_ivow2")
@@ -9935,7 +9936,6 @@ material = SubResource("ShaderMaterial_hi7q1")
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_6nvx4")
 animation = &"attack_down"
-frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -10163,6 +10163,9 @@ animation = &"level_up"
 frame = 11
 frame_progress = 1.0
 speed_scale = 0.7
+
+[node name="LevelUpSFX" type="AudioStreamPlayer" parent="Misc"]
+stream = ExtResource("49_ajb3w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

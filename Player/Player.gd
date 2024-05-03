@@ -10,7 +10,8 @@ class_name Player
 
 #General (Game)
 @onready var stats = Status
-@onready var levelUpSound = $Misc/LevelUp
+@onready var levelUpVFX = $Misc/LevelUp
+@onready var levelUpSFX = $Misc/LevelUpSFX
 @onready var checkTime = null
 @onready var lightSource = $Misc/Light_Source
 
@@ -93,7 +94,8 @@ func _on_check_time(_day, hour, _minute):
 		lightSource.visible = false
 		
 func _on_level_up(_Level):
-	levelUpSound.play("level_up")
+	levelUpVFX.play("level_up")
+	levelUpSFX.play()
 	
 func playerDead():
 	queue_free()
