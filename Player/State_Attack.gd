@@ -10,6 +10,7 @@ var attacking = false
 func Enter():
 	Status.KNOCKOUT_SPEED = 60
 	player.calculateDmg(bonusDMG)
+	player.slashTrail.play("default")
 	player.slashFX.play("slash_animation")
 	player.UpdateAnimation("Attack")
 	player.attackTimer.start()

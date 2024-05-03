@@ -17,7 +17,6 @@ func insert(item: InventoryItem):
 
 	if emptySlots.is_empty():
 		emit_signal("inventory_full", true)
-		print("FULL")
 		return
 
 	var itemSlots = slots.filter(func(slot): return slot.item == item and slot != slots[slots.size() - 4])
@@ -29,7 +28,6 @@ func insert(item: InventoryItem):
 			emptySlots[0].amount = 1
 		else:
 			emit_signal("inventory_full", true)
-			print("FULL")
 			return
 
 	check_inventory_full()

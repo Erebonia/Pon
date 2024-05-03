@@ -28,7 +28,6 @@ func Physics(delta : float) -> State:
 		return roll
 	
 	if Input.is_action_pressed("attack") and weaponEquipped:
-		print('attack during move')
 		return attack
 		
 	move_state(delta)
@@ -45,5 +44,13 @@ func move_state(delta):
 			player.animationTree.set("parameters/Attack/BlendSpace2D/blend_position", player.aim_direction)
 			player.animationTree.set("parameters/Attack_Combo/BlendSpace2D/blend_position", player.aim_direction)
 			player.animationTree.set("parameters/Attack_Combo2/BlendSpace2D/blend_position", player.aim_direction)
+			
+			# Calculate the angle and apply rotation
+			var angle = atan2(player.aim_direction.y, player.aim_direction.x)
+			var degrees = rad_to_deg(angle)
+			player.slashTrail.rotation_degrees = degrees
+			
+			# Position the SlashTrail 12 pixels away in the direction of aim
+			player.slashTrail.position = player.global_position * 5
 		else:
 			StateMachine.ChangeState(idle)

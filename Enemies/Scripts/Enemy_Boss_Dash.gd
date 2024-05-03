@@ -5,7 +5,6 @@ extends EnemyState
 @onready var dash = $"../Dash"
  
 func Enter():
-	print("DASH TIME")
 	animation_player.play("glowing")
 	var tween = create_tween()
 	tween.tween_property(owner, "position", enemy.playerPosition, DASH_SPEED)

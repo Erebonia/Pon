@@ -21,6 +21,7 @@ class_name Player
 @onready var slashFX = $Combat/Sword/SwordSprite/Slash_FX
 @onready var attackTimer = $Combat/AttackTimer
 @onready var healthBar = $Combat_UI/Healthbar
+@onready var slashTrail = $Combat/SlashTrail
 
 #Debug
 @onready var debug = $debug

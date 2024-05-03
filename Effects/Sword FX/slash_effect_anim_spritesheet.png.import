@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djk5ib4r7k4ch"
-path="res://.godot/imported/slashfx.png-359649c35b9efe62530174be89f1a0e6.ctex"
+uid="uid://3ffwnmt30anw"
+path="res://.godot/imported/slash_effect_anim_spritesheet.png-50fda17008c85dbf324fc252968b9d7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Effects/Sword FX/slashfx.png"
-dest_files=["res://.godot/imported/slashfx.png-359649c35b9efe62530174be89f1a0e6.ctex"]
+source_file="res://Effects/Sword FX/slash_effect_anim_spritesheet.png"
+dest_files=["res://.godot/imported/slash_effect_anim_spritesheet.png-50fda17008c85dbf324fc252968b9d7d.ctex"]
 
 [params]
 

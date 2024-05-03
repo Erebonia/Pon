@@ -11,6 +11,7 @@ func Enter():
 	player.attackTimer.stop()
 	Status.KNOCKOUT_SPEED = 90
 	player.calculateDmg(bonusDMG)
+	player.slashTrail.play("default")
 	player.slashFX.play("slash_animation")
 	player.UpdateAnimation("Attack_Combo")
 	player.animationTree.animation_finished.connect(endAttack)
