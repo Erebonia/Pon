@@ -403,4 +403,7 @@ position = Vector2(176, 112)
 [editable path="Player/Combat/Hurtbox"]
 [editable path="User_Interface"]
 [editable path="User_Interface/InventoryGui"]
+[editable path="User_Interface/InventoryGui/Hat_Slot"]
+[editable path="User_Interface/InventoryGui/Body_Slot"]
+[editable path="User_Interface/InventoryGui/Accessory_Slot"]
 [editable path="Environment/FogShader"]

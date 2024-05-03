@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dx4gc50eoqluo"]
+[gd_scene load_steps=36 format=3 uid="uid://dx4gc50eoqluo"]
 
 [ext_resource type="Script" path="res://World/Inventory_UI.gd" id="1_0y4l0"]
 [ext_resource type="PackedScene" uid="uid://xgwv4syylx7" path="res://Player/Inventory/Scene/inventory_gui.tscn" id="2_6d6xj"]
@@ -9,6 +9,23 @@
 [ext_resource type="Texture2D" uid="uid://bldievrlq0s0x" path="res://Player/Inventory/Art/GUI_1x_sliced.png" id="5_ych27"]
 [ext_resource type="AudioStream" uid="uid://cqggtqsqcugk5" path="res://Music and Sounds/General/potatoscream.mp3" id="6_8jchq"]
 [ext_resource type="Texture2D" uid="uid://cbwoxp5xax18m" path="res://Player/Pixivan MC/Portrait/Character Portrait Enlarged.png" id="7_nigos"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kjcbx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8iswf"]
+bg_color = Color(0.941176, 0.956863, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ek7xv"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.27451)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nibcp"]
+bg_color = Color(0.431373, 0.431373, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dptxe"]
 atlas = ExtResource("4_eg32x")
@@ -152,6 +169,18 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndlsn"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.27451)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_su3g2"]
+bg_color = Color(0.529412, 0.0588235, 0.176471, 0.52549)
+
 [node name="User_Interface" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_0y4l0")
@@ -190,22 +219,25 @@ offset_bottom = 45.1429
 scale = Vector2(0.9, 0.9)
 
 [node name="Hat_Slot" parent="InventoryGui" index="2"]
-offset_left = 50.0
+offset_left = 52.8571
 offset_top = 107.143
-offset_right = 70.0
+offset_right = 72.8571
 offset_bottom = 127.143
 
 [node name="Body_Slot" parent="InventoryGui" index="3"]
-offset_left = 72.8571
+offset_left = 75.7142
 offset_top = 107.143
-offset_right = 92.8571
+offset_right = 95.7142
 offset_bottom = 127.143
 
 [node name="Accessory_Slot" parent="InventoryGui" index="4"]
-offset_left = 94.2857
+offset_left = 98.5714
 offset_top = 107.143
-offset_right = 114.286
+offset_right = 118.572
 offset_bottom = 127.143
+
+[node name="Accessory_Slot_BG" parent="InventoryGui/Accessory_Slot/background" index="0"]
+position = Vector2(10, 9.99985)
 
 [node name="Trash" parent="InventoryGui" index="5"]
 offset_left = 198.571
@@ -227,57 +259,70 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Status Screen" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Status Screen" type="Node2D" parent="."]
+position = Vector2(160, 90)
 script = ExtResource("4_huemg")
 
 [node name="ProgressBar" type="ProgressBar" parent="Status Screen"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 74.0
-offset_top = 15.0
-offset_right = 237.0
-offset_bottom = 37.0
+z_index = 1
+offset_left = -84.0
+offset_top = -57.0
+offset_right = 74.0
+offset_bottom = -53.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 5
+theme_override_styles/background = SubResource("StyleBoxEmpty_kjcbx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8iswf")
+value = 60.0
+
+[node name="ProgressBG" type="ProgressBar" parent="Status Screen/ProgressBar"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_ek7xv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nibcp")
+value = 100.0
+show_percentage = false
 
 [node name="Level" type="Label" parent="Status Screen"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 141.0
-offset_top = 62.0
-offset_right = 168.0
-offset_bottom = 71.0
+offset_left = -17.0
+offset_top = -28.0
+offset_right = 10.0
+offset_bottom = -19.0
 theme_override_font_sizes/font_size = 8
 text = "Level: 1"
 
 [node name="HP_Text" type="Label" parent="Status Screen"]
-layout_mode = 0
-offset_left = 92.0
-offset_top = 69.0
-offset_right = 108.0
-offset_bottom = 78.0
+offset_left = -66.0
+offset_top = -21.0
+offset_right = -50.0
+offset_bottom = -12.0
 theme_override_font_sizes/font_size = 8
 text = "HP"
 
 [node name="HP" type="Label" parent="Status Screen"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
-layout_mode = 0
-offset_left = 106.0
-offset_top = 69.0
-offset_right = 146.0
-offset_bottom = 78.0
+offset_left = -52.0
+offset_top = -21.0
+offset_right = -12.0
+offset_bottom = -12.0
 theme_override_font_sizes/font_size = 8
 text = "100/100"
 
 [node name="Stats" type="HBoxContainer" parent="Status Screen"]
-layout_mode = 0
-offset_left = 92.0
-offset_top = 80.0
-offset_right = 152.0
-offset_bottom = 122.0
+offset_left = -66.0
+offset_top = -10.0
+offset_right = -6.0
+offset_bottom = 32.0
 
 [node name="Attribute" type="VBoxContainer" parent="Status Screen/Stats"]
 layout_mode = 2
@@ -350,7 +395,7 @@ theme_override_font_sizes/font_size = 8
 text = "1"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Status Screen"]
-position = Vector2(177, 83)
+position = Vector2(19, -7)
 scale = Vector2(0.65625, 0.65625)
 sprite_frames = SubResource("SpriteFrames_u7cyo")
 animation = &"level_up"
@@ -367,12 +412,12 @@ autoplay = "default"
 stream = ExtResource("6_8jchq")
 
 [node name="CharacterPortrait" type="Sprite2D" parent="Status Screen"]
-position = Vector2(155, 94)
+position = Vector2(-2.99998, 4.00001)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_nigos")
 
 [node name="HP_Icon" type="Sprite2D" parent="Status Screen"]
-position = Vector2(86, 73)
+position = Vector2(-72, -17)
 texture = ExtResource("5_ych27")
 hframes = 8
 vframes = 2
@@ -380,7 +425,7 @@ region_enabled = true
 region_rect = Rect2(0, 136, 71, 17)
 
 [node name="STR_Icon" type="Sprite2D" parent="Status Screen"]
-position = Vector2(86, 84)
+position = Vector2(-72, -6)
 texture = ExtResource("5_ych27")
 hframes = 8
 vframes = 2
@@ -389,7 +434,7 @@ region_enabled = true
 region_rect = Rect2(0, 136, 71, 17)
 
 [node name="MAG_Icon2" type="Sprite2D" parent="Status Screen"]
-position = Vector2(86, 95)
+position = Vector2(-72, 5)
 texture = ExtResource("5_ych27")
 hframes = 8
 vframes = 2
@@ -398,7 +443,7 @@ region_enabled = true
 region_rect = Rect2(0, 136, 71, 17)
 
 [node name="AGI_Icon" type="Sprite2D" parent="Status Screen"]
-position = Vector2(86, 106)
+position = Vector2(-72, 16)
 texture = ExtResource("5_ych27")
 hframes = 8
 vframes = 2
@@ -407,7 +452,7 @@ region_enabled = true
 region_rect = Rect2(0, 136, 71, 17)
 
 [node name="DEF_Icon" type="Sprite2D" parent="Status Screen"]
-position = Vector2(86, 117)
+position = Vector2(-72, 27)
 texture = ExtResource("5_ych27")
 hframes = 8
 vframes = 2
@@ -415,4 +460,23 @@ frame = 6
 region_enabled = true
 region_rect = Rect2(0, 136, 71, 17)
 
+[node name="DamageBar" type="ProgressBar" parent="Status Screen"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ndlsn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_su3g2")
+value = 80.0
+show_percentage = false
+
 [editable path="InventoryGui"]
+[editable path="InventoryGui/Hat_Slot"]
+[editable path="InventoryGui/Body_Slot"]
+[editable path="InventoryGui/Accessory_Slot"]

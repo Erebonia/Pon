@@ -113,7 +113,6 @@ offset_bottom = 112.857
 
 [node name="Hat_Slot_BG" type="Sprite2D" parent="Hat_Slot/background" index="0"]
 position = Vector2(9.99999, 9.99993)
-scale = Vector2(1, 1)
 texture = ExtResource("5_cht7g")
 hframes = 11
 vframes = 4
@@ -128,7 +127,6 @@ offset_bottom = 112.857
 
 [node name="Body_Slot_BG" type="Sprite2D" parent="Body_Slot/background" index="0"]
 position = Vector2(9.99999, 9.99993)
-scale = Vector2(1, 1)
 texture = ExtResource("5_cht7g")
 hframes = 11
 vframes = 4
@@ -143,7 +141,6 @@ offset_bottom = 112.857
 
 [node name="Accessory_Slot_BG" type="Sprite2D" parent="Accessory_Slot/background" index="0"]
 position = Vector2(9.99999, 9.99993)
-scale = Vector2(1, 1)
 texture = ExtResource("5_cht7g")
 hframes = 11
 vframes = 4
