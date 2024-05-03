@@ -219,22 +219,22 @@ offset_bottom = 45.1429
 scale = Vector2(0.9, 0.9)
 
 [node name="Hat_Slot" parent="InventoryGui" index="2"]
-offset_left = 52.8571
-offset_top = 107.143
-offset_right = 72.8571
-offset_bottom = 127.143
+offset_left = 45.7143
+offset_top = 102.857
+offset_right = 65.7143
+offset_bottom = 122.857
 
 [node name="Body_Slot" parent="InventoryGui" index="3"]
-offset_left = 75.7142
-offset_top = 107.143
-offset_right = 95.7142
-offset_bottom = 127.143
+offset_left = 68.5714
+offset_top = 102.857
+offset_right = 88.5714
+offset_bottom = 122.857
 
 [node name="Accessory_Slot" parent="InventoryGui" index="4"]
-offset_left = 98.5714
-offset_top = 107.143
-offset_right = 118.572
-offset_bottom = 127.143
+offset_left = 91.4286
+offset_top = 102.857
+offset_right = 111.429
+offset_bottom = 122.857
 
 [node name="Accessory_Slot_BG" parent="InventoryGui/Accessory_Slot/background" index="0"]
 position = Vector2(10, 9.99985)
@@ -266,8 +266,8 @@ script = ExtResource("4_huemg")
 [node name="ProgressBar" type="ProgressBar" parent="Status Screen"]
 unique_name_in_owner = true
 z_index = 1
-offset_left = -84.0
-offset_top = -57.0
+offset_left = -83.0
+offset_top = -59.0
 offset_right = 74.0
 offset_bottom = -53.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -293,36 +293,36 @@ show_percentage = false
 
 [node name="Level" type="Label" parent="Status Screen"]
 unique_name_in_owner = true
-offset_left = -17.0
-offset_top = -28.0
-offset_right = 10.0
-offset_bottom = -19.0
+offset_left = -80.0
+offset_top = -22.0
+offset_right = -53.0
+offset_bottom = -13.0
 theme_override_font_sizes/font_size = 8
 text = "Level: 1"
 
 [node name="HP_Text" type="Label" parent="Status Screen"]
-offset_left = -66.0
-offset_top = -21.0
-offset_right = -50.0
-offset_bottom = -12.0
+offset_left = -69.0
+offset_top = -12.0
+offset_right = -53.0
+offset_bottom = -3.0
 theme_override_font_sizes/font_size = 8
 text = "HP"
 
 [node name="HP" type="Label" parent="Status Screen"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
-offset_left = -52.0
-offset_top = -21.0
-offset_right = -12.0
-offset_bottom = -12.0
+offset_left = -55.0
+offset_top = -12.0
+offset_right = -15.0
+offset_bottom = -3.0
 theme_override_font_sizes/font_size = 8
 text = "100/100"
 
 [node name="Stats" type="HBoxContainer" parent="Status Screen"]
-offset_left = -66.0
-offset_top = -10.0
-offset_right = -6.0
-offset_bottom = 32.0
+offset_left = -69.0
+offset_top = -1.0
+offset_right = -9.0
+offset_bottom = 41.0
 
 [node name="Attribute" type="VBoxContainer" parent="Status Screen/Stats"]
 layout_mode = 2
@@ -412,12 +412,12 @@ autoplay = "default"
 stream = ExtResource("6_8jchq")
 
 [node name="CharacterPortrait" type="Sprite2D" parent="Status Screen"]
-position = Vector2(-2.99998, 4.00001)
+position = Vector2(-8, -1)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_nigos")
 
 [node name="HP_Icon" type="Sprite2D" parent="Status Screen"]
-position = Vector2(-72, -17)
+position = Vector2(-75, -8)
 texture = ExtResource("5_ych27")
 hframes = 8
 vframes = 2
@@ -425,7 +425,7 @@ region_enabled = true
 region_rect = Rect2(0, 136, 71, 17)
 
 [node name="STR_Icon" type="Sprite2D" parent="Status Screen"]
-position = Vector2(-72, -6)
+position = Vector2(-75, 3)
 texture = ExtResource("5_ych27")
 hframes = 8
 vframes = 2
@@ -434,7 +434,7 @@ region_enabled = true
 region_rect = Rect2(0, 136, 71, 17)
 
 [node name="MAG_Icon2" type="Sprite2D" parent="Status Screen"]
-position = Vector2(-72, 5)
+position = Vector2(-75, 14)
 texture = ExtResource("5_ych27")
 hframes = 8
 vframes = 2
@@ -443,7 +443,7 @@ region_enabled = true
 region_rect = Rect2(0, 136, 71, 17)
 
 [node name="AGI_Icon" type="Sprite2D" parent="Status Screen"]
-position = Vector2(-72, 16)
+position = Vector2(-75, 25)
 texture = ExtResource("5_ych27")
 hframes = 8
 vframes = 2
@@ -452,7 +452,7 @@ region_enabled = true
 region_rect = Rect2(0, 136, 71, 17)
 
 [node name="DEF_Icon" type="Sprite2D" parent="Status Screen"]
-position = Vector2(-72, 27)
+position = Vector2(-75, 36)
 texture = ExtResource("5_ych27")
 hframes = 8
 vframes = 2
