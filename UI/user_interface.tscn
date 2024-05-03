@@ -217,10 +217,10 @@ offset_bottom = 116.0
 scale = Vector2(0.9, 0.9)
 
 [node name="Trash" parent="InventoryGui" index="5"]
-offset_left = 212.0
-offset_top = 97.0
-offset_right = 232.0
-offset_bottom = 117.0
+offset_left = 179.0
+offset_top = 98.0
+offset_right = 199.0
+offset_bottom = 118.0
 
 [node name="Hotbar" parent="." instance=ExtResource("3_268fo")]
 visible = false
@@ -250,9 +250,9 @@ script = ExtResource("4_huemg")
 [node name="ProgressBar" type="ProgressBar" parent="Status Screen"]
 unique_name_in_owner = true
 z_index = 1
-offset_left = -85.0
+offset_left = -84.0
 offset_top = 61.0
-offset_right = 118.0
+offset_right = 88.0
 offset_bottom = 67.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
