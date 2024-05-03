@@ -1,7 +1,7 @@
 extends Node2D
 class_name State
 
-static var player : Player
+@onready var player : Player = get_node("../../../Player")
 @onready var StateMachine = $".."
 var weaponEquipped : bool = false
 @onready var handSprite: Sprite2D = $"../../Combat/Sword/SwordSprite"
