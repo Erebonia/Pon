@@ -297,6 +297,7 @@ offset_left = -80.0
 offset_top = -22.0
 offset_right = -53.0
 offset_bottom = -13.0
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "Level: 1"
 
@@ -305,6 +306,7 @@ offset_left = -69.0
 offset_top = -12.0
 offset_right = -53.0
 offset_bottom = -3.0
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "HP"
 
@@ -315,6 +317,7 @@ offset_left = -55.0
 offset_top = -12.0
 offset_right = -15.0
 offset_bottom = -3.0
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "100/100"
 
@@ -331,26 +334,31 @@ theme_override_constants/separation = 2
 [node name="TotalXP" type="Label" parent="Status Screen/Stats/Attribute"]
 visible = false
 layout_mode = 2
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "EXP"
 
 [node name="Strength" type="Label" parent="Status Screen/Stats/Attribute"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "STR"
 
 [node name="Magic" type="Label" parent="Status Screen/Stats/Attribute"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "MAG"
 
 [node name="Agility" type="Label" parent="Status Screen/Stats/Attribute"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "AGI"
 
 [node name="Defense" type="Label" parent="Status Screen/Stats/Attribute"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "DEF"
 
@@ -363,6 +371,7 @@ unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "0/240"
 
@@ -370,6 +379,7 @@ text = "0/240"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "1"
 
@@ -377,6 +387,7 @@ text = "1"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "1"
 
@@ -384,6 +395,7 @@ text = "1"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "1"
 
@@ -391,6 +403,7 @@ text = "1"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "1"
 
