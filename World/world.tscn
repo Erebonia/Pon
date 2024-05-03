@@ -110,6 +110,7 @@ texture_scale = 1.0
 remote_path = NodePath("../../World_Camera")
 
 [node name="User_Interface" parent="." instance=ExtResource("4_gmpnl")]
+visible = false
 
 [node name="StartingMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -317,73 +318,27 @@ position = Vector2(-53, 72)
 color = Color(1, 0.870588, 0.866667, 1)
 script = ExtResource("19_u2x26")
 
-[node name="HP_Potion" parent="." instance=ExtResource("24_ruj4i")]
-position = Vector2(10, 223)
+[node name="PlaceholderDrops" type="Node2D" parent="."]
 
-[node name="Sword" parent="." instance=ExtResource("25_fb58y")]
-position = Vector2(41, 222)
+[node name="HP_Potion" parent="PlaceholderDrops" instance=ExtResource("24_ruj4i")]
+position = Vector2(152, 143)
 
-[node name="Axe" parent="." instance=ExtResource("27_vtid3")]
-position = Vector2(70, 221)
+[node name="Sword" parent="PlaceholderDrops" instance=ExtResource("25_fb58y")]
+position = Vector2(120, 89)
 
-[node name="Battleaxe" parent="." instance=ExtResource("28_f4dgn")]
-position = Vector2(56, 245)
+[node name="Axe" parent="PlaceholderDrops" instance=ExtResource("27_vtid3")]
+position = Vector2(179, 89)
 
-[node name="HP_Potion2" parent="." instance=ExtResource("24_ruj4i")]
-position = Vector2(24, 207)
+[node name="Battleaxe" parent="PlaceholderDrops" instance=ExtResource("28_f4dgn")]
+position = Vector2(150, 88)
 
-[node name="Sword2" parent="." instance=ExtResource("25_fb58y")]
-position = Vector2(55, 206)
-
-[node name="Axe2" parent="." instance=ExtResource("27_vtid3")]
-position = Vector2(84, 205)
-
-[node name="Battleaxe2" parent="." instance=ExtResource("28_f4dgn")]
-position = Vector2(70, 229)
-
-[node name="HP_Potion3" parent="." instance=ExtResource("24_ruj4i")]
-position = Vector2(108, 222)
-
-[node name="Sword3" parent="." instance=ExtResource("25_fb58y")]
-position = Vector2(139, 221)
-
-[node name="Axe3" parent="." instance=ExtResource("27_vtid3")]
-position = Vector2(168, 220)
-
-[node name="Battleaxe3" parent="." instance=ExtResource("28_f4dgn")]
-position = Vector2(154, 244)
-
-[node name="HP_Potion4" parent="." instance=ExtResource("24_ruj4i")]
-position = Vector2(-17, 200)
-
-[node name="Sword4" parent="." instance=ExtResource("25_fb58y")]
-position = Vector2(14, 199)
-
-[node name="Axe4" parent="." instance=ExtResource("27_vtid3")]
-position = Vector2(43, 198)
-
-[node name="Battleaxe4" parent="." instance=ExtResource("28_f4dgn")]
-position = Vector2(29, 222)
-
-[node name="HP_Potion5" parent="." instance=ExtResource("24_ruj4i")]
-position = Vector2(-8, 225)
-
-[node name="Sword5" parent="." instance=ExtResource("25_fb58y")]
-position = Vector2(23, 224)
-
-[node name="Axe5" parent="." instance=ExtResource("27_vtid3")]
-position = Vector2(52, 223)
-
-[node name="Battleaxe5" parent="." instance=ExtResource("28_f4dgn")]
-position = Vector2(38, 247)
-
-[node name="Helmet" parent="." instance=ExtResource("25_x8uix")]
+[node name="Helmet" parent="PlaceholderDrops" instance=ExtResource("25_x8uix")]
 position = Vector2(121, 112)
 
-[node name="Armor" parent="." instance=ExtResource("26_cffuj")]
+[node name="Armor" parent="PlaceholderDrops" instance=ExtResource("26_cffuj")]
 position = Vector2(149, 112)
 
-[node name="Accessory" parent="." instance=ExtResource("27_o5yve")]
+[node name="Accessory" parent="PlaceholderDrops" instance=ExtResource("27_o5yve")]
 position = Vector2(176, 112)
 
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]
