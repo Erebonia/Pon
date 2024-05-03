@@ -250,6 +250,7 @@ script = ExtResource("4_huemg")
 [node name="ProgressBar" type="ProgressBar" parent="Status Screen"]
 unique_name_in_owner = true
 z_index = 1
+layout_mode = 0
 offset_left = -84.0
 offset_top = 61.0
 offset_right = 86.0
@@ -278,6 +279,7 @@ show_percentage = false
 
 [node name="Level" type="Label" parent="Status Screen"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = -20.0
 offset_top = -27.0
 offset_right = 7.0
@@ -287,6 +289,7 @@ theme_override_font_sizes/font_size = 8
 text = "Level: 1"
 
 [node name="HP_Text" type="Label" parent="Status Screen"]
+layout_mode = 0
 offset_left = -66.0
 offset_top = -21.0
 offset_right = -50.0
@@ -297,6 +300,7 @@ text = "HP"
 
 [node name="HP" type="Label" parent="Status Screen"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = -52.0
 offset_top = -21.0
 offset_right = -12.0
@@ -330,6 +334,7 @@ theme_override_font_sizes/font_size = 6
 text = "0/240"
 
 [node name="Stats" type="HBoxContainer" parent="Status Screen"]
+layout_mode = 0
 offset_left = -66.0
 offset_top = -10.0
 offset_right = -6.0

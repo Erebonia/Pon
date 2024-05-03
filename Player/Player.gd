@@ -92,7 +92,7 @@ func _on_check_time(_day, hour, _minute):
 	else:
 		lightSource.visible = false
 		
-func _on_level_up(Level):
+func _on_level_up(_Level):
 	levelUpSound.play("level_up")
 	
 func playerDead():
@@ -157,9 +157,6 @@ func inventoryCheck(full):
 		inventoryIsFull = false
 
 func _on_hp_recovery_timeout():
-	print(stats.HP)
-	print(stats.max_HP)
 	if stats.HP < stats.max_HP:
 		$Combat/HpRecovery.start()
-		print("HP TIME")
 		stats.HP += 1

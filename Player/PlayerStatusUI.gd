@@ -7,10 +7,10 @@ func _ready():
 	Status.connect("level_up", Callable(self, "_update_level_ui"))
 	Status.connect("experience_gained", Callable(self, "_update_xp_ui"))
 	
-func _process(delta):
+func _process(_delta):
 	_update_stats_ui(Status.HP, Status.max_HP, Status.Strength, Status.Magic, Status.Agility, Status.Defense)
 	_update_level_ui(Status.Level)
-	_update_xp_ui(Status.experience_gained, Status.current_xp, Status.get_required_experience(Status.Level))
+	_update_xp_ui(Status.current_xp, Status.get_required_experience(Status.Level))
 
 func _update_stats_ui(hp, max_hp, strength, magic, agility, defense):
 	%HP.text = str(hp) + "/" + str(max_hp)
@@ -22,7 +22,7 @@ func _update_stats_ui(hp, max_hp, strength, magic, agility, defense):
 func _update_level_ui(level):
 	%Level.text = "Level: " + str(level)
 
-func _update_xp_ui(exp_gained, total_exp, next_level_exp):
+func _update_xp_ui(total_exp, next_level_exp):
 	%ProgressBar.max_value = next_level_exp
 	%ProgressBar.value = total_exp
 	if next_level_exp == -1:

@@ -14,7 +14,7 @@ class_name InventoryItem
 @export var defBonus: int = 0
 @export var hpBonus: int = 0
 
-func use(player: Player) -> void:
+func use(_player: Player) -> void:
 	pass
 	
 func getType():

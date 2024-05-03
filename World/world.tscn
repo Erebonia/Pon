@@ -111,12 +111,6 @@ remote_path = NodePath("../../World_Camera")
 
 [node name="User_Interface" parent="." instance=ExtResource("4_gmpnl")]
 
-[node name="InventoryGui" parent="User_Interface" index="0"]
-visible = false
-
-[node name="Status Screen" parent="User_Interface" index="2"]
-visible = false
-
 [node name="StartingMap" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = ExtResource("10_evtyf")
@@ -392,8 +386,6 @@ position = Vector2(149, 112)
 [node name="Accessory" parent="." instance=ExtResource("27_o5yve")]
 position = Vector2(176, 112)
 
-[connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
-[connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]
 [connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]
 [connection signal="body_exited" from="Boss Room Entrance" to="." method="_on_boss_transition_body_exited"]
 
@@ -401,9 +393,4 @@ position = Vector2(176, 112)
 [editable path="Player"]
 [editable path="Player/Combat/HitboxPivot/SwordHitbox"]
 [editable path="Player/Combat/Hurtbox"]
-[editable path="User_Interface"]
-[editable path="User_Interface/InventoryGui"]
-[editable path="User_Interface/InventoryGui/Hat_Slot"]
-[editable path="User_Interface/InventoryGui/Body_Slot"]
-[editable path="User_Interface/InventoryGui/Accessory_Slot"]
 [editable path="Environment/FogShader"]

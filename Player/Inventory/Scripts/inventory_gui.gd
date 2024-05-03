@@ -14,7 +14,6 @@ signal closed
 @onready var slots: Array = hotbar_slots + $NinePatchRect/GridContainer.get_children() + extraSlots
 @onready var player = $"../../Player"
 
-
 var itemInHand: ItemStackGui
 var oldIndex: int = -1
 var locked: bool = false
@@ -26,7 +25,7 @@ func _ready():
 	player.connect("updateInventoryUI", Callable(self, "update"))
 	update()
 	
-func _process(delta):
+func _process(_delta):
 	update()
 	
 func connectSlots():
@@ -61,7 +60,6 @@ func update():
 		if i == 18 and inventorySlot.item != null:
 			$Accessory_Slot/background/Accessory_Slot_BG.visible = false
 			
-		
 		var itemStackGui: ItemStackGui = slots[i].itemStackGui
 		if !itemStackGui:
 			itemStackGui = ItemStackGuiClass.instantiate()
@@ -87,18 +85,18 @@ func onSlotClicked(slot):
 	# Check if there's an item in hand and the slot clicked corresponds to a specific type
 	if itemInHand:
 		if slot.index == 16 and itemInHand.inventorySlot.item.isHelmet:
-			handleEquipmentSlot(slot, itemInHand)
+			handleEquipmentSlot(slot)
 		elif slot.index == 17 and itemInHand.inventorySlot.item.isBody:
-			handleEquipmentSlot(slot, itemInHand)
+			handleEquipmentSlot(slot)
 		elif slot.index == 18 and itemInHand.inventorySlot.item.isAccessory:
-			handleEquipmentSlot(slot, itemInHand)
+			handleEquipmentSlot(slot)
 		elif slot.index < 16 or slot.index > 18:
 			handleNormalSlot(slot)
 	elif not itemInHand and not slot.isEmpty():
 		# Handle taking an item from a slot
 		takeItemFromSlot(slot)
 
-func handleEquipmentSlot(slot, itemInHand):
+func handleEquipmentSlot(slot):
 	# Check if the slot is empty or needs swapping
 	if not slot.isEmpty():
 		if slot.itemStackGui.inventorySlot.item.getType() == itemInHand.inventorySlot.item.getType():
@@ -211,7 +209,7 @@ func putItemBack():
 	insertItemInSlot(targetSlot)
 	locked = false
 	
-func _input(event):
+func _input(_event):
 	if itemInHand and !locked and Input.is_action_just_pressed("rightClick"):
 		putItemBack()
 	

@@ -9908,7 +9908,7 @@ script = ExtResource("4_m08hb")
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="StateMachine/Run"]
 stream = ExtResource("5_6he2w")
-volume_db = -10.0
+volume_db = -5.0
 
 [node name="Roll" type="Node2D" parent="StateMachine"]
 script = ExtResource("5_gajw7")
