@@ -51,6 +51,16 @@ func update():
 			print("Trash detected")
 			inventory.remove_trash()
 			continue
+			
+		if i == 16 and inventorySlot.item != null:
+			$Hat_Slot/background/Hat_Slot_BG.visible = false
+			
+		if i == 17 and inventorySlot.item != null:
+			$Body_Slot/background/Body_Slot_BG.visible = false
+			
+		if i == 18 and inventorySlot.item != null:
+			$Accessory_Slot/background/Accessory_Slot_BG.visible = false
+			
 		
 		var itemStackGui: ItemStackGui = slots[i].itemStackGui
 		if !itemStackGui:
