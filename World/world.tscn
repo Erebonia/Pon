@@ -111,6 +111,12 @@ remote_path = NodePath("../../World_Camera")
 
 [node name="User_Interface" parent="." instance=ExtResource("4_gmpnl")]
 
+[node name="InventoryGui" parent="User_Interface" index="0"]
+visible = false
+
+[node name="Status Screen" parent="User_Interface" index="2"]
+visible = false
+
 [node name="StartingMap" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = ExtResource("10_evtyf")
@@ -291,27 +297,27 @@ position = Vector2(-312, 40)
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_0isge")
-position = Vector2(-29, 80)
+position = Vector2(-294, 117)
 
 [node name="Enemy_Bat2" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_i6fys")
-position = Vector2(-53, 72)
+position = Vector2(-318, 109)
 
 [node name="Enemy_Bat3" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_akx05")
-position = Vector2(-45, 72)
+position = Vector2(-310, 109)
 
 [node name="Enemy_Bat4" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_8300g")
-position = Vector2(-45, 72)
+position = Vector2(-310, 109)
 
 [node name="Enemy_Bat5" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_tgxgg")
-position = Vector2(-37, 72)
+position = Vector2(-302, 109)
 
 [node name="Enemy_Bat6" parent="." instance=ExtResource("18_unihb")]
 material = SubResource("ShaderMaterial_82sbw")
-position = Vector2(-53, 72)
+position = Vector2(-318, 109)
 
 [node name="DayAndNight (Editor Only)" type="CanvasModulate" parent="."]
 color = Color(1, 0.870588, 0.866667, 1)
@@ -347,4 +353,9 @@ position = Vector2(176, 112)
 [editable path="Player"]
 [editable path="Player/Combat/HitboxPivot/SwordHitbox"]
 [editable path="Player/Combat/Hurtbox"]
+[editable path="User_Interface"]
+[editable path="User_Interface/InventoryGui"]
+[editable path="User_Interface/InventoryGui/Hat_Slot"]
+[editable path="User_Interface/InventoryGui/Body_Slot"]
+[editable path="User_Interface/InventoryGui/Accessory_Slot"]
 [editable path="Environment/FogShader"]

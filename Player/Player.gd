@@ -55,19 +55,8 @@ func _process(_delta):
 		saveData()
 	if Input.is_action_just_pressed("Load"):
 		loadSaveData()
-	#Extract and save these.
-	playerData.loadSavedPosition(self.position)	
-	playerData.updateHP(stats.HP)
-	playerData.updateMaxHP(stats.max_HP)
-	playerData.updateEXP(stats.current_xp)
-	playerData.updateLevel(stats.Level)
-	playerData.updateDMG(swordHitbox.damage)
-	playerData.updateSTR(stats.Strength)
-	playerData.updateAGI(stats.Agility)
-	playerData.updateMAG(stats.Magic)
-	playerData.updateDEF(stats.Defense)
-	playerData.updateInventory(inventory.slots)
-	
+		
+	saveStats()
 	updateHealthBarUI()
 
 func _physics_process(_delta):
@@ -82,26 +71,19 @@ func setMovementDirection():
 	input_vector.y = Input.get_action_strength("Move_Down") - Input.get_action_strength("Move_Up")
 	input_vector = input_vector.normalized()
 	move_and_slide()
-
-func calculateDmg(dmgBoostStat):
-	baseCombatDMG.damage = dmgBoostStat
 	
-func _on_check_time(_day, hour, _minute):
-	#24 hour Clock
-	if (hour >= 19 and hour <= 23) or (hour >= 0 and hour < 5):
-		lightSource.visible = true
-	else:
-		lightSource.visible = false
-		
-func _on_level_up(_Level):
-	levelUpVFX.play("level_up")
-	levelUpSFX.play()
-	
-func playerDead():
-	queue_free()
-	
-func player():
-	pass
+func saveStats():
+	playerData.loadSavedPosition(self.position)	
+	playerData.updateHP(stats.HP)
+	playerData.updateMaxHP(stats.max_HP)
+	playerData.updateEXP(stats.current_xp)
+	playerData.updateLevel(stats.Level)
+	playerData.updateDMG(swordHitbox.damage)
+	playerData.updateSTR(stats.Strength)
+	playerData.updateAGI(stats.Agility)
+	playerData.updateMAG(stats.Magic)
+	playerData.updateDEF(stats.Defense)
+	playerData.updateInventory(inventory.slots)
 	
 func saveData():
 	ResourceSaver.save(playerData, save_file_path + save_file_name)
@@ -131,6 +113,26 @@ func gameStarted():
 	
 func verifySaveDirectory(path: String):
 	DirAccess.make_dir_absolute(path)
+	
+func _on_check_time(_day, hour, _minute):
+	#24 hour Clock
+	if (hour >= 19 and hour <= 23) or (hour >= 0 and hour < 5):
+		lightSource.visible = true
+	else:
+		lightSource.visible = false
+	
+func calculateDmg(dmgBoostStat):
+	baseCombatDMG.damage = dmgBoostStat
+		
+func _on_level_up(_Level):
+	levelUpVFX.play("level_up")
+	levelUpSFX.play()
+	
+func playerDead():
+	queue_free()
+	
+func player():
+	pass
 	
 func updateHealthBarUI():
 	healthBar.health = stats.HP
@@ -162,3 +164,4 @@ func _on_hp_recovery_timeout():
 	if stats.HP < stats.max_HP:
 		$Combat/HpRecovery.start()
 		stats.HP += 1
+			
