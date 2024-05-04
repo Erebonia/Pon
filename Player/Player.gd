@@ -19,7 +19,7 @@ class_name Player
 @onready var baseCombatDMG = $Combat/HitboxPivot/SwordHitbox
 @onready var swordSprite = $Combat/Sword/SwordSprite
 @onready var swordHitbox = $Combat/HitboxPivot/SwordHitbox
-@onready var slashFX = $Combat/Sword/SwordSprite/Slash_FX
+@onready var slashFX = $Combat/Sword/SwordSprite/SwordGlow_VFX
 @onready var attackTimer = $Combat/AttackTimer
 @onready var healthBar = $Combat_UI/Healthbar
 @onready var slashTrail = $Combat/SlashTrail
@@ -70,6 +70,11 @@ func setMovementDirection():
 	input_vector.x = Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left")
 	input_vector.y = Input.get_action_strength("Move_Down") - Input.get_action_strength("Move_Up")
 	input_vector = input_vector.normalized()
+	
+	aim_direction = (get_global_mouse_position() - global_position).normalized() # Make player face the mouse
+	animationTree.set("parameters/Attack/BlendSpace2D/blend_position", aim_direction)
+	animationTree.set("parameters/Attack_Combo/BlendSpace2D/blend_position", aim_direction)
+	animationTree.set("parameters/Attack_Combo2/BlendSpace2D/blend_position", aim_direction)
 	move_and_slide()
 	
 func saveStats():

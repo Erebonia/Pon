@@ -1,35 +1,36 @@
-[gd_scene load_steps=36 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=37 format=3 uid="uid://jpnitqgvchnd"]
 
-[ext_resource type="Script" path="res://World/world.gd" id="1_26jxo"]
-[ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="1_i1ktu"]
-[ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="2_7prvd"]
-[ext_resource type="PackedScene" uid="uid://dr31cgvo6r8ds" path="res://World/Environment/bush.tscn" id="2_qhdct"]
-[ext_resource type="PackedScene" uid="uid://dx4gc50eoqluo" path="res://UI/user_interface.tscn" id="4_gmpnl"]
-[ext_resource type="PackedScene" uid="uid://dyr164gbvcxrf" path="res://World/Environment/tree-birch-yellow.tscn" id="5_k7lfl"]
-[ext_resource type="PackedScene" uid="uid://wgf5hgrk43ew" path="res://World/Environment/grass.tscn" id="6_dcagb"]
-[ext_resource type="PackedScene" uid="uid://c7xb0raqot3km" path="res://World/Environment/tree-mother.tscn" id="6_vdsp3"]
-[ext_resource type="PackedScene" uid="uid://b7i18f46oewtr" path="res://Effects/Scenes/fog shader.tscn" id="7_c4jo8"]
-[ext_resource type="PackedScene" uid="uid://bw6x38gtjukc2" path="res://NPC/BlackSmith/blacksmith.tscn" id="8_2m8e1"]
-[ext_resource type="PackedScene" uid="uid://573ei0gs5ftg" path="res://NPC/Roy/roy.tscn" id="9_0dwxv"]
-[ext_resource type="TileSet" uid="uid://dehp76qcudo5q" path="res://World/Environment.tres" id="10_evtyf"]
-[ext_resource type="AudioStream" uid="uid://lgr7fwqk321e" path="res://Music and Sounds/Music/Whispering_Woods.mp3" id="12_llom8"]
-[ext_resource type="PackedScene" uid="uid://dvbvyl1rsoiu6" path="res://Enemies/Scenes/boss_golem.tscn" id="13_s14mq"]
-[ext_resource type="PackedScene" uid="uid://0hxcd2qn0qv8" path="res://World/Environment/tree-birch-green.tscn" id="13_tl4gk"]
-[ext_resource type="Texture2D" uid="uid://bkkl6qi4h8nwh" path="res://World/Environment/Rainbow_Cake.png" id="14_5qeg5"]
-[ext_resource type="Shader" path="res://World/godrays.gdshader" id="15_n7swr"]
-[ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="18_unihb"]
-[ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="19_p8hbm"]
-[ext_resource type="Script" path="res://World/DayAndNight (Editor Only).gd" id="19_u2x26"]
-[ext_resource type="PackedScene" uid="uid://qwygywl07m00" path="res://Player/Inventory/Items/general/hp_potion.tscn" id="24_ruj4i"]
-[ext_resource type="PackedScene" uid="uid://d33af0kyesbm8" path="res://Player/Inventory/Items/weapon/sword.tscn" id="25_fb58y"]
-[ext_resource type="PackedScene" uid="uid://casaldp7h1lce" path="res://Player/Inventory/Items/helmet/helmet_gladiator.tscn" id="25_x8uix"]
-[ext_resource type="PackedScene" uid="uid://d0d3pxcumfshs" path="res://Player/Inventory/Items/armor/armor_traveler_robe.tscn" id="26_cffuj"]
-[ext_resource type="PackedScene" uid="uid://dekowggjojorb" path="res://Player/Inventory/Items/accessory/accessory_royal_cape.tscn" id="27_o5yve"]
-[ext_resource type="PackedScene" uid="uid://bgu36cpnxvspy" path="res://Player/Inventory/Items/weapon/axe.tscn" id="27_vtid3"]
-[ext_resource type="PackedScene" uid="uid://cxi06x36o4qhe" path="res://Player/Inventory/Items/weapon/battleaxe.tscn" id="28_f4dgn"]
+[ext_resource type="Script" path="res://World/world.gd" id="1_1t6ay"]
+[ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_cf228"]
+[ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="3_ff3p1"]
+[ext_resource type="PackedScene" uid="uid://dx4gc50eoqluo" path="res://UI/user_interface.tscn" id="4_rea0h"]
+[ext_resource type="TileSet" uid="uid://dehp76qcudo5q" path="res://World/Environment.tres" id="5_0rdgj"]
+[ext_resource type="Shader" path="res://World/godrays.gdshader" id="6_opibm"]
+[ext_resource type="PackedScene" uid="uid://b7i18f46oewtr" path="res://Effects/Scenes/fog shader.tscn" id="7_e32ue"]
+[ext_resource type="PackedScene" uid="uid://bw6x38gtjukc2" path="res://NPC/BlackSmith/blacksmith.tscn" id="8_fmiol"]
+[ext_resource type="PackedScene" uid="uid://573ei0gs5ftg" path="res://NPC/Roy/roy.tscn" id="9_ta82o"]
+[ext_resource type="PackedScene" uid="uid://c7xb0raqot3km" path="res://World/Environment/tree-mother.tscn" id="10_j7vvl"]
+[ext_resource type="PackedScene" uid="uid://0hxcd2qn0qv8" path="res://World/Environment/tree-birch-green.tscn" id="11_41xo7"]
+[ext_resource type="PackedScene" uid="uid://dyr164gbvcxrf" path="res://World/Environment/tree-birch-yellow.tscn" id="12_cbqoc"]
+[ext_resource type="PackedScene" uid="uid://dr31cgvo6r8ds" path="res://World/Environment/bush.tscn" id="13_16hmp"]
+[ext_resource type="PackedScene" uid="uid://wgf5hgrk43ew" path="res://World/Environment/grass.tscn" id="14_yd00v"]
+[ext_resource type="Texture2D" uid="uid://bkkl6qi4h8nwh" path="res://World/Environment/Rainbow_Cake.png" id="15_jnfrn"]
+[ext_resource type="AudioStream" uid="uid://lgr7fwqk321e" path="res://Music and Sounds/Music/Whispering_Woods.mp3" id="16_vf03n"]
+[ext_resource type="PackedScene" uid="uid://dvbvyl1rsoiu6" path="res://Enemies/Scenes/boss_golem.tscn" id="17_8r1no"]
+[ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="18_q6jbc"]
+[ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="19_d0dbh"]
+[ext_resource type="Script" path="res://World/DayAndNight (Editor Only).gd" id="20_xkww7"]
+[ext_resource type="PackedScene" uid="uid://qwygywl07m00" path="res://Player/Inventory/Items/general/hp_potion.tscn" id="21_8bd14"]
+[ext_resource type="PackedScene" uid="uid://d33af0kyesbm8" path="res://Player/Inventory/Items/weapon/sword.tscn" id="22_s2i1s"]
+[ext_resource type="PackedScene" uid="uid://bgu36cpnxvspy" path="res://Player/Inventory/Items/weapon/axe.tscn" id="23_ffx7r"]
+[ext_resource type="PackedScene" uid="uid://cxi06x36o4qhe" path="res://Player/Inventory/Items/weapon/battleaxe.tscn" id="24_majnd"]
+[ext_resource type="PackedScene" uid="uid://casaldp7h1lce" path="res://Player/Inventory/Items/helmet/helmet_gladiator.tscn" id="25_4qph3"]
+[ext_resource type="PackedScene" uid="uid://d0d3pxcumfshs" path="res://Player/Inventory/Items/armor/armor_traveler_robe.tscn" id="26_y2kyx"]
+[ext_resource type="PackedScene" uid="uid://dekowggjojorb" path="res://Player/Inventory/Items/accessory/accessory_royal_cape.tscn" id="27_uhdye"]
+[ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="28_sw2sp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rgn5p"]
-shader = ExtResource("15_n7swr")
+shader = ExtResource("6_opibm")
 shader_parameter/angle = -0.3
 shader_parameter/position = -0.2
 shader_parameter/spread = 1.0
@@ -44,44 +45,44 @@ shader_parameter/color = Color(1, 1, 1, 0.960784)
 shader_parameter/hdr = false
 shader_parameter/seed = 5.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iovvw"]
-size = Vector2(53, 95)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0isge"]
 resource_local_to_scene = true
-shader = ExtResource("19_p8hbm")
+shader = ExtResource("19_d0dbh")
 shader_parameter/active = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i6fys"]
 resource_local_to_scene = true
-shader = ExtResource("19_p8hbm")
+shader = ExtResource("19_d0dbh")
 shader_parameter/active = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_akx05"]
 resource_local_to_scene = true
-shader = ExtResource("19_p8hbm")
+shader = ExtResource("19_d0dbh")
 shader_parameter/active = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8300g"]
 resource_local_to_scene = true
-shader = ExtResource("19_p8hbm")
+shader = ExtResource("19_d0dbh")
 shader_parameter/active = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tgxgg"]
 resource_local_to_scene = true
-shader = ExtResource("19_p8hbm")
+shader = ExtResource("19_d0dbh")
 shader_parameter/active = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_82sbw"]
 resource_local_to_scene = true
-shader = ExtResource("19_p8hbm")
+shader = ExtResource("19_d0dbh")
 shader_parameter/active = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3vxf"]
+size = Vector2(16, 96)
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_26jxo")
+script = ExtResource("1_1t6ay")
 
-[node name="World_Camera" parent="." instance=ExtResource("1_i1ktu")]
+[node name="World_Camera" parent="." instance=ExtResource("2_cf228")]
 position = Vector2(153, 200)
 zoom = Vector2(0.75, 0.75)
 limit_smoothed = true
@@ -95,7 +96,7 @@ position = Vector2(-80, -103)
 [node name="BottomRight" parent="World_Camera/Limits" index="1"]
 position = Vector2(367, 271)
 
-[node name="Player" parent="." instance=ExtResource("2_7prvd")]
+[node name="Player" parent="." instance=ExtResource("3_ff3p1")]
 y_sort_enabled = true
 position = Vector2(153, 200)
 collision_mask = 1
@@ -109,7 +110,7 @@ texture_scale = 1.0
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../World_Camera")
 
-[node name="User_Interface" parent="." instance=ExtResource("4_gmpnl")]
+[node name="User_Interface" parent="." instance=ExtResource("4_rea0h")]
 
 [node name="InventoryGui" parent="User_Interface" index="0"]
 visible = false
@@ -119,7 +120,7 @@ visible = false
 
 [node name="StartingMap" type="TileMap" parent="."]
 y_sort_enabled = true
-tile_set = ExtResource("10_evtyf")
+tile_set = ExtResource("5_0rdgj")
 format = 2
 layer_0/name = "Ground"
 layer_0/y_sort_enabled = true
@@ -169,7 +170,7 @@ offset_top = -112.0
 offset_right = 368.0
 offset_bottom = 128.0
 
-[node name="FogShader" parent="Environment" instance=ExtResource("7_c4jo8")]
+[node name="FogShader" parent="Environment" instance=ExtResource("7_e32ue")]
 layer = 0
 visible = false
 
@@ -178,103 +179,103 @@ position = Vector2(-178, -73)
 
 [node name="NPCs" type="Node2D" parent="Environment"]
 
-[node name="Blacksmith" parent="Environment/NPCs" instance=ExtResource("8_2m8e1")]
+[node name="Blacksmith" parent="Environment/NPCs" instance=ExtResource("8_fmiol")]
 position = Vector2(16, 2)
 
-[node name="Fox" parent="Environment/NPCs" instance=ExtResource("9_0dwxv")]
+[node name="Fox" parent="Environment/NPCs" instance=ExtResource("9_ta82o")]
 position = Vector2(-10, 30)
 
 [node name="Trees" type="Node2D" parent="Environment"]
 y_sort_enabled = true
 position = Vector2(4, 27)
 
-[node name="Mother Tree" parent="Environment/Trees" instance=ExtResource("6_vdsp3")]
+[node name="Mother Tree" parent="Environment/Trees" instance=ExtResource("10_j7vvl")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(147, -69)
 
-[node name="Tree2" parent="Environment/Trees" instance=ExtResource("13_tl4gk")]
+[node name="Tree2" parent="Environment/Trees" instance=ExtResource("11_41xo7")]
 position = Vector2(303, -83)
 
-[node name="Tree3" parent="Environment/Trees" instance=ExtResource("13_tl4gk")]
+[node name="Tree3" parent="Environment/Trees" instance=ExtResource("11_41xo7")]
 position = Vector2(335, 68)
 
-[node name="Tree" parent="Environment/Trees" instance=ExtResource("13_tl4gk")]
+[node name="Tree" parent="Environment/Trees" instance=ExtResource("11_41xo7")]
 position = Vector2(54, -66)
 
-[node name="Tree5" parent="Environment/Trees" instance=ExtResource("13_tl4gk")]
+[node name="Tree5" parent="Environment/Trees" instance=ExtResource("11_41xo7")]
 position = Vector2(226, -66)
 
-[node name="Tree7" parent="Environment/Trees" instance=ExtResource("13_tl4gk")]
+[node name="Tree7" parent="Environment/Trees" instance=ExtResource("11_41xo7")]
 position = Vector2(226, -66)
 
-[node name="Tree4" parent="Environment/Trees" instance=ExtResource("5_k7lfl")]
+[node name="Tree4" parent="Environment/Trees" instance=ExtResource("12_cbqoc")]
 position = Vector2(264, -75)
 
-[node name="Tree9" parent="Environment/Trees" instance=ExtResource("5_k7lfl")]
+[node name="Tree9" parent="Environment/Trees" instance=ExtResource("12_cbqoc")]
 position = Vector2(78, -52)
 
-[node name="Tree6" parent="Environment/Trees" instance=ExtResource("5_k7lfl")]
+[node name="Tree6" parent="Environment/Trees" instance=ExtResource("12_cbqoc")]
 position = Vector2(343, -25)
 
-[node name="Tree8" parent="Environment/Trees" instance=ExtResource("5_k7lfl")]
+[node name="Tree8" parent="Environment/Trees" instance=ExtResource("12_cbqoc")]
 position = Vector2(29, -75)
 
 [node name="Bushes" type="Node2D" parent="Environment"]
 y_sort_enabled = true
 position = Vector2(4, 27)
 
-[node name="Bush4" parent="Environment/Bushes" instance=ExtResource("2_qhdct")]
+[node name="Bush4" parent="Environment/Bushes" instance=ExtResource("13_16hmp")]
 position = Vector2(348, -75)
 
-[node name="Bush6" parent="Environment/Bushes" instance=ExtResource("2_qhdct")]
+[node name="Bush6" parent="Environment/Bushes" instance=ExtResource("13_16hmp")]
 position = Vector2(106, -25)
 
-[node name="Bush5" parent="Environment/Bushes" instance=ExtResource("2_qhdct")]
+[node name="Bush5" parent="Environment/Bushes" instance=ExtResource("13_16hmp")]
 position = Vector2(-68, -100)
 
-[node name="Bush9" parent="Environment/Bushes" instance=ExtResource("2_qhdct")]
+[node name="Bush9" parent="Environment/Bushes" instance=ExtResource("13_16hmp")]
 position = Vector2(327, -89)
 
-[node name="Bush7" parent="Environment/Bushes" instance=ExtResource("2_qhdct")]
+[node name="Bush7" parent="Environment/Bushes" instance=ExtResource("13_16hmp")]
 position = Vector2(-41, -108)
 
-[node name="Bush8" parent="Environment/Bushes" instance=ExtResource("2_qhdct")]
+[node name="Bush8" parent="Environment/Bushes" instance=ExtResource("13_16hmp")]
 position = Vector2(-12, -108)
 
 [node name="Grass" type="Node2D" parent="Environment"]
 visible = false
 y_sort_enabled = true
 
-[node name="Grass" parent="Environment/Grass" instance=ExtResource("6_dcagb")]
+[node name="Grass" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
 position = Vector2(118, 185)
 
-[node name="Grass2" parent="Environment/Grass" instance=ExtResource("6_dcagb")]
+[node name="Grass2" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
 position = Vector2(26, 43)
 
-[node name="Grass3" parent="Environment/Grass" instance=ExtResource("6_dcagb")]
+[node name="Grass3" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
 position = Vector2(-18, 185)
 
-[node name="Grass4" parent="Environment/Grass" instance=ExtResource("6_dcagb")]
+[node name="Grass4" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
 position = Vector2(-56, 43)
 
-[node name="Grass5" parent="Environment/Grass" instance=ExtResource("6_dcagb")]
+[node name="Grass5" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
 position = Vector2(181, 186)
 
-[node name="Grass6" parent="Environment/Grass" instance=ExtResource("6_dcagb")]
+[node name="Grass6" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
 position = Vector2(236, 17)
 
-[node name="Grass7" parent="Environment/Grass" instance=ExtResource("6_dcagb")]
+[node name="Grass7" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
 position = Vector2(352, 125)
 
-[node name="Grass8" parent="Environment/Grass" instance=ExtResource("6_dcagb")]
+[node name="Grass8" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
 position = Vector2(302, 191)
 
 [node name="RainbowCake" type="Sprite2D" parent="Environment"]
 visible = false
 position = Vector2(178, 45)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_5qeg5")
+texture = ExtResource("15_jnfrn")
 
 [node name="Map Collision (Borders)" type="StaticBody2D" parent="."]
 visible = false
@@ -282,72 +283,75 @@ visible = false
 [node name="Collison Draw" type="CollisionPolygon2D" parent="Map Collision (Borders)"]
 polygon = PackedVector2Array(-79, -63, 92, -62, 91, -115, 188, -117, 193, -62, 366, -62, 369, 106, 397, 139, 369, 145, 366, 268, -76, 273, -77, 265, -81, -60, -137, 368, 294, 361, 521, 310, 466, -46, 360, -203, 75, -200, -80, -63, -79, -61, -81, -60)
 
-[node name="Boss Room Entrance" type="Area2D" parent="."]
-position = Vector2(-80, 212)
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss Room Entrance"]
-shape = SubResource("RectangleShape2D_iovvw")
-
 [node name="BGM - Whispering Woods" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_llom8")
+stream = ExtResource("16_vf03n")
 
-[node name="Boss_Golem" parent="." instance=ExtResource("13_s14mq")]
+[node name="Boss_Golem" parent="." instance=ExtResource("17_8r1no")]
 position = Vector2(-312, 40)
 
-[node name="Enemy_Bat" parent="." instance=ExtResource("18_unihb")]
+[node name="Enemy_Bat" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_0isge")
 position = Vector2(-294, 117)
 
-[node name="Enemy_Bat2" parent="." instance=ExtResource("18_unihb")]
+[node name="Enemy_Bat2" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_i6fys")
 position = Vector2(-318, 109)
 
-[node name="Enemy_Bat3" parent="." instance=ExtResource("18_unihb")]
+[node name="Enemy_Bat3" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_akx05")
 position = Vector2(-310, 109)
 
-[node name="Enemy_Bat4" parent="." instance=ExtResource("18_unihb")]
+[node name="Enemy_Bat4" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_8300g")
 position = Vector2(-310, 109)
 
-[node name="Enemy_Bat5" parent="." instance=ExtResource("18_unihb")]
+[node name="Enemy_Bat5" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_tgxgg")
 position = Vector2(-302, 109)
 
-[node name="Enemy_Bat6" parent="." instance=ExtResource("18_unihb")]
+[node name="Enemy_Bat6" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_82sbw")
 position = Vector2(-318, 109)
 
 [node name="DayAndNight (Editor Only)" type="CanvasModulate" parent="."]
 color = Color(1, 0.870588, 0.866667, 1)
-script = ExtResource("19_u2x26")
+script = ExtResource("20_xkww7")
 
 [node name="PlaceholderDrops" type="Node2D" parent="."]
 
-[node name="HP_Potion" parent="PlaceholderDrops" instance=ExtResource("24_ruj4i")]
+[node name="HP_Potion" parent="PlaceholderDrops" instance=ExtResource("21_8bd14")]
 position = Vector2(152, 143)
 
-[node name="Sword" parent="PlaceholderDrops" instance=ExtResource("25_fb58y")]
+[node name="Sword" parent="PlaceholderDrops" instance=ExtResource("22_s2i1s")]
 position = Vector2(120, 89)
 
-[node name="Axe" parent="PlaceholderDrops" instance=ExtResource("27_vtid3")]
+[node name="Axe" parent="PlaceholderDrops" instance=ExtResource("23_ffx7r")]
 position = Vector2(179, 89)
 
-[node name="Battleaxe" parent="PlaceholderDrops" instance=ExtResource("28_f4dgn")]
+[node name="Battleaxe" parent="PlaceholderDrops" instance=ExtResource("24_majnd")]
 position = Vector2(150, 88)
 
-[node name="Helmet" parent="PlaceholderDrops" instance=ExtResource("25_x8uix")]
+[node name="Helmet" parent="PlaceholderDrops" instance=ExtResource("25_4qph3")]
 position = Vector2(121, 112)
 
-[node name="Armor" parent="PlaceholderDrops" instance=ExtResource("26_cffuj")]
+[node name="Armor" parent="PlaceholderDrops" instance=ExtResource("26_y2kyx")]
 position = Vector2(149, 112)
 
-[node name="Accessory" parent="PlaceholderDrops" instance=ExtResource("27_o5yve")]
+[node name="Accessory" parent="PlaceholderDrops" instance=ExtResource("27_uhdye")]
 position = Vector2(176, 112)
 
-[connection signal="body_entered" from="Boss Room Entrance" to="." method="_on_boss_transition_body_entered"]
-[connection signal="body_exited" from="Boss Room Entrance" to="." method="_on_boss_transition_body_exited"]
+[node name="SceneTrigger" parent="." instance=ExtResource("28_sw2sp")]
+position = Vector2(-89, 229)
+connected_scene = "Wilderness"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(4, -5)
+shape = SubResource("RectangleShape2D_w3vxf")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="Wilderness" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-64, 224)
 
 [editable path="World_Camera"]
 [editable path="Player"]

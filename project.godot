@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Potato the Traveler"
-run/main_scene="res://World/world.tscn"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
@@ -21,6 +21,7 @@ DayAndNight="*res://World/Weather/weather/daynightcycle_scene.tscn"
 DamageNumbers="*res://Overlap/DamageNumbers.gd"
 Status="*res://Player/PlayerStatus.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+scene_manager="*res://World/Scene_Manager.gd"
 
 [dialogic]
 

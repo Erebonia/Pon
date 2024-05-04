@@ -10,10 +10,10 @@ class_name State_Sword_Stance
 @onready var swordWaveCooldown = $"../../Combat/SwordWaveProjectile/swordWaveCooldown"
 @onready var swordWaveStanceSound = $"../../Combat/SwordWaveProjectile/swordWaveStance"
 @onready var swordProjectileSound = $"../../Combat/SwordWaveProjectile/swordWaveSound"
-@onready var swordStanceAuraFX = $"../../Combat/SwordStanceAura"
-@onready var swordStanceAnimation = $"../../Combat/Sword/SwordSprite/Sword_Stance_FX"
-@onready var swordStanceLabel = $"../../Combat/SwordStanceAura/SwordStanceLabel"
-@onready var swordGlow = $"../../Combat/Sword/SwordSprite/Sword_Glowing"
+@onready var swordStanceAuraFX = $"../../Combat/SwordStance_ActivateAura"
+@onready var swordStanceAnimation = $"../../Combat/Sword/SwordSprite/SwordWave_FX"
+@onready var swordStanceLabel = $"../../Combat/SwordStance_ActivateAura/SwordStanceLabel"
+@onready var swordGlow = $"../../Combat/Sword/SwordSprite/SwordStance_Glowing"
 
 var swordWaveSlash = preload("res://Player/swordWaveProjectile.tscn")
 var isPerformingSwordWave = false
@@ -63,8 +63,8 @@ func Physics(delta : float) -> State:
 func activateStance():
 	if !isPerformingSwordWave:
 		isPerformingSwordWave = true
-		var aim_direction = roll.rollVector
 		# Set the rotation of the sword wave projectile to match the character's facing direction
+		var aim_direction = (player.get_global_mouse_position() - player.global_position).normalized() # Make player face the mouse
 		swordWaveProjectile.rotation = atan2(aim_direction.y, aim_direction.x)
 		toggle_attack_animation()
 		player.slashTrail.play("default")
