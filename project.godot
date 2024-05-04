@@ -16,12 +16,11 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
 
-global="*res://global.gd"
+Status="*res://Player/PlayerStatus.gd"
+scene_manager="*res://World/Scene_Manager.gd"
 DayAndNight="*res://World/Weather/weather/daynightcycle_scene.tscn"
 DamageNumbers="*res://Overlap/DamageNumbers.gd"
-Status="*res://Player/PlayerStatus.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-scene_manager="*res://World/Scene_Manager.gd"
 
 [dialogic]
 
