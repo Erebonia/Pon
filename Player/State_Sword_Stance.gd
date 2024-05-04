@@ -80,9 +80,11 @@ func activateStance():
 		
 func toggle_attack_animation():
 	if lastAnimationPlayed == "Attack_Combo":
+		player.animationTree.set("parameters/Attack_Combo2/BlendSpace2D/blend_position", player.aim_direction)
 		player.UpdateAnimation("Attack_Combo2")
 		lastAnimationPlayed = "Attack_Combo2"
 	else:
+		player.animationTree.set("parameters/Attack_Combo/BlendSpace2D/blend_position", player.aim_direction)
 		player.UpdateAnimation("Attack_Combo")
 		lastAnimationPlayed = "Attack_Combo"
 

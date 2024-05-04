@@ -8,6 +8,7 @@ var bonusDMG = 15
 var attacking = false
 
 func Enter():
+	player.animationTree.set("parameters/Attack/BlendSpace2D/blend_position", player.aim_direction)
 	Status.KNOCKOUT_SPEED = 60
 	player.calculateDmg(bonusDMG)
 	player.slashTrail.play("default")

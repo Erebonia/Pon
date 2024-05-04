@@ -72,9 +72,7 @@ func setMovementDirection():
 	input_vector = input_vector.normalized()
 	
 	aim_direction = (get_global_mouse_position() - global_position).normalized() # Make player face the mouse
-	animationTree.set("parameters/Attack/BlendSpace2D/blend_position", aim_direction)
-	animationTree.set("parameters/Attack_Combo/BlendSpace2D/blend_position", aim_direction)
-	animationTree.set("parameters/Attack_Combo2/BlendSpace2D/blend_position", aim_direction)
+
 	move_and_slide()
 	
 func saveStats():
