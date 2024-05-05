@@ -31,6 +31,10 @@ func Physics(_delta : float) -> State:
 	if !player.attackTimer.is_stopped():
 		if Input.is_action_pressed("attack") and !attacking:
 			return attack_combo
+			
+		if Input.is_action_pressed("Move_Down") or Input.is_action_pressed("Move_Up") or Input.is_action_pressed("Move_Right") or Input.is_action_pressed("Move_Left"):
+			if !attacking and player.attackTimer.get_time_left() <= 1.7:
+				return run
 		return
 		
 	if !attacking:

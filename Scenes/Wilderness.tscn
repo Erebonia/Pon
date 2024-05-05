@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cwaturk2bjfds"]
+[gd_scene load_steps=56 format=3 uid="uid://cwaturk2bjfds"]
 
 [ext_resource type="Script" path="res://World/Base_Scene.gd" id="1_l6ros"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_lr241"]
@@ -43,6 +43,186 @@ shader = ExtResource("8_5o4h1")
 shader_parameter/active = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dw5m3"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pvajy"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_byi6k"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3bryw"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lc86w"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jt37f"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yk64f"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4eqn4"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ygb0f"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0rk1s"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4gbgn"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7xurn"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8hy8"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r23yi"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8q4ky"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0dqtc"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bq26m"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_toa22"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dxawk"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dsfqp"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5q7k"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8nich"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3wgmp"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n4b04"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fbp05"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0pay"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sc1je"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3scqn"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nb17v"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oho6v"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fwvpp"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1dsg"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5bs0u"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0q4ef"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xi6te"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mjag0"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a4g0k"]
 resource_local_to_scene = true
 shader = ExtResource("8_5o4h1")
 shader_parameter/active = true
@@ -122,147 +302,147 @@ material = SubResource("ShaderMaterial_dw5m3")
 position = Vector2(137, 197)
 
 [node name="Enemy_Bat7" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_bwo37")
+material = SubResource("ShaderMaterial_pvajy")
 position = Vector2(497, 219)
 
 [node name="Enemy_Bat8" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_cq7ks")
+material = SubResource("ShaderMaterial_byi6k")
 position = Vector2(473, 211)
 
 [node name="Enemy_Bat9" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_sp7g6")
+material = SubResource("ShaderMaterial_3bryw")
 position = Vector2(481, 211)
 
 [node name="Enemy_Bat10" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_ykqo2")
+material = SubResource("ShaderMaterial_lc86w")
 position = Vector2(481, 211)
 
 [node name="Enemy_Bat11" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_8ehxx")
+material = SubResource("ShaderMaterial_jt37f")
 position = Vector2(489, 211)
 
 [node name="Enemy_Bat12" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_dw5m3")
+material = SubResource("ShaderMaterial_yk64f")
 position = Vector2(473, 211)
 
 [node name="Enemy_Bat13" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_bwo37")
+material = SubResource("ShaderMaterial_4eqn4")
 position = Vector2(300, 274)
 
 [node name="Enemy_Bat14" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_cq7ks")
+material = SubResource("ShaderMaterial_ygb0f")
 position = Vector2(276, 266)
 
 [node name="Enemy_Bat15" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_sp7g6")
+material = SubResource("ShaderMaterial_0rk1s")
 position = Vector2(284, 266)
 
 [node name="Enemy_Bat16" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_ykqo2")
+material = SubResource("ShaderMaterial_4gbgn")
 position = Vector2(284, 266)
 
 [node name="Enemy_Bat17" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_8ehxx")
+material = SubResource("ShaderMaterial_7xurn")
 position = Vector2(292, 266)
 
 [node name="Enemy_Bat18" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_dw5m3")
+material = SubResource("ShaderMaterial_b8hy8")
 position = Vector2(276, 266)
 
 [node name="Enemy_Bat19" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_bwo37")
+material = SubResource("ShaderMaterial_r23yi")
 position = Vector2(321, 145)
 
 [node name="Enemy_Bat20" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_cq7ks")
+material = SubResource("ShaderMaterial_8q4ky")
 position = Vector2(297, 137)
 
 [node name="Enemy_Bat21" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_sp7g6")
+material = SubResource("ShaderMaterial_0dqtc")
 position = Vector2(305, 137)
 
 [node name="Enemy_Bat22" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_ykqo2")
+material = SubResource("ShaderMaterial_bq26m")
 position = Vector2(305, 137)
 
 [node name="Enemy_Bat23" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_8ehxx")
+material = SubResource("ShaderMaterial_toa22")
 position = Vector2(313, 137)
 
 [node name="Enemy_Bat24" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_dw5m3")
+material = SubResource("ShaderMaterial_dxawk")
 position = Vector2(297, 137)
 
 [node name="Enemy_Bat25" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_bwo37")
+material = SubResource("ShaderMaterial_dsfqp")
 position = Vector2(389, 223)
 
 [node name="Enemy_Bat26" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_cq7ks")
+material = SubResource("ShaderMaterial_v5q7k")
 position = Vector2(365, 215)
 
 [node name="Enemy_Bat27" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_sp7g6")
+material = SubResource("ShaderMaterial_8nich")
 position = Vector2(373, 215)
 
 [node name="Enemy_Bat28" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_ykqo2")
+material = SubResource("ShaderMaterial_3wgmp")
 position = Vector2(373, 215)
 
 [node name="Enemy_Bat29" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_8ehxx")
+material = SubResource("ShaderMaterial_n4b04")
 position = Vector2(381, 215)
 
 [node name="Enemy_Bat30" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_dw5m3")
+material = SubResource("ShaderMaterial_fbp05")
 position = Vector2(365, 215)
 
 [node name="Enemy_Bat31" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_bwo37")
+material = SubResource("ShaderMaterial_k0pay")
 position = Vector2(280, 205)
 
 [node name="Enemy_Bat32" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_cq7ks")
+material = SubResource("ShaderMaterial_sc1je")
 position = Vector2(256, 197)
 
 [node name="Enemy_Bat33" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_sp7g6")
+material = SubResource("ShaderMaterial_3scqn")
 position = Vector2(264, 197)
 
 [node name="Enemy_Bat34" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_ykqo2")
+material = SubResource("ShaderMaterial_nb17v")
 position = Vector2(264, 197)
 
 [node name="Enemy_Bat35" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_8ehxx")
+material = SubResource("ShaderMaterial_oho6v")
 position = Vector2(272, 197)
 
 [node name="Enemy_Bat36" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_dw5m3")
+material = SubResource("ShaderMaterial_fwvpp")
 position = Vector2(256, 197)
 
 [node name="Enemy_Bat37" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_bwo37")
+material = SubResource("ShaderMaterial_l1dsg")
 position = Vector2(174, 329)
 
 [node name="Enemy_Bat38" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_cq7ks")
+material = SubResource("ShaderMaterial_5bs0u")
 position = Vector2(150, 321)
 
 [node name="Enemy_Bat39" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_sp7g6")
+material = SubResource("ShaderMaterial_0q4ef")
 position = Vector2(158, 321)
 
 [node name="Enemy_Bat40" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_ykqo2")
+material = SubResource("ShaderMaterial_xi6te")
 position = Vector2(158, 321)
 
 [node name="Enemy_Bat41" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_8ehxx")
+material = SubResource("ShaderMaterial_mjag0")
 position = Vector2(166, 321)
 
 [node name="Enemy_Bat42" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
-material = SubResource("ShaderMaterial_dw5m3")
+material = SubResource("ShaderMaterial_a4g0k")
 position = Vector2(150, 321)
 
 [node name="Boss Tilemap V2" type="TileMap" parent="."]

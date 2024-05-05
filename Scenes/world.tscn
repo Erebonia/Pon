@@ -115,7 +115,7 @@ remote_path = NodePath("../../World_Camera")
 [node name="InventoryGui" parent="User_Interface" index="0"]
 visible = false
 
-[node name="Status Screen" parent="User_Interface" index="2"]
+[node name="Status Screen" parent="User_Interface" index="1"]
 visible = false
 
 [node name="StartingMap" type="TileMap" parent="."]
@@ -289,27 +289,27 @@ position = Vector2(-312, 40)
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_0isge")
-position = Vector2(-294, 117)
+position = Vector2(20, 94)
 
 [node name="Enemy_Bat2" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_i6fys")
-position = Vector2(-318, 109)
+position = Vector2(-4, 86)
 
 [node name="Enemy_Bat3" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_akx05")
-position = Vector2(-310, 109)
+position = Vector2(4, 86)
 
 [node name="Enemy_Bat4" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_8300g")
-position = Vector2(-310, 109)
+position = Vector2(4, 86)
 
 [node name="Enemy_Bat5" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_tgxgg")
-position = Vector2(-302, 109)
+position = Vector2(12, 86)
 
 [node name="Enemy_Bat6" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_82sbw")
-position = Vector2(-318, 109)
+position = Vector2(-4, 86)
 
 [node name="DayAndNight (Editor Only)" type="CanvasModulate" parent="."]
 color = Color(1, 0.870588, 0.866667, 1)

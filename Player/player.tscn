@@ -9975,7 +9975,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AttackTimer" type="Timer" parent="Combat"]
-wait_time = 0.5
+wait_time = 2.0
 one_shot = true
 
 [node name="HitboxPivot" type="Marker2D" parent="Combat"]
