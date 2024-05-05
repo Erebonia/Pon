@@ -244,36 +244,34 @@ position = Vector2(-41, -108)
 position = Vector2(-12, -108)
 
 [node name="Grass" type="Node2D" parent="Environment"]
-visible = false
 y_sort_enabled = true
 
 [node name="Grass" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
 position = Vector2(118, 185)
 
 [node name="Grass2" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
-position = Vector2(26, 43)
+position = Vector2(181, -8)
 
 [node name="Grass3" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
-position = Vector2(-18, 185)
+position = Vector2(9, 261)
 
 [node name="Grass4" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
-position = Vector2(-56, 43)
+position = Vector2(-71, 52)
 
 [node name="Grass5" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
 position = Vector2(181, 186)
 
 [node name="Grass6" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
-position = Vector2(236, 17)
+position = Vector2(-44, 261)
 
 [node name="Grass7" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
-position = Vector2(352, 125)
+position = Vector2(297, -20)
 
 [node name="Grass8" parent="Environment/Grass" instance=ExtResource("14_yd00v")]
-position = Vector2(302, 191)
+position = Vector2(64, 261)
 
 [node name="RainbowCake" type="Sprite2D" parent="Environment"]
-visible = false
-position = Vector2(178, 45)
+position = Vector2(61, -5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("15_jnfrn")
 
@@ -352,6 +350,9 @@ shape = SubResource("RectangleShape2D_w3vxf")
 
 [node name="Wilderness" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(-64, 224)
+
+[connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
+[connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]
 
 [editable path="World_Camera"]
 [editable path="Player"]

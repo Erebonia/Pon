@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c3ux4koq4jcxc" path="res://World/Environment/Asset Pack - Pixivan/tree-mother.png" id="2_xxh7a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d8nxa"]
-radius = 17.0
+radius = 6.0
 height = 34.0
 
 [node name="Tree" type="StaticBody2D"]
@@ -14,7 +14,6 @@ position = Vector2(0, -16)
 texture = ExtResource("2_xxh7a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 58)
+position = Vector2(1, 50)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_d8nxa")

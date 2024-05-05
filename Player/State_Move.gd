@@ -3,7 +3,7 @@ class_name State_Move
 
 #Speed
 @export var ACCELERATION = 500
-@export var MAX_SPEED = 70
+@export var MAX_SPEED = 80
 @export var ROLL_SPEED = 80
 @export var Friction = 500
 

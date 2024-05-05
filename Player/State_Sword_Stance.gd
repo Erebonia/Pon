@@ -44,6 +44,8 @@ func Exit():
 	swordGlow.stop()
 	swordGlow.visible = false
 	swordStanceLabel.visible = false
+	run.MAX_SPEED = 80
+	Status.KNOCKOUT_SPEED = 0
 	player.animationTree.set("parameters/Attack_Combo/TimeScale/scale", 2)
 	player.animationTree.set("parameters/Attack_Combo2/TimeScale/scale", 2)
 	

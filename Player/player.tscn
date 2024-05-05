@@ -47,7 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://c7yhdcbx7s00" path="res://Music and Sounds/Skill FX/swordStance.wav" id="33_yreqn"]
 [ext_resource type="Texture2D" uid="uid://3ffwnmt30anw" path="res://Effects/Sword FX/slash_effect_anim_spritesheet.png" id="34_saooa"]
 [ext_resource type="AudioStream" uid="uid://cereuq4i6jmah" path="res://Music and Sounds/Skill FX/swordWave.wav" id="34_sscdg"]
-[ext_resource type="Texture2D" uid="uid://jlgohrvwbf1t" path="res://Player/weapon/longsword.png" id="35_uyx5i"]
+[ext_resource type="Texture2D" uid="uid://c8y0qr80ktgg8" path="res://Player/weapon/basic_sword.png" id="35_otfcl"]
 [ext_resource type="AudioStream" uid="uid://ccwev0ttpjs0c" path="res://Music and Sounds/UI/Level up Pickup (Rpg).wav" id="49_ajb3w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hi7q1"]
@@ -9804,7 +9804,9 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5gkre"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_58lcn"]
+radius = 8.0
+height = 16.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -9859,9 +9861,8 @@ script = ExtResource("9_af0ex")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_hi7q1")
 sprite_frames = SubResource("SpriteFrames_6nvx4")
-animation = &"run_upright"
-frame = 3
-flip_h = true
+animation = &"attack_down_combo"
+frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -9914,8 +9915,7 @@ z_index = -1
 position = Vector2(4, -17)
 
 [node name="SwordSprite" type="Sprite2D" parent="Combat/Sword"]
-texture = ExtResource("35_uyx5i")
-flip_h = true
+texture = ExtResource("35_otfcl")
 
 [node name="SwordWave_FX" type="AnimatedSprite2D" parent="Combat/Sword/SwordSprite"]
 position = Vector2(-6.66667, 5.33333)
@@ -9981,7 +9981,7 @@ one_shot = true
 
 [node name="HitboxPivot" type="Marker2D" parent="Combat"]
 position = Vector2(0, 5)
-rotation = 5.23599
+rotation = 1.5708
 
 [node name="SwordHitbox" parent="Combat/HitboxPivot" instance=ExtResource("3_nnp8n")]
 position = Vector2(17, 0.999938)
@@ -10094,9 +10094,8 @@ speed_scale = 0.7
 stream = ExtResource("49_ajb3w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(1, -6)
-shape = SubResource("CircleShape2D_5gkre")
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_58lcn")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Combat/AttackTimer" to="StateMachine/Attack" method="_on_attack_timer_timeout"]
