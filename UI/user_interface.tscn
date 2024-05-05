@@ -176,6 +176,7 @@ process_mode = 3
 script = ExtResource("1_0y4l0")
 
 [node name="InventoryGui" parent="." instance=ExtResource("2_6d6xj")]
+visible = false
 offset_left = -89.0
 offset_top = -59.0
 offset_right = 123.0
@@ -225,6 +226,7 @@ offset_right = 199.0
 offset_bottom = 118.0
 
 [node name="Status Screen" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
