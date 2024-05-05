@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://doymymyvwpypl"]
+
+[ext_resource type="Texture2D" uid="uid://dscn8sshh3uhr" path="res://World/Environment/Asset Pack - Roguelike Dungeon/enemy_afterdead_explosion_anim_spritesheet.png" id="1_u4pyk"]
+[ext_resource type="Script" path="res://World/Environment/Asset Pack - Roguelike Dungeon/Spawn_Explosion.gd" id="2_5ol31"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82425"]
+atlas = ExtResource("1_u4pyk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wsgy"]
+atlas = ExtResource("1_u4pyk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw27q"]
+atlas = ExtResource("1_u4pyk")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xgcu"]
+atlas = ExtResource("1_u4pyk")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfe8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82425")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wsgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bw27q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xgcu")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SpawnExplosion" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_rfe8x")
+script = ExtResource("2_5ol31")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

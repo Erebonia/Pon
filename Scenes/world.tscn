@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=31 format=3 uid="uid://jpnitqgvchnd"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_1t6ay"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_cf228"]
@@ -16,8 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://wgf5hgrk43ew" path="res://World/Environment/grass.tscn" id="14_yd00v"]
 [ext_resource type="Texture2D" uid="uid://bkkl6qi4h8nwh" path="res://World/Environment/Rainbow_Cake.png" id="15_jnfrn"]
 [ext_resource type="AudioStream" uid="uid://0v4s58bqthyu" path="res://Music and Sounds/Music/theme_dream.ogg" id="16_uj6gj"]
-[ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="18_q6jbc"]
-[ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="19_d0dbh"]
 [ext_resource type="Script" path="res://World/DayAndNight (Editor Only).gd" id="20_xkww7"]
 [ext_resource type="PackedScene" uid="uid://qwygywl07m00" path="res://Player/Inventory/Items/general/hp_potion.tscn" id="21_8bd14"]
 [ext_resource type="PackedScene" uid="uid://d33af0kyesbm8" path="res://Player/Inventory/Items/weapon/sword.tscn" id="22_s2i1s"]
@@ -26,7 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://casaldp7h1lce" path="res://Player/Inventory/Items/helmet/helmet_gladiator.tscn" id="25_4qph3"]
 [ext_resource type="PackedScene" uid="uid://d0d3pxcumfshs" path="res://Player/Inventory/Items/armor/armor_traveler_robe.tscn" id="26_y2kyx"]
 [ext_resource type="PackedScene" uid="uid://dekowggjojorb" path="res://Player/Inventory/Items/accessory/accessory_royal_cape.tscn" id="27_uhdye"]
+[ext_resource type="Texture2D" uid="uid://c4ks0si1457w8" path="res://World/cloud.png" id="28_cb04i"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="28_sw2sp"]
+[ext_resource type="PackedScene" uid="uid://c15sxlr3o36gr" path="res://World/Environment/Asset Pack - Roguelike Dungeon/room_0.tscn" id="29_u7i0a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rgn5p"]
 shader = ExtResource("6_opibm")
@@ -44,38 +44,12 @@ shader_parameter/color = Color(1, 1, 1, 0.960784)
 shader_parameter/hdr = false
 shader_parameter/seed = 5.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0isge"]
-resource_local_to_scene = true
-shader = ExtResource("19_d0dbh")
-shader_parameter/active = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6fys"]
-resource_local_to_scene = true
-shader = ExtResource("19_d0dbh")
-shader_parameter/active = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_akx05"]
-resource_local_to_scene = true
-shader = ExtResource("19_d0dbh")
-shader_parameter/active = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8300g"]
-resource_local_to_scene = true
-shader = ExtResource("19_d0dbh")
-shader_parameter/active = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tgxgg"]
-resource_local_to_scene = true
-shader = ExtResource("19_d0dbh")
-shader_parameter/active = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_82sbw"]
-resource_local_to_scene = true
-shader = ExtResource("19_d0dbh")
-shader_parameter/active = true
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3vxf"]
 size = Vector2(16, 96)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u0ehe"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -118,6 +92,7 @@ visible = false
 visible = false
 
 [node name="StartingMap" type="TileMap" parent="."]
+visible = false
 y_sort_enabled = true
 tile_set = ExtResource("5_0rdgj")
 format = 2
@@ -282,31 +257,6 @@ polygon = PackedVector2Array(-79, -63, 92, -62, 91, -115, 188, -117, 193, -62, 3
 
 [node name="BGM - Whispering Woods" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_uj6gj")
-autoplay = true
-
-[node name="Enemy_Bat" parent="." instance=ExtResource("18_q6jbc")]
-material = SubResource("ShaderMaterial_0isge")
-position = Vector2(20, 94)
-
-[node name="Enemy_Bat2" parent="." instance=ExtResource("18_q6jbc")]
-material = SubResource("ShaderMaterial_i6fys")
-position = Vector2(-4, 86)
-
-[node name="Enemy_Bat3" parent="." instance=ExtResource("18_q6jbc")]
-material = SubResource("ShaderMaterial_akx05")
-position = Vector2(4, 86)
-
-[node name="Enemy_Bat4" parent="." instance=ExtResource("18_q6jbc")]
-material = SubResource("ShaderMaterial_8300g")
-position = Vector2(4, 86)
-
-[node name="Enemy_Bat5" parent="." instance=ExtResource("18_q6jbc")]
-material = SubResource("ShaderMaterial_tgxgg")
-position = Vector2(12, 86)
-
-[node name="Enemy_Bat6" parent="." instance=ExtResource("18_q6jbc")]
-material = SubResource("ShaderMaterial_82sbw")
-position = Vector2(-4, 86)
 
 [node name="DayAndNight (Editor Only)" type="CanvasModulate" parent="."]
 color = Color(1, 0.870588, 0.866667, 1)
@@ -315,25 +265,25 @@ script = ExtResource("20_xkww7")
 [node name="PlaceholderDrops" type="Node2D" parent="."]
 
 [node name="HP_Potion" parent="PlaceholderDrops" instance=ExtResource("21_8bd14")]
-position = Vector2(152, 143)
+position = Vector2(-16, 259)
 
 [node name="Sword" parent="PlaceholderDrops" instance=ExtResource("22_s2i1s")]
-position = Vector2(120, 89)
+position = Vector2(-48, 205)
 
 [node name="Axe" parent="PlaceholderDrops" instance=ExtResource("23_ffx7r")]
-position = Vector2(179, 89)
+position = Vector2(11, 205)
 
 [node name="Battleaxe" parent="PlaceholderDrops" instance=ExtResource("24_majnd")]
-position = Vector2(150, 88)
+position = Vector2(-18, 204)
 
 [node name="Helmet" parent="PlaceholderDrops" instance=ExtResource("25_4qph3")]
-position = Vector2(121, 112)
+position = Vector2(-47, 228)
 
 [node name="Armor" parent="PlaceholderDrops" instance=ExtResource("26_y2kyx")]
-position = Vector2(149, 112)
+position = Vector2(-19, 228)
 
 [node name="Accessory" parent="PlaceholderDrops" instance=ExtResource("27_uhdye")]
-position = Vector2(176, 112)
+position = Vector2(8, 228)
 
 [node name="SceneTrigger" parent="." instance=ExtResource("28_sw2sp")]
 position = Vector2(-89, 229)
@@ -347,6 +297,17 @@ shape = SubResource("RectangleShape2D_w3vxf")
 
 [node name="Wilderness" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(-64, 224)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_u0ehe")
+texture = ExtResource("28_cb04i")
+lifetime = 10.0
+
+[node name="Rooms" type="Node2D" parent="."]
+
+[node name="Room0" parent="Rooms" instance=ExtResource("29_u7i0a")]
 
 [connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]
