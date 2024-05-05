@@ -10,7 +10,7 @@ func _ready():
 	pass
 
 func Enter() -> void:
-	player = get_node("/root/World/Player")
+	player = get_parent().get_parent().find_child("Player")
 	
 func Exit() -> void:
 	pass

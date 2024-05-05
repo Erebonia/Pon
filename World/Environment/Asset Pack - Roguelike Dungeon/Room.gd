@@ -12,7 +12,7 @@ const ENEMY_SCENES: Dictionary = {
 
 var num_enemies: int
 
-@onready var tilemap: TileMap = $NavigationAgent2D/TileMap2
+@onready var tilemap: TileMap = $TileMap
 @onready var entrance: Node2D = get_node("Entrance")
 @onready var door_container: Node2D = get_node("Doors")
 @onready var enemy_positions_container: Node2D = get_node("EnemyPositions")

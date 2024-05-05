@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="4_robrp"]
 [ext_resource type="PackedScene" uid="uid://b7i18f46oewtr" path="res://Effects/Scenes/fog shader.tscn" id="5_22yle"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="6_gsxhe"]
-[ext_resource type="PackedScene" uid="uid://c15sxlr3o36gr" path="res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/SpawnRoom_0.tscn" id="8_kltts"]
+[ext_resource type="PackedScene" uid="uid://c15sxlr3o36gr" path="res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/room_0.tscn" id="8_kltts"]
 [ext_resource type="Script" path="res://Scenes/Rooms.gd" id="8_xe6n5"]
 [ext_resource type="AudioStream" uid="uid://b30d2271k7t4u" path="res://Music and Sounds/Music/The_Forest_Foxs_Quest2.mp3" id="9_sibt0"]
 
@@ -28,7 +28,7 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="TopLeft" parent="World_Camera/Limits" index="0"]
-position = Vector2(-280, -1436)
+position = Vector2(-2, -13)
 
 [node name="BottomRight" parent="World_Camera/Limits" index="1"]
 position = Vector2(610, 368)
