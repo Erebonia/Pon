@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=36 format=3 uid="uid://jpnitqgvchnd"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_1t6ay"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_cf228"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://wgf5hgrk43ew" path="res://World/Environment/grass.tscn" id="14_yd00v"]
 [ext_resource type="Texture2D" uid="uid://bkkl6qi4h8nwh" path="res://World/Environment/Rainbow_Cake.png" id="15_jnfrn"]
 [ext_resource type="AudioStream" uid="uid://lgr7fwqk321e" path="res://Music and Sounds/Music/Whispering_Woods.mp3" id="16_vf03n"]
-[ext_resource type="PackedScene" uid="uid://dvbvyl1rsoiu6" path="res://Enemies/Scenes/boss_golem.tscn" id="17_8r1no"]
 [ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="18_q6jbc"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="19_d0dbh"]
 [ext_resource type="Script" path="res://World/DayAndNight (Editor Only).gd" id="20_xkww7"]
@@ -283,9 +282,6 @@ polygon = PackedVector2Array(-79, -63, 92, -62, 91, -115, 188, -117, 193, -62, 3
 
 [node name="BGM - Whispering Woods" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_vf03n")
-
-[node name="Boss_Golem" parent="." instance=ExtResource("17_8r1no")]
-position = Vector2(-312, 40)
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_0isge")
