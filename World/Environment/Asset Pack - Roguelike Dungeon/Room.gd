@@ -53,7 +53,7 @@ func _spawn_enemies() -> void:
 				enemy = ENEMY_SCENES.FLYING_CREATURE.instantiate()
 			else:
 				enemy = ENEMY_SCENES.GOBLIN.instantiate() 
-		enemy.connect("tree_exited", Callable(self, "on_enemy_killed"))
+		enemy.connect("tree_exited", Callable(self, "_on_enemy_killed"))
 		enemy.position = enemy_position.position
 		call_deferred("add_child", enemy)
 
