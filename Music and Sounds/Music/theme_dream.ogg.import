@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0v4s58bqthyu"
+path="res://.godot/imported/theme_dream.ogg-9a1e08bc2ffcbfbcee5ac26138530032.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music and Sounds/Music/theme_dream.ogg"
+dest_files=["res://.godot/imported/theme_dream.ogg-9a1e08bc2ffcbfbcee5ac26138530032.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

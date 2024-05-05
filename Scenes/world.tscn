@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dr31cgvo6r8ds" path="res://World/Environment/bush.tscn" id="13_16hmp"]
 [ext_resource type="PackedScene" uid="uid://wgf5hgrk43ew" path="res://World/Environment/grass.tscn" id="14_yd00v"]
 [ext_resource type="Texture2D" uid="uid://bkkl6qi4h8nwh" path="res://World/Environment/Rainbow_Cake.png" id="15_jnfrn"]
-[ext_resource type="AudioStream" uid="uid://lgr7fwqk321e" path="res://Music and Sounds/Music/Whispering_Woods.mp3" id="16_vf03n"]
+[ext_resource type="AudioStream" uid="uid://0v4s58bqthyu" path="res://Music and Sounds/Music/theme_dream.ogg" id="16_uj6gj"]
 [ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="18_q6jbc"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="19_d0dbh"]
 [ext_resource type="Script" path="res://World/DayAndNight (Editor Only).gd" id="20_xkww7"]
@@ -281,7 +281,8 @@ visible = false
 polygon = PackedVector2Array(-79, -63, 92, -62, 91, -115, 188, -117, 193, -62, 366, -62, 369, 106, 397, 139, 369, 145, 366, 268, -76, 273, -77, 265, -81, -60, -137, 368, 294, 361, 521, 310, 466, -46, 360, -203, 75, -200, -80, -63, -79, -61, -81, -60)
 
 [node name="BGM - Whispering Woods" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("16_vf03n")
+stream = ExtResource("16_uj6gj")
+autoplay = true
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("18_q6jbc")]
 material = SubResource("ShaderMaterial_0isge")
