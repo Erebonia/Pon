@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwaturk2bjfds"]
+[gd_scene load_steps=20 format=3 uid="uid://cwaturk2bjfds"]
 
 [ext_resource type="Script" path="res://World/Base_Scene.gd" id="1_l6ros"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_lr241"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b7i18f46oewtr" path="res://Effects/Scenes/fog shader.tscn" id="5_22yle"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="6_gsxhe"]
 [ext_resource type="TileSet" uid="uid://dehp76qcudo5q" path="res://World/Environment.tres" id="7_0hq2f"]
+[ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="7_j2peq"]
+[ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="8_5o4h1"]
 [ext_resource type="PackedScene" uid="uid://dvbvyl1rsoiu6" path="res://Enemies/Scenes/boss_golem.tscn" id="8_qtreq"]
 [ext_resource type="AudioStream" uid="uid://b30d2271k7t4u" path="res://Music and Sounds/Music/The_Forest_Foxs_Quest2.mp3" id="9_sibt0"]
 
@@ -14,6 +16,36 @@
 size = Vector2(20, 22)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8moo5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bwo37"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cq7ks"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sp7g6"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ykqo2"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ehxx"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dw5m3"]
+resource_local_to_scene = true
+shader = ExtResource("8_5o4h1")
+shader_parameter/active = true
 
 [node name="Wilderness" type="Node2D"]
 y_sort_enabled = true
@@ -40,11 +72,6 @@ position = Vector2(310, 359)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 
-[node name="Environment" type="Node2D" parent="."]
-y_sort_enabled = true
-
-[node name="ParallaxBackground" parent="Environment" instance=ExtResource("5_22yle")]
-
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
@@ -62,6 +89,181 @@ shape = SubResource("RectangleShape2D_qlmfo")
 position = Vector2(-1.90735e-06, -3.5)
 scale = Vector2(20, 17)
 texture = SubResource("PlaceholderTexture2D_8moo5")
+
+[node name="Environment" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="ParallaxBackground" parent="Environment" instance=ExtResource("5_22yle")]
+
+[node name="Enemies" type="Node2D" parent="Environment"]
+
+[node name="Enemy_Bat" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_bwo37")
+position = Vector2(161, 205)
+
+[node name="Enemy_Bat2" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_cq7ks")
+position = Vector2(137, 197)
+
+[node name="Enemy_Bat3" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_sp7g6")
+position = Vector2(145, 197)
+
+[node name="Enemy_Bat4" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_ykqo2")
+position = Vector2(145, 197)
+
+[node name="Enemy_Bat5" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_8ehxx")
+position = Vector2(153, 197)
+
+[node name="Enemy_Bat6" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_dw5m3")
+position = Vector2(137, 197)
+
+[node name="Enemy_Bat7" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_bwo37")
+position = Vector2(497, 219)
+
+[node name="Enemy_Bat8" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_cq7ks")
+position = Vector2(473, 211)
+
+[node name="Enemy_Bat9" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_sp7g6")
+position = Vector2(481, 211)
+
+[node name="Enemy_Bat10" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_ykqo2")
+position = Vector2(481, 211)
+
+[node name="Enemy_Bat11" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_8ehxx")
+position = Vector2(489, 211)
+
+[node name="Enemy_Bat12" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_dw5m3")
+position = Vector2(473, 211)
+
+[node name="Enemy_Bat13" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_bwo37")
+position = Vector2(300, 274)
+
+[node name="Enemy_Bat14" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_cq7ks")
+position = Vector2(276, 266)
+
+[node name="Enemy_Bat15" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_sp7g6")
+position = Vector2(284, 266)
+
+[node name="Enemy_Bat16" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_ykqo2")
+position = Vector2(284, 266)
+
+[node name="Enemy_Bat17" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_8ehxx")
+position = Vector2(292, 266)
+
+[node name="Enemy_Bat18" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_dw5m3")
+position = Vector2(276, 266)
+
+[node name="Enemy_Bat19" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_bwo37")
+position = Vector2(321, 145)
+
+[node name="Enemy_Bat20" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_cq7ks")
+position = Vector2(297, 137)
+
+[node name="Enemy_Bat21" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_sp7g6")
+position = Vector2(305, 137)
+
+[node name="Enemy_Bat22" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_ykqo2")
+position = Vector2(305, 137)
+
+[node name="Enemy_Bat23" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_8ehxx")
+position = Vector2(313, 137)
+
+[node name="Enemy_Bat24" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_dw5m3")
+position = Vector2(297, 137)
+
+[node name="Enemy_Bat25" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_bwo37")
+position = Vector2(389, 223)
+
+[node name="Enemy_Bat26" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_cq7ks")
+position = Vector2(365, 215)
+
+[node name="Enemy_Bat27" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_sp7g6")
+position = Vector2(373, 215)
+
+[node name="Enemy_Bat28" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_ykqo2")
+position = Vector2(373, 215)
+
+[node name="Enemy_Bat29" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_8ehxx")
+position = Vector2(381, 215)
+
+[node name="Enemy_Bat30" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_dw5m3")
+position = Vector2(365, 215)
+
+[node name="Enemy_Bat31" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_bwo37")
+position = Vector2(280, 205)
+
+[node name="Enemy_Bat32" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_cq7ks")
+position = Vector2(256, 197)
+
+[node name="Enemy_Bat33" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_sp7g6")
+position = Vector2(264, 197)
+
+[node name="Enemy_Bat34" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_ykqo2")
+position = Vector2(264, 197)
+
+[node name="Enemy_Bat35" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_8ehxx")
+position = Vector2(272, 197)
+
+[node name="Enemy_Bat36" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_dw5m3")
+position = Vector2(256, 197)
+
+[node name="Enemy_Bat37" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_bwo37")
+position = Vector2(174, 329)
+
+[node name="Enemy_Bat38" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_cq7ks")
+position = Vector2(150, 321)
+
+[node name="Enemy_Bat39" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_sp7g6")
+position = Vector2(158, 321)
+
+[node name="Enemy_Bat40" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_ykqo2")
+position = Vector2(158, 321)
+
+[node name="Enemy_Bat41" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_8ehxx")
+position = Vector2(166, 321)
+
+[node name="Enemy_Bat42" parent="Environment/Enemies" instance=ExtResource("7_j2peq")]
+material = SubResource("ShaderMaterial_dw5m3")
+position = Vector2(150, 321)
 
 [node name="Boss Tilemap V2" type="TileMap" parent="."]
 y_sort_enabled = true

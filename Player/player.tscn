@@ -1,7 +1,7 @@
 [gd_scene load_steps=641 format=3 uid="uid://b1lifm57p7pvt"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_fjjot"]
-[ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Shadows/SmallShadow.png" id="2_6k4r1"]
+[ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Effects/Shadows/SmallShadow.png" id="2_6k4r1"]
 [ext_resource type="Script" path="res://Player/PlayerStateMachine.gd" id="2_nsk5u"]
 [ext_resource type="Script" path="res://Player/State_Idle.gd" id="3_l2iho"]
 [ext_resource type="PackedScene" uid="uid://bbh4m23t6e35d" path="res://Overlap/hitbox.tscn" id="3_nnp8n"]
@@ -9805,8 +9805,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_58lcn"]
-radius = 8.0
-height = 16.0
+radius = 4.0
+height = 20.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -9861,8 +9861,7 @@ script = ExtResource("9_af0ex")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_hi7q1")
 sprite_frames = SubResource("SpriteFrames_6nvx4")
-animation = &"attack_down_combo"
-frame = 8
+animation = &"idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -10094,7 +10093,6 @@ speed_scale = 0.7
 stream = ExtResource("49_ajb3w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_58lcn")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
