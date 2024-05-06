@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://nqsjao3kiwxe"]
+
+[node name="IncrementLevel" type="Area2D"]
+collision_mask = 2

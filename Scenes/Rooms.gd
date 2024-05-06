@@ -15,7 +15,9 @@ const TILE_SIZE: int = 16
 
 
 func _ready() -> void:
-	Status.dungeonFloor += 1
+	if Status.dungeonFloor > MAX_FLOORS:
+		Status.dungeonFloor = 1
+	#Status.dungeonFloor += 1
 	print(Status.dungeonFloor)
 	if Status.dungeonFloor == 2:
 		num_levels = 3

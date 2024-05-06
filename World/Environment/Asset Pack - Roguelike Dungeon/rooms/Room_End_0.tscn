@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c80duq2tjlko"]
+[gd_scene load_steps=7 format=3 uid="uid://c80duq2tjlko"]
 
 [ext_resource type="PackedScene" uid="uid://cded01chy127l" path="res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/Room.tscn" id="1_yx8ra"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="2_mhmym"]
+[ext_resource type="PackedScene" uid="uid://nqsjao3kiwxe" path="res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/increment_level.tscn" id="3_6jhs8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo1q5"]
 size = Vector2(200, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uac2h"]
+size = Vector2(16, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pad0f"]
 size = Vector2(16, 17)
 
 [node name="Room_End_0" instance=ExtResource("1_yx8ra")]
@@ -39,3 +43,12 @@ connected_scene = "Wilderness"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger" index="0"]
 position = Vector2(136, 39.5)
 shape = SubResource("RectangleShape2D_uac2h")
+
+[node name="IncrementLevel" parent="." index="6" instance=ExtResource("3_6jhs8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IncrementLevel" index="0"]
+position = Vector2(136, 39.5)
+shape = SubResource("RectangleShape2D_pad0f")
+debug_color = Color(0.972549, 0, 0.435294, 0.419608)
+
+[connection signal="body_entered" from="IncrementLevel" to="." method="_on_increment_level_body_entered"]

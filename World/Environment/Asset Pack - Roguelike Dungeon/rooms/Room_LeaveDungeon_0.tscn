@@ -1,14 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://b833wv45o2m3w"]
+[gd_scene load_steps=20 format=3 uid="uid://b833wv45o2m3w"]
 
 [ext_resource type="PackedScene" uid="uid://cded01chy127l" path="res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/Room.tscn" id="1_flgy5"]
+[ext_resource type="PackedScene" uid="uid://nqsjao3kiwxe" path="res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/increment_level.tscn" id="2_e2hxq"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="2_jwwry"]
 [ext_resource type="Texture2D" uid="uid://cr5743xde4sk0" path="res://World/Environment/Asset Pack - Roguelike Dungeon/Purple Portal Sprite Sheet.png" id="3_jjr8i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo1q5"]
 size = Vector2(200, 15)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uac2h"]
-size = Vector2(16, 17)
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ka3p"]
+radius = 12.0104
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ld7qu"]
 atlas = ExtResource("3_jjr8i")
@@ -95,6 +96,9 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_urns0"]
+radius = 12.0
+
 [node name="Room_Leave_Dungeon_0" instance=ExtResource("1_flgy5")]
 
 [node name="TileMap" parent="." index="0"]
@@ -124,8 +128,8 @@ position = Vector2(45, 67)
 connected_scene = "world"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger" index="0"]
-position = Vector2(136, 39.5)
-shape = SubResource("RectangleShape2D_uac2h")
+position = Vector2(136, 39)
+shape = SubResource("CircleShape2D_0ka3p")
 
 [node name="Portal" type="AnimatedSprite2D" parent="." index="6"]
 position = Vector2(180, 102)
@@ -133,3 +137,13 @@ scale = Vector2(2.90625, 1)
 sprite_frames = SubResource("SpriteFrames_g7123")
 autoplay = "default"
 frame_progress = 0.20077
+
+[node name="IncrementLevel" parent="." index="7" instance=ExtResource("2_e2hxq")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IncrementLevel" index="0"]
+z_index = 1
+position = Vector2(181, 106)
+shape = SubResource("CircleShape2D_urns0")
+debug_color = Color(0.945098, 0, 0.588235, 0.419608)
+
+[connection signal="body_entered" from="IncrementLevel" to="." method="_on_increment_level_body_entered"]
