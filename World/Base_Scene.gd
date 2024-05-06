@@ -10,6 +10,7 @@ func _ready():
 		if player:
 			player.queue_free()
 			
+			
 		player = scene_manager.player
 		add_child(player)
 		

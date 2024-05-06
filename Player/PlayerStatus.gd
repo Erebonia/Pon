@@ -11,6 +11,7 @@ var Magic : int
 var Agility : int
 var Defense : int
 var KNOCKOUT_SPEED = 0
+var dungeonFloor: int = 0
 
 # Define new signals
 signal level_up(Level)

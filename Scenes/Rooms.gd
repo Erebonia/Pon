@@ -4,19 +4,20 @@ const SPAWN_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguel
 const INTERMEDIATE_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/room_0.tscn"), preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/room_1.tscn")]
 const SPECIAL_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/special_room_0.tscn")]
 const END_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/Room_End_0.tscn")]
+const EXIT_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/Room_LeaveDungeon_0.tscn")]
 const SLIME_BOSS_SCENE: PackedScene = preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/Boss_Room_0.tscn")
 
 const TILE_SIZE: int = 16
 
 @export var num_levels: int = 5
-@export var num_floor: int = 0
-
+@export var MAX_FLOORS = 2
 @onready var player: CharacterBody2D = get_parent().get_node("Player")
 
 
 func _ready() -> void:
-	num_floor += 1
-	if num_floor == 3:
+	Status.dungeonFloor += 1
+	print(Status.dungeonFloor)
+	if Status.dungeonFloor == 2:
 		num_levels = 3
 	_spawn_rooms()
 
@@ -32,10 +33,13 @@ func _spawn_rooms() -> void:
 			room = SPAWN_ROOMS[randi() % SPAWN_ROOMS.size()].instantiate()
 			player.position = room.get_node("PlayerSpawnPos").position
 		else:
-			if i == num_levels - 1:
+			if i == num_levels - 1 and Status.dungeonFloor != MAX_FLOORS:
 				room = END_ROOMS[randi() % END_ROOMS.size()].instantiate()
+			elif i == num_levels - 1 and Status.dungeonFloor == MAX_FLOORS:
+				print("MAX FLOOR DETECTED")
+				room = EXIT_ROOMS[randi() % EXIT_ROOMS.size()].instantiate() 
 			else:
-				if num_floor == 3:
+				if Status.dungeonFloor == 2:
 					room = SLIME_BOSS_SCENE.instantiate()
 				else:
 					if (randi() % 3 == 0 and not special_room_spawned) or (i == num_levels - 2 and not special_room_spawned):

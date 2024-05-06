@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c80duq2tjlko"]
+[gd_scene load_steps=5 format=3 uid="uid://c80duq2tjlko"]
 
 [ext_resource type="PackedScene" uid="uid://cded01chy127l" path="res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/Room.tscn" id="1_yx8ra"]
+[ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="2_mhmym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo1q5"]
 size = Vector2(200, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uac2h"]
+size = Vector2(16, 17)
 
 [node name="Room_End_0" instance=ExtResource("1_yx8ra")]
 
@@ -17,7 +21,7 @@ layer_1/z_index = -1
 layer_1/tile_data = PackedInt32Array(65541, 458752, 4, 65542, 524288, 4, 65544, 458752, 4, 65543, 458752, 4, 196621, 393216, 4, 196622, 393216, 4, 196624, 393216, 4, 196623, 393216, 4, 196625, 393216, 4, 65545, 458752, 4, 131081, 458752, 4, 196617, 458752, 4, 196618, 458752, 4, 196619, 458752, 4, 196620, 458752, 4)
 layer_2/name = "Collisions"
 layer_2/y_sort_enabled = true
-layer_2/tile_data = PackedInt32Array(196625, 262144, 5, 262161, 262144, 6, 327697, 262144, 5, 393233, 262144, 5, 458769, 262144, 5, 524305, 262144, 5, 589841, 262144, 5, 655377, 262144, 5, 720913, 327680, 7, 720901, 65536, 7, 655365, 196608, 5, 589829, 196608, 5, 524293, 196608, 5, 458757, 196608, 5, 393221, 196608, 5, 327685, 196608, 5, 131077, 196608, 5, 65541, 196608, 5, 5, 131072, 6, 720902, 131072, 7, 720910, 131072, 7, 720911, 131072, 7, 720912, 131072, 7, 720909, 131072, 7, 720908, 131072, 7, 720907, 131072, 7, 720906, 131072, 7, 720905, 131072, 7, 6, 131072, 6, 7, 131072, 6, 8, 131072, 6, 196613, 196608, 5, 262149, 196608, 5, 458758, 65536, 0, 655376, 65536, 0, 9, 131072, 6, 65545, 262144, 5, 131081, 262144, 6, 131082, 327680, 6, 131083, 327680, 6, 131084, 327680, 6, 131085, 327680, 6, 131086, 327680, 6, 131087, 327680, 6, 131088, 327680, 6, 131089, 327680, 6, 131080, 65536, 3)
+layer_2/tile_data = PackedInt32Array(196625, 262144, 5, 262161, 262144, 6, 327697, 262144, 5, 393233, 262144, 5, 458769, 262144, 5, 524305, 262144, 5, 589841, 262144, 5, 655377, 262144, 5, 720913, 327680, 7, 720901, 65536, 7, 655365, 196608, 5, 589829, 196608, 5, 524293, 196608, 5, 458757, 196608, 5, 393221, 196608, 5, 327685, 196608, 5, 131077, 196608, 5, 65541, 196608, 5, 5, 131072, 6, 720902, 131072, 7, 720910, 131072, 7, 720911, 131072, 7, 720912, 131072, 7, 720909, 131072, 7, 6, 131072, 6, 7, 131072, 6, 8, 131072, 6, 196613, 196608, 5, 262149, 196608, 5, 458758, 65536, 0, 655376, 65536, 0, 9, 131072, 6, 65545, 262144, 5, 131081, 262144, 6, 131082, 327680, 6, 131083, 327680, 6, 131084, 327680, 6, 131085, 327680, 6, 131086, 327680, 6, 131087, 327680, 6, 131088, 327680, 6, 131089, 327680, 6, 131080, 65536, 3)
 
 [node name="Marker2D" type="Marker2D" parent="Entrance" index="0"]
 position = Vector2(119, 187)
@@ -25,12 +29,13 @@ position = Vector2(119, 187)
 [node name="Marker2D2" type="Marker2D" parent="Entrance" index="1"]
 position = Vector2(135, 187)
 
-[node name="Marker2D" type="Marker2D" parent="EnemyPositions" index="0"]
-position = Vector2(105, 58)
-
-[node name="Marker2D2" type="Marker2D" parent="EnemyPositions" index="1"]
-position = Vector2(155, 66)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" index="0"]
 position = Vector2(184, 155)
 shape = SubResource("RectangleShape2D_mo1q5")
+
+[node name="SceneTrigger" parent="." index="5" instance=ExtResource("2_mhmym")]
+connected_scene = "Wilderness"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger" index="0"]
+position = Vector2(136, 39.5)
+shape = SubResource("RectangleShape2D_uac2h")

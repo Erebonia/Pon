@@ -7,7 +7,7 @@ const SPAWN_EXPLOSION_SCENE: PackedScene = preload("res://World/Environment/Asse
 
 const ENEMY_SCENES: Dictionary = {
 	"FLYING_CREATURE": preload("res://Enemies/Scenes/enemy_bat.tscn"),
-	"GOBLIN": preload("res://Enemies/Scenes/enemy_bat.tscn"), "SLIME_BOSS": preload("res://Enemies/Scenes/enemy_bat.tscn")
+	"GOBLIN": preload("res://Enemies/Scenes/enemy_bat.tscn"), "SLIME_BOSS": preload("res://Enemies/Scenes/boss_golem.tscn")
 }
 
 var num_enemies: int
@@ -24,7 +24,6 @@ func _ready() -> void:
 
 
 func _on_enemy_killed() -> void:
-	print("TEST")
 	num_enemies -= 1
 	if num_enemies == 0:
 		_open_doors()
@@ -37,22 +36,23 @@ func _open_doors() -> void:
 
 func _close_entrance() -> void:
 	for entry_position in entrance.get_children():
-		print(tilemap.local_to_map(entry_position.position))
 		tilemap.set_cell(2, tilemap.local_to_map(entry_position.position), 0, Vector2i(2,7))
 		tilemap.set_cell(1, tilemap.local_to_map(entry_position.position) + Vector2i.DOWN, 0, Vector2i(7,4))
 
 
 func _spawn_enemies() -> void:
+	var boss_Spawned = false
 	for enemy_position in enemy_positions_container.get_children():
 		var enemy: CharacterBody2D
-		if boss_room:
+		if boss_room and !boss_Spawned:
 			enemy = ENEMY_SCENES.SLIME_BOSS.instantiate()
-			num_enemies = 15
+			boss_Spawned = true
 		else:
 			if randi() % 2 == 0:
 				enemy = ENEMY_SCENES.FLYING_CREATURE.instantiate()
 			else:
 				enemy = ENEMY_SCENES.GOBLIN.instantiate() 
+				
 		enemy.connect("tree_exited", Callable(self, "_on_enemy_killed"))
 		enemy.position = enemy_position.position
 		call_deferred("add_child", enemy)
