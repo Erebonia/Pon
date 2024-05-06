@@ -46,17 +46,17 @@ func _spawn_rooms() -> void:
 
 			var previous_room_tilemap: TileMap = previous_room.get_node("TileMap")
 			var previous_room_door: StaticBody2D = previous_room.get_node("Doors/Door")
-			var exit_tile_pos: Vector2i = previous_room_tilemap.local_to_map(previous_room_door.position) + Vector2i.UP * 2
+			var exit_tile_pos: Vector2i = previous_room_tilemap.local_to_map(previous_room_door.position)
 
 			var corridor_height: int = randi() % 5 + 2
-			for y in corridor_height:
+			for y in corridor_height + 1:
 				#set_cell(layer, coordinates we want to place, source ID, atlas sheet coords)
-				previous_room_tilemap.set_cell(2, exit_tile_pos + Vector2i(-1, -y), 0, Vector2i(3,5))#Left Wall on sprite atlas
-				previous_room_tilemap.set_cell(0, exit_tile_pos + Vector2i(-1, -y), 0, Vector2i(3,1))#Floor on sprite atlas
-				previous_room_tilemap.set_cell(0, exit_tile_pos + Vector2i(0, -y), 0, Vector2i(3,1))#Floor on sprite atlas
-				previous_room_tilemap.set_cell(2, exit_tile_pos + Vector2i(0, -y), 0, Vector2i(4,5))#Right wall on sprite atlas
+				previous_room_tilemap.set_cell(2, exit_tile_pos + Vector2i(-1, -y + 1), 0, Vector2i(3,5)) #Left Wall on sprite atlas
+				previous_room_tilemap.set_cell(0, exit_tile_pos + Vector2i(-1, -y + 1), 0, Vector2i(3,1)) #Floor on sprite atlas
+				previous_room_tilemap.set_cell(0, exit_tile_pos + Vector2i(0, -y + 1), 0, Vector2i(3,1)) #Floor on sprite atlas
+				previous_room_tilemap.set_cell(2, exit_tile_pos + Vector2i(0, -y + 1), 0, Vector2i(4,5)) #Right wall on sprite atlas
 
 			var room_tilemap: TileMap = room.get_node("TileMap")
-			room.position = previous_room_door.global_position + Vector2.UP * room_tilemap.get_used_rect().size.y * TILE_SIZE + Vector2.UP * (1 + corridor_height) * TILE_SIZE + Vector2.LEFT * room_tilemap.local_to_map(room.get_node("Entrance/Marker2D2").position).x * TILE_SIZE
+			room.position = previous_room_door.global_position + Vector2.UP * room_tilemap.get_used_rect().size.y * TILE_SIZE + Vector2.UP * (corridor_height) * TILE_SIZE + Vector2.LEFT * room_tilemap.local_to_map(room.get_node("Entrance/Marker2D2").position).x * TILE_SIZE
 		add_child(room)
 		previous_room = room

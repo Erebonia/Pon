@@ -9963,6 +9963,7 @@ speed_scale = 2.0
 
 [node name="SwordStanceLabel" type="Label" parent="Combat/SwordStance_ActivateAura"]
 visible = false
+z_index = 10
 offset_left = -40.0
 offset_top = -36.9231
 offset_right = 42.0

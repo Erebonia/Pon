@@ -31,7 +31,7 @@ drag_vertical_enabled = true
 position = Vector2(-280, -1436)
 
 [node name="BottomRight" parent="World_Camera/Limits" index="1"]
-position = Vector2(1956, 870)
+position = Vector2(610, 368)
 
 [node name="User_Interface" parent="." instance=ExtResource("3_j75hx")]
 
