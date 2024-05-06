@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dx4gc50eoqluo" path="res://UI/user_interface.tscn" id="3_j75hx"]
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="4_robrp"]
 [ext_resource type="PackedScene" uid="uid://b7i18f46oewtr" path="res://Effects/Scenes/fog shader.tscn" id="5_22yle"]
-[ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="6_gsxhe"]
+[ext_resource type="PackedScene" path="res://World/SceneTrigger.tscn" id="6_gsxhe"]
 [ext_resource type="Script" path="res://Scenes/Rooms.gd" id="8_xe6n5"]
 [ext_resource type="AudioStream" uid="uid://b30d2271k7t4u" path="res://Music and Sounds/Music/The_Forest_Foxs_Quest2.mp3" id="9_sibt0"]
 
@@ -19,7 +19,7 @@ y_sort_enabled = true
 script = ExtResource("1_l6ros")
 
 [node name="World_Camera" parent="." instance=ExtResource("2_lr241")]
-position = Vector2(196, 242)
+position = Vector2(0, 0)
 zoom = Vector2(0.75, 0.75)
 limit_smoothed = true
 rotation_smoothing_enabled = true
@@ -31,14 +31,6 @@ position = Vector2(-280, -1436)
 
 [node name="BottomRight" parent="World_Camera/Limits" index="1"]
 position = Vector2(1956, 870)
-
-[node name="User_Interface" parent="." instance=ExtResource("3_j75hx")]
-
-[node name="Player" parent="." instance=ExtResource("4_robrp")]
-position = Vector2(196, 242)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../World_Camera")
 
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -70,5 +62,12 @@ texture = SubResource("PlaceholderTexture2D_8moo5")
 [node name="Rooms" type="Node2D" parent="."]
 y_sort_enabled = true
 script = ExtResource("8_xe6n5")
+
+[node name="Player" parent="." instance=ExtResource("4_robrp")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../World_Camera")
+
+[node name="User_Interface" parent="." instance=ExtResource("3_j75hx")]
 
 [editable path="World_Camera"]
