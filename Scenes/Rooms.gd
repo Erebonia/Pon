@@ -2,9 +2,9 @@ extends Node2D
 
 const SPAWN_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/SpawnRoom_0.tscn")]
 const INTERMEDIATE_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/room_0.tscn"), preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/room_1.tscn")]
-const SPECIAL_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/room_1.tscn")]
+const SPECIAL_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/special_room_0.tscn")]
 const END_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/Room_End_0.tscn")]
-const SLIME_BOSS_SCENE: PackedScene = preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/room_1.tscn")
+const SLIME_BOSS_SCENE: PackedScene = preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/Boss_Room_0.tscn")
 
 const TILE_SIZE: int = 16
 
@@ -51,13 +51,12 @@ func _spawn_rooms() -> void:
 			var corridor_height: int = randi() % 5 + 2
 			for y in corridor_height:
 				#set_cell(layer, coordinates we want to place, source ID, atlas sheet coords)
-				previous_room_tilemap.set_cell(1, exit_tile_pos + Vector2i(-1, -y), 0, Vector2i(3,5))#Left Wall on sprite atlas
+				previous_room_tilemap.set_cell(2, exit_tile_pos + Vector2i(-1, -y), 0, Vector2i(3,5))#Left Wall on sprite atlas
 				previous_room_tilemap.set_cell(0, exit_tile_pos + Vector2i(-1, -y), 0, Vector2i(3,1))#Floor on sprite atlas
 				previous_room_tilemap.set_cell(0, exit_tile_pos + Vector2i(0, -y), 0, Vector2i(3,1))#Floor on sprite atlas
-				previous_room_tilemap.set_cell(1, exit_tile_pos + Vector2i(0, -y), 0, Vector2i(4,5))#Right wall on sprite atlas
+				previous_room_tilemap.set_cell(2, exit_tile_pos + Vector2i(0, -y), 0, Vector2i(4,5))#Right wall on sprite atlas
 
 			var room_tilemap: TileMap = room.get_node("TileMap")
 			room.position = previous_room_door.global_position + Vector2.UP * room_tilemap.get_used_rect().size.y * TILE_SIZE + Vector2.UP * (1 + corridor_height) * TILE_SIZE + Vector2.LEFT * room_tilemap.local_to_map(room.get_node("Entrance/Marker2D2").position).x * TILE_SIZE
-
 		add_child(room)
 		previous_room = room

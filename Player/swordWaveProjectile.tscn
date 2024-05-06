@@ -92,13 +92,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1if6m"]
 radius = 11.0
 
-[node name="arrow" type="Area2D"]
+[node name="SwordWaveProjectile" type="Area2D"]
 y_sort_enabled = true
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_wkodc")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 y_sort_enabled = true
 rotation = 4.71239
 scale = Vector2(0.6, 0.6)
