@@ -7190,7 +7190,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_gully"]
 resource_name = "RollDown"
-length = 1.00001
+length = 0.9
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -7237,7 +7237,7 @@ tracks/3/path = NodePath("StateMachine/Roll")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -7247,7 +7247,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_qpyrh"]
 resource_name = "RollLeft"
-length = 1.00001
+length = 0.9
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -7306,7 +7306,7 @@ tracks/4/path = NodePath("StateMachine/Roll")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -7316,7 +7316,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_dv6o8"]
 resource_name = "RollRight"
-length = 1.00001
+length = 0.9
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -7375,7 +7375,7 @@ tracks/4/path = NodePath("StateMachine/Roll")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -7385,7 +7385,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_t7p6g"]
 resource_name = "RollUp"
-length = 1.00001
+length = 0.9
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -7432,7 +7432,7 @@ tracks/3/path = NodePath("StateMachine/Roll")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -7442,7 +7442,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_5ufjd"]
 resource_name = "RunDown"
-length = 0.60001
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -7507,7 +7507,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_3tejo"]
 resource_name = "RunLeft"
-length = 0.60001
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -7584,7 +7584,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_efod4"]
 resource_name = "RunRight"
-length = 0.60001
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -7661,7 +7661,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_lplnh"]
 resource_name = "RunUp"
-length = 0.60001
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -8034,6 +8034,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_5pi3u"]
 resource_name = "roll_downleft"
+length = 0.9
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -8092,7 +8093,7 @@ tracks/4/path = NodePath("StateMachine/Roll")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -8102,6 +8103,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_d22pe"]
 resource_name = "roll_downright"
+length = 0.9
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -8160,7 +8162,7 @@ tracks/4/path = NodePath("StateMachine/Roll")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -8170,6 +8172,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_32pas"]
 resource_name = "roll_upleft"
+length = 0.9
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -8228,7 +8231,7 @@ tracks/4/path = NodePath("StateMachine/Roll")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -8238,6 +8241,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_5qvwh"]
 resource_name = "roll_upright"
+length = 0.9
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -8296,7 +8300,7 @@ tracks/4/path = NodePath("StateMachine/Roll")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -9861,7 +9865,8 @@ script = ExtResource("9_af0ex")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_hi7q1")
 sprite_frames = SubResource("SpriteFrames_6nvx4")
-animation = &"idle"
+animation = &"attack_downright_combo"
+flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -9904,7 +9909,7 @@ shape = SubResource("CapsuleShape2D_av4qi")
 
 [node name="ShadowSprite" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.25098)
-position = Vector2(1, -1)
+position = Vector2(0, 10)
 texture = ExtResource("2_6k4r1")
 
 [node name="Combat" type="Node2D" parent="."]
@@ -9980,7 +9985,7 @@ one_shot = true
 
 [node name="HitboxPivot" type="Marker2D" parent="Combat"]
 position = Vector2(0, 5)
-rotation = 1.5708
+rotation = 2.61799
 
 [node name="SwordHitbox" parent="Combat/HitboxPivot" instance=ExtResource("3_nnp8n")]
 position = Vector2(17, 0.999938)
@@ -10093,6 +10098,7 @@ speed_scale = 0.7
 stream = ExtResource("49_ajb3w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_58lcn")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

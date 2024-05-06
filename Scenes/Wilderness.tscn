@@ -69,9 +69,9 @@ visible = false
 stream = ExtResource("9_sibt0")
 
 [node name="Rooms" type="Node2D" parent="."]
+y_sort_enabled = true
 script = ExtResource("8_xe6n5")
 
 [node name="Room0" parent="Rooms" instance=ExtResource("8_kltts")]
-y_sort_enabled = false
 
 [editable path="World_Camera"]
