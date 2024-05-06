@@ -1,7 +1,7 @@
 extends Node2D
 class_name EnemyState
 
-@export var enemy : Enemy_Base
+@export var enemy : CharacterBody2D
 @onready var StateMachine = $".."
 @onready var animation_player = owner.find_child("AnimationPlayer")
 var player: CharacterBody2D
@@ -10,12 +10,13 @@ func _ready():
 	pass
 
 func Enter() -> void:
-	player = get_parent().get_parent().find_child("Player")
+	pass
 	
 func Exit() -> void:
 	pass
 	
 func Process(_delta : float) -> EnemyState:
+	player = get_tree().get_first_node_in_group("Player")
 	return null
 	
 func Physics( _delta : float) -> EnemyState:

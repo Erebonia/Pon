@@ -10,7 +10,7 @@ func Enter():
 	
 func Physics(_delta : float) -> EnemyState:
 	if owner.direction.length() > 50:
-		return dash 
+		return follow 
 	
 	return null
 

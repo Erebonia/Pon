@@ -12,9 +12,8 @@ func Physics(delta : float) -> EnemyState:
 	if player != null:
 		enemy.velocity = enemy.velocity.move_toward(Vector2.ZERO, enemy.FRICTION * delta)
 		accelerate_towards_point(player.global_position, delta)
-		
-	var distance = owner.direction.length()	
-	if distance <= 5:
+	
+	if owner.direction.length() <= 5:
 		return melee
 		
 	if softCollision.is_colliding():

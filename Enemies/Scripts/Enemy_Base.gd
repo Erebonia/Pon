@@ -20,7 +20,8 @@ var playerPosition
 @export var MAX_SPEED = 50
 @export var FRICTION = 200
 @onready var startPosition = get_global_transform().origin
-@onready var player = get_parent().find_child("Player")
+
+var player: CharacterBody2D
 
 #Debug
 @onready var debug = $Debug
@@ -30,14 +31,14 @@ func _ready():
 	stateMachine.Initialize(self)
 	stats.connect("no_health", Callable(self, "_on_stats_no_health"))
 	healthbar.max_value = stats.health
-	#healthbar.init_health(stats.health)  # Corrected function name
+	player = get_tree().get_first_node_in_group("Player")
+	healthbar.init_health(stats.health)
  
 func _physics_process(delta):
 	debug.text = "State: " + stateMachine.current_state.name
 	
 	if player != null:
-		direction = player.position - position
-		playerPosition = player.position
+		direction = player.global_position - global_position
 		
 	var sprite = $AnimatedSprite
 	if direction.x < 0:

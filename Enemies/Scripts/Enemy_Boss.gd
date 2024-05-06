@@ -13,12 +13,13 @@ func _ready():
  
 func _physics_process(delta):
 	debug.text = "State: " + stateMachine.current_state.name
-	if stats.health < 0:
-		stateMachine.ChangeState(deathState)
 	
 	if player != null:
-		direction = player.position - position
-		playerPosition = player.position
+		direction = player.global_position - global_position
+		playerPosition = player.global_position
+		
+	if stats.health < 0:
+		stateMachine.ChangeState(deathState)
 	
 	if direction.x < 0:
 		bossSprite.flip_h = true

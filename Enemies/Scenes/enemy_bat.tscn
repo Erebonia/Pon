@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bbh4m23t6e35d" path="res://Overlap/hitbox.tscn" id="16_rlhr6"]
 [ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Effects/Shadows/SmallShadow.png" id="17_185gh"]
 [ext_resource type="PackedScene" uid="uid://cms5nxy1iwkm2" path="res://Enemies/Scenes/player_detection.tscn" id="17_kvbjh"]
-[ext_resource type="PackedScene" uid="uid://dk7ckqq8mq2nr" path="res://Overlap/Stats.tscn" id="18_mo171"]
+[ext_resource type="PackedScene" path="res://Overlap/Stats.tscn" id="18_mo171"]
 [ext_resource type="PackedScene" uid="uid://bhv1fd4uvlhpd" path="res://Enemies/Scenes/wander_controller.tscn" id="19_knn8k"]
 [ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://UI/Health/healthbar_overhead.tscn" id="20_l8fcu"]
 [ext_resource type="PackedScene" uid="uid://bkf2a5dlqworv" path="res://Overlap/soft_collision.tscn" id="21_14vnn"]
@@ -196,6 +196,7 @@ monitorable = false
 script = ExtResource("16_8tpba")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+visible = false
 shape = SubResource("CircleShape2D_12m0g")
 
 [node name="Timer" type="Timer" parent="Hurtbox"]
@@ -206,7 +207,6 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
-visible = false
 position = Vector2(-249.083, -88.3566)
 shape = SubResource("CircleShape2D_ddof4")
 debug_color = Color(0.627451, 0.529412, 0.133333, 0.419608)
@@ -226,7 +226,6 @@ offset_right = 9.0
 offset_bottom = -28.0
 
 [node name="Debug" type="Label" parent="."]
-visible = false
 offset_left = -23.0
 offset_top = -42.0
 offset_right = 26.0
