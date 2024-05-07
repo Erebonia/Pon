@@ -17,7 +17,6 @@ const TILE_SIZE: int = 16
 func _ready() -> void:
 	if Status.dungeonFloor > MAX_FLOORS:
 		Status.dungeonFloor = 1
-	#Status.dungeonFloor += 1
 	print(Status.dungeonFloor)
 	if Status.dungeonFloor == 2:
 		num_levels = 3
@@ -33,6 +32,7 @@ func _spawn_rooms() -> void:
 
 		if i == 0:
 			room = SPAWN_ROOMS[randi() % SPAWN_ROOMS.size()].instantiate()
+			print("SETTING PLAYER")
 			player.position = room.get_node("PlayerSpawnPos").position
 		else:
 			if i == num_levels - 1 and Status.dungeonFloor != MAX_FLOORS:

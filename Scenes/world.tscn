@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=30 format=3 uid="uid://jpnitqgvchnd"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_q3h4t"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_bhid6"]
@@ -26,9 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://dekowggjojorb" path="res://Player/Inventory/Items/accessory/accessory_royal_cape.tscn" id="24_2e4gf"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="25_xso8f"]
 [ext_resource type="Texture2D" uid="uid://c4ks0si1457w8" path="res://World/cloud.png" id="26_8pyy5"]
-[ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="27_al17l"]
-[ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="28_tdxox"]
-[ext_resource type="PackedScene" uid="uid://dvbvyl1rsoiu6" path="res://Enemies/Scenes/boss_golem.tscn" id="29_qn8rf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rgn5p"]
 shader = ExtResource("6_qdfgf")
@@ -52,11 +49,6 @@ size = Vector2(16, 96)
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u0ehe"]
 particle_flag_disable_z = true
 gravity = Vector3(0, 98, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0e1do"]
-resource_local_to_scene = true
-shader = ExtResource("28_tdxox")
-shader_parameter/active = true
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -295,22 +287,12 @@ shape = SubResource("RectangleShape2D_w3vxf")
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
-[node name="Wilderness" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(-64, 224)
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
 amount = 6
 process_material = SubResource("ParticleProcessMaterial_u0ehe")
 texture = ExtResource("26_8pyy5")
 lifetime = 10.0
-
-[node name="Enemy_Bat" parent="." instance=ExtResource("27_al17l")]
-material = SubResource("ShaderMaterial_0e1do")
-position = Vector2(55, 217)
-
-[node name="Boss_Golem" parent="." instance=ExtResource("29_qn8rf")]
-position = Vector2(-19, 76)
 
 [connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]

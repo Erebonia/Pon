@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvq7w8jewvpm5"]
+[gd_scene load_steps=12 format=3 uid="uid://bvq7w8jewvpm5"]
 
 [ext_resource type="Script" path="res://World/Base_Scene.gd" id="1_l6ros"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_lr241"]
@@ -13,6 +13,8 @@
 size = Vector2(20, 22)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8moo5"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ipnse"]
 
 [node name="Wilderness" type="Node2D"]
 y_sort_enabled = true
@@ -43,11 +45,8 @@ stream = ExtResource("9_sibt0")
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
-[node name="any" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(196, 245)
-
 [node name="SceneTrigger" parent="." instance=ExtResource("6_gsxhe")]
-position = Vector2(143, 235)
+position = Vector2(261, 91)
 connected_scene = "world"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
@@ -69,5 +68,12 @@ script = ExtResource("8_xe6n5")
 remote_path = NodePath("../../World_Camera")
 
 [node name="User_Interface" parent="." instance=ExtResource("3_j75hx")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -10
+position = Vector2(81, -1817)
+scale = Vector2(-7614.64, 6992.57)
+texture = SubResource("PlaceholderTexture2D_ipnse")
 
 [editable path="World_Camera"]

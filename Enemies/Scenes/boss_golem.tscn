@@ -486,6 +486,9 @@ radius = 73.7564
 [node name="Boss_Golem" type="CharacterBody2D"]
 collision_layer = 16
 script = ExtResource("1_ucatd")
+ACCELERATION = 400
+MAX_SPEED = 80
+FRICTION = 100
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -528,11 +531,13 @@ disabled = true
 [node name="FiniteStateMachine" type="Node2D" parent="."]
 script = ExtResource("7_njdfh")
 
-[node name="Idle" type="Node2D" parent="FiniteStateMachine"]
+[node name="Idle" type="Node2D" parent="FiniteStateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("7_6aaru")
+enemy = NodePath("../..")
 
-[node name="Follow" type="Node2D" parent="FiniteStateMachine"]
+[node name="Follow" type="Node2D" parent="FiniteStateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("8_d7gp6")
+enemy = NodePath("../..")
 
 [node name="MeleeAttack" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("9_8gny1")

@@ -23,5 +23,5 @@ func set_target():
 func Physics(_delta : float) -> EnemyState:
 	if can_transition:
 		can_transition = false
-		return dash
+		return follow
 	return null

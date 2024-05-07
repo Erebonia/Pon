@@ -6,14 +6,19 @@ extends Enemy_Follow
 func Enter():
 	animation_player.play("idle")
 
-func Physics(_delta : float) -> EnemyState:
-	var distance = owner.direction.length()
+func Physics(delta : float) -> EnemyState:
 	
-	if distance > 50 and distance < 100:
+	if player != null:
+		enemy.velocity = enemy.velocity.move_toward(Vector2.ZERO, enemy.FRICTION * delta)
+		accelerate_towards_point(player.global_position, delta)
+		
+	if enemy.direction.length() > 9 and enemy.direction.length() < 20:
 		attackPlayerRanged()
-	elif distance < 5:
+		
+	if enemy.direction.length() <= 9:
 		return melee
 		
+	enemy.move_and_slide()
 	return null
 	
 func attackPlayerRanged():
@@ -23,4 +28,3 @@ func attackPlayerRanged():
 			StateMachine.ChangeState(homingMissile)
 		1:
 			StateMachine.ChangeState(laserBeam)
-			

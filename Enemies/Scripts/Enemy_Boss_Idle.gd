@@ -6,7 +6,7 @@ extends Enemy_Idle
 var player_entered_boss: bool = false:
 	set(value):
 		canAttackBossCollision.set_deferred("disabled", false)
-		if enemy != null:
+		if overhead_health_bar and progress_bar != null:
 			progress_bar.set_deferred("visible",value)
 			overhead_health_bar.set_deferred("visible",value)
 		
