@@ -5,7 +5,7 @@ class_name State_Attack
 @onready var run = $"../Run"
 @onready var idle = $"../Idle"
 var bonusDMG = 15
-var attacking = true
+var attacking = false
 
 func Enter():
 	player.animationTree.set("parameters/Attack/BlendSpace2D/blend_position", player.aim_direction)
@@ -16,6 +16,7 @@ func Enter():
 	player.UpdateAnimation("Attack")
 	player.attackTimer.start()
 	player.animationTree.animation_finished.connect(endAttack)
+	attacking = true
 	
 func Exit() -> void:
 	player.animationTree.animation_finished.disconnect(endAttack)
@@ -32,7 +33,7 @@ func Physics(_delta : float) -> State:
 			return attack_combo
 			
 		if Input.is_action_pressed("Move_Down") or Input.is_action_pressed("Move_Up") or Input.is_action_pressed("Move_Right") or Input.is_action_pressed("Move_Left"):
-			if !attacking:
+			if !attacking and player.attackTimer.get_time_left() <= 1.7:
 				return run
 		return
 		

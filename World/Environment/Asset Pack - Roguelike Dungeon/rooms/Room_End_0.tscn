@@ -38,7 +38,7 @@ position = Vector2(184, 155)
 shape = SubResource("RectangleShape2D_mo1q5")
 
 [node name="SceneTrigger" parent="." index="5" instance=ExtResource("2_mhmym")]
-connected_scene = "Wilderness"
+connected_scene = "Dungeon_1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger" index="0"]
 position = Vector2(136, 39.5)
