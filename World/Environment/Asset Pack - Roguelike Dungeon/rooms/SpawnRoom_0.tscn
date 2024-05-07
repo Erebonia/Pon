@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c15sxlr3o36gr"]
+[gd_scene load_steps=6 format=3 uid="uid://c15sxlr3o36gr"]
 
 [ext_resource type="PackedScene" uid="uid://cded01chy127l" path="res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/Room.tscn" id="1_6suqc"]
 [ext_resource type="PackedScene" uid="uid://ddhf7b3wtualh" path="res://World/Environment/Asset Pack - Roguelike Dungeon/door.tscn" id="2_bpvlh"]
+[ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="3_wi4s2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo1q5"]
 size = Vector2(73.5, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j8w77"]
 
 [node name="Room0" instance=ExtResource("1_6suqc")]
 
@@ -36,3 +39,10 @@ shape = SubResource("RectangleShape2D_mo1q5")
 
 [node name="PlayerSpawnPos" type="Marker2D" parent="." index="5"]
 position = Vector2(184, 103)
+
+[node name="SceneTrigger" parent="." index="6" instance=ExtResource("3_wi4s2")]
+connected_scene = "world"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger" index="0"]
+position = Vector2(264, 103)
+shape = SubResource("CircleShape2D_j8w77")
