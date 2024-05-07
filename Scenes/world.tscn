@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://casaldp7h1lce" path="res://Player/Inventory/Items/helmet/helmet_gladiator.tscn" id="22_rqkig"]
 [ext_resource type="PackedScene" uid="uid://d0d3pxcumfshs" path="res://Player/Inventory/Items/armor/armor_traveler_robe.tscn" id="23_r2k2a"]
 [ext_resource type="PackedScene" uid="uid://dekowggjojorb" path="res://Player/Inventory/Items/accessory/accessory_royal_cape.tscn" id="24_2e4gf"]
-[ext_resource type="PackedScene" path="res://World/SceneTrigger.tscn" id="25_xso8f"]
+[ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="25_xso8f"]
 [ext_resource type="Texture2D" uid="uid://c4ks0si1457w8" path="res://World/cloud.png" id="26_8pyy5"]
 [ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="27_al17l"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="28_tdxox"]

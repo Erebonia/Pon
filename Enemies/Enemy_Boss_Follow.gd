@@ -6,7 +6,7 @@ extends Enemy_Follow
 func Enter():
 	animation_player.play("idle")
 
-func Physics(delta : float) -> EnemyState:
+func Physics(_delta : float) -> EnemyState:
 	var distance = owner.direction.length()
 	
 	if distance > 50 and distance < 100:

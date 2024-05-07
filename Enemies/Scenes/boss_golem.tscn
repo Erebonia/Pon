@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_Dash.gd" id="14_31jw8"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_Death.gd" id="15_bbn2r"]
 [ext_resource type="Script" path="res://Overlap/hurtbox.gd" id="16_6uqi4"]
-[ext_resource type="PackedScene" path="res://Overlap/Stats.tscn" id="18_f152u"]
+[ext_resource type="PackedScene" uid="uid://dk7ckqq8mq2nr" path="res://Overlap/Stats.tscn" id="18_f152u"]
 [ext_resource type="PackedScene" uid="uid://bhv1fd4uvlhpd" path="res://Enemies/Scenes/wander_controller.tscn" id="19_08jca"]
 [ext_resource type="PackedScene" uid="uid://cms5nxy1iwkm2" path="res://Enemies/Scenes/player_detection.tscn" id="20_bq1px"]
 [ext_resource type="PackedScene" uid="uid://bkf2a5dlqworv" path="res://Overlap/soft_collision.tscn" id="21_bdf6k"]
