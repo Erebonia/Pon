@@ -2,6 +2,7 @@ extends EnemyState
  
 @onready var pivot = $"../../pivot"
 @onready var dash = $"../Dash"
+@onready var follow = $"../Follow"
 
 var can_transition: bool = false
  
