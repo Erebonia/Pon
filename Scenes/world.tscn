@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=23 format=3 uid="uid://jpnitqgvchnd"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_q3h4t"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_bhid6"]
@@ -17,13 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://bkkl6qi4h8nwh" path="res://World/Environment/Rainbow_Cake.png" id="15_un17n"]
 [ext_resource type="AudioStream" uid="uid://0v4s58bqthyu" path="res://Music and Sounds/Music/theme_dream.ogg" id="16_y7hhj"]
 [ext_resource type="Script" path="res://World/DayAndNight (Editor Only).gd" id="17_4oi2p"]
-[ext_resource type="PackedScene" uid="uid://qwygywl07m00" path="res://Player/Inventory/Items/general/hp_potion.tscn" id="18_m3eqd"]
-[ext_resource type="PackedScene" uid="uid://d33af0kyesbm8" path="res://Player/Inventory/Items/weapon/sword.tscn" id="19_4ilw6"]
-[ext_resource type="PackedScene" uid="uid://bgu36cpnxvspy" path="res://Player/Inventory/Items/weapon/axe.tscn" id="20_v28vn"]
-[ext_resource type="PackedScene" uid="uid://cxi06x36o4qhe" path="res://Player/Inventory/Items/weapon/battleaxe.tscn" id="21_7jxrq"]
-[ext_resource type="PackedScene" uid="uid://casaldp7h1lce" path="res://Player/Inventory/Items/helmet/helmet_gladiator.tscn" id="22_rqkig"]
-[ext_resource type="PackedScene" uid="uid://d0d3pxcumfshs" path="res://Player/Inventory/Items/armor/armor_traveler_robe.tscn" id="23_r2k2a"]
-[ext_resource type="PackedScene" uid="uid://dekowggjojorb" path="res://Player/Inventory/Items/accessory/accessory_royal_cape.tscn" id="24_2e4gf"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="25_xso8f"]
 [ext_resource type="Texture2D" uid="uid://c4ks0si1457w8" path="res://World/cloud.png" id="26_8pyy5"]
 
@@ -254,29 +247,6 @@ stream = ExtResource("16_y7hhj")
 color = Color(1, 0.870588, 0.866667, 1)
 script = ExtResource("17_4oi2p")
 
-[node name="PlaceholderDrops" type="Node2D" parent="."]
-
-[node name="HP_Potion" parent="PlaceholderDrops" instance=ExtResource("18_m3eqd")]
-position = Vector2(-16, 259)
-
-[node name="Sword" parent="PlaceholderDrops" instance=ExtResource("19_4ilw6")]
-position = Vector2(-48, 205)
-
-[node name="Axe" parent="PlaceholderDrops" instance=ExtResource("20_v28vn")]
-position = Vector2(11, 205)
-
-[node name="Battleaxe" parent="PlaceholderDrops" instance=ExtResource("21_7jxrq")]
-position = Vector2(-18, 204)
-
-[node name="Helmet" parent="PlaceholderDrops" instance=ExtResource("22_rqkig")]
-position = Vector2(-47, 228)
-
-[node name="Armor" parent="PlaceholderDrops" instance=ExtResource("23_r2k2a")]
-position = Vector2(-19, 228)
-
-[node name="Accessory" parent="PlaceholderDrops" instance=ExtResource("24_2e4gf")]
-position = Vector2(8, 228)
-
 [node name="SceneTrigger" parent="." instance=ExtResource("25_xso8f")]
 position = Vector2(-89, 229)
 connected_scene = "Wilderness"
@@ -286,6 +256,9 @@ position = Vector2(4, -5)
 shape = SubResource("RectangleShape2D_w3vxf")
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="Wilderness" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-64, 224)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false

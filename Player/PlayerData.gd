@@ -21,6 +21,9 @@ func updateInventory(value: Array[InventorySlot]):
 func loadSavedPosition(value: Vector2):
 	savedPosition = value
 	
+func updateDungeonFloor(value: int):
+	dungeonFloor = value
+	
 func updateHP(value: int):
 	HP = value
 	

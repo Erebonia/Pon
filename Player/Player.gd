@@ -49,6 +49,7 @@ func _ready():
 	verifySaveDirectory(save_file_path)
 	checkTime = DayAndNight.get_child(1)
 	checkTime.connect("time_tick", Callable(self, "_on_check_time"))
+	loadSaveData()
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("Save"):
@@ -76,7 +77,7 @@ func setMovementDirection():
 	move_and_slide()
 	
 func saveStats():
-	playerData.loadSavedPosition(self.position)	
+	#playerData.loadSavedPosition(self.position)	
 	playerData.updateHP(stats.HP)
 	playerData.updateMaxHP(stats.max_HP)
 	playerData.updateEXP(stats.current_xp)
@@ -87,15 +88,19 @@ func saveStats():
 	playerData.updateMAG(stats.Magic)
 	playerData.updateDEF(stats.Defense)
 	playerData.updateInventory(inventory.slots)
+	playerData.updateDungeonFloor(stats.dungeonFloor)
 	
 func saveData():
 	ResourceSaver.save(playerData, save_file_path + save_file_name)
 	print("Game Saved")
 
 func loadSaveData():
-	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
-	gameStarted()
-	print("Save Loaded")
+	if FileAccess.file_exists(save_file_path + save_file_name):
+		playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+		gameStarted()
+		print("Save Loaded")
+	else:
+		print("File not found. Press O to save!")
 
 signal updateInventoryUI
 func gameStarted():
@@ -103,7 +108,7 @@ func gameStarted():
 	inventory.slots = playerData.slots
 	inventory.check_inventory_full()
 	emit_signal("updateInventoryUI")
-	self.position = playerData.savedPosition
+	#self.position = playerData.savedPosition
 	stats.HP = playerData.HP
 	stats.max_HP = playerData.max_HP
 	stats.current_xp = playerData.EXP
@@ -113,6 +118,7 @@ func gameStarted():
 	stats.Agility = playerData.agility
 	stats.Magic = playerData.magic
 	stats.Defense = playerData.defense
+	stats.dungeonFloor = playerData.dungeonFloor
 	
 func verifySaveDirectory(path: String):
 	DirAccess.make_dir_absolute(path)
