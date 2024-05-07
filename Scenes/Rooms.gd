@@ -32,7 +32,6 @@ func _spawn_rooms() -> void:
 
 		if i == 0:
 			room = SPAWN_ROOMS[randi() % SPAWN_ROOMS.size()].instantiate()
-			print("SETTING PLAYER")
 			player.position = room.get_node("PlayerSpawnPos").position
 		else:
 			if i == num_levels - 1 and Status.dungeonFloor != MAX_FLOORS:
