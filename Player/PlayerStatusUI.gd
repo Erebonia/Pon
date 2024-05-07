@@ -26,5 +26,6 @@ func _update_xp_ui(total_exp, next_level_exp):
 	%ProgressBar.max_value = next_level_exp
 	%ProgressBar.value = total_exp
 	if next_level_exp == -1:
-		next_level_exp = "MAX"
-	%TotalXP.text = str(total_exp) + "/" + str(next_level_exp)
+		%TotalXP.text = str("MAX")
+	else:
+		%TotalXP.text = str(total_exp) + "/" + str(next_level_exp)
