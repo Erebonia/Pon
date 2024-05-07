@@ -13,3 +13,6 @@ func _on_visible_on_screen_enabler_2d_screen_exited():
 	
 func projectile():
 	pass
+
+func _on_hitbox_body_entered(body):
+	queue_free()
