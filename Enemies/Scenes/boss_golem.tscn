@@ -484,6 +484,7 @@ radius = 73.7564
 [sub_resource type="CircleShape2D" id="CircleShape2D_r77o4"]
 
 [node name="Boss_Golem" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
 collision_layer = 16
 script = ExtResource("1_ucatd")
 ACCELERATION = 400
@@ -596,7 +597,7 @@ shape = SubResource("CircleShape2D_ddof4")
 debug_color = Color(0.627451, 0.529412, 0.133333, 0.419608)
 
 [node name="Stats" parent="." instance=ExtResource("18_f152u")]
-max_health = 200
+max_health = 1000
 
 [node name="DamageNumbersOrigin" type="Node2D" parent="."]
 position = Vector2(0, -27)

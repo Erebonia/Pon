@@ -24,6 +24,7 @@ func move_selector() -> void:
 	currently_selected = (currently_selected + 1) % slots.size()
 	selector.global_position = slots[currently_selected].global_position
 	
+	
 func move_selector_backwards() -> void:
 	currently_selected = (currently_selected - 1) % slots.size()
 	selector.global_position = slots[currently_selected].global_position
@@ -33,5 +34,7 @@ func _unhandled_input(event) -> void:
 		inventory.use_item_at_index(currently_selected)
 	if event.is_action_pressed("move_selector"):
 		move_selector()
+		$SelectorSoundFX.play()
 	elif event.is_action_pressed("move_selector_reverse"):
 		move_selector_backwards()
+		$SelectorSoundFX.play()

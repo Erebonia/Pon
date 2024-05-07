@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bk6ahcnb3aje2"
+path="res://.godot/imported/Inventory - Place Item.ogg-bd22389c7aa639e2e3c5403372c63eb3.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music and Sounds/UI/Inventory - Place Item.ogg"
+dest_files=["res://.godot/imported/Inventory - Place Item.ogg-bd22389c7aa639e2e3c5403372c63eb3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

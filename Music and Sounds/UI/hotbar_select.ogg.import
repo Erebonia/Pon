@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b3f778igft3ee"
+path="res://.godot/imported/hotbar_select.ogg-c4e90bdf6e039dd40c5a4c8455b3219b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music and Sounds/UI/hotbar_select.ogg"
+dest_files=["res://.godot/imported/hotbar_select.ogg-c4e90bdf6e039dd40c5a4c8455b3219b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
