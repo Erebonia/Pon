@@ -2,6 +2,7 @@ extends Node
 class_name SceneManager
 
 var player: Player
+var userInterface: UserInterface
 var last_scene_name: String 
 var scene_dir_path = "res://scenes/"
 
@@ -10,7 +11,7 @@ func change_scene(from, to_scene_name: String) -> void:
 	if player != null:
 		player = from.player
 		player.get_parent().remove_child(player)
-			
+		
 	# Fade effect
 	TransitionScene.transition() 
 	
