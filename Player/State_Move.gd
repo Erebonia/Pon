@@ -27,7 +27,7 @@ func Physics(delta : float) -> State:
 	if Input.is_action_just_pressed("roll"):
 		return roll
 	
-	if Input.is_action_pressed("attack") and weaponEquipped:
+	if Input.is_action_pressed("attack") and player.weaponEquipped:
 		return attack
 		
 	move_state(delta)

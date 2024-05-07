@@ -38,6 +38,10 @@ var inventoryIsFull: bool
 var input_vector = Vector2.ZERO
 var aim_direction = null
 
+var hotbar_instance: Hotbar
+var weaponEquipped : bool = false
+@onready var handSprite: Sprite2D = $Combat/Sword/SwordSprite
+
 func _ready():
 	inventory.use_item.connect(use_item)
 	inventory.inventory_full.connect(inventoryCheck)
@@ -57,6 +61,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Load"):
 		loadSaveData()
 		
+	checkSelectedWeapon()	
 	saveStats()
 	updateHealthBarUI()
 
@@ -173,4 +178,19 @@ func _on_hp_recovery_timeout():
 	if stats.HP < stats.max_HP:
 		$Combat/HpRecovery.start()
 		stats.HP += 1
+		
+func checkSelectedWeapon(): 
+	hotbar_instance = get_tree().get_first_node_in_group("hotbar")
+	var currently_selected_index = hotbar_instance.currently_selected
+	
+	if currently_selected_index < hotbar_instance.inventory.slots.size():
+		var inventory_slot = hotbar_instance.inventory.slots[currently_selected_index]
+		
+		if inventory_slot.item != null:
+			#Set the item texture and equip weapon status
+			if inventory_slot.item.isWeapon: weaponEquipped = true
+			else: weaponEquipped = false
+			handSprite.texture = inventory_slot.item.texture
+		else:
+			handSprite.texture = null
 			

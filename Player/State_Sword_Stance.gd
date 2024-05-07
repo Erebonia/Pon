@@ -54,7 +54,7 @@ func Process(_delta : float) -> State:
 	return null
 	
 func Physics(delta : float) -> State:
-	if Input.is_action_pressed("attack") and weaponEquipped:
+	if Input.is_action_pressed("attack") and player.weaponEquipped:
 		player.velocity = Vector2.ZERO
 		activateStance()
 	elif !isPerformingSwordWave:

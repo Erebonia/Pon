@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvq7w8jewvpm5"]
+[gd_scene load_steps=7 format=3 uid="uid://bvq7w8jewvpm5"]
 
 [ext_resource type="Script" path="res://World/Base_Scene.gd" id="1_grit8"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_orh0m"]
 [ext_resource type="Script" path="res://Scenes/Rooms.gd" id="3_kr7du"]
-[ext_resource type="PackedScene" uid="uid://dx4gc50eoqluo" path="res://UI/user_interface.tscn" id="4_6ixf6"]
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="5_kom6a"]
 [ext_resource type="AudioStream" uid="uid://b30d2271k7t4u" path="res://Music and Sounds/Music/The_Forest_Foxs_Quest2.mp3" id="6_oowxi"]
 
@@ -32,8 +31,6 @@ position = Vector2(1956, 870)
 [node name="Rooms" type="Node2D" parent="."]
 y_sort_enabled = true
 script = ExtResource("3_kr7du")
-
-[node name="User_Interface" parent="." instance=ExtResource("4_6ixf6")]
 
 [node name="Player" parent="." instance=ExtResource("5_kom6a")]
 
