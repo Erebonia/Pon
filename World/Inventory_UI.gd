@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+class_name UserInterface
+
 @onready var inventory = $InventoryGui
 @onready var hotbar = $Hotbar
 @onready var playerStatusUI = $"Status Screen"

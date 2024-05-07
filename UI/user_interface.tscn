@@ -173,7 +173,7 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="User_Interface" type="CanvasLayer"]
+[node name="User_Interface" type="CanvasLayer" groups=["UserInterface"]]
 process_mode = 3
 script = ExtResource("1_0y4l0")
 

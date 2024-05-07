@@ -38,7 +38,6 @@ var inventoryIsFull: bool
 var input_vector = Vector2.ZERO
 var aim_direction = null
 
-var hotbar_instance: Hotbar
 var weaponEquipped : bool = false
 @onready var handSprite: Sprite2D = $Combat/Sword/SwordSprite
 
@@ -180,7 +179,7 @@ func _on_hp_recovery_timeout():
 		stats.HP += 1
 		
 func checkSelectedWeapon(): 
-	hotbar_instance = get_tree().get_first_node_in_group("hotbar")
+	var hotbar_instance = get_tree().get_first_node_in_group("Hotbar")
 	var currently_selected_index = hotbar_instance.currently_selected
 	
 	if currently_selected_index < hotbar_instance.inventory.slots.size():
