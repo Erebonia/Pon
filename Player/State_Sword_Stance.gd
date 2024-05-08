@@ -34,6 +34,7 @@ func Enter():
 	swordWaveStanceSound.play()
 	await player.animationPlayer.animation_finished
 	player.animationTree.set_active(true)
+	swordStanceAuraFX.play("default")
 	
 	#Stat Bonus
 	run.MAX_SPEED = 120
