@@ -130,7 +130,8 @@ func verifySaveDirectory(path: String):
 func _on_check_time(_day, hour, _minute):
 	#24 hour Clock
 	if (hour >= 19 and hour <= 23) or (hour >= 0 and hour < 5):
-		lightSource.visible = true
+		if scene_manager.currentScene != "Dungeon_1":
+			lightSource.visible = true
 	else:
 		lightSource.visible = false
 	

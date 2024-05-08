@@ -5,6 +5,11 @@ var player: Player
 var userInterface: UserInterface
 var last_scene_name: String 
 var scene_dir_path = "res://scenes/"
+var currentScene: String
+
+func _process(delta):
+	if get_tree().current_scene != null:
+		currentScene = get_tree().current_scene.name
 
 func change_scene(from, to_scene_name: String) -> void:
 	last_scene_name = from.name

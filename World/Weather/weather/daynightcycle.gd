@@ -9,7 +9,7 @@ signal time_tick(day:int, hour:int, minute:int)
 
 
 @export var gradient_texture:GradientTexture1D
-@export var INGAME_SPEED = 2
+@export var INGAME_SPEED = 50
 @export var INITIAL_HOUR = 12:
 	set(h):
 		INITIAL_HOUR = h
@@ -26,9 +26,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	if get_tree().current_scene != null:
-		if get_tree().current_scene.name != "Dungeon_1":
-			visible = true
+	if scene_manager.currentScene != "Dungeon_1":
+		visible = true
 	else:
 		visible = false
 			
