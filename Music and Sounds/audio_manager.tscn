@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8ch0uoebvnjt"]
+
+[ext_resource type="AudioStream" uid="uid://bt1vkgu3oclss" path="res://Music and Sounds/General/SceneTransition.ogg" id="1_r7f63"]
+[ext_resource type="AudioStream" uid="uid://djhd2ioya7yr" path="res://Music and Sounds/General/Grass_sfx.wav" id="2_rms4j"]
+
+[node name="AudioManager" type="Node2D"]
+
+[node name="SceneTransition" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_r7f63")
+volume_db = -5.0
+pitch_scale = 0.5
+
+[node name="Grass_SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_rms4j")
+pitch_scale = 0.5

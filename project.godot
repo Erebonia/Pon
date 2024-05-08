@@ -22,6 +22,7 @@ DayAndNight="*res://World/Weather/weather/daynightcycle_scene.tscn"
 DamageNumbers="*res://Overlap/DamageNumbers.gd"
 TransitionScene="*res://UI/transition_scene.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+AudioManager="*res://Music and Sounds/audio_manager.tscn"
 
 [dialogic]
 
@@ -64,7 +65,6 @@ window/size/viewport_height=180
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="res://UI/cursor.png"
 
 [editor_plugins]
 

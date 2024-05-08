@@ -13,6 +13,7 @@ func create_grass_effect():
 	#Puts the effect in the same position as the instance we made.
 	grassEffect.global_position = global_position
 	
+	AudioManager.get_node("Grass_SFX").play()
 	queue_free()
 
 func _on_hurtbox_area_entered(_area):

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://djhd2ioya7yr"
+path="res://.godot/imported/Grass_sfx.wav-c45b60cf4a81e3164f8a240e2c61cd74.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/General/Grass_sfx.wav"
+dest_files=["res://.godot/imported/Grass_sfx.wav-c45b60cf4a81e3164f8a240e2c61cd74.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

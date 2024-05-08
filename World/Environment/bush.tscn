@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dr31cgvo6r8ds"]
 
-[ext_resource type="Texture2D" uid="uid://dog6lttt22v0v" path="res://Shadows/LargeShadow.png" id="1_h8osg"]
+[ext_resource type="Texture2D" uid="uid://dog6lttt22v0v" path="res://Effects/Shadows/LargeShadow.png" id="1_h8osg"]
 [ext_resource type="Texture2D" uid="uid://cuk1ltr27lffq" path="res://World/Environment/Asset Pack - Pixivan/bush.png" id="2_mtjcd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nv8tj"]

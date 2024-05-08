@@ -18,10 +18,9 @@ class_name State_Sword_Stance
 var swordWaveSlash = preload("res://Player/swordWaveProjectile.tscn")
 var isPerformingSwordWave = false
 var lastAnimationPlayed = "attack_combo1"  # Initialize to the first animation
+var stanceEnded: bool = false
 
 func Enter():
-	player.UpdateAnimation("Idle")
-	
 	#Activate Special FX
 	swordStanceLabel.visible = true
 	swordStanceAuraFX.play("aura")
@@ -30,7 +29,11 @@ func Enter():
 	swordStanceAnimation.play("enter_sword_stance")
 
 	#Enter Actual Stance
+	player.animationTree.set_active(false)
 	player.animationPlayer.play("swordStance")
+	swordWaveStanceSound.play()
+	await player.animationPlayer.animation_finished
+	player.animationTree.set_active(true)
 	
 	#Stat Bonus
 	run.MAX_SPEED = 120
@@ -38,7 +41,7 @@ func Enter():
 	player.animationTree.set("parameters/Attack_Combo/TimeScale/scale", 5)
 	player.animationTree.set("parameters/Attack_Combo2/TimeScale/scale", 5)
 	swordWaveCooldown.start()
-	swordWaveStanceSound.play()
+	stanceEnded = true
 	
 func Exit():
 	swordGlow.stop()
@@ -50,14 +53,13 @@ func Exit():
 	player.animationTree.set("parameters/Attack_Combo2/TimeScale/scale", 2)
 	
 func Process(_delta : float) -> State:
-	super.Process(_delta)
 	return null
 	
 func Physics(delta : float) -> State:
-	if Input.is_action_pressed("attack") and player.weaponEquipped:
+	if Input.is_action_pressed("attack") and player.weaponEquipped and stanceEnded:
 		player.velocity = Vector2.ZERO
 		activateStance()
-	elif !isPerformingSwordWave:
+	elif !isPerformingSwordWave and stanceEnded:
 		swordStanceMoveState(delta)
 	
 	return null
@@ -107,4 +109,5 @@ func swordStanceMoveState(delta):
 			player.aim_direction = (player.get_global_mouse_position() - player.global_position).normalized() # Make player face the mouse
 		else:
 			player.velocity = Vector2.ZERO
-			player.UpdateAnimation("Idle")
+			player.UpdateAnimation("Idle")	
+			

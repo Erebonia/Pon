@@ -38,6 +38,7 @@ var inventoryIsFull: bool
 var input_vector = Vector2.ZERO
 var aim_direction = null
 
+#Changing Werapon Sprites
 var weaponEquipped : bool = false
 @onready var handSprite: Sprite2D = $Combat/Sword/SwordSprite
 
@@ -140,12 +141,6 @@ func _on_level_up(_Level):
 	levelUpVFX.play("level_up")
 	levelUpSFX.play()
 	
-func playerDead():
-	queue_free()
-	
-func player():
-	pass
-	
 func updateHealthBarUI():
 	healthBar.health = stats.HP
 	healthBar.max_value = stats.max_HP
@@ -187,4 +182,10 @@ func checkSelectedWeapon():
 			handSprite.texture = inventory_slot.item.texture
 		else:
 			handSprite.texture = null
+			
+func playerDead():
+	queue_free()
+	
+func player():
+	pass
 			
