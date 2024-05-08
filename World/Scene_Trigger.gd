@@ -9,4 +9,4 @@ var scene_folder = "res://scenes/"
 func _on_body_entered(body):
 	if body is Player:
 		body.saveData() # Save Data before scene switch
-		scene_manager.change_scene(get_owner(), connected_scene)
+		scene_manager.change_scene(get_tree().current_scene, connected_scene)

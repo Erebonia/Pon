@@ -25,6 +25,13 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	
+	if get_tree().current_scene != null:
+		if get_tree().current_scene.name != "Dungeon_1":
+			visible = true
+	else:
+		visible = false
+			
 	time += delta * INGAME_TO_REAL_MINUTE_DURATION * INGAME_SPEED
 	
 	var value = (sin(time - PI / 2.0) + 1.0) / 2.0

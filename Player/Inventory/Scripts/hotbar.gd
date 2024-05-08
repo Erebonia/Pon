@@ -24,7 +24,6 @@ func move_selector() -> void:
 	currently_selected = (currently_selected + 1) % slots.size()
 	selector.global_position = slots[currently_selected].global_position
 	
-	
 func move_selector_backwards() -> void:
 	currently_selected = (currently_selected - 1) % slots.size()
 	selector.global_position = slots[currently_selected].global_position

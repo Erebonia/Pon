@@ -13,7 +13,8 @@ class_name State_Move
 
 func Enter():
 	player.UpdateAnimation("Run")
-	$Footsteps.play()
+	if get_tree().current_scene.name == "World":
+		$Footsteps.play()
 	
 func Exit():
 	$Footsteps.stop()
