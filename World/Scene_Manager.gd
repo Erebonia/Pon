@@ -7,7 +7,7 @@ var last_scene_name: String
 var scene_dir_path = "res://scenes/"
 var currentScene: String
 
-func _process(delta):
+func _process(_delta):
 	if get_tree().current_scene != null:
 		currentScene = get_tree().current_scene.name
 

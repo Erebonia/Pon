@@ -1,4 +1,4 @@
-[gd_scene load_steps=641 format=3 uid="uid://b1lifm57p7pvt"]
+[gd_scene load_steps=642 format=3 uid="uid://b1lifm57p7pvt"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_fjjot"]
 [ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Effects/Shadows/SmallShadow.png" id="2_6k4r1"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bvite1qic5j1a" path="res://Overlap/hurtbox.tscn" id="5_bhnfg"]
 [ext_resource type="AudioStream" uid="uid://cyl68booq45wm" path="res://Music and Sounds/General/Evade.wav" id="5_fd2kj"]
 [ext_resource type="Script" path="res://Player/State_Roll.gd" id="5_gajw7"]
+[ext_resource type="AudioStream" uid="uid://dkl2ddoj5o6o3" path="res://Music and Sounds/General/footsteps_stone.wav" id="6_1dej3"]
 [ext_resource type="Script" path="res://Player/State_Attack.gd" id="6_w1ud3"]
 [ext_resource type="Script" path="res://Player/State_Attack_Combo.gd" id="7_g4l0n"]
 [ext_resource type="Script" path="res://Player/State_Sword_Stance.gd" id="8_xg1yj"]
@@ -9838,8 +9839,12 @@ script = ExtResource("3_l2iho")
 [node name="Run" type="Node2D" parent="StateMachine"]
 script = ExtResource("4_m08hb")
 
-[node name="Footsteps" type="AudioStreamPlayer2D" parent="StateMachine/Run"]
+[node name="Footsteps_Wood" type="AudioStreamPlayer2D" parent="StateMachine/Run"]
 stream = ExtResource("5_6he2w")
+volume_db = -5.0
+
+[node name="Footsteps_Stone" type="AudioStreamPlayer2D" parent="StateMachine/Run"]
+stream = ExtResource("6_1dej3")
 volume_db = -5.0
 
 [node name="Roll" type="Node2D" parent="StateMachine"]

@@ -13,14 +13,16 @@ class_name State_Move
 
 func Enter():
 	player.UpdateAnimation("Run")
-	if get_tree().current_scene.name == "World":
-		$Footsteps.play()
+	if scene_manager.currentScene == "World":
+		$Footsteps_Wood.play()
+	elif scene_manager.currentScene == "Dungeon_1":
+		$Footsteps_Stone.play()
 	
 func Exit():
-	$Footsteps.stop()
+	$Footsteps_Wood.stop()
+	$Footsteps_Stone.stop()
 	
 func Process(_delta : float) -> State:
-	super.Process(_delta)
 	return null
 	
 func Physics(delta : float) -> State:

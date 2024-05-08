@@ -75,9 +75,7 @@ func setMovementDirection():
 	input_vector.x = Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left")
 	input_vector.y = Input.get_action_strength("Move_Down") - Input.get_action_strength("Move_Up")
 	input_vector = input_vector.normalized()
-	
 	aim_direction = (get_global_mouse_position() - global_position).normalized() # Make player face the mouse
-
 	move_and_slide()
 	
 func saveStats():
@@ -160,10 +158,6 @@ func _on_area_2d_area_entered(area):
 		
 func increase_health(amount: int) -> void:
 	stats.HP += amount
-	
-	#currentHealth += amount
-	#currentHealth = min(maxHealth, currentHealth)
-	#healthChanged.emit(currentHealth)
 	
 func use_item(item: InventoryItem) -> void:
 	item.use(self)
