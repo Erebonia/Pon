@@ -9939,7 +9939,7 @@ vertical_alignment = 1
 [node name="Light_Source" type="PointLight2D" parent="Misc"]
 visible = false
 y_sort_enabled = true
-position = Vector2(28, 39)
+position = Vector2(23, 48)
 color = Color(0.862745, 0.568627, 0.27451, 1)
 energy = 1.3
 texture = SubResource("GradientTexture2D_m7mi1")

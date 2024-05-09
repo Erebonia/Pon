@@ -1,10 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=23 format=3 uid="uid://jpnitqgvchnd"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_q3h4t"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_bhid6"]
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="3_viep7"]
 [ext_resource type="PackedScene" uid="uid://dx4gc50eoqluo" path="res://UI/user_interface.tscn" id="4_rvbtp"]
 [ext_resource type="TileSet" uid="uid://dehp76qcudo5q" path="res://World/Environment.tres" id="5_gotvy"]
+[ext_resource type="PackedScene" uid="uid://4rgixsghg61n" path="res://World/Weather/leaf.tscn" id="5_ogxpn"]
+[ext_resource type="PackedScene" uid="uid://cksixn20dl4jo" path="res://World/Weather/rain.tscn" id="6_6mrr8"]
 [ext_resource type="PackedScene" uid="uid://b7i18f46oewtr" path="res://Effects/Scenes/fog shader.tscn" id="7_jicy6"]
 [ext_resource type="PackedScene" uid="uid://bw6x38gtjukc2" path="res://NPC/BlackSmith/blacksmith.tscn" id="8_5ta4w"]
 [ext_resource type="PackedScene" uid="uid://573ei0gs5ftg" path="res://NPC/Roy/roy.tscn" id="9_7y6bg"]
@@ -40,6 +42,18 @@ position = Vector2(-80, -103)
 
 [node name="BottomRight" parent="World_Camera/Limits" index="1"]
 position = Vector2(367, 271)
+
+[node name="Cloud" parent="World_Camera" instance=ExtResource("18_k84w4")]
+z_index = 2
+
+[node name="Raylight" parent="World_Camera" instance=ExtResource("19_ps03t")]
+z_index = 2
+
+[node name="Leaf" parent="World_Camera" instance=ExtResource("5_ogxpn")]
+z_index = 2
+
+[node name="Rain" parent="World_Camera" instance=ExtResource("6_6mrr8")]
+z_index = 2
 
 [node name="Player" parent="." instance=ExtResource("3_viep7")]
 y_sort_enabled = true
@@ -204,6 +218,8 @@ polygon = PackedVector2Array(-79, -63, 92, -62, 91, -115, 188, -117, 193, -62, 3
 
 [node name="BGM - Whispering Woods" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_y7hhj")
+volume_db = -10.0
+autoplay = true
 
 [node name="DayAndNight (Editor Only)" type="CanvasModulate" parent="."]
 color = Color(1, 0.870588, 0.866667, 1)
@@ -221,12 +237,6 @@ shape = SubResource("RectangleShape2D_w3vxf")
 
 [node name="Dungeon_1" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(-64, 224)
-
-[node name="Cloud" parent="." instance=ExtResource("18_k84w4")]
-position = Vector2(152, -40)
-
-[node name="Raylight" parent="." instance=ExtResource("19_ps03t")]
-position = Vector2(152, -40)
 
 [connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]

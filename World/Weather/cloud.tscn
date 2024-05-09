@@ -23,7 +23,7 @@ color_ramp = SubResource("GradientTexture1D_x6ovm")
 
 [node name="Cloud" type="GPUParticles2D"]
 emitting = false
-amount = 3
+amount = 4
 process_material = SubResource("ParticleProcessMaterial_5wo8h")
 texture = ExtResource("1_0sgk6")
 lifetime = 20.0
