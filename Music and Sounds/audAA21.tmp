@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8ch0uoebvnjt"]
+[gd_scene load_steps=15 format=3 uid="uid://c8ch0uoebvnjt"]
 
+[ext_resource type="Script" path="res://Music and Sounds/audio_manager.gd" id="1_fqogx"]
 [ext_resource type="AudioStream" uid="uid://cmofgpeo654vn" path="res://Music and Sounds/General/Scene_Transition.ogg" id="1_r7f63"]
 [ext_resource type="AudioStream" uid="uid://d0he8dphbgyaq" path="res://Music and Sounds/General/Grass_breaking.wav" id="2_rms4j"]
 [ext_resource type="AudioStream" uid="uid://ccwev0ttpjs0c" path="res://Music and Sounds/UI/Level up Pickup (Rpg).wav" id="3_4ygy7"]
@@ -15,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://cyl68booq45wm" path="res://Music and Sounds/General/Evade.wav" id="13_rm2re"]
 
 [node name="AudioManager" type="Node2D"]
-process_mode = 3
+script = ExtResource("1_fqogx")
 
 [node name="Scene_Transition" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_r7f63")
