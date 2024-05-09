@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4nr2tql2dcc7"
-path="res://.godot/imported/icon113.png-38c97d890bba0fca541712238bc5edce.ctex"
+uid="uid://ccb1mgmdgrf3q"
+path="res://.godot/imported/rain_on_floor.png-81726d9ac0b8da2bc68e9c73972eab0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Environment/Weather/icon113.png"
-dest_files=["res://.godot/imported/icon113.png-38c97d890bba0fca541712238bc5edce.ctex"]
+source_file="res://World/Weather/rain_on_floor.png"
+dest_files=["res://.godot/imported/rain_on_floor.png-81726d9ac0b8da2bc68e9c73972eab0c.ctex"]
 
 [params]
 

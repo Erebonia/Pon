@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=24 format=3 uid="uid://jpnitqgvchnd"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_q3h4t"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_bhid6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://4rgixsghg61n" path="res://World/Weather/leaf.tscn" id="5_ogxpn"]
 [ext_resource type="PackedScene" uid="uid://cksixn20dl4jo" path="res://World/Weather/rain.tscn" id="6_6mrr8"]
 [ext_resource type="PackedScene" uid="uid://b7i18f46oewtr" path="res://Effects/Scenes/fog shader.tscn" id="7_jicy6"]
+[ext_resource type="PackedScene" uid="uid://dij26us17ejag" path="res://World/Weather/rain_on_floor.tscn" id="7_svlxc"]
 [ext_resource type="PackedScene" uid="uid://bw6x38gtjukc2" path="res://NPC/BlackSmith/blacksmith.tscn" id="8_5ta4w"]
 [ext_resource type="PackedScene" uid="uid://573ei0gs5ftg" path="res://NPC/Roy/roy.tscn" id="9_7y6bg"]
 [ext_resource type="PackedScene" uid="uid://c7xb0raqot3km" path="res://World/Environment/tree-mother.tscn" id="10_uwxq1"]
@@ -55,13 +56,14 @@ z_index = 2
 [node name="Rain" parent="World_Camera" instance=ExtResource("6_6mrr8")]
 z_index = 2
 
+[node name="RainOnFloor" parent="World_Camera" instance=ExtResource("7_svlxc")]
+
 [node name="Player" parent="." instance=ExtResource("3_viep7")]
 y_sort_enabled = true
 position = Vector2(153, 200)
 collision_mask = 1
 
 [node name="Light_Source" parent="Player/Misc" index="1"]
-position = Vector2(24, 37)
 color = Color(0.964706, 0.74902, 0.552941, 1)
 energy = 1.12
 texture_scale = 1.0
@@ -216,10 +218,9 @@ visible = false
 [node name="Collison Draw" type="CollisionPolygon2D" parent="Map Collision (Borders)"]
 polygon = PackedVector2Array(-79, -63, 92, -62, 91, -115, 188, -117, 193, -62, 366, -62, 369, 106, 397, 139, 369, 145, 366, 268, -76, 273, -77, 265, -81, -60, -137, 368, 294, 361, 521, 310, 466, -46, 360, -203, 75, -200, -80, -63, -79, -61, -81, -60)
 
-[node name="BGM - Whispering Woods" type="AudioStreamPlayer2D" parent="."]
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_y7hhj")
 volume_db = -10.0
-autoplay = true
 
 [node name="DayAndNight (Editor Only)" type="CanvasModulate" parent="."]
 color = Color(1, 0.870588, 0.866667, 1)

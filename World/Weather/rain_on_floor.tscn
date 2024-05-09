@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dij26us17ejag"]
+
+[ext_resource type="Texture2D" uid="uid://ccb1mgmdgrf3q" path="res://World/Weather/rain_on_floor.png" id="1_xhpk5"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_33vl3"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dxn4q"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[node name="RainOnFloor" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_33vl3")
+emitting = false
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_dxn4q")
+texture = ExtResource("1_xhpk5")
+lifetime = 0.5
+fixed_fps = 0
+draw_order = 0
