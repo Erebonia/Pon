@@ -63,11 +63,6 @@ y_sort_enabled = true
 position = Vector2(153, 200)
 collision_mask = 1
 
-[node name="Light_Source" parent="Player/Misc" index="1"]
-color = Color(0.964706, 0.74902, 0.552941, 1)
-energy = 1.12
-texture_scale = 1.0
-
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../World_Camera")
 
@@ -212,6 +207,19 @@ position = Vector2(61, -5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("15_un17n")
 
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="Dungeon_1" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-64, 224)
+
+[node name="SceneTrigger" parent="." instance=ExtResource("25_xso8f")]
+position = Vector2(-89, 229)
+connected_scene = "Dungeon_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(4, -5)
+shape = SubResource("RectangleShape2D_w3vxf")
+
 [node name="Map Collision (Borders)" type="StaticBody2D" parent="."]
 visible = false
 
@@ -226,26 +234,10 @@ volume_db = -10.0
 color = Color(1, 0.870588, 0.866667, 1)
 script = ExtResource("17_4oi2p")
 
-[node name="SceneTrigger" parent="." instance=ExtResource("25_xso8f")]
-position = Vector2(-89, 229)
-connected_scene = "Dungeon_1"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(4, -5)
-shape = SubResource("RectangleShape2D_w3vxf")
-
-[node name="EntranceMarkers" type="Node2D" parent="."]
-
-[node name="Dungeon_1" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(-64, 224)
-
 [connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]
 
 [editable path="World_Camera"]
-[editable path="Player"]
-[editable path="Player/Combat/HitboxPivot/SwordHitbox"]
-[editable path="Player/Combat/Hurtbox"]
 [editable path="User_Interface"]
 [editable path="User_Interface/InventoryGui"]
 [editable path="User_Interface/InventoryGui/Hat_Slot"]
