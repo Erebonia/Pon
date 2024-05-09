@@ -4,9 +4,7 @@ const MINUTES_PER_DAY = 1440
 const MINUTES_PER_HOUR = 60
 const INGAME_TO_REAL_MINUTE_DURATION = (2 * PI) / MINUTES_PER_DAY
 
-
 signal time_tick(day:int, hour:int, minute:int)
-
 
 @export var gradient_texture:GradientTexture1D
 @export var INGAME_SPEED = 2
@@ -15,14 +13,11 @@ signal time_tick(day:int, hour:int, minute:int)
 		INITIAL_HOUR = h
 		time = INGAME_TO_REAL_MINUTE_DURATION * MINUTES_PER_HOUR * INITIAL_HOUR
 
-
 var time:float= 0.0
 var past_minute:int= -1
 
-
 func _ready() -> void:
 	time = INGAME_TO_REAL_MINUTE_DURATION * MINUTES_PER_HOUR * INITIAL_HOUR
-
 
 func _process(delta: float) -> void:
 	
@@ -37,7 +32,6 @@ func _process(delta: float) -> void:
 	self.color = gradient_texture.gradient.sample(value)
 	
 	_recalculate_time()	
-
 		
 func _recalculate_time() -> void:
 	var total_minutes = int(time / INGAME_TO_REAL_MINUTE_DURATION)
