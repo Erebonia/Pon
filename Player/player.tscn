@@ -1,4 +1,4 @@
-[gd_scene load_steps=621 format=3 uid="uid://b1lifm57p7pvt"]
+[gd_scene load_steps=620 format=3 uid="uid://b1lifm57p7pvt"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_fjjot"]
 [ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Effects/Shadows/SmallShadow.png" id="2_6k4r1"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://br7ec2mf71h1u" path="res://Effects/Sword FX/Wide Area Attack Motion Blur.png" id="31_gibrd"]
 [ext_resource type="Texture2D" uid="uid://44ock017fba4" path="res://Effects/Sprites/LevelUp.png" id="32_blh2b"]
 [ext_resource type="Texture2D" uid="uid://c8y0qr80ktgg8" path="res://Player/weapon/basic_sword.png" id="35_otfcl"]
+[ext_resource type="Texture2D" uid="uid://bdj4cy6nv2g63" path="res://Effects/Shadows/light.png" id="42_8pqup"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hi7q1"]
 shader = ExtResource("4_ivow2")
@@ -9482,16 +9483,6 @@ _data = {
 "Stop": SubResource("Animation_nwjam")
 }
 
-[sub_resource type="Gradient" id="Gradient_uusiu"]
-offsets = PackedFloat32Array(0, 0.781591)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_m7mi1"]
-gradient = SubResource("Gradient_uusiu")
-fill = 1
-fill_from = Vector2(0.512821, 0.491453)
-fill_to = Vector2(1, 0.504274)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dptxe"]
 atlas = ExtResource("32_blh2b")
 region = Rect2(128, 0, 128, 128)
@@ -9816,9 +9807,9 @@ vertical_alignment = 1
 visible = false
 y_sort_enabled = true
 position = Vector2(23, 48)
-color = Color(0.862745, 0.568627, 0.27451, 1)
-energy = 1.3
-texture = SubResource("GradientTexture2D_m7mi1")
+color = Color(0.713726, 0.454902, 0.180392, 1)
+energy = 1.1
+texture = ExtResource("42_8pqup")
 texture_scale = 0.5
 
 [node name="LevelUp" type="AnimatedSprite2D" parent="Misc"]
