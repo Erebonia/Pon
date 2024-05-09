@@ -1,4 +1,4 @@
-[gd_scene load_steps=636 format=3 uid="uid://b1lifm57p7pvt"]
+[gd_scene load_steps=621 format=3 uid="uid://b1lifm57p7pvt"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_fjjot"]
 [ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Effects/Shadows/SmallShadow.png" id="2_6k4r1"]
@@ -37,12 +37,10 @@
 [ext_resource type="Texture2D" uid="uid://chhw2ojm4666c" path="res://Player/Pixivan MC/BackSide DashnRoll.png" id="21_5teel"]
 [ext_resource type="Texture2D" uid="uid://csnu1soky1r5f" path="res://Effects/Sword FX/Smear 01 Horizontal 1.png" id="29_5mtdj"]
 [ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://UI/Health/healthbar_overhead.tscn" id="29_b6em7"]
-[ext_resource type="Texture2D" uid="uid://cwm208se5als4" path="res://Player/Pixivan MC/crosshair.png" id="29_cv1rw"]
 [ext_resource type="Texture2D" uid="uid://ceu0br3nrywpf" path="res://Effects/Sprites/flameslash effect.png" id="29_nvg0i"]
 [ext_resource type="Texture2D" uid="uid://bsjpqcvr7vk7h" path="res://Effects/Sword FX/Burst_1_128.png" id="30_liyf5"]
 [ext_resource type="Texture2D" uid="uid://br7ec2mf71h1u" path="res://Effects/Sword FX/Wide Area Attack Motion Blur.png" id="31_gibrd"]
 [ext_resource type="Texture2D" uid="uid://44ock017fba4" path="res://Effects/Sprites/LevelUp.png" id="32_blh2b"]
-[ext_resource type="Texture2D" uid="uid://3ffwnmt30anw" path="res://Effects/Sword FX/slash_effect_anim_spritesheet.png" id="34_saooa"]
 [ext_resource type="Texture2D" uid="uid://c8y0qr80ktgg8" path="res://Player/weapon/basic_sword.png" id="35_otfcl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hi7q1"]
@@ -9130,103 +9128,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cdvy2"]
-atlas = ExtResource("29_nvg0i")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_glmqq"]
-atlas = ExtResource("29_nvg0i")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u775s"]
-atlas = ExtResource("29_nvg0i")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cmkc5"]
-atlas = ExtResource("29_nvg0i")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8i2n1"]
-atlas = ExtResource("29_nvg0i")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_siwvt"]
-atlas = ExtResource("29_nvg0i")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g41ju"]
-atlas = ExtResource("29_nvg0i")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_brdwb"]
-atlas = ExtResource("29_nvg0i")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l3qfe"]
-atlas = ExtResource("34_saooa")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4le53"]
-atlas = ExtResource("34_saooa")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0eud7"]
-atlas = ExtResource("34_saooa")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2y337"]
-atlas = ExtResource("30_liyf5")
-region = Rect2(512, 384, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_k3bmo"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cdvy2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_glmqq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u775s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cmkc5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8i2n1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_siwvt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g41ju")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_brdwb")
-}],
-"loop": false,
-"name": &"2",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l3qfe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4le53")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0eud7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2y337")
-}],
-"loop": false,
-"name": &"default",
-"speed": 6.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ow60"]
 atlas = ExtResource("30_liyf5")
 region = Rect2(512, 384, 128, 128)
@@ -9692,18 +9593,6 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_fjjot")
 
-[node name="debug" type="Label" parent="."]
-visible = false
-z_index = 5
-offset_left = -18.0
-offset_top = -33.0
-offset_right = 22.0
-offset_bottom = -22.0
-theme_override_font_sizes/font_size = 7
-text = "State: Idle"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource("2_nsk5u")
 
@@ -9778,8 +9667,8 @@ rotation = -1.5708
 shape = SubResource("CapsuleShape2D_av4qi")
 
 [node name="ShadowSprite" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.25098)
-position = Vector2(0, 10)
+z_index = -1
+position = Vector2(0, 8)
 texture = ExtResource("2_6k4r1")
 
 [node name="Combat" type="Node2D" parent="."]
@@ -9814,13 +9703,6 @@ sprite_frames = SubResource("SpriteFrames_ikxga")
 animation = &"glow"
 frame = 11
 frame_progress = 1.0
-
-[node name="SlashTrail" type="AnimatedSprite2D" parent="Combat"]
-visible = false
-z_index = -1
-scale = Vector2(1.7, 1.7)
-sprite_frames = SubResource("SpriteFrames_k3bmo")
-frame = 3
 
 [node name="SwordStance_ActivateAura" type="AnimatedSprite2D" parent="Combat"]
 z_index = -1
@@ -9876,12 +9758,6 @@ one_shot = true
 
 [node name="ArrowProjectile" type="Marker2D" parent="Combat"]
 modulate = Color(0, 0, 0, 1)
-
-[node name="AimIndicator" type="Sprite2D" parent="Combat"]
-visible = false
-z_index = 1
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("29_cv1rw")
 
 [node name="Hurtbox" parent="Combat" instance=ExtResource("5_bhnfg")]
 collision_mask = 4
@@ -9954,6 +9830,18 @@ animation = &"level_up"
 frame = 11
 frame_progress = 1.0
 speed_scale = 0.7
+
+[node name="debug" type="Label" parent="Misc"]
+visible = false
+z_index = 5
+offset_left = 6.0
+offset_top = 13.0
+offset_right = 46.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 7
+text = "State: Idle"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

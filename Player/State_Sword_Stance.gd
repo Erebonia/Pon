@@ -70,7 +70,6 @@ func activateStance():
 		var aim_direction = (player.get_global_mouse_position() - player.global_position).normalized() # Make player face the mouse
 		swordWaveProjectile.rotation = atan2(aim_direction.y, aim_direction.x)
 		toggle_attack_animation()
-		player.slashTrail.play("default")
 		await player.animationTree.animation_finished
 		var sword_wave_instance = swordWaveSlash.instantiate()
 		sword_wave_instance.rotation = swordWaveProjectile.rotation

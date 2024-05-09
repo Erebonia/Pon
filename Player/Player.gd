@@ -21,10 +21,9 @@ class_name Player
 @onready var slashFX = $Combat/Sword/SwordSprite/SwordGlow_VFX
 @onready var attackTimer = $Combat/AttackTimer
 @onready var healthBar = $Combat_UI/Healthbar
-@onready var slashTrail = $Combat/SlashTrail
 
 #Debug
-@onready var debug = $debug
+@onready var debug = $Misc/debug
 
 #Save System
 const save_file_path = "user://save/"
