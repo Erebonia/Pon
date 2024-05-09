@@ -5,6 +5,7 @@ extends Node2D
 @onready var raylights = $World_Camera/Raylight
 @onready var leaves = $World_Camera/Leaf
 @onready var rain = $World_Camera/Rain
+@onready var fog = $Environment/FogShader
 
 var checkTime = DayAndNight.get_child(1)
 var savedDay: int
@@ -29,6 +30,7 @@ func _on_check_time(day, hour, _minute):
 		clouds.emitting = false 
 		raylights.emitting = false
 		leaves.emitting = false
+		fog.visible = true
 	else:
 		clouds.emitting = true 
 		raylights.emitting = true
