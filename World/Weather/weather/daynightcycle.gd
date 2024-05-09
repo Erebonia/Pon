@@ -9,7 +9,7 @@ signal time_tick(day:int, hour:int, minute:int)
 
 
 @export var gradient_texture:GradientTexture1D
-@export var INGAME_SPEED = 1
+@export var INGAME_SPEED = 2
 @export var INITIAL_HOUR = 19:
 	set(h):
 		INITIAL_HOUR = h
