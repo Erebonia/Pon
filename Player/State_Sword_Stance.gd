@@ -75,7 +75,7 @@ func activateStance():
 		var sword_wave_instance = swordWaveSlash.instantiate()
 		sword_wave_instance.rotation = swordWaveProjectile.rotation
 		sword_wave_instance.global_position = swordWaveProjectile.global_position
-		AudioManager.get_node("Swordwave_Projectile_SFX")
+		AudioManager.get_node("Swordwave_Projectile").play()
 		add_child(sword_wave_instance)
 		# Cooldown
 		await get_tree().create_timer(0.2).timeout

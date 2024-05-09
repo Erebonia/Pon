@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bt61aynx51qph"]
+
+[ext_resource type="Texture2D" uid="uid://cmmkpbym2nuox" path="res://World/Weather/snow.png" id="1_pwldi"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7vdq6"]
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_bqbuh"]
+offsets = PackedFloat32Array(0, 0.127716, 0.884061, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_frr1n"]
+gradient = SubResource("Gradient_bqbuh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dagba"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 140, 0)
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(-0.5, 1, 0)
+spread = 0.0
+initial_velocity_min = 5.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -20.0
+radial_accel_max = 20.0
+tangential_accel_min = -10.0
+tangential_accel_max = 10.0
+damping_max = 10.0
+color = Color(0.94902, 0.917647, 0.945098, 1)
+color_ramp = SubResource("GradientTexture1D_frr1n")
+anim_offset_max = 1.0
+sub_emitter_mode = 1
+sub_emitter_frequency = 4.0
+
+[node name="Snow" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_7vdq6")
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_dagba")
+texture = ExtResource("1_pwldi")
+fixed_fps = 0
+draw_order = 0

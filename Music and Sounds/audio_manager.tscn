@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8ch0uoebvnjt"]
+[gd_scene load_steps=15 format=3 uid="uid://c8ch0uoebvnjt"]
 
 [ext_resource type="AudioStream" uid="uid://cmofgpeo654vn" path="res://Music and Sounds/General/Scene_Transition.ogg" id="1_r7f63"]
 [ext_resource type="AudioStream" uid="uid://d0he8dphbgyaq" path="res://Music and Sounds/General/Grass_breaking.wav" id="2_rms4j"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://cereuq4i6jmah" path="res://Music and Sounds/Skill FX/swordWave.wav" id="11_0wdi0"]
 [ext_resource type="AudioStream" uid="uid://3fbw5pkyvvgg" path="res://Music and Sounds/General/Hurt.wav" id="12_mwas8"]
 [ext_resource type="AudioStream" uid="uid://cyl68booq45wm" path="res://Music and Sounds/General/Evade.wav" id="13_rm2re"]
+[ext_resource type="AudioStream" uid="uid://bwlfgh440l4ll" path="res://Music and Sounds/General/Door_Open.ogg" id="14_axxfk"]
 
 [node name="AudioManager" type="Node2D"]
 process_mode = 3
@@ -69,5 +70,10 @@ max_polyphony = 100
 
 [node name="Evade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_rm2re")
+volume_db = -5.0
+max_polyphony = 100
+
+[node name="Door_Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_axxfk")
 volume_db = -5.0
 max_polyphony = 100

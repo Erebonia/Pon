@@ -4,4 +4,4 @@ extends StaticBody2D
 
 func open() -> void:
 	animation_player.play("open")
-	#TODO Door Sound FX
+	AudioManager.get_node("Door_Open").play()

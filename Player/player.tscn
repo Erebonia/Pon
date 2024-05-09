@@ -9736,8 +9736,7 @@ script = ExtResource("9_af0ex")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_hi7q1")
 sprite_frames = SubResource("SpriteFrames_6nvx4")
-animation = &"roll_downright"
-flip_h = true
+animation = &"attack_down"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -9855,7 +9854,7 @@ one_shot = true
 
 [node name="HitboxPivot" type="Marker2D" parent="Combat"]
 position = Vector2(0, 5)
-rotation = 4.71239
+rotation = 1.5708
 
 [node name="SwordHitbox" parent="Combat/HitboxPivot" instance=ExtResource("3_nnp8n")]
 position = Vector2(17, 0.999938)

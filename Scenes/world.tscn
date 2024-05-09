@@ -1,11 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=21 format=3 uid="uid://jpnitqgvchnd"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_q3h4t"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_bhid6"]
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="3_viep7"]
 [ext_resource type="PackedScene" uid="uid://dx4gc50eoqluo" path="res://UI/user_interface.tscn" id="4_rvbtp"]
 [ext_resource type="TileSet" uid="uid://dehp76qcudo5q" path="res://World/Environment.tres" id="5_gotvy"]
-[ext_resource type="Shader" path="res://World/godrays.gdshader" id="6_qdfgf"]
 [ext_resource type="PackedScene" uid="uid://b7i18f46oewtr" path="res://Effects/Scenes/fog shader.tscn" id="7_jicy6"]
 [ext_resource type="PackedScene" uid="uid://bw6x38gtjukc2" path="res://NPC/BlackSmith/blacksmith.tscn" id="8_5ta4w"]
 [ext_resource type="PackedScene" uid="uid://573ei0gs5ftg" path="res://NPC/Roy/roy.tscn" id="9_7y6bg"]
@@ -17,31 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://bkkl6qi4h8nwh" path="res://World/Environment/Rainbow_Cake.png" id="15_un17n"]
 [ext_resource type="AudioStream" uid="uid://0v4s58bqthyu" path="res://Music and Sounds/Music/theme_dream.ogg" id="16_y7hhj"]
 [ext_resource type="Script" path="res://World/DayAndNight (Editor Only).gd" id="17_4oi2p"]
+[ext_resource type="PackedScene" uid="uid://biufpxc43sk0x" path="res://World/Weather/cloud.tscn" id="18_k84w4"]
+[ext_resource type="PackedScene" uid="uid://yx7eggf336rq" path="res://World/Weather/raylight.tscn" id="19_ps03t"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="25_xso8f"]
-[ext_resource type="Texture2D" uid="uid://c4ks0si1457w8" path="res://World/cloud.png" id="26_8pyy5"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rgn5p"]
-shader = ExtResource("6_qdfgf")
-shader_parameter/angle = -0.3
-shader_parameter/position = -0.2
-shader_parameter/spread = 1.0
-shader_parameter/cutoff = 0.1
-shader_parameter/falloff = 1.0
-shader_parameter/edge_fade = 0.15
-shader_parameter/speed = 1.0
-shader_parameter/ray1_density = 8.0
-shader_parameter/ray2_density = 30.0
-shader_parameter/ray2_intensity = 0.4
-shader_parameter/color = Color(1, 1, 1, 0.960784)
-shader_parameter/hdr = false
-shader_parameter/seed = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3vxf"]
 size = Vector2(16, 96)
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u0ehe"]
-particle_flag_disable_z = true
-gravity = Vector3(0, 98, 0)
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -110,24 +90,6 @@ layer_6/tile_data = PackedInt32Array(-65524, 0, 31, 12, 0, 32, 65548, 0, 33, 131
 
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true
-
-[node name="Day Godrays" type="ColorRect" parent="Environment"]
-visible = false
-z_index = 100
-material = SubResource("ShaderMaterial_rgn5p")
-offset_left = -80.0
-offset_top = -144.0
-offset_right = 368.0
-offset_bottom = 128.0
-
-[node name="Night Godrays" type="ColorRect" parent="Environment"]
-visible = false
-z_index = 100
-material = SubResource("ShaderMaterial_rgn5p")
-offset_left = -80.0
-offset_top = -112.0
-offset_right = 368.0
-offset_bottom = 128.0
 
 [node name="FogShader" parent="Environment" instance=ExtResource("7_jicy6")]
 layer = 0
@@ -260,12 +222,11 @@ shape = SubResource("RectangleShape2D_w3vxf")
 [node name="Dungeon_1" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(-64, 224)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-emitting = false
-amount = 6
-process_material = SubResource("ParticleProcessMaterial_u0ehe")
-texture = ExtResource("26_8pyy5")
-lifetime = 10.0
+[node name="Cloud" parent="." instance=ExtResource("18_k84w4")]
+position = Vector2(152, -40)
+
+[node name="Raylight" parent="." instance=ExtResource("19_ps03t")]
+position = Vector2(152, -40)
 
 [connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]

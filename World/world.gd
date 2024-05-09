@@ -11,13 +11,11 @@ func _ready():
 func _on_check_time(_day, hour, _minute):
 	#24 hour Clock
 	if (hour >= 19 and hour <= 23) or (hour >= 0 and hour < 5):
-		$"Environment/Day Godrays".visible = false
-		$"Environment/Night Godrays".visible = true
-		$Environment/FogShader.visible = true
+		$Cloud.emitting = false 
+		$Raylight.emitting = false
 	else:
-		$"Environment/Day Godrays".visible = true
-		$"Environment/Night Godrays".visible = false
-		$Environment/FogShader.visible = false
+		$Cloud.emitting = true 
+		$Raylight.emitting = true
 
 func _on_inventory_gui_opened():
 	get_tree().paused = true
