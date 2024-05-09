@@ -14,6 +14,7 @@ position = Vector2(0, -16)
 texture = ExtResource("2_xxh7a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1, 50)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_d8nxa")
