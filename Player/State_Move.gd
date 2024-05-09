@@ -14,13 +14,13 @@ class_name State_Move
 func Enter():
 	player.UpdateAnimation("Run")
 	if scene_manager.currentScene == "World":
-		$Footsteps_Wood.play()
+		AudioManager.get_node("Footsteps_Grass").play()
 	elif scene_manager.currentScene == "Dungeon_1":
-		$Footsteps_Stone.play()
+		AudioManager.get_node("Footsteps_Stone").play()
 	
 func Exit():
-	$Footsteps_Wood.stop()
-	$Footsteps_Stone.stop()
+	AudioManager.get_node("Footsteps_Grass").stop()
+	AudioManager.get_node("Footsteps_Stone").stop()
 	
 func Process(_delta : float) -> State:
 	return null

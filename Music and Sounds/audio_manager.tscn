@@ -1,15 +1,72 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8ch0uoebvnjt"]
+[gd_scene load_steps=14 format=3 uid="uid://c8ch0uoebvnjt"]
 
-[ext_resource type="AudioStream" uid="uid://bt1vkgu3oclss" path="res://Music and Sounds/General/SceneTransition.ogg" id="1_r7f63"]
-[ext_resource type="AudioStream" uid="uid://djhd2ioya7yr" path="res://Music and Sounds/General/Grass_sfx.wav" id="2_rms4j"]
+[ext_resource type="AudioStream" uid="uid://cmofgpeo654vn" path="res://Music and Sounds/General/Scene_Transition.ogg" id="1_r7f63"]
+[ext_resource type="AudioStream" uid="uid://d0he8dphbgyaq" path="res://Music and Sounds/General/Grass_breaking.wav" id="2_rms4j"]
+[ext_resource type="AudioStream" uid="uid://ccwev0ttpjs0c" path="res://Music and Sounds/UI/Level up Pickup (Rpg).wav" id="3_4ygy7"]
+[ext_resource type="AudioStream" uid="uid://cfcolr35hfvoh" path="res://Music and Sounds/UI/close.wav" id="4_4ms0m"]
+[ext_resource type="AudioStream" uid="uid://brho1m4e6trus" path="res://Music and Sounds/UI/openinventory.wav" id="5_4l6e3"]
+[ext_resource type="AudioStream" uid="uid://c3tday1y5vl4b" path="res://Music and Sounds/UI/Inventory - Grab Item.ogg" id="6_j3anx"]
+[ext_resource type="AudioStream" uid="uid://bk6ahcnb3aje2" path="res://Music and Sounds/UI/Inventory - Place Item.ogg" id="7_7v1pg"]
+[ext_resource type="AudioStream" uid="uid://86220vewmppb" path="res://Music and Sounds/General/footsteps_grass.wav" id="8_viqmu"]
+[ext_resource type="AudioStream" uid="uid://dkl2ddoj5o6o3" path="res://Music and Sounds/General/footsteps_stone.wav" id="9_jv1hd"]
+[ext_resource type="AudioStream" uid="uid://c7yhdcbx7s00" path="res://Music and Sounds/Skill FX/swordStance.wav" id="10_3w1cq"]
+[ext_resource type="AudioStream" uid="uid://cereuq4i6jmah" path="res://Music and Sounds/Skill FX/swordWave.wav" id="11_0wdi0"]
+[ext_resource type="AudioStream" uid="uid://3fbw5pkyvvgg" path="res://Music and Sounds/General/Hurt.wav" id="12_mwas8"]
+[ext_resource type="AudioStream" uid="uid://cyl68booq45wm" path="res://Music and Sounds/General/Evade.wav" id="13_rm2re"]
 
 [node name="AudioManager" type="Node2D"]
 
-[node name="SceneTransition" type="AudioStreamPlayer2D" parent="."]
+[node name="Scene_Transition" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_r7f63")
 volume_db = -5.0
 pitch_scale = 0.5
 
-[node name="Grass_SFX" type="AudioStreamPlayer2D" parent="."]
+[node name="Grass_Breaking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_rms4j")
 pitch_scale = 0.5
+
+[node name="Level_Up" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4ygy7")
+
+[node name="Close_Inventory" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_4ms0m")
+volume_db = -10.0
+
+[node name="Open_Inventory" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4l6e3")
+volume_db = -10.0
+
+[node name="Pickup_Item" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_j3anx")
+volume_db = -10.0
+
+[node name="Place_Item" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_7v1pg")
+volume_db = -13.0
+
+[node name="Footsteps_Grass" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_viqmu")
+volume_db = -5.0
+
+[node name="Footsteps_Stone" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_jv1hd")
+volume_db = -5.0
+
+[node name="Swordwave_Stance" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_3w1cq")
+volume_db = -10.0
+
+[node name="Swordwave_Projectile" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_0wdi0")
+volume_db = -10.0
+max_polyphony = 100
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_mwas8")
+volume_db = -10.0
+max_polyphony = 100
+
+[node name="Evade" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_rm2re")
+volume_db = -5.0
+max_polyphony = 100

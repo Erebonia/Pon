@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0he8dphbgyaq"
+path="res://.godot/imported/Grass_breaking.wav-13dabb4a75453f8e9a55fa714665c8be.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/General/Grass_breaking.wav"
+dest_files=["res://.godot/imported/Grass_breaking.wav-13dabb4a75453f8e9a55fa714665c8be.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

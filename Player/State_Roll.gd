@@ -13,6 +13,7 @@ func Enter():
 	hurt.blinkAnimationPlayer.play("Start")
 	hurt.hurtbox.start_invincibility(.6)
 	player.UpdateAnimation("Roll")
+	AudioManager.get_node("Evade").play()
 	
 func Exit():
 	player.velocity = Vector2.ZERO

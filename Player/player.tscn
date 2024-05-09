@@ -1,4 +1,4 @@
-[gd_scene load_steps=642 format=3 uid="uid://b1lifm57p7pvt"]
+[gd_scene load_steps=636 format=3 uid="uid://b1lifm57p7pvt"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_fjjot"]
 [ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Effects/Shadows/SmallShadow.png" id="2_6k4r1"]
@@ -9,11 +9,8 @@
 [ext_resource type="Script" path="res://Player/SwordHitbox.gd" id="4_ghg0u"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="4_ivow2"]
 [ext_resource type="Script" path="res://Player/State_Move.gd" id="4_m08hb"]
-[ext_resource type="AudioStream" uid="uid://86220vewmppb" path="res://Music and Sounds/General/footsteps_grass.wav" id="5_6he2w"]
 [ext_resource type="PackedScene" uid="uid://bvite1qic5j1a" path="res://Overlap/hurtbox.tscn" id="5_bhnfg"]
-[ext_resource type="AudioStream" uid="uid://cyl68booq45wm" path="res://Music and Sounds/General/Evade.wav" id="5_fd2kj"]
 [ext_resource type="Script" path="res://Player/State_Roll.gd" id="5_gajw7"]
-[ext_resource type="AudioStream" uid="uid://dkl2ddoj5o6o3" path="res://Music and Sounds/General/footsteps_stone.wav" id="6_1dej3"]
 [ext_resource type="Script" path="res://Player/State_Attack.gd" id="6_w1ud3"]
 [ext_resource type="Script" path="res://Player/State_Attack_Combo.gd" id="7_g4l0n"]
 [ext_resource type="Script" path="res://Player/State_Sword_Stance.gd" id="8_xg1yj"]
@@ -45,11 +42,8 @@
 [ext_resource type="Texture2D" uid="uid://bsjpqcvr7vk7h" path="res://Effects/Sword FX/Burst_1_128.png" id="30_liyf5"]
 [ext_resource type="Texture2D" uid="uid://br7ec2mf71h1u" path="res://Effects/Sword FX/Wide Area Attack Motion Blur.png" id="31_gibrd"]
 [ext_resource type="Texture2D" uid="uid://44ock017fba4" path="res://Effects/Sprites/LevelUp.png" id="32_blh2b"]
-[ext_resource type="AudioStream" uid="uid://c7yhdcbx7s00" path="res://Music and Sounds/Skill FX/swordStance.wav" id="33_yreqn"]
 [ext_resource type="Texture2D" uid="uid://3ffwnmt30anw" path="res://Effects/Sword FX/slash_effect_anim_spritesheet.png" id="34_saooa"]
-[ext_resource type="AudioStream" uid="uid://cereuq4i6jmah" path="res://Music and Sounds/Skill FX/swordWave.wav" id="34_sscdg"]
 [ext_resource type="Texture2D" uid="uid://c8y0qr80ktgg8" path="res://Player/weapon/basic_sword.png" id="35_otfcl"]
-[ext_resource type="AudioStream" uid="uid://ccwev0ttpjs0c" path="res://Music and Sounds/UI/Level up Pickup (Rpg).wav" id="49_ajb3w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hi7q1"]
 shader = ExtResource("4_ivow2")
@@ -2413,7 +2407,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -2528,7 +2522,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -2657,7 +2651,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -2772,7 +2766,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -2901,7 +2895,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -3030,7 +3024,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -3145,7 +3139,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -3274,7 +3268,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -3403,7 +3397,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -3518,7 +3512,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -3633,7 +3627,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -3762,7 +3756,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -3877,7 +3871,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -3992,7 +3986,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -4121,7 +4115,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -4236,7 +4230,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -4365,7 +4359,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -4494,7 +4488,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -4609,7 +4603,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -4738,7 +4732,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -4881,7 +4875,7 @@ tracks/2/keys = {
 tracks/3/type = "audio"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Combat/AudioStreamPlayer")
+tracks/3/path = NodePath("Combat/Sword_Swipe")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -4996,7 +4990,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -5111,7 +5105,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Combat/AudioStreamPlayer")
+tracks/2/path = NodePath("Combat/Sword_Swipe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -5254,7 +5248,7 @@ tracks/2/keys = {
 tracks/3/type = "audio"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Combat/AudioStreamPlayer")
+tracks/3/path = NodePath("Combat/Sword_Swipe")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -7192,52 +7186,37 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_gully"]
 resource_name = "RollDown"
 length = 0.9
-tracks/0/type = "audio"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Combat/AudioStreamPlayer")
+tracks/0/path = NodePath("PlayerSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("5_fd2kj")
-}],
-"times": PackedFloat32Array(0.1)
-}
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"dash_down"]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("StateMachine/Roll")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine/Roll")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -7249,64 +7228,49 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_qpyrh"]
 resource_name = "RollLeft"
 length = 0.9
-tracks/0/type = "audio"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Combat/AudioStreamPlayer")
+tracks/0/path = NodePath("PlayerSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("5_fd2kj")
-}],
-"times": PackedFloat32Array(0.1)
-}
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"dash_sideways"]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprite:flip_h")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("StateMachine/Roll")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateMachine/Roll")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -7318,90 +7282,18 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_dv6o8"]
 resource_name = "RollRight"
 length = 0.9
-tracks/0/type = "audio"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Combat/AudioStreamPlayer")
+tracks/0/path = NodePath("PlayerSprite:flip_h")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("5_fd2kj")
-}],
-"times": PackedFloat32Array(0.1)
-}
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"dash_sideways"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprite:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("StateMachine/Roll")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.9),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"roll_animation_finished"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_t7p6g"]
-resource_name = "RollUp"
-length = 0.9
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Combat/AudioStreamPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("5_fd2kj")
-}],
-"times": PackedFloat32Array(0.1)
-}
-tracks/0/use_blend = true
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
@@ -7412,7 +7304,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"dash_up"]
+"values": [&"dash_sideways"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -7433,6 +7325,48 @@ tracks/3/path = NodePath("StateMachine/Roll")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"roll_animation_finished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_t7p6g"]
+resource_name = "RollUp"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"dash_up"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine/Roll")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -8036,64 +7970,49 @@ tracks/5/keys = {
 [sub_resource type="Animation" id="Animation_5pi3u"]
 resource_name = "roll_downleft"
 length = 0.9
-tracks/0/type = "audio"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Combat/AudioStreamPlayer")
+tracks/0/path = NodePath("PlayerSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("5_fd2kj")
-}],
-"times": PackedFloat32Array(0.1)
-}
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"roll_downright"]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprite:flip_h")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("StateMachine/Roll")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateMachine/Roll")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -8105,64 +8024,49 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_d22pe"]
 resource_name = "roll_downright"
 length = 0.9
-tracks/0/type = "audio"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Combat/AudioStreamPlayer")
+tracks/0/path = NodePath("PlayerSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("5_fd2kj")
-}],
-"times": PackedFloat32Array(0.1)
-}
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"roll_downright"]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprite:flip_h")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("StateMachine/Roll")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateMachine/Roll")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -8174,64 +8078,49 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_32pas"]
 resource_name = "roll_upleft"
 length = 0.9
-tracks/0/type = "audio"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Combat/AudioStreamPlayer")
+tracks/0/path = NodePath("PlayerSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("5_fd2kj")
-}],
-"times": PackedFloat32Array(0.1)
-}
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"roll_upright"]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprite:flip_h")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("StateMachine/Roll")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateMachine/Roll")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -8243,64 +8132,49 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_5qvwh"]
 resource_name = "roll_upright"
 length = 0.9
-tracks/0/type = "audio"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Combat/AudioStreamPlayer")
+tracks/0/path = NodePath("PlayerSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("5_fd2kj")
-}],
-"times": PackedFloat32Array(0.1)
-}
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"roll_upright"]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprite:flip_h")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("StateMachine/Roll")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateMachine/Roll")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -8350,7 +8224,7 @@ tracks/2/keys = {
 tracks/3/type = "audio"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Combat/AudioStreamPlayer")
+tracks/3/path = NodePath("Combat/Sword_Swipe")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -9839,14 +9713,6 @@ script = ExtResource("3_l2iho")
 [node name="Run" type="Node2D" parent="StateMachine"]
 script = ExtResource("4_m08hb")
 
-[node name="Footsteps_Wood" type="AudioStreamPlayer2D" parent="StateMachine/Run"]
-stream = ExtResource("5_6he2w")
-volume_db = -5.0
-
-[node name="Footsteps_Stone" type="AudioStreamPlayer2D" parent="StateMachine/Run"]
-stream = ExtResource("6_1dej3")
-volume_db = -5.0
-
 [node name="Roll" type="Node2D" parent="StateMachine"]
 script = ExtResource("5_gajw7")
 
@@ -9870,8 +9736,8 @@ script = ExtResource("9_af0ex")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_hi7q1")
 sprite_frames = SubResource("SpriteFrames_6nvx4")
-animation = &"attack_down_combo"
-frame = 8
+animation = &"roll_downright"
+flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -9925,6 +9791,7 @@ position = Vector2(4, -17)
 
 [node name="SwordSprite" type="Sprite2D" parent="Combat/Sword"]
 texture = ExtResource("35_otfcl")
+flip_h = true
 
 [node name="SwordWave_FX" type="AnimatedSprite2D" parent="Combat/Sword/SwordSprite"]
 position = Vector2(-6.66667, 5.33333)
@@ -9988,7 +9855,7 @@ one_shot = true
 
 [node name="HitboxPivot" type="Marker2D" parent="Combat"]
 position = Vector2(0, 5)
-rotation = 1.5708
+rotation = 4.71239
 
 [node name="SwordHitbox" parent="Combat/HitboxPivot" instance=ExtResource("3_nnp8n")]
 position = Vector2(17, 0.999938)
@@ -10007,15 +9874,6 @@ modulate = Color(0, 0, 0, 1)
 [node name="swordWaveCooldown" type="Timer" parent="Combat/SwordWaveProjectile"]
 wait_time = 30.0
 one_shot = true
-
-[node name="swordWaveStance" type="AudioStreamPlayer" parent="Combat/SwordWaveProjectile"]
-stream = ExtResource("33_yreqn")
-volume_db = -10.0
-
-[node name="swordWaveSound" type="AudioStreamPlayer" parent="Combat/SwordWaveProjectile"]
-stream = ExtResource("34_sscdg")
-volume_db = -10.0
-max_polyphony = 100
 
 [node name="ArrowProjectile" type="Marker2D" parent="Combat"]
 modulate = Color(0, 0, 0, 1)
@@ -10042,7 +9900,7 @@ libraries = {
 "": SubResource("AnimationLibrary_67yjy")
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Combat"]
+[node name="Sword_Swipe" type="AudioStreamPlayer" parent="Combat"]
 volume_db = -20.0
 
 [node name="HpRecovery" type="Timer" parent="Combat"]
@@ -10058,9 +9916,9 @@ position = Vector2(0, -34)
 visible = false
 z_index = 99
 offset_left = -7.0
-offset_top = -27.0
+offset_top = -16.0
 offset_right = 7.0
-offset_bottom = -25.0
+offset_bottom = -14.0
 size_flags_vertical = 4
 
 [node name="Misc" type="Node2D" parent="."]
@@ -10068,10 +9926,10 @@ position = Vector2(-24, -46)
 
 [node name="Username" type="Label" parent="Misc"]
 visible = false
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 48.0
-offset_bottom = 31.0
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 45.0
+offset_bottom = 35.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27451)
 theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 7
@@ -10097,9 +9955,6 @@ animation = &"level_up"
 frame = 11
 frame_progress = 1.0
 speed_scale = 0.7
-
-[node name="LevelUpSFX" type="AudioStreamPlayer" parent="Misc"]
-stream = ExtResource("49_ajb3w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

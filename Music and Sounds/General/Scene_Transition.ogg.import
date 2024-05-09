@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cmofgpeo654vn"
+path="res://.godot/imported/Scene_Transition.ogg-e86aeede82f971a3c02173eeb4dc2338.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music and Sounds/General/Scene_Transition.ogg"
+dest_files=["res://.godot/imported/Scene_Transition.ogg-e86aeede82f971a3c02173eeb4dc2338.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

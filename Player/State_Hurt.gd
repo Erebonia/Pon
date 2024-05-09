@@ -14,8 +14,6 @@ class_name State_Hurt
 @onready var hurt = $"../Hurt"
 @onready var idle = $"../Idle"
 
-const PlayerHurtSound = preload("res://Player/player_hurt_sound.tscn")
-
 func Enter():
 	healthBar.max_value = stats.max_HP
 	healthBar.init_health(stats.HP)
@@ -61,8 +59,7 @@ func _on_hurtbox_area_entered(area):
 	hurtbox.create_hit_effect()
 
 	#Hurtbox Sound
-	var playerHurtSound = PlayerHurtSound.instantiate()
-	get_tree().current_scene.add_child(playerHurtSound)
+	AudioManager.get_node("Hurt").play()
 		
 func _on_hurtbox_invincibility_started():
 	blinkAnimationPlayer.play("Start")

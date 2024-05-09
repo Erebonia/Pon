@@ -11,7 +11,6 @@ class_name Player
 #General (Game)
 @onready var stats = Status
 @onready var levelUpVFX = $Misc/LevelUp
-@onready var levelUpSFX = $Misc/LevelUpSFX
 @onready var checkTime = null
 @onready var lightSource = $Misc/Light_Source
 
@@ -139,7 +138,7 @@ func calculateDmg(dmgBoostStat):
 		
 func _on_level_up(_Level):
 	levelUpVFX.play("level_up")
-	levelUpSFX.play()
+	AudioManager.get_node("Level_Up").play()
 	
 func updateHealthBarUI():
 	healthBar.health = stats.HP

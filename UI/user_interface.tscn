@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dx4gc50eoqluo"]
+[gd_scene load_steps=34 format=3 uid="uid://dx4gc50eoqluo"]
 
 [ext_resource type="Script" path="res://World/Inventory_UI.gd" id="1_0y4l0"]
 [ext_resource type="PackedScene" uid="uid://xgwv4syylx7" path="res://Player/Inventory/Scene/inventory_gui.tscn" id="2_6d6xj"]
@@ -9,10 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bldievrlq0s0x" path="res://Player/Inventory/Art/GUI_1x_sliced.png" id="5_ych27"]
 [ext_resource type="AudioStream" uid="uid://ccwev0ttpjs0c" path="res://Music and Sounds/UI/Level up Pickup (Rpg).wav" id="7_jd5fw"]
 [ext_resource type="Texture2D" uid="uid://cbwoxp5xax18m" path="res://Player/Pixivan MC/Portrait/Character Portrait Enlarged.png" id="7_nigos"]
-[ext_resource type="AudioStream" uid="uid://cfcolr35hfvoh" path="res://Music and Sounds/UI/close.wav" id="10_1xx1d"]
-[ext_resource type="AudioStream" uid="uid://brho1m4e6trus" path="res://Music and Sounds/UI/openinventory.wav" id="11_kwvfg"]
-[ext_resource type="AudioStream" uid="uid://c3tday1y5vl4b" path="res://Music and Sounds/UI/Inventory - Grab Item.ogg" id="12_0lp4g"]
-[ext_resource type="AudioStream" uid="uid://bk6ahcnb3aje2" path="res://Music and Sounds/UI/Inventory - Place Item.ogg" id="13_okgtn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kjcbx"]
 
@@ -476,22 +472,6 @@ offset_right = 85.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="CloseInventory" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_1xx1d")
-volume_db = -10.0
-
-[node name="OpenInventory" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_kwvfg")
-volume_db = -10.0
-
-[node name="PickupItem" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_0lp4g")
-volume_db = -10.0
-
-[node name="PlaceItem" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_okgtn")
-volume_db = -13.0
 
 [editable path="InventoryGui"]
 [editable path="InventoryGui/Hat_Slot"]

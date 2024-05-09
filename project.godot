@@ -21,8 +21,8 @@ scene_manager="*res://World/Scene_Manager.gd"
 DayAndNight="*res://World/Weather/weather/daynightcycle_scene.tscn"
 DamageNumbers="*res://Overlap/DamageNumbers.gd"
 TransitionScene="*res://UI/transition_scene.tscn"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AudioManager="*res://Music and Sounds/audio_manager.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 

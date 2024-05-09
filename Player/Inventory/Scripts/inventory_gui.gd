@@ -138,7 +138,7 @@ func insertItemInSlot(slot):
 		Status.Strength += item.inventorySlot.item.attackBonus
 		
 	inventory.check_inventory_full()
-	$"../PlaceItem".play()
+	AudioManager.get_node("Place_Item").play()
 
 func takeItemFromSlot(slot):
 	itemInHand = slot.takeItem()
@@ -158,7 +158,7 @@ func takeItemFromSlot(slot):
 		$Accessory_Slot/background/Accessory_Slot_BG.visible = true
 		Status.Strength -= itemInHand.inventorySlot.item.attackBonus
 	inventory.check_inventory_full()
-	$"../PickupItem".play()
+	AudioManager.get_node("Pickup_Item").play()
 	
 func swapItems(slot):
 	var tempItem = slot.takeItem()

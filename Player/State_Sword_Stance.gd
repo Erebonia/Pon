@@ -8,8 +8,6 @@ class_name State_Sword_Stance
 #Sword Stance
 @onready var swordWaveProjectile = $"../../Combat/SwordWaveProjectile"
 @onready var swordWaveCooldown = $"../../Combat/SwordWaveProjectile/swordWaveCooldown"
-@onready var swordWaveStanceSound = $"../../Combat/SwordWaveProjectile/swordWaveStance"
-@onready var swordProjectileSound = $"../../Combat/SwordWaveProjectile/swordWaveSound"
 @onready var swordStanceAuraFX = $"../../Combat/SwordStance_ActivateAura"
 @onready var swordStanceAnimation = $"../../Combat/Sword/SwordSprite/SwordWave_FX"
 @onready var swordStanceLabel = $"../../Combat/SwordStance_ActivateAura/SwordStanceLabel"
@@ -31,7 +29,7 @@ func Enter():
 	#Enter Actual Stance
 	player.animationTree.set_active(false)
 	player.animationPlayer.play("swordStance")
-	swordWaveStanceSound.play()
+	AudioManager.get_node("Swordwave_Stance").play()
 	await player.animationPlayer.animation_finished
 	player.animationTree.set_active(true)
 	swordStanceAuraFX.play("default")
@@ -77,7 +75,7 @@ func activateStance():
 		var sword_wave_instance = swordWaveSlash.instantiate()
 		sword_wave_instance.rotation = swordWaveProjectile.rotation
 		sword_wave_instance.global_position = swordWaveProjectile.global_position
-		swordProjectileSound.play()
+		AudioManager.get_node("Swordwave_Projectile_SFX")
 		add_child(sword_wave_instance)
 		# Cooldown
 		await get_tree().create_timer(0.2).timeout
