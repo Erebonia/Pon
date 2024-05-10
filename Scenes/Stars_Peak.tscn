@@ -28,7 +28,7 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="TopLeft" parent="World_Camera/Limits" index="0"]
-position = Vector2(0, 0)
+position = Vector2(9, -260)
 
 [node name="BottomRight" parent="World_Camera/Limits" index="1"]
 position = Vector2(576, 323)
