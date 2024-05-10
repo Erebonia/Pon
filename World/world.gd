@@ -33,7 +33,6 @@ func _on_check_time(day, hour, _minute):
 		fog.visible = true
 	else:
 		clouds.emitting = true 
-		raylights.emitting = true
 
 func randomWeather():
 	var randomPick = randi_range(1,3)
@@ -42,14 +41,17 @@ func randomWeather():
 			print("Leaves Day")
 			leaves.emitting = true
 			rain.emitting = false
+			raylights.emitting = true
 		2:
 			print("Rainy Day")
 			leaves.emitting = false
 			rain.emitting = true
+			raylights.emitting = false
 		3,4:
 			print("Nothing Day")
 			leaves.emitting = false
 			rain.emitting = false
+			raylights.emitting = true
 
 func _on_inventory_gui_opened():
 	get_tree().paused = true

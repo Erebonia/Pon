@@ -4,7 +4,7 @@ class_name SceneManager
 var player: Player
 var userInterface: UserInterface
 var last_scene_name: String 
-var scene_dir_path = "res://scenes/"
+var scene_dir_path = "res://Scenes/"
 var currentScene: String
 
 func _process(_delta):

@@ -10,6 +10,7 @@ var rollVector = Vector2.DOWN
 
 func Enter():
 	player.animationTree.set("parameters/Roll/Blendspace2D/blend_position", player.input_vector)	
+	hurt.blinkAnimationPlayer.play("Start")
 	hurt.hurtbox.start_invincibility(.6)
 	player.UpdateAnimation("Roll")
 	AudioManager.get_node("Evade").play()

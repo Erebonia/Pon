@@ -9669,6 +9669,7 @@ z_index = -1
 position = Vector2(4, -17)
 
 [node name="SwordSprite" type="Sprite2D" parent="Combat/Sword"]
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("35_otfcl")
 flip_h = true
 
