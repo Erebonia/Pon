@@ -17,7 +17,7 @@ func _ready():
 func _on_check_time(day, hour, _minute):
 	# Randomize Weather every 12 hours
 	if savedHour == -1 or hour == (savedHour + 12) % 24:
-		print("Hour: " + str(hour))
+		#print("Hour: " + str(hour))
 		randomWeather()
 		savedHour = hour
 	
@@ -38,17 +38,17 @@ func randomWeather():
 	var randomPick = randi_range(1,3)
 	match randomPick:
 		1:
-			print("Leaves Day")
+			#print("Leaves Day")
 			leaves.emitting = true
 			rain.emitting = false
 			raylights.emitting = true
 		2:
-			print("Rainy Day")
+			#print("Rainy Day")
 			leaves.emitting = false
 			rain.emitting = true
 			raylights.emitting = false
 		3,4:
-			print("Nothing Day")
+			#print("Nothing Day")
 			leaves.emitting = false
 			rain.emitting = false
 			raylights.emitting = true
