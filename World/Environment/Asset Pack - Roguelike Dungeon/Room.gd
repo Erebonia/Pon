@@ -73,4 +73,4 @@ func _on_PlayerDetector_body_entered(_body: CharacterBody2D) -> void:
 func _on_increment_level_body_entered(body):
 	if body.has_method("player"):
 		Status.dungeonFloor += 1
-		print("Floor incremented:" + str(Status.dungeonFloor))
+		print("Current Floor:" + str(Status.dungeonFloor))
