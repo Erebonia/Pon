@@ -12,6 +12,9 @@ var Agility : int
 var Defense : int
 var KNOCKOUT_SPEED = 0
 var dungeonFloor: int = 1
+var tempSTR: int
+var tempDEF: int
+var tempAGI: int
 
 # Define new signals
 signal level_up(Level)
@@ -67,3 +70,4 @@ func load_xp_data():
 
 func update_ui():
 	emit_signal("update_stats", HP, max_HP, Strength, Magic, Agility, Defense)
+

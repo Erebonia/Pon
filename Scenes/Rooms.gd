@@ -13,11 +13,13 @@ const TILE_SIZE: int = 16
 @export var MAX_FLOORS = 2
 @onready var player: CharacterBody2D = get_parent().get_node("Player")
 
-
 func _ready() -> void:
 	if Status.dungeonFloor > MAX_FLOORS:
 		print("RESETTING FLOOR")
 		Status.dungeonFloor = 1
+		Status.tempAGI = 0
+		Status.tempDEF = 0
+		Status.tempSTR = 0
 
 	if Status.dungeonFloor == 2:
 		num_levels = 3

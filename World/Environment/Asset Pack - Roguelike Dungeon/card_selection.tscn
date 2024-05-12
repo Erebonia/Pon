@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ofi5kflovwaw"]
+[gd_scene load_steps=9 format=3 uid="uid://ofi5kflovwaw"]
 
 [ext_resource type="Script" path="res://World/Environment/Asset Pack - Roguelike Dungeon/card_selection.gd" id="1_6kh1b"]
+[ext_resource type="Script" path="res://World/Environment/Asset Pack - Roguelike Dungeon/Card_Effect_Button.gd" id="2_d2p23"]
 [ext_resource type="Texture2D" uid="uid://drbtv5kqbqan2" path="res://UI/card_outline_white.png" id="3_c0un7"]
 [ext_resource type="Texture2D" uid="uid://bldievrlq0s0x" path="res://Player/Inventory/Art/GUI_1x_sliced.png" id="3_l4ooe"]
 [ext_resource type="Texture2D" uid="uid://dm14f1ob77ihi" path="res://UI/card_outline_gold.png" id="4_hml8t"]
@@ -97,11 +98,12 @@ process_mode = 3
 script = ExtResource("1_6kh1b")
 
 [node name="BG" type="ColorRect" parent="."]
-modulate = Color(0, 0, 0, 0.490196)
+modulate = Color(0, 0, 0, 0)
 offset_right = 320.0
 offset_bottom = 181.0
 
 [node name="Title" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
 offset_left = 38.0
 offset_top = 8.0
 offset_right = 286.0
@@ -118,8 +120,10 @@ offset_bottom = 141.115
 theme_override_constants/separation = 40
 
 [node name="Card_Effect_Button_1" type="Button" parent="CardContainer"]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(69, 0)
 layout_mode = 2
+script = ExtResource("2_d2p23")
 
 [node name="Card_Icon" type="Sprite2D" parent="CardContainer/Card_Effect_Button_1"]
 position = Vector2(10, 8)
@@ -172,8 +176,10 @@ theme_override_font_sizes/font_size = 5
 text = "+10 STR"
 
 [node name="Card_Effect_Button_2" type="Button" parent="CardContainer"]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(69, 0)
 layout_mode = 2
+script = ExtResource("2_d2p23")
 
 [node name="Card_Icon" type="Sprite2D" parent="CardContainer/Card_Effect_Button_2"]
 position = Vector2(10, 8)
@@ -226,8 +232,10 @@ theme_override_font_sizes/font_size = 5
 text = "+10 STR"
 
 [node name="Card_Effect_Button_3" type="Button" parent="CardContainer"]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(69, 0)
 layout_mode = 2
+script = ExtResource("2_d2p23")
 
 [node name="Card_Icon" type="Sprite2D" parent="CardContainer/Card_Effect_Button_3"]
 position = Vector2(10, 8)
@@ -284,6 +292,12 @@ libraries = {
 "": SubResource("AnimationLibrary_06kt5")
 }
 
-[connection signal="pressed" from="CardContainer/Card_Effect_Button_1" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CardContainer/Card_Effect_Button_2" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CardContainer/Card_Effect_Button_3" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CardContainer/Card_Effect_Button_1" to="CardContainer/Card_Effect_Button_1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CardContainer/Card_Effect_Button_1" to="CardContainer/Card_Effect_Button_1" method="_on_mouse_exited"]
+[connection signal="pressed" from="CardContainer/Card_Effect_Button_1" to="." method="_on_pressed"]
+[connection signal="mouse_entered" from="CardContainer/Card_Effect_Button_2" to="CardContainer/Card_Effect_Button_2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CardContainer/Card_Effect_Button_2" to="CardContainer/Card_Effect_Button_2" method="_on_mouse_exited"]
+[connection signal="pressed" from="CardContainer/Card_Effect_Button_2" to="." method="_on_pressed"]
+[connection signal="mouse_entered" from="CardContainer/Card_Effect_Button_3" to="CardContainer/Card_Effect_Button_3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CardContainer/Card_Effect_Button_3" to="CardContainer/Card_Effect_Button_3" method="_on_mouse_exited"]
+[connection signal="pressed" from="CardContainer/Card_Effect_Button_3" to="." method="_on_pressed"]

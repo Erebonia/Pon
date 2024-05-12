@@ -60,7 +60,6 @@ func _process(_delta):
 		loadSaveData()
 		
 	checkSelectedWeapon()	
-	saveStats()
 	updateHealthBarUI()
 
 func _physics_process(_delta):
@@ -109,6 +108,7 @@ func gameStarted():
 	inventory.slots = playerData.slots
 	inventory.check_inventory_full()
 	emit_signal("updateInventoryUI")
+	#current scene save
 	#self.position = playerData.savedPosition
 	stats.HP = playerData.HP
 	stats.max_HP = playerData.max_HP
@@ -133,7 +133,8 @@ func _on_check_time(_day, hour, _minute):
 		lightSource.visible = false
 	
 func calculateDmg(dmgBoostStat):
-	baseCombatDMG.damage = dmgBoostStat
+	baseCombatDMG.damage = (Status.Strength * 0.5) + dmgBoostStat
+	#baseCombatDMG.damage = dmgBoostStat
 		
 func _on_level_up(_Level):
 	levelUpVFX.play("level_up")
@@ -186,4 +187,6 @@ func playerDead():
 	
 func player():
 	pass
-			
+	
+func _on_save_timeout():
+	saveData()

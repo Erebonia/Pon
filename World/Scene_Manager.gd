@@ -10,6 +10,7 @@ var currentScene: String
 func _process(_delta):
 	if get_tree().current_scene != null:
 		currentScene = get_tree().current_scene.name
+		removeTemporaryStats()
 
 func change_scene(from, to_scene_name: String) -> void:
 	last_scene_name = from.name
@@ -26,3 +27,12 @@ func change_scene(from, to_scene_name: String) -> void:
 	var full_path = scene_dir_path + to_scene_name + ".tscn"
 	from.get_tree().call_deferred("change_scene_to_file", full_path)
 	AudioManager.get_node("Scene_Transition").play()
+	
+func removeTemporaryStats():
+	if scene_manager.currentScene != "Dungeon_1":
+		Status.Strength = Status.Strength - Status.tempSTR
+		Status.Defense = Status.Defense - Status.tempDEF
+		Status.Agility = Status.Agility - Status.tempAGI
+		Status.tempSTR = 0
+		Status.tempAGI = 0
+		Status.tempDEF = 0

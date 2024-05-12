@@ -7,8 +7,35 @@ extends CanvasLayer
 @onready var white_border = preload("res://UI/card_outline_white.png")
 
 var rareCardBonus: int = 10
+var strength: int
+var agility: int
+var defense: int
 
 func _ready():
+	randomizeCards()	
+	animation_player.play("Canvas_Title")
+	await animation_player.animation_finished
+	makeCardsFloat()
+
+func freeze_game():
+	get_tree().paused = true
+	
+func _on_pressed():
+	var card_instance = find_child("Card_Title")
+	match card_instance.text:
+		"Gladiator":
+			Status.tempSTR = strength
+			Status.Strength = Status.Strength + Status.tempSTR
+		"Fortify":
+			Status.tempDEF = defense
+			Status.Defense = Status.Defense + Status.tempDEF
+		"Flash":
+			Status.tempAGI = agility
+			Status.Agility = Status.Agility + Status.tempAGI
+	self.visible = false
+	get_tree().paused = false
+	
+func randomizeCards():
 	effects.shuffle()  # Shuffle the effects array to randomize order
 	for i in range(min(cards.size(), effects.size())):  # Use min to ensure we don't go out of bounds
 		var card = cards[i]
@@ -29,34 +56,24 @@ func _ready():
 				cardDescription.text = "Become enraged from endlessly slaying monsters with no end in sight."
 				cardStats.text = "STR + " + str(cardBonus)
 				cardBG.set_texture(white_border)
+				strength = cardBonus
 			"Fortify":
 				cardIcon.frame = 6
 				cardDescription.text = "Inherit the blessing of the God of Defense Claytonic."
 				cardStats.text = "DEF + " + str(cardBonus + rareCardBonus)
 				cardBG.set_texture(gold_border)
+				defense = cardBonus + rareCardBonus
 			"Flash":
 				cardIcon.frame = 1
 				cardDescription.text = "Become one with the wind and unlock your latent potential for speed and agility."
 				cardStats.text = "AGI + " + str(cardBonus)
 				cardBG.set_texture(white_border)
-			
-	animation_player.play("Canvas_Title")
-	await animation_player.animation_finished
-		
+				agility = cardBonus
+				
+func makeCardsFloat():
 	var cardContainer = $CardContainer
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(cardContainer, "position", Vector2(cardContainer.position.x, cardContainer.position.y + 2), 1)
 	tween.tween_property(cardContainer, "position", Vector2(cardContainer.position.x, cardContainer.position.y - 2), 1)
 	tween.set_loops()
-		
-func _on_button_pressed():
-	self.visible = false
-	get_tree().paused = false
-
-func freeze_game():
-	get_tree().paused = true
-	
-
-	
-

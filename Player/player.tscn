@@ -9835,6 +9835,11 @@ text = "State: Idle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Save" type="Timer" parent="Misc"]
+process_mode = 3
+wait_time = 60.0
+autostart = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CapsuleShape2D_58lcn")
@@ -9846,6 +9851,7 @@ shape = SubResource("CapsuleShape2D_58lcn")
 [connection signal="invincibility_ended" from="Combat/Hurtbox" to="StateMachine/Hurt" method="_on_hurtbox_invincibility_ended"]
 [connection signal="invincibility_started" from="Combat/Hurtbox" to="StateMachine/Hurt" method="_on_hurtbox_invincibility_started"]
 [connection signal="timeout" from="Combat/HpRecovery" to="." method="_on_hp_recovery_timeout"]
+[connection signal="timeout" from="Misc/Save" to="." method="_on_save_timeout"]
 
 [editable path="Combat/HitboxPivot/SwordHitbox"]
 [editable path="Combat/Hurtbox"]
