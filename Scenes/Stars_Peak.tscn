@@ -28,10 +28,10 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="TopLeft" parent="World_Camera/Limits" index="0"]
-position = Vector2(9, -260)
+position = Vector2(-11, -1620)
 
 [node name="BottomRight" parent="World_Camera/Limits" index="1"]
-position = Vector2(576, 323)
+position = Vector2(1149, 890)
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
@@ -77,7 +77,7 @@ centered = false
 
 [node name="Moon" type="ParallaxLayer" parent="Parallax_Background/ParallaxBackground"]
 motion_scale = Vector2(0.1, 0)
-motion_mirroring = Vector2(570, 0)
+motion_mirroring = Vector2(570, 570)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax_Background/ParallaxBackground/Moon"]
 texture = ExtResource("8_i8ql1")
@@ -85,7 +85,7 @@ centered = false
 
 [node name="Main Clouds" type="ParallaxLayer" parent="Parallax_Background/ParallaxBackground"]
 motion_scale = Vector2(0.7, 0.7)
-motion_mirroring = Vector2(570, 0)
+motion_mirroring = Vector2(570, 570)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax_Background/ParallaxBackground/Main Clouds"]
 texture = ExtResource("9_rbhve")
@@ -93,7 +93,7 @@ centered = false
 
 [node name="Sub Clouds" type="ParallaxLayer" parent="Parallax_Background/ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(570, 0)
+motion_mirroring = Vector2(570, 570)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax_Background/ParallaxBackground/Sub Clouds"]
 texture = ExtResource("10_jpkpu")

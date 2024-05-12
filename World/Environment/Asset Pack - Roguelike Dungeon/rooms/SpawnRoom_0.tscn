@@ -1,13 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://c15sxlr3o36gr"]
+[gd_scene load_steps=9 format=3 uid="uid://c15sxlr3o36gr"]
 
 [ext_resource type="PackedScene" uid="uid://cded01chy127l" path="res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/Room.tscn" id="1_6suqc"]
 [ext_resource type="PackedScene" uid="uid://ddhf7b3wtualh" path="res://World/Environment/Asset Pack - Roguelike Dungeon/door.tscn" id="2_bpvlh"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="3_wi4s2"]
+[ext_resource type="PackedScene" uid="uid://nqsjao3kiwxe" path="res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/increment_level.tscn" id="4_fjpc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo1q5"]
 size = Vector2(73.5, 15)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8w77"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_comnd"]
+size = Vector2(16, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhler"]
+size = Vector2(16, 17)
 
 [node name="Room0" instance=ExtResource("1_6suqc")]
 
@@ -46,3 +53,20 @@ connected_scene = "world"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger" index="0"]
 position = Vector2(264, 103)
 shape = SubResource("CircleShape2D_j8w77")
+
+[node name="SkipLevel" parent="." index="7" instance=ExtResource("3_wi4s2")]
+position = Vector2(127, 127)
+connected_scene = "Dungeon_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SkipLevel" index="0"]
+position = Vector2(136, 39.5)
+shape = SubResource("RectangleShape2D_comnd")
+
+[node name="IncrementLevel" parent="." index="8" instance=ExtResource("4_fjpc1")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IncrementLevel" index="0"]
+position = Vector2(263, 166.5)
+shape = SubResource("RectangleShape2D_vhler")
+debug_color = Color(0.945098, 0.137255, 0.47451, 0.419608)
+
+[connection signal="body_entered" from="IncrementLevel" to="." method="_on_increment_level_body_entered"]

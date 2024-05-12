@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvq7w8jewvpm5"]
+[gd_scene load_steps=9 format=3 uid="uid://bvq7w8jewvpm5"]
 
 [ext_resource type="Script" path="res://World/Base_Scene.gd" id="1_grit8"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_orh0m"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dx4gc50eoqluo" path="res://UI/user_interface.tscn" id="4_6ixf6"]
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="5_kom6a"]
 [ext_resource type="AudioStream" uid="uid://b30d2271k7t4u" path="res://Music and Sounds/Music/The_Forest_Foxs_Quest2.mp3" id="6_oowxi"]
+[ext_resource type="PackedScene" uid="uid://ofi5kflovwaw" path="res://World/Environment/Asset Pack - Roguelike Dungeon/card_selection.tscn" id="7_ckblp"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ipnse"]
 
@@ -50,5 +51,8 @@ texture = SubResource("PlaceholderTexture2D_ipnse")
 stream = ExtResource("6_oowxi")
 
 [node name="User_Interface" parent="." instance=ExtResource("4_6ixf6")]
+
+[node name="CardSelection" parent="." instance=ExtResource("7_ckblp")]
+visible = false
 
 [editable path="World_Camera"]

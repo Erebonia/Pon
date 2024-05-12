@@ -17,11 +17,14 @@ var num_enemies: int
 @onready var door_container: Node2D = get_node("Doors")
 @onready var enemy_positions_container: Node2D = get_node("EnemyPositions")
 @onready var player_detector: Area2D = get_node("PlayerDetector")
+@onready var cardSelect = null
 
 
 func _ready() -> void:
 	num_enemies = enemy_positions_container.get_child_count()
-
+	cardSelect = get_tree().get_first_node_in_group("CardSelection")
+	#if Status.dungeonFloor > 1:
+	cardSelect.visible = true
 
 func _on_enemy_killed() -> void:
 	num_enemies -= 1
