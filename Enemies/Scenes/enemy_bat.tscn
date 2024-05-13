@@ -144,7 +144,7 @@ radius = 5.0
 
 [node name="Enemy_Bat" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_gesaw")
-collision_layer = 16
+collision_layer = 17
 script = ExtResource("1_143xm")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
@@ -226,6 +226,7 @@ offset_right = 9.0
 offset_bottom = -28.0
 
 [node name="Debug" type="Label" parent="."]
+visible = false
 offset_left = -23.0
 offset_top = -42.0
 offset_right = 26.0

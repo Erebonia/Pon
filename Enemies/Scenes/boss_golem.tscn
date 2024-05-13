@@ -462,6 +462,8 @@ resource_local_to_scene = true
 shader = ExtResource("3_7n1b6")
 shader_parameter/active = false
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2rsni"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0cag4"]
 shader = ExtResource("3_7n1b6")
 shader_parameter/active = false
@@ -479,13 +481,11 @@ height = 52.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ddof4"]
 radius = 73.7564
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2rsni"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_r77o4"]
 
 [node name="Boss_Golem" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
-collision_layer = 16
+collision_layer = 17
 script = ExtResource("1_ucatd")
 ACCELERATION = 400
 MAX_SPEED = 80
@@ -507,6 +507,10 @@ material = SubResource("ShaderMaterial_58gw5")
 texture = ExtResource("1_ckc57")
 hframes = 10
 vframes = 10
+
+[node name="Base Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_2rsni")
 
 [node name="pivot" type="Node2D" parent="."]
 position = Vector2(0, -17)
@@ -646,6 +650,7 @@ offset_right = 9.0
 offset_bottom = -28.0
 
 [node name="Debug" type="Label" parent="."]
+visible = false
 offset_left = -23.0
 offset_top = -42.0
 offset_right = 26.0
@@ -654,11 +659,6 @@ theme_override_font_sizes/font_size = 8
 text = "Debug"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Base Collision" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_2rsni")
 
 [node name="SoftCollision" parent="." instance=ExtResource("21_bdf6k")]
 
