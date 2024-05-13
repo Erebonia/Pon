@@ -9587,7 +9587,6 @@ frame_progress = 1.0
 speed_scale = 0.7
 
 [node name="debug" type="Label" parent="Misc"]
-visible = false
 z_index = 5
 offset_left = 6.0
 offset_top = 13.0
