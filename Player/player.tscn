@@ -1,4 +1,4 @@
-[gd_scene load_steps=620 format=3 uid="uid://b1lifm57p7pvt"]
+[gd_scene load_steps=613 format=3 uid="uid://b1lifm57p7pvt"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_fjjot"]
 [ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Effects/Shadows/SmallShadow.png" id="2_6k4r1"]
@@ -35,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://dvtrwwoxixqt2" path="res://Player/Pixivan MC/FrontSide Movement.png" id="16_yht0i"]
 [ext_resource type="Texture2D" uid="uid://8ywudpb6s7k6" path="res://Player/Pixivan MC/FrontSide Bow.png" id="17_rbfl3"]
 [ext_resource type="Texture2D" uid="uid://chhw2ojm4666c" path="res://Player/Pixivan MC/BackSide DashnRoll.png" id="21_5teel"]
-[ext_resource type="Texture2D" uid="uid://csnu1soky1r5f" path="res://Effects/Sword FX/Smear 01 Horizontal 1.png" id="29_5mtdj"]
 [ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://UI/Health/healthbar_overhead.tscn" id="29_b6em7"]
 [ext_resource type="Texture2D" uid="uid://ceu0br3nrywpf" path="res://Effects/Sprites/flameslash effect.png" id="29_nvg0i"]
 [ext_resource type="Texture2D" uid="uid://bsjpqcvr7vk7h" path="res://Effects/Sword FX/Burst_1_128.png" id="30_liyf5"]
@@ -8994,52 +8993,6 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i8lds"]
-atlas = ExtResource("29_5mtdj")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ly5yh"]
-atlas = ExtResource("29_5mtdj")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0gxr1"]
-atlas = ExtResource("29_5mtdj")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ue5k3"]
-atlas = ExtResource("29_5mtdj")
-region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v1tgh"]
-atlas = ExtResource("29_5mtdj")
-region = Rect2(192, 0, 48, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sku4v"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i8lds")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ly5yh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0gxr1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ue5k3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v1tgh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_44nkr")
-}],
-"loop": false,
-"name": &"slash_animation",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ki1mf"]
 atlas = ExtResource("31_gibrd")
 region = Rect2(0, 0, 42, 40)
@@ -9616,7 +9569,6 @@ script = ExtResource("9_af0ex")
 material = SubResource("ShaderMaterial_hi7q1")
 sprite_frames = SubResource("SpriteFrames_6nvx4")
 animation = &"attack_sideways"
-frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -9677,14 +9629,6 @@ rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_nr6b0")
 animation = &"enter_sword_stance"
 frame = 11
-
-[node name="SwordGlow_VFX" type="AnimatedSprite2D" parent="Combat/Sword/SwordSprite"]
-visible = false
-sprite_frames = SubResource("SpriteFrames_sku4v")
-animation = &"slash_animation"
-frame = 5
-frame_progress = 1.0
-speed_scale = 2.0
 
 [node name="SwordStance_Glowing" type="AnimatedSprite2D" parent="Combat/Sword/SwordSprite"]
 z_index = -1

@@ -1,32 +1,70 @@
-[gd_scene load_steps=7 format=3 uid="uid://budmruvolxy4p"]
+[gd_scene load_steps=12 format=3 uid="uid://budmruvolxy4p"]
 
-[ext_resource type="Texture2D" uid="uid://s6wrs4npo5um" path="res://Effects/Sprites/HitEffect.png" id="1_8l3ab"]
+[ext_resource type="Texture2D" uid="uid://db5c7q8q1uovo" path="res://Effects/Sword FX/Thrust VFX 03 Color 1.png" id="1_ga33h"]
 [ext_resource type="Script" path="res://Effects/Scripts/Effect.gd" id="2_ped2g"]
 [ext_resource type="AudioStream" uid="uid://j3k2bh4dhv7j" path="res://Music and Sounds/General/Hit.wav" id="3_rmub1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_77amd"]
-atlas = ExtResource("1_8l3ab")
-region = Rect2(0, 0, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ileo"]
+atlas = ExtResource("1_ga33h")
+region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vtctb"]
-atlas = ExtResource("1_8l3ab")
-region = Rect2(24, 0, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8r2o"]
+atlas = ExtResource("1_ga33h")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4t80"]
+atlas = ExtResource("1_ga33h")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnheq"]
+atlas = ExtResource("1_ga33h")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qmvl"]
+atlas = ExtResource("1_ga33h")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr63w"]
+atlas = ExtResource("1_ga33h")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhvc5"]
+atlas = ExtResource("1_ga33h")
+region = Rect2(288, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t3o6x"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_77amd")
+"texture": SubResource("AtlasTexture_0ileo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vtctb")
+"texture": SubResource("AtlasTexture_i8r2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4t80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnheq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qmvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hr63w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhvc5")
 }],
 "loop": false,
 "name": &"Animate",
-"speed": 15.0
+"speed": 10.0
 }]
 
 [node name="HitEffect" type="AnimatedSprite2D"]
+z_index = 1
+position = Vector2(-7, 6)
+rotation = 0.677375
 sprite_frames = SubResource("SpriteFrames_t3o6x")
 animation = &"Animate"
 offset = Vector2(0, -8)

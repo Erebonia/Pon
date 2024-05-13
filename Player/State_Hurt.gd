@@ -56,7 +56,6 @@ func _on_hurtbox_area_entered(area):
 	
 	#Invincibility and hit effect    
 	hurtbox.start_invincibility(.6)
-	hurtbox.create_hit_effect()
 
 	#Hurtbox Sound
 	AudioManager.get_node("Hurt").play()

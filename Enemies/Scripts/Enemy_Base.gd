@@ -68,7 +68,7 @@ func take_damage(area):
 		damage_taken *= critical_multiplier
 
 	stats.health -= damage_taken
-	hurtbox.create_hit_effect()
+	hurtbox.create_hit_effect(area.global_position)
 	hurtbox.start_invincibility(0.4)
 	DamageNumbers.display_number(damage_taken, damage_numbers_origin.global_position, is_critical)
 

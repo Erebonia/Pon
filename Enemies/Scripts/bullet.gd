@@ -34,7 +34,7 @@ func _on_hurtbox_area_entered(area):
 	if area.has_method("playerWeapon"):
 		print("Projectile has been slashed by the player.")
 		queue_free()
-		hurtbox.create_hit_effect()
+		hurtbox.create_hit_effect(area.global_position)
 
 func _on_timer_timeout():
 	queue_free()

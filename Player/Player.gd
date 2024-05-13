@@ -18,7 +18,6 @@ class_name Player
 @onready var baseCombatDMG = $Combat/HitboxPivot/SwordHitbox
 @onready var swordSprite = $Combat/Sword/SwordSprite
 @onready var swordHitbox = $Combat/HitboxPivot/SwordHitbox
-@onready var slashFX = $Combat/Sword/SwordSprite/SwordGlow_VFX
 @onready var attackTimer = $Combat/AttackTimer
 @onready var healthBar = $Combat_UI/Healthbar
 

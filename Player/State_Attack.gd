@@ -11,7 +11,6 @@ func Enter():
 	player.animationTree.set("parameters/Attack/BlendSpace2D/blend_position", player.aim_direction)
 	Status.KNOCKOUT_SPEED = 60
 	player.calculateDmg(bonusDMG)
-	player.slashFX.play("slash_animation")
 	player.UpdateAnimation("Attack")
 	player.attackTimer.start()
 	player.animationTree.animation_finished.connect(endAttack)
