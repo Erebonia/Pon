@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 class_name Status
 
@@ -16,6 +16,7 @@ const MAX_LEVEL = 4
 @export var tempSTR: int
 @export var tempDEF: int
 @export var tempAGI: int
+@export var dungeonFloor: int = 1
 
 # Define new signals
 signal level_up(Level)

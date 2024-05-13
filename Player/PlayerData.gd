@@ -11,7 +11,7 @@ class_name PlayerData
 @export var agility: int
 @export var defense: int
 @export var slots: Array[InventorySlot] = []
-@export var dungeonFloor: int
+@export var dungeonFloor: int = 1
 
 @export var savedPosition: Vector2
 
