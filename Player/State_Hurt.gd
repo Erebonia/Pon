@@ -8,7 +8,6 @@ class_name State_Hurt
 @onready var blinkAnimationPlayer = $"../../Combat/BlinkAnimationPlayer"
 @onready var damageNumbersOrigin = $"../../Combat_UI/DamageNumbersOrigin"
 @onready var healthBar = $"../../Combat_UI/Healthbar"
-@onready var stats = Status
 
 # States
 @onready var hurt = $"../Hurt"
@@ -18,11 +17,11 @@ class_name State_Hurt
 @onready var defaultShader = preload("res://Player/WhiteColor.gdshader")
 
 func Enter():
-	healthBar.max_value = stats.max_HP
-	healthBar.init_health(stats.HP)
+	healthBar.max_value = player.stats.max_HP
+	healthBar.init_health(player.stats.HP)
 	
 func Exit():
-	stats.disconnect("no_HP", Callable(self, "playerDead"))
+	player.stats.disconnect("no_HP", Callable(self, "playerDead"))
 	
 func Process(_delta : float) -> State:
 	return null
@@ -39,16 +38,16 @@ func takeDamage(area):
 	if critical_chance <= 0.1:
 		is_critical = true
 		var critical_multiplier = randf_range(1.2, 2) # Crit chance between these values
-		stats.HP -= area.damage * critical_multiplier # Apply critical damage
+		player.stats.HP -= area.damage * critical_multiplier # Apply critical damage
 		DamageNumbers.display_number(area.damage * critical_multiplier, damageNumbersOrigin.global_position, is_critical)
 	else:
-		stats.HP -= area.damage
+		player.stats.HP -= area.damage
 		DamageNumbers.display_number(area.damage, damageNumbersOrigin.global_position, is_critical)
 	
-	healthBar.health = stats.HP
-	healthBar.max_value = stats.max_HP
+	healthBar.health = player.stats.HP
+	healthBar.max_value = player.stats.max_HP
 	
-	if stats.HP < stats.max_HP:
+	if player.stats.HP < player.stats.max_HP:
 		healthBar.visible = true
 		
 func _on_hurtbox_area_entered(area):

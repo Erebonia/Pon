@@ -10,7 +10,7 @@ class_name Player
 @onready var playerSprite: AnimatedSprite2D = $PlayerSprite
 
 #General (Game)
-@onready var stats = Status
+@onready var stats = $Stats
 @onready var levelUpVFX = $Misc/LevelUp
 @onready var checkTime = null
 @onready var lightSource = $Misc/Light_Source
@@ -137,7 +137,7 @@ func _on_check_time(_day, hour, _minute):
 		lightSource.visible = false
 	
 func calculateDmg(dmgBoostStat):
-	baseCombatDMG.damage = (Status.Strength * 0.5) + dmgBoostStat
+	baseCombatDMG.damage = (stats.Strength * 0.5) + dmgBoostStat
 	#baseCombatDMG.damage = dmgBoostStat
 		
 func _on_level_up(_Level):

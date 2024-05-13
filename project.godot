@@ -16,7 +16,6 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
 
-Status="*res://Player/PlayerStatus.gd"
 scene_manager="*res://World/Scene_Manager.gd"
 DayAndNight="*res://World/Weather/weather/daynightcycle_scene.tscn"
 DamageNumbers="*res://Overlap/DamageNumbers.gd"

@@ -35,7 +35,7 @@ func Enter():
 	
 	#Stat Bonus
 	run.MAX_SPEED = 120
-	Status.KNOCKOUT_SPEED = 30
+	player.stats.KNOCKOUT_SPEED = 30
 	player.animationTree.set("parameters/Attack_Combo/TimeScale/scale", 5)
 	player.animationTree.set("parameters/Attack_Combo2/TimeScale/scale", 5)
 	swordWaveCooldown.start()
@@ -46,7 +46,7 @@ func Exit():
 	swordGlow.visible = false
 	swordStanceLabel.visible = false
 	run.MAX_SPEED = 80
-	Status.KNOCKOUT_SPEED = 0
+	player.stats.KNOCKOUT_SPEED = 0
 	player.animationTree.set("parameters/Attack_Combo/TimeScale/scale", 2)
 	player.animationTree.set("parameters/Attack_Combo2/TimeScale/scale", 2)
 	

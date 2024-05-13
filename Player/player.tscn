@@ -1,4 +1,4 @@
-[gd_scene load_steps=587 format=3 uid="uid://b1lifm57p7pvt"]
+[gd_scene load_steps=588 format=3 uid="uid://b1lifm57p7pvt"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_fjjot"]
 [ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Effects/Shadows/SmallShadow.png" id="2_6k4r1"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://44ock017fba4" path="res://Effects/Sprites/LevelUp.png" id="32_blh2b"]
 [ext_resource type="Texture2D" uid="uid://c8y0qr80ktgg8" path="res://Player/weapon/basic_sword.png" id="35_otfcl"]
 [ext_resource type="Texture2D" uid="uid://bdj4cy6nv2g63" path="res://Effects/Shadows/light.png" id="42_8pqup"]
+[ext_resource type="Script" path="res://Player/PlayerStatus.gd" id="44_0x1pl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hi7q1"]
 shader = ExtResource("4_ivow2")
@@ -9605,6 +9606,9 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CapsuleShape2D_58lcn")
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("44_0x1pl")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Combat/AttackTimer" to="StateMachine/Attack" method="_on_attack_timer_timeout"]

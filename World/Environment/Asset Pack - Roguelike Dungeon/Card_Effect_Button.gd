@@ -1,5 +1,10 @@
 extends Button
 
+var player: Player
+
+func _ready():
+	player = get_tree().get_first_node_in_group("Player")
+
 func _on_mouse_entered():
 	modulate = Color(3,3,3)
 	
@@ -10,13 +15,13 @@ func _on_pressed():
 	var card_selection = get_tree().get_first_node_in_group("CardSelection")
 	match find_child("Card_Title").text:
 		"Gladiator":
-			Status.tempSTR = card_selection.strength
-			Status.Strength = Status.Strength + Status.tempSTR
+			player.stats.tempSTR = card_selection.strength
+			player.stats.Strength = player.stats.Strength + player.stats.tempSTR
 		"Fortify":
-			Status.tempDEF = card_selection.defense
-			Status.Defense = Status.Defense + Status.tempDEF
+			player.stats.tempDEF = card_selection.defense
+			player.stats.Defense = player.stats.Defense + player.stats.tempDEF
 		"Flash":
-			Status.tempAGI = card_selection.agility
-			Status.Agility = Status.Agility + Status.tempAGI
+			player.stats.tempAGI = card_selection.agility
+			player.stats.Agility = player.stats.Agility + player.stats.tempAGI
 	card_selection.visible = false
 	get_tree().paused = false

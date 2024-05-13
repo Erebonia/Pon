@@ -1,20 +1,21 @@
 extends Node
 
+class_name Status
+
 const MAX_LEVEL = 4
-var XP_Table_Data = {}
-var current_xp = 0
-var Level : int = 1: set = set_level
-var HP : int : set = set_hp
-var max_HP : int : set = set_max_hp
-var Strength : int
-var Magic : int
-var Agility : int
-var Defense : int
-var KNOCKOUT_SPEED = 0
-var dungeonFloor: int = 1
-var tempSTR: int
-var tempDEF: int
-var tempAGI: int
+@export var XP_Table_Data = {}
+@export var current_xp = 0
+@export var Level : int = 1: set = set_level
+@export var HP : int : set = set_hp
+@export var max_HP : int : set = set_max_hp
+@export var Strength : int
+@export var Magic : int
+@export var Agility : int
+@export var Defense : int
+@export var KNOCKOUT_SPEED = 0
+@export var tempSTR: int
+@export var tempDEF: int
+@export var tempAGI: int
 
 # Define new signals
 signal level_up(Level)

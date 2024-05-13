@@ -4,10 +4,10 @@ class_name EnemyState
 @export var enemy : CharacterBody2D
 @onready var StateMachine = $".."
 @onready var animation_player = owner.find_child("AnimationPlayer")
-var player: CharacterBody2D
+var player
 
 func _ready():
-	pass
+	player = get_tree().get_first_node_in_group("Player")
 
 func Enter() -> void:
 	pass
@@ -16,7 +16,6 @@ func Exit() -> void:
 	pass
 	
 func Process(_delta : float) -> EnemyState:
-	player = get_tree().get_first_node_in_group("Player")
 	return null
 	
 func Physics( _delta : float) -> EnemyState:

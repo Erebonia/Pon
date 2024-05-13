@@ -42,7 +42,7 @@ func _on_hurtbox_area_entered(area):
 		bossHealthbar.health = stats.health 
 	#Knockback
 	var newDirection = ( position - area.owner.position ).normalized()
-	var knockback = newDirection * Status.KNOCKOUT_SPEED
+	var knockback = newDirection * player.stats.KNOCKOUT_SPEED
 	velocity = knockback
 
 func _on_stats_no_health():

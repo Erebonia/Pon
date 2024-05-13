@@ -10,7 +10,7 @@ var attacking = false
 func Enter():
 	player.animationTree.set("parameters/Attack_Combo/BlendSpace2D/blend_position", player.aim_direction)
 	player.attackTimer.stop()
-	Status.KNOCKOUT_SPEED = 90
+	player.stats.KNOCKOUT_SPEED = 90
 	player.calculateDmg(bonusDMG)
 	player.UpdateAnimation("Attack_Combo")
 	player.animationTree.animation_finished.connect(endAttack)

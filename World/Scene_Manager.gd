@@ -10,7 +10,7 @@ var currentScene: String
 func _process(_delta):
 	if get_tree().current_scene != null:
 		currentScene = get_tree().current_scene.name
-		removeTemporaryStats()
+		#removeTemporaryStats()
 
 func change_scene(from, to_scene_name: String) -> void:
 	last_scene_name = from.name
@@ -30,9 +30,9 @@ func change_scene(from, to_scene_name: String) -> void:
 	
 func removeTemporaryStats():
 	if scene_manager.currentScene != "Dungeon_1":
-		Status.Strength = Status.Strength - Status.tempSTR
-		Status.Defense = Status.Defense - Status.tempDEF
-		Status.Agility = Status.Agility - Status.tempAGI
-		Status.tempSTR = 0
-		Status.tempAGI = 0
-		Status.tempDEF = 0
+		player.stats.Strength = player.stats.Strength - player.stats.tempSTR
+		player.stats.Defense = player.stats.Defense - player.stats.tempDEF
+		player.stats.Agility = player.stats.Agility - player.stats.tempAGI
+		player.stats.tempSTR = 0
+		player.stats.tempAGI = 0
+		player.stats.tempDEF = 0

@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var effects: Array = ["Gladiator", "Fortify", "Flash"]
 @onready var gold_border = preload("res://UI/card_outline_gold.png")
 @onready var white_border = preload("res://UI/card_outline_white.png")
+var player: Player
 
 var rareCardBonus: int = 10
 var strength: int
@@ -12,6 +13,7 @@ var agility: int
 var defense: int
 
 func _ready():
+	player = get_tree().get_first_node_in_group("Player")
 	randomizeCards()	
 	animation_player.play("Canvas_Title")
 	await animation_player.animation_finished
@@ -23,14 +25,14 @@ func freeze_game():
 func _on_pressed():
 	match find_child("Card_Title").text:
 		"Gladiator":
-			Status.tempSTR = strength
-			Status.Strength = Status.Strength + Status.tempSTR
+			player.stats.tempSTR = strength
+			player.stats.Strength = player.stats.Strength + player.stats.tempSTR
 		"Fortify":
-			Status.tempDEF = defense
-			Status.Defense = Status.Defense + Status.tempDEF
+			player.stats.tempDEF = defense
+			player.stats.Defense = player.stats.Defense + player.stats.tempDEF
 		"Flash":
-			Status.tempAGI = agility
-			Status.Agility = Status.Agility + Status.tempAGI
+			player.stats.tempAGI = agility
+			player.stats.Agility = player.stats.Agility + player.stats.tempAGI
 	self.visible = false
 	get_tree().paused = false
 	
