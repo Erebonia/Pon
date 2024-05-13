@@ -1,4 +1,4 @@
-[gd_scene load_steps=586 format=3 uid="uid://b1lifm57p7pvt"]
+[gd_scene load_steps=587 format=3 uid="uid://b1lifm57p7pvt"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_fjjot"]
 [ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Effects/Shadows/SmallShadow.png" id="2_6k4r1"]
@@ -8674,6 +8674,10 @@ graph_offset = Vector2(-918.014, -82.4058)
 radius = 4.0
 height = 8.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7spmy"]
+shader = ExtResource("4_ivow2")
+shader_parameter/active = false
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrsd1"]
 atlas = ExtResource("31_gibrd")
 region = Rect2(0, 0, 42, 40)
@@ -9168,6 +9172,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Combat/Sword/SwordSprite:material:shader_parameter/active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_dqrtk"]
 length = 0.001
@@ -9188,6 +9204,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Combat/Sword/SwordSprite:material:shader_parameter/active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_nwjam"]
 resource_name = "Stop"
@@ -9199,6 +9227,18 @@ tracks/0/path = NodePath("PlayerSprite:material:shader_parameter/active")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Combat/Sword/SwordSprite:material:shader_parameter/active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -9400,6 +9440,7 @@ position = Vector2(-4, 7)
 rotation = -1.309
 
 [node name="SwordSprite" type="Sprite2D" parent="Combat/Sword"]
+material = SubResource("ShaderMaterial_7spmy")
 texture = ExtResource("35_otfcl")
 flip_h = true
 

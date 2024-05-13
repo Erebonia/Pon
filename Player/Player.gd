@@ -77,6 +77,7 @@ func setMovementDirection():
 	move_and_slide()
 	
 func saveStats():
+	#save scene?
 	#playerData.loadSavedPosition(self.position)	
 	playerData.updateHP(stats.HP)
 	playerData.updateMaxHP(stats.max_HP)
@@ -108,7 +109,7 @@ func gameStarted():
 	inventory.slots = playerData.slots
 	inventory.check_inventory_full()
 	emit_signal("updateInventoryUI")
-	#current scene save
+	#current scene load
 	#self.position = playerData.savedPosition
 	stats.HP = playerData.HP
 	stats.max_HP = playerData.max_HP

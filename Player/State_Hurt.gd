@@ -71,4 +71,5 @@ func _on_hurtbox_invincibility_started():
 
 func _on_hurtbox_invincibility_ended():
 	player.playerSprite.material.set("shader", defaultShader)
+	player.swordSprite.material.set("shader", defaultShader)
 	blinkAnimationPlayer.play("Stop")

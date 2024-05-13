@@ -11,6 +11,7 @@ var evade_complete = false
 
 func Enter():
 	player.playerSprite.material.set("shader", evadeShader)
+	player.swordSprite.material.set("shader", evadeShader)
 	player.animationTree.set("parameters/Dash/BlendSpace2D/blend_position", player.input_vector)	
 	hurt.hurtbox.start_invincibility(.6)
 	player.UpdateAnimation("Dash")
