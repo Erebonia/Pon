@@ -33,7 +33,6 @@ func insert(item: InventoryItem):
 	check_inventory_full()
 	updated.emit()
 
-
 func removeSlot(inventorySlot: InventorySlot):
 	var index = slots.find(inventorySlot)
 	if index < 0: return
@@ -64,8 +63,6 @@ func check_inventory_full():
 			is_full = false
 			break
 	emit_signal("inventory_full", is_full)
-
-
 
 func use_item_at_index(index: int) -> void:
 	if index < 0 or index >= slots.size() or !slots[index].item or !slots[index].item.isConsumable: return

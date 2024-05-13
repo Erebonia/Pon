@@ -55,6 +55,7 @@ func _ready():
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("Save"):
+		saveStats()
 		saveData()
 	if Input.is_action_just_pressed("Load"):
 		loadSaveData()
@@ -92,8 +93,10 @@ func saveStats():
 	playerData.updateDungeonFloor(stats.dungeonFloor)
 	
 func saveData():
-	ResourceSaver.save(playerData, save_file_path + save_file_name)
-	print("Game Saved")
+	var save_path = save_file_path + save_file_name
+	verifySaveDirectory(save_path)
+	print("Saving to: ", save_path)
+	ResourceSaver.save(playerData, save_path)
 
 func loadSaveData():
 	if FileAccess.file_exists(save_file_path + save_file_name):
