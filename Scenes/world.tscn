@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=24 format=3 uid="uid://jpnitqgvchnd"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_q3h4t"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_bhid6"]
@@ -20,7 +20,6 @@
 [ext_resource type="Script" path="res://World/DayAndNight (Editor Only).gd" id="17_4oi2p"]
 [ext_resource type="PackedScene" uid="uid://biufpxc43sk0x" path="res://World/Weather/cloud.tscn" id="18_k84w4"]
 [ext_resource type="PackedScene" uid="uid://yx7eggf336rq" path="res://World/Weather/raylight.tscn" id="19_ps03t"]
-[ext_resource type="PackedScene" uid="uid://dvbvyl1rsoiu6" path="res://Enemies/Scenes/boss_golem.tscn" id="24_11tgs"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="25_xso8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3vxf"]
@@ -241,9 +240,6 @@ volume_db = -10.0
 [node name="DayAndNight (Editor Only)" type="CanvasModulate" parent="."]
 color = Color(1, 0.870588, 0.866667, 1)
 script = ExtResource("17_4oi2p")
-
-[node name="Boss_Golem" parent="." instance=ExtResource("24_11tgs")]
-position = Vector2(-15, 38)
 
 [connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]

@@ -63,8 +63,8 @@ animations = [{
 
 [node name="HitEffect" type="AnimatedSprite2D"]
 z_index = 1
-position = Vector2(-7, 6)
-rotation = 0.677375
+position = Vector2(-10, 5)
+rotation = 0.853288
 sprite_frames = SubResource("SpriteFrames_t3o6x")
 animation = &"Animate"
 offset = Vector2(0, -8)
