@@ -21,8 +21,8 @@ func Exit():
 	player.animationTree.animation_finished.disconnect(endAttack)
 	
 func Physics( _delta : float) -> State:
-	
 	player.velocity = Vector2.ZERO
+	
 	if attackComboCompleted:
 		attackComboCompleted = false
 		return idle
