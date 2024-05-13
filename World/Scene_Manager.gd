@@ -1,7 +1,7 @@
 extends Node
 class_name SceneManager
 
-var player: Player
+var player
 var userInterface: UserInterface
 var last_scene_name: String 
 var scene_dir_path = "res://Scenes/"
@@ -10,11 +10,11 @@ var currentScene: String
 func _process(_delta):
 	if get_tree().current_scene != null:
 		currentScene = get_tree().current_scene.name
-		#removeTemporaryStats()
-
+		
 func change_scene(from, to_scene_name: String) -> void:
 	last_scene_name = from.name
 	if player != null:
+		removeTemporaryStats()
 		player = from.player
 		player.get_parent().remove_child(player)
 		
