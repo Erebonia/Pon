@@ -13,6 +13,9 @@ class_name State_Hurt
 # States
 @onready var hurt = $"../Hurt"
 @onready var idle = $"../Idle"
+@onready var evade = $"../Evade"
+
+@onready var defaultShader = preload("res://Player/WhiteColor.gdshader")
 
 func Enter():
 	healthBar.max_value = stats.max_HP
@@ -61,7 +64,11 @@ func _on_hurtbox_area_entered(area):
 	AudioManager.get_node("Hurt").play()
 		
 func _on_hurtbox_invincibility_started():
-	blinkAnimationPlayer.play("Start")
+	if StateMachine.current_state == evade:
+		blinkAnimationPlayer.play("Evade")
+	else:
+		blinkAnimationPlayer.play("Start")
 
 func _on_hurtbox_invincibility_ended():
+	player.playerSprite.material.set("shader", defaultShader)
 	blinkAnimationPlayer.play("Stop")

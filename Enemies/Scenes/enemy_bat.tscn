@@ -144,7 +144,7 @@ radius = 5.0
 
 [node name="Enemy_Bat" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_gesaw")
-collision_layer = 17
+collision_layer = 16
 script = ExtResource("1_143xm")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]

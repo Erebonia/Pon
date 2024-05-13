@@ -2,7 +2,7 @@ extends State
 class_name State_Sword_Stance
 
 @onready var run = $"../Run"
-@onready var roll = $"../Roll"
+@onready var evade = $"../Evade"
 @onready var idle = $"../Idle"
 
 #Sword Stance
@@ -97,7 +97,7 @@ func _on_sword_wave_cooldown_timeout():
 func swordStanceMoveState(delta):
 		if player.input_vector != Vector2.ZERO: 
 			player.UpdateAnimation("Run")
-			roll.rollVector = player.input_vector
+			evade.evadeVector = player.input_vector
 			player.velocity = player.velocity.move_toward(player.input_vector * run.MAX_SPEED, run.ACCELERATION * delta) # This will be the direction we move to
 			player.animationTree.set("parameters/Run/blend_position", player.input_vector)
 			player.animationTree.set("parameters/Idle/blend_position", player.input_vector)

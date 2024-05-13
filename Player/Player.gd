@@ -7,6 +7,7 @@ class_name Player
 @onready var animationPlayer = $AnimationPlayer
 @onready var animationTree = $AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
+@onready var playerSprite: AnimatedSprite2D = $PlayerSprite
 
 #General (Game)
 @onready var stats = Status

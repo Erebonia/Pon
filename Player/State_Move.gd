@@ -8,7 +8,7 @@ class_name State_Move
 @export var Friction = 500
 
 @onready var idle : State = $"../Idle"
-@onready var roll : State = $"../Roll"
+@onready var evade : State = $"../Evade"
 @onready var attack = $"../Attack"
 
 func Enter():
@@ -27,8 +27,8 @@ func Process(_delta : float) -> State:
 	
 func Physics(delta : float) -> State:
 	
-	if Input.is_action_just_pressed("roll"):
-		return roll
+	if Input.is_action_just_pressed("evade"):
+		return evade
 	
 	if Input.is_action_pressed("attack") and player.weaponEquipped:
 		return attack
@@ -39,7 +39,7 @@ func Physics(delta : float) -> State:
 	
 func move_state(delta):
 		if player.input_vector != Vector2.ZERO: 
-			roll.rollVector = player.input_vector
+			evade.evadeVector = player.input_vector
 			player.velocity = player.velocity.move_toward(player.input_vector * MAX_SPEED, ACCELERATION * delta) # This will be the direction we move to
 			player.animationTree.set("parameters/Run/blend_position", player.input_vector)
 			player.animationTree.set("parameters/Idle/blend_position", player.input_vector)
