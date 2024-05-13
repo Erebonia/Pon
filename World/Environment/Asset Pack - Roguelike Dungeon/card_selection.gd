@@ -21,8 +21,7 @@ func freeze_game():
 	get_tree().paused = true
 	
 func _on_pressed():
-	var card_instance = find_child("Card_Title")
-	match card_instance.text:
+	match find_child("Card_Title").text:
 		"Gladiator":
 			Status.tempSTR = strength
 			Status.Strength = Status.Strength + Status.tempSTR
