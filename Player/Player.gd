@@ -10,7 +10,7 @@ class_name Player
 @onready var playerSprite: AnimatedSprite2D = $PlayerSprite
 
 #General (Game)
-@onready var stats = Status.new()
+@onready var stats = $Stats
 @onready var levelUpVFX = $Misc/LevelUp
 @onready var checkTime = null
 @onready var lightSource = $Misc/Light_Source
@@ -28,7 +28,7 @@ class_name Player
 #Save System
 const save_file_path = "user://save/"
 const save_file_name = "Player.tres"
-@onready var playerData = $Stats
+var playerData = PlayerData.new()
 var inventory = preload("res://Player/Inventory/PlayerInventory.tres")
 var inventoryIsFull: bool
 
@@ -187,9 +187,6 @@ func checkSelectedWeapon():
 			
 func playerDead():
 	queue_free()
-	
-func player():
-	pass
 	
 func _on_save_timeout():
 	saveData()

@@ -11,7 +11,7 @@ var player_entered_boss: bool = false:
 			#overhead_health_bar.set_deferred("visible",value)
 		
 func _on_player_detection_body_entered(body):
-	if body.has_method("player"):
+	if body is Player:
 		player_entered = true
 		player_entered_boss = true
 	

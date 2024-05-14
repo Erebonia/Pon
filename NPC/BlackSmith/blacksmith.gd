@@ -18,11 +18,11 @@ func run_dialogue(dialogue_string):
 	conversationInProgress = true
 
 func _on_player_detection_body_entered(body):
-	if body.has_method("player"):
+	if body is Player:
 		playerInArea = true
 
 func _on_player_detection_body_exited(body):
-	if body.has_method("player"):
+	if body is Player:
 		playerInArea = false
 		conversationInProgress = false
 		

@@ -57,7 +57,7 @@ func accelerate_towards_point(point, delta):
 	enemy.velocity = enemy.velocity.move_toward(direction * enemy.MAX_SPEED, enemy.ACCELERATION * delta)
 
 func _on_player_detection_body_entered(body):
-	if body.has_method("player"):
+	if body is Player:
 		player_entered = true
 
 func _on_stats_health_changed(value):
