@@ -5,7 +5,7 @@ class_name State_Move
 @export var ACCELERATION = 500
 @export var MAX_SPEED = 80
 @export var ROLL_SPEED = 80
-@export var Friction = 500
+@export var FRICTION = 500
 
 @onready var idle : State = $"../Idle"
 @onready var evade : State = $"../Evade"
@@ -30,7 +30,7 @@ func Physics(delta : float) -> State:
 	if Input.is_action_just_pressed("evade"):
 		return evade
 	
-	if Input.is_action_pressed("attack") and player.weaponEquipped:
+	if Input.is_action_pressed("attack") and player.weapon_equipped:
 		return attack
 		
 	move_state(delta)
@@ -39,9 +39,9 @@ func Physics(delta : float) -> State:
 	
 func move_state(delta):
 		if player.input_vector != Vector2.ZERO: 
-			evade.evadeVector = player.input_vector
+			evade.evade_vector = player.input_vector
 			player.velocity = player.velocity.move_toward(player.input_vector * MAX_SPEED, ACCELERATION * delta) # This will be the direction we move to
-			player.animationTree.set("parameters/Run/blend_position", player.input_vector)
-			player.animationTree.set("parameters/Idle/blend_position", player.input_vector)
+			player.animation_tree.set("parameters/Run/blend_position", player.input_vector)
+			player.animation_tree.set("parameters/Idle/blend_position", player.input_vector)
 		else:
-			StateMachine.ChangeState(idle)
+			state_machine.ChangeState(idle)

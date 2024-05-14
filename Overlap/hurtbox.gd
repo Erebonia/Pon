@@ -5,7 +5,7 @@ const HitEffect = preload("res://Effects/Scenes/hit_effect.tscn")
 @export var invincible:bool = false
 
 @onready var timer = $Timer
-@onready var collisionShape = $CollisionShape2D
+@onready var collision_shape = $CollisionShape2D
 
 signal invincibility_started
 signal invincibility_ended
@@ -26,7 +26,7 @@ func _on_timer_timeout():
 	emit_signal("invincibility_ended")
 		
 func _on_invincibility_started():
-	collisionShape.set_deferred('disabled', true)
+	collision_shape.set_deferred('disabled', true)
 	
 func _on_invincibility_ended():
-	collisionShape.disabled = false
+	collision_shape.disabled = false

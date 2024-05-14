@@ -5,14 +5,14 @@ class_name State_Evade
 @onready var run = $"../Run"
 @onready var hurt = $"../Hurt"
 @export var ROLL_SPEED = 90
-var evadeVector = Vector2.DOWN
+var evade_vector = Vector2.DOWN
 var evade_complete = false
-@onready var evadeShader = preload("res://Player/evade.gdshader")
+@onready var evade_shader = preload("res://Player/evade.gdshader")
 
 func Enter():
-	player.playerSprite.material.set("shader", evadeShader)
-	player.swordSprite.material.set("shader", evadeShader)
-	player.animationTree.set("parameters/Dash/BlendSpace2D/blend_position", player.input_vector)	
+	player.player_sprite.material.set("shader", evade_shader)
+	player.sword_sprite.material.set("shader", evade_shader)
+	player.animation_tree.set("parameters/Dash/BlendSpace2D/blend_position", player.input_vector)	
 	hurt.hurtbox.start_invincibility(.6)
 	player.UpdateAnimation("Dash")
 	AudioManager.get_node("Evade").play()
@@ -25,7 +25,7 @@ func Process(_delta : float) -> State:
 	return null
 	
 func Physics(_delta : float) -> State:
-	player.velocity = evadeVector * ROLL_SPEED
+	player.velocity = evade_vector * ROLL_SPEED
 	player.move_and_slide()
 	
 	if evade_complete:

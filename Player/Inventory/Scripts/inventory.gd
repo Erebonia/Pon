@@ -20,7 +20,7 @@ func insert(item: InventoryItem):
 		return
 
 	var itemSlots = slots.filter(func(slot): return slot.item == item and slot != slots[slots.size() - 4])
-	if !itemSlots.is_empty() and itemSlots[0].amount + 1 <= item.maxAmountPrStack:
+	if !itemSlots.is_empty() and itemSlots[0].amount + 1 <= item.max_amount_per_stack:
 		itemSlots[0].amount += 1
 	else:
 		if emptySlots.size() > 0:

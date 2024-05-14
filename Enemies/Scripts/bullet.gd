@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var player = get_parent().find_child("Player")
-@onready var playerLastLoc = null
+@onready var player_last_location = null
 @onready var sprite = $AnimatedSprite2D
 @onready var animationPlayer = $AnimationPlayer
 @onready var hurtbox = $Hurtbox
@@ -15,8 +15,8 @@ var direction : Vector2
 
 func _physics_process(delta):
 	if player != null:
-		playerLastLoc = player.position
-		acceleration = (playerLastLoc - position).normalized() * 700
+		player_last_location = player.position
+		acceleration = (player_last_location - position).normalized() * 700
 		velocity += acceleration * delta
 		rotation = velocity.angle()
 		velocity = velocity.limit_length(150)

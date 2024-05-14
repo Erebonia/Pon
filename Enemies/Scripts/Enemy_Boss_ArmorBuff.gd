@@ -2,11 +2,11 @@ extends EnemyState
  
 var can_transition : bool = false
 @onready var follow = $"../Follow"
-@onready var canAttackBossCollision = $"../../Hurtbox/CollisionShape2D"
+@onready var can_attack_boss_collision = $"../../Hurtbox/CollisionShape2D"
 
 func Enter():
 	animation_player.speed_scale = 0.8
-	canAttackBossCollision.set_deferred("disabled", true)
+	can_attack_boss_collision.set_deferred("disabled", true)
 	animation_player.play("block")
 	await animation_player.animation_finished
 	animation_player.play("armor_buff")
@@ -17,7 +17,7 @@ func Enter():
 func Physics(_delta : float) -> EnemyState:
 	if can_transition:
 		can_transition = false
-		canAttackBossCollision.set_deferred("disabled", false)
+		can_attack_boss_collision.set_deferred("disabled", false)
 		return follow
 		
 	return null

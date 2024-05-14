@@ -5,4 +5,4 @@ func Enter():
 	await animation_player.animation_finished
 	animation_player.play("boss_slain")
 	await animation_player.animation_finished
-	player.playerData.gain_experience(240)
+	player.player_data.gain_experience(240)

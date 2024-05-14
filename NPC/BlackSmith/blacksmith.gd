@@ -1,13 +1,13 @@
 extends StaticBody2D
 
-var playerInArea = false
-var conversationInProgress = false
+var player_in_area = false
+var conversation_in_progress = false
 
 func _ready():
 	Dialogic.signal_event.connect(DialogicSignal)
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("talk") and playerInArea and not conversationInProgress:
+	if Input.is_action_just_pressed("talk") and player_in_area and not conversation_in_progress:
 		
 		#TODO check time and run a different dialogue
 		
@@ -15,16 +15,16 @@ func _process(_delta):
 	
 func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
-	conversationInProgress = true
+	conversation_in_progress = true
 
 func _on_player_detection_body_entered(body):
 	if body is Player:
-		playerInArea = true
+		player_in_area = true
 
 func _on_player_detection_body_exited(body):
 	if body is Player:
-		playerInArea = false
-		conversationInProgress = false
+		player_in_area = false
+		conversation_in_progress = false
 		
 func DialogicSignal(arg: String):
 	if arg == ("openShop"):

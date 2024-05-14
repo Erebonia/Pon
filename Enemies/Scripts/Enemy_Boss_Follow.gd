@@ -25,6 +25,6 @@ func attackPlayerRanged():
 	var chance = randi() % 2
 	match chance:
 		0:
-			StateMachine.ChangeState(homingMissile)
+			state_machine.ChangeState(homingMissile)
 		1:
-			StateMachine.ChangeState(laserBeam)
+			state_machine.ChangeState(laserBeam)

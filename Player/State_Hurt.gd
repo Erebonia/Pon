@@ -5,23 +5,23 @@ class_name State_Hurt
 
 #Hurtbox
 @onready var hurtbox = $"../../Combat/Hurtbox"
-@onready var blinkAnimationPlayer = $"../../Combat/BlinkAnimationPlayer"
-@onready var damageNumbersOrigin = $"../../Combat_UI/DamageNumbersOrigin"
-@onready var healthBar = $"../../Combat_UI/Healthbar"
+@onready var blink_animation_player = $"../../Combat/BlinkAnimationPlayer"
+@onready var damage_numbers_origin = $"../../Combat_UI/DamageNumbersOrigin"
+@onready var health_bar = $"../../Combat_UI/Healthbar"
 
 # States
 @onready var hurt = $"../Hurt"
 @onready var idle = $"../Idle"
 @onready var evade = $"../Evade"
 
-@onready var defaultShader = preload("res://Player/WhiteColor.gdshader")
+@onready var default_shader = preload("res://Player/WhiteColor.gdshader")
 
 func Enter():
-	healthBar.max_value = player.playerData.max_HP
-	healthBar.init_health(player.playerData.HP)
+	health_bar.max_value = player.player_data.max_HP
+	health_bar.init_health(player.player_data.HP)
 	
 func Exit():
-	player.playerData.disconnect("no_HP", Callable(self, "playerDead"))
+	player.player_data.disconnect("no_HP", Callable(self, "playerDead"))
 	
 func Process(_delta : float) -> State:
 	return null
@@ -38,17 +38,17 @@ func takeDamage(area):
 	if critical_chance <= 0.1:
 		is_critical = true
 		var critical_multiplier = randf_range(1.2, 2) # Crit chance between these values
-		player.playerData.HP -= area.damage * critical_multiplier # Apply critical damage
-		DamageNumbers.display_number(area.damage * critical_multiplier, damageNumbersOrigin.global_position, is_critical)
+		player.player_data.HP -= area.damage * critical_multiplier # Apply critical damage
+		DamageNumbers.display_number(area.damage * critical_multiplier, damage_numbers_origin.global_position, is_critical)
 	else:
-		player.playerData.HP -= area.damage
-		DamageNumbers.display_number(area.damage, damageNumbersOrigin.global_position, is_critical)
+		player.player_data.HP -= area.damage
+		DamageNumbers.display_number(area.damage, damage_numbers_origin.global_position, is_critical)
 	
-	healthBar.health = player.playerData.HP
-	healthBar.max_value = player.playerData.max_HP
+	health_bar.health = player.player_data.HP
+	health_bar.max_value = player.player_data.max_HP
 	
-	if player.playerData.HP < player.playerData.max_HP:
-		healthBar.visible = true
+	if player.player_data.HP < player.player_data.max_HP:
+		health_bar.visible = true
 		
 func _on_hurtbox_area_entered(area):
 	takeDamage(area)
@@ -63,12 +63,12 @@ func _on_hurtbox_area_entered(area):
 	AudioManager.get_node("Hurt").play()
 		
 func _on_hurtbox_invincibility_started():
-	if StateMachine.current_state == evade:
-		blinkAnimationPlayer.play("Evade")
+	if state_machine.current_state == evade:
+		blink_animation_player.play("Evade")
 	else:
-		blinkAnimationPlayer.play("Start")
+		blink_animation_player.play("Start")
 
 func _on_hurtbox_invincibility_ended():
-	player.playerSprite.material.set("shader", defaultShader)
-	player.swordSprite.material.set("shader", defaultShader)
-	blinkAnimationPlayer.play("Stop")
+	player.player_sprite.material.set("shader", default_shader)
+	player.sword_sprite.material.set("shader", default_shader)
+	blink_animation_player.play("Stop")

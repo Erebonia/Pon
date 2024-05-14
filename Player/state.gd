@@ -2,7 +2,7 @@ extends Node2D
 class_name State
 
 @onready var player : Player = get_tree().get_first_node_in_group("Player")
-@onready var StateMachine = $".."
+@onready var state_machine = $".."
 
 func _ready():
 	pass

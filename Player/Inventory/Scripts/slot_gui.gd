@@ -13,15 +13,15 @@ func insert(isg: ItemStackGui):
 	backgroundSprite.frame = 1
 	container.add_child(itemStackGui)
 	
-	if !itemStackGui.inventorySlot or inventory.slots[index] == itemStackGui.inventorySlot:
+	if !itemStackGui.inventory_slot or inventory.slots[index] == itemStackGui.inventory_slot:
 		return
 		
-	inventory.insertSlot(index, itemStackGui.inventorySlot)
+	inventory.insertSlot(index, itemStackGui.inventory_slot)
 	
 func takeItem():
 	var item = itemStackGui
 	
-	inventory.removeSlot(itemStackGui.inventorySlot)
+	inventory.removeSlot(itemStackGui.inventory_slot)
 	
 	return item
 	

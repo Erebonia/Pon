@@ -20,10 +20,10 @@ func Process(_delta : float) -> State:
 	
 func Physics(_delta : float) -> State:
 	
-	if Input.is_action_pressed("Sword Wave (Activate)") and player.weaponEquipped:
+	if Input.is_action_pressed("Sword Wave (Activate)") and player.weapon_equipped:
 		return sword_stance
 	
-	if Input.is_action_pressed("attack") and player.weaponEquipped:
+	if Input.is_action_pressed("attack") and player.weapon_equipped:
 		return attack
 		
 	if Input.is_action_just_pressed("evade"):

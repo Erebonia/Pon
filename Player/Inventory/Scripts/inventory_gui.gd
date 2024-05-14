@@ -65,7 +65,7 @@ func update():
 			itemStackGui = ItemStackGuiClass.instantiate()
 			slots[i].insert(itemStackGui)
 			
-		itemStackGui.inventorySlot = inventorySlot
+		itemStackGui.inventory_slot = inventorySlot
 		itemStackGui.update()
 		
 func open():
@@ -84,11 +84,11 @@ func onSlotClicked(slot):
 
 	# Check if there's an item in hand and the slot clicked corresponds to a specific type
 	if itemInHand:
-		if slot.index == 16 and itemInHand.inventorySlot.item.isHelmet:
+		if slot.index == 16 and itemInHand.inventory_slot.item.isHelmet:
 			handleEquipmentSlot(slot)
-		elif slot.index == 17 and itemInHand.inventorySlot.item.isBody:
+		elif slot.index == 17 and itemInHand.inventory_slot.item.isBody:
 			handleEquipmentSlot(slot)
-		elif slot.index == 18 and itemInHand.inventorySlot.item.isAccessory:
+		elif slot.index == 18 and itemInHand.inventory_slot.item.isAccessory:
 			handleEquipmentSlot(slot)
 		elif slot.index < 16 or slot.index > 18:
 			handleNormalSlot(slot)
@@ -99,7 +99,7 @@ func onSlotClicked(slot):
 func handleEquipmentSlot(slot):
 	# Check if the slot is empty or needs swapping
 	if not slot.isEmpty():
-		if slot.itemStackGui.inventorySlot.item.getType() == itemInHand.inventorySlot.item.getType():
+		if slot.itemStackGui.inventory_slot.item.getType() == itemInHand.inventory_slot.item.getType():
 			swapItems(slot)  # Swap if same type
 		else:
 			print("Cannot swap: Item types do not match.")
@@ -113,7 +113,7 @@ func handleNormalSlot(slot):
 	else:
 		if not itemInHand:
 			takeItemFromSlot(slot)
-		elif slot.itemStackGui.inventorySlot.item.name == itemInHand.inventorySlot.item.name:
+		elif slot.itemStackGui.inventory_slot.item.name == itemInHand.inventory_slot.item.name:
 			stackItems(slot)
 		else:
 			swapItems(slot)
@@ -128,14 +128,14 @@ func insertItemInSlot(slot):
 	# Apply stat changes based on the type of slot
 	if slot.index == 16:  # Assuming 16 is the helmet slot
 		$Hat_Slot/background/Hat_Slot_BG.visible = false
-		player.playerData.Defense += item.inventorySlot.item.defBonus
+		player.player_data.Defense += item.inventory_slot.item.defBonus
 	elif slot.index == 17:  # Body slot
 		$Body_Slot/background/Body_Slot_BG.visible = false
-		player.playerData.HP += item.inventorySlot.item.hpBonus
-		player.playerData.max_HP += item.inventorySlot.item.hpBonus
+		player.player_data.HP += item.inventory_slot.item.hpBonus
+		player.player_data.max_HP += item.inventory_slot.item.hpBonus
 	elif slot.index == 18:  # Accessory slot
 		$Accessory_Slot/background/Accessory_Slot_BG.visible = false
-		player.playerData.Strength += item.inventorySlot.item.attackBonus
+		player.player_data.Strength += item.inventory_slot.item.attackBonus
 		
 	inventory.check_inventory_full()
 	AudioManager.get_node("Place_Item").play()
@@ -149,14 +149,14 @@ func takeItemFromSlot(slot):
 	# Apply stat changes based on the type of slot
 	if slot.index == 16:  # Assuming 16 is the helmet slot
 		$Hat_Slot/background/Hat_Slot_BG.visible = true
-		player.playerData.Defense -= itemInHand.inventorySlot.item.defBonus
+		player.player_data.Defense -= itemInHand.inventory_slot.item.defBonus
 	elif slot.index == 17:  # Body slot
 		$Body_Slot/background/Body_Slot_BG.visible = true
-		player.playerData.HP -= itemInHand.inventorySlot.item.hpBonus
-		player.playerData.max_HP -= itemInHand.inventorySlot.item.hpBonus
+		player.player_data.HP -= itemInHand.inventory_slot.item.hpBonus
+		player.player_data.max_HP -= itemInHand.inventory_slot.item.hpBonus
 	elif slot.index == 18:  # Accessory slot
 		$Accessory_Slot/background/Accessory_Slot_BG.visible = true
-		player.playerData.Strength -= itemInHand.inventorySlot.item.attackBonus
+		player.player_data.Strength -= itemInHand.inventory_slot.item.attackBonus
 	inventory.check_inventory_full()
 	AudioManager.get_node("Pickup_Item").play()
 	
@@ -171,21 +171,21 @@ func swapItems(slot):
 
 func stackItems(slot):
 	var slotItem: ItemStackGui = slot.itemStackGui
-	var maxAmount = slotItem.inventorySlot.item.maxAmountPrStack
-	var totalAmount = slotItem.inventorySlot.amount + itemInHand.inventorySlot.amount
+	var maxAmount = slotItem.inventory_slot.item.max_amount_per_stack
+	var totalAmount = slotItem.inventory_slot.amount + itemInHand.inventory_slot.amount
 	
-	if slotItem.inventorySlot.amount == maxAmount:
+	if slotItem.inventory_slot.amount == maxAmount:
 		swapItems(slot)
 		return
 		
 	if totalAmount <= maxAmount:
-		slotItem.inventorySlot.amount = totalAmount
+		slotItem.inventory_slot.amount = totalAmount
 		remove_child(itemInHand)
 		itemInHand = null
 		oldIndex = -1
 	else:
-		slotItem.inventorySlot.amount = maxAmount
-		itemInHand.inventorySlot.amount = totalAmount - maxAmount
+		slotItem.inventory_slot.amount = maxAmount
+		itemInHand.inventory_slot.amount = totalAmount - maxAmount
 		
 	slotItem.update()
 	if itemInHand: itemInHand.update()

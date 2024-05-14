@@ -31,11 +31,11 @@ func change_scene(from, to_scene_name: String) -> void:
 func removeTemporaryStats():
 	if scene_manager.currentScene != "Dungeon_1":
 		var player = get_tree().get_first_node_in_group("Player")
-		if player.playerData.temp_str > 0 or player.playerData.temp_def > 0 or player.playerData.temp_agi > 0:
+		if player.player_data.temp_str > 0 or player.player_data.temp_def > 0 or player.player_data.temp_agi > 0:
 			print("Removing temp stats")
-			player.playerData.Strength -= player.playerData.temp_str
-			player.playerData.Defense -= player.playerData.temp_def
-			player.playerData.Agility -= player.playerData.temp_agi
-			player.playerData.temp_str = 0
-			player.playerData.temp_agi = 0
-			player.playerData.temp_def = 0
+			player.player_data.Strength -= player.player_data.temp_str
+			player.player_data.Defense -= player.player_data.temp_def
+			player.player_data.Agility -= player.player_data.temp_agi
+			player.player_data.temp_str = 0
+			player.player_data.temp_agi = 0
+			player.player_data.temp_def = 0

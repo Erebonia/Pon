@@ -4,7 +4,7 @@ class_name InventoryItem
 
 @export var name: String = ""
 @export var texture: Texture2D
-@export var maxAmountPrStack: int
+@export var max_amount_per_stack: int
 @export var isConsumable: bool = false
 @export var isWeapon: bool = false
 @export var isHelmet: bool = false

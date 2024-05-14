@@ -4,7 +4,7 @@ class_name Enemy_Idle
 @export var WANDER_TARGET_RANGE = 4
 @onready var collision = $"../../PlayerDetection/CollisionShape2D"
 @onready var overhead_health_bar = owner.find_child("Healthbar")
-@onready var wanderController = $"../../WanderController"
+@onready var wander_controller = $"../../WanderController"
 @onready var follow = $"../Follow"
 @onready var idle = $"../Idle"
 
@@ -28,13 +28,13 @@ func Physics(delta : float) -> EnemyState:
 	match state:
 		IDLE:
 			enemy.velocity = enemy.velocity.move_toward(Vector2.ZERO, enemy.FRICTION * delta)
-			if wanderController.get_time_left() == 0:
+			if wander_controller.get_time_left() == 0:
 				update_wander()
 		WANDER:
-			if wanderController.get_time_left() == 0:
+			if wander_controller.get_time_left() == 0:
 				update_wander()
-			accelerate_towards_point(wanderController.target_position, delta)
-			if global_position.distance_to(wanderController.target_position) <= WANDER_TARGET_RANGE:
+			accelerate_towards_point(wander_controller.target_position, delta)
+			if global_position.distance_to(wander_controller.target_position) <= WANDER_TARGET_RANGE:
 				update_wander()
 	
 	if player_entered:
@@ -46,7 +46,7 @@ func Physics(delta : float) -> EnemyState:
 		
 func update_wander():
 	state = pick_random_state([IDLE, WANDER])
-	wanderController.start_wander_timer(randf_range(1,3))
+	wander_controller.start_wander_timer(randf_range(1,3))
 	
 func pick_random_state(state_list):
 	state_list.shuffle()

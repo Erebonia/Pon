@@ -9,7 +9,7 @@ func update_to_slot(slot: InventorySlot) -> void:
 		background_sprite.frame = 0
 		return
 
-	item_stack_gui.inventorySlot = slot
+	item_stack_gui.inventory_slot = slot
 	item_stack_gui.update()
 	item_stack_gui.visible = true
 	

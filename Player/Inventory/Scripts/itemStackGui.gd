@@ -2,19 +2,19 @@ extends Panel
 
 class_name ItemStackGui
 
-@onready var itemSprite: Sprite2D = $item
-@onready var amountLabel = $Label
+@onready var item_sprite: Sprite2D = $item
+@onready var amount_label = $Label
 
-var inventorySlot: InventorySlot
+var inventory_slot: InventorySlot
 
 func update():
-	if !inventorySlot || !inventorySlot.item: return
+	if !inventory_slot || !inventory_slot.item: return
 	
-	itemSprite.visible = true
-	itemSprite.texture = inventorySlot.item.texture
+	item_sprite.visible = true
+	item_sprite.texture = inventory_slot.item.texture
 	
-	if inventorySlot.amount > 1:
-		amountLabel.visible = true
-		amountLabel.text = str(inventorySlot.amount)
+	if inventory_slot.amount > 1:
+		amount_label.visible = true
+		amount_label.text = str(inventory_slot.amount)
 	else:
-		amountLabel.visible = false
+		amount_label.visible = false

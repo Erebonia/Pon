@@ -1,41 +1,41 @@
 extends CharacterBody2D
 class_name Enemy_Base
 
-const EnemyDeathEffect = preload("res://Effects/Scenes/enemy_death_effect.tscn")
+const Enemy_Death_Effect = preload("res://Effects/Scenes/enemy_death_effect.tscn")
 
 #Combat
 @onready var stats = $Stats
 @onready var hurtbox = $Hurtbox
-@onready var meleeAttackDir = $FiniteStateMachine/MeleeAttack/MeleeAOE
+@onready var melee_attack_dir = $FiniteStateMachine/MeleeAttack/MeleeAOE
 @onready var healthbar = $Healthbar
 @onready var damage_numbers_origin = $DamageNumbersOrigin
-@onready var blinkAnimationPlayer = $BlinkAnimationPlayer
-@onready var softCollision = $SoftCollision
-@onready var deathState = $FiniteStateMachine/Death
+@onready var blink_animation_player = $BlinkAnimationPlayer
+@onready var soft_collision = $SoftCollision
+@onready var death_state = $FiniteStateMachine/Death
 
 #Direction
 var direction : Vector2
-var playerPosition
+var player_position
 @export var ACCELERATION = 300
 @export var MAX_SPEED = 50
 @export var FRICTION = 200
-@onready var startPosition = get_global_transform().origin
+@onready var start_position = get_global_transform().origin
 
 var player
 
 #Debug
 @onready var debug = $Debug
-@onready var stateMachine = $FiniteStateMachine
+@onready var state_machine = $FiniteStateMachine
  
 func _ready():
-	stateMachine.Initialize(self)
+	state_machine.Initialize(self)
 	stats.connect("no_health", Callable(self, "_on_stats_no_health"))
 	healthbar.max_value = stats.health
 	player = get_tree().get_first_node_in_group("Player")
 	healthbar.init_health(stats.health)
  
 func _physics_process(delta):
-	debug.text = "State: " + stateMachine.current_state.name
+	debug.text = "State: " + state_machine.current_state.name
 	
 	if player != null:
 		direction = player.global_position - global_position
@@ -43,13 +43,13 @@ func _physics_process(delta):
 	var sprite = $AnimatedSprite
 	if direction.x < 0:
 		sprite.flip_h = true
-		meleeAttackDir.position.x = -31
+		melee_attack_dir.position.x = -31
 	else:
 		sprite.flip_h = false
-		meleeAttackDir.position.x = 17
+		melee_attack_dir.position.x = 17
 		
-	if softCollision.is_colliding():
-		velocity += softCollision.get_push_vector() * delta
+	if soft_collision.is_colliding():
+		velocity += soft_collision.get_push_vector() * delta
  
 func take_damage(area):
 	var is_critical = false
@@ -79,18 +79,18 @@ func _on_hurtbox_area_entered(area):
 		
 	#Knockback
 	var newDirection = ( position - area.owner.position ).normalized()
-	var knockback = newDirection * player.playerData.KNOCKOUT_SPEED
+	var knockback = newDirection * player.player_data.KNOCKOUT_SPEED
 	velocity = knockback
 	
 func _on_hurtbox_invincibility_started():
-	blinkAnimationPlayer.play("Start")
+	blink_animation_player.play("Start")
 
 func _on_hurtbox_invincibility_ended():
-	blinkAnimationPlayer.play("Stop")
+	blink_animation_player.play("Stop")
 	
 func _on_stats_no_health():
-	stateMachine.ChangeState(deathState)
-	var enemyDeathEffect = EnemyDeathEffect.instantiate()
+	state_machine.ChangeState(death_state)
+	var enemyDeathEffect = Enemy_Death_Effect.instantiate()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
 	queue_free()

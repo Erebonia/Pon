@@ -4,8 +4,8 @@ class_name Enemy_Follow
 @onready var follow = $"../Follow"
 @onready var melee = $"../MeleeAttack"
 @onready var idle = $"../Idle"
-@onready var playerDetectionZone = $"../../PlayerDetection"
-@onready var softCollision = $"../../SoftCollision"
+@onready var player_detection_zone = $"../../PlayerDetection"
+@onready var soft_collision = $"../../SoftCollision"
 	
 func Physics(delta : float) -> EnemyState:
 		
@@ -16,8 +16,8 @@ func Physics(delta : float) -> EnemyState:
 	if owner.direction.length() <= 5:
 		return melee
 		
-	if softCollision.is_colliding():
-		enemy.velocity += softCollision.get_push_vector() * delta * 400
+	if soft_collision.is_colliding():
+		enemy.velocity += soft_collision.get_push_vector() * delta * 400
 	
 	enemy.move_and_slide()
 	return null

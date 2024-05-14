@@ -25,14 +25,14 @@ func freeze_game():
 func _on_pressed():
 	match find_child("Card_Title").text:
 		"Gladiator":
-			player.playerData.tempSTR = strength
-			player.playerData.Strength += player.playerData.tempSTR
+			player.player_data.tempSTR = strength
+			player.player_data.Strength += player.player_data.tempSTR
 		"Fortify":
-			player.playerData.tempDEF = defense
-			player.playerData.Defense += player.playerData.tempDEF
+			player.player_data.tempDEF = defense
+			player.player_data.Defense += player.player_data.tempDEF
 		"Flash":
-			player.playerData.tempAGI = agility
-			player.playerData.Agility += player.playerData.tempAGI
+			player.player_data.tempAGI = agility
+			player.player_data.Agility += player.player_data.tempAGI
 	self.visible = false
 	get_tree().paused = false
 	

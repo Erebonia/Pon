@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://UI/Health/healthbar_overhead.tscn" id="5_jttkw"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_Idle.gd" id="7_6aaru"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_StateMachine.gd" id="7_njdfh"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Boss_Follow.gd" id="8_d7gp6"]
+[ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_Follow.gd" id="8_d7gp6"]
 [ext_resource type="PackedScene" uid="uid://g21t8tducx7e" path="res://Enemies/Scenes/bullet.tscn" id="8_qymu3"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_MeleeAttack.gd" id="9_8gny1"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_HomingMissile.gd" id="10_utb4h"]
