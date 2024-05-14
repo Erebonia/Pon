@@ -17,12 +17,13 @@ var playerStats
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 	playerStats = player.find_child("Stats")
+	print("DUNGEON FLOOR ATM: " + str(playerStats.dungeonFloor))
 	if playerStats.dungeonFloor > MAX_FLOORS:
 		print("RESETTING FLOOR")
-		player.stats.dungeonFloor = 1
-		player.stats.tempAGI = 0
-		player.stats.tempDEF = 0
-		player.stats.tempSTR = 0
+		playerStats.dungeonFloor = 1
+		playerStats.tempAGI = 0
+		playerStats.tempDEF = 0
+		playerStats.tempSTR = 0
 
 	if playerStats.dungeonFloor == 2:
 		num_levels = 3

@@ -74,6 +74,6 @@ func _on_PlayerDetector_body_entered(_body: CharacterBody2D) -> void:
 		_open_doors()
 		
 func _on_increment_level_body_entered(body):
-	if body.has_method("player"):
-		body.playerData.dungeonFloor += 1
-		print("Current Floor:" + str(body.playerData.dungeonFloor))
+	if body is Player:
+		body.stats.dungeonFloor += 1
+		print("Current Floor:" + str(body.stats.dungeonFloor))

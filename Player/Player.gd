@@ -10,7 +10,7 @@ class_name Player
 @onready var playerSprite: AnimatedSprite2D = $PlayerSprite
 
 #General (Game)
-@onready var stats = $Stats
+@onready var stats = Status.new()
 @onready var levelUpVFX = $Misc/LevelUp
 @onready var checkTime = null
 @onready var lightSource = $Misc/Light_Source
@@ -28,7 +28,7 @@ class_name Player
 #Save System
 const save_file_path = "user://save/"
 const save_file_name = "Player.tres"
-var playerData = PlayerData.new()
+@onready var playerData = $Stats
 var inventory = preload("res://Player/Inventory/PlayerInventory.tres")
 var inventoryIsFull: bool
 
@@ -138,7 +138,6 @@ func _on_check_time(_day, hour, _minute):
 	
 func calculateDmg(dmgBoostStat):
 	baseCombatDMG.damage = (stats.Strength * 0.5) + dmgBoostStat
-	#baseCombatDMG.damage = dmgBoostStat
 		
 func _on_level_up(_Level):
 	levelUpVFX.play("level_up")

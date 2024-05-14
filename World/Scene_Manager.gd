@@ -10,12 +10,12 @@ var currentScene: String
 func _process(_delta):
 	if get_tree().current_scene != null:
 		currentScene = get_tree().current_scene.name
-
+		removeTemporaryStats()
+		
 func change_scene(from, to_scene_name: String) -> void:
 	last_scene_name = from.name
 	if player != null:
 		player = from.player
-		removeTemporaryStats()
 		player.get_parent().remove_child(player)
 		
 	# Fade effect
@@ -29,7 +29,7 @@ func change_scene(from, to_scene_name: String) -> void:
 	AudioManager.get_node("Scene_Transition").play()
 	
 func removeTemporaryStats():
-	if scene_manager.currentScene != "Dungeon_1":
+	if scene_manager.currentScene != "Dungeon_1" and player != null:
 		var playerStats = player.get_node("Stats")
 		playerStats.Strength = player.stats.Strength - player.stats.tempSTR
 		playerStats.Defense = player.stats.Defense - player.stats.tempDEF
