@@ -9554,19 +9554,6 @@ size_flags_vertical = 4
 [node name="Misc" type="Node2D" parent="."]
 position = Vector2(-24, -46)
 
-[node name="Username" type="Label" parent="Misc"]
-visible = false
-offset_left = 5.0
-offset_top = 12.0
-offset_right = 45.0
-offset_bottom = 35.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27451)
-theme_override_constants/shadow_offset_y = 1
-theme_override_font_sizes/font_size = 7
-text = "Doghater"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Light_Source" type="PointLight2D" parent="Misc"]
 visible = false
 y_sort_enabled = true
@@ -9586,8 +9573,26 @@ frame = 11
 frame_progress = 1.0
 speed_scale = 0.7
 
+[node name="Save" type="Timer" parent="Misc"]
+process_mode = 3
+wait_time = 60.0
+autostart = true
+
+[node name="Username" type="Label" parent="Misc"]
+visible = false
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 45.0
+offset_bottom = 35.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27451)
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 7
+text = "Doghater"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="debug" type="Label" parent="Misc"]
-z_index = 5
+visible = false
 offset_left = 6.0
 offset_top = 13.0
 offset_right = 46.0
@@ -9596,11 +9601,6 @@ theme_override_font_sizes/font_size = 7
 text = "State: Idle"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Save" type="Timer" parent="Misc"]
-process_mode = 3
-wait_time = 60.0
-autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

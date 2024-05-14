@@ -78,6 +78,7 @@ func savePlayerData():
 	#Save Scene and Location
 	#playerData.loadSavedPosition(self.position)	
 	playerData.updateInventory(inventory.slots)
+	playerData.updateBaseDMG(swordHitbox.damage)
 	
 func saveDataToFile():
 	var save_path = save_file_path + save_file_name
@@ -99,8 +100,6 @@ func gameStarted():
 	inventory.slots = playerData.slots
 	inventory.check_inventory_full()
 	emit_signal("updateInventoryUI")
-	
-	#Assign base damage to the sword hitbox
 	swordHitbox.damage = playerData.base_damage
 	
 	#Reload the last scene and position

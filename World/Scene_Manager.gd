@@ -11,7 +11,7 @@ func _process(_delta):
 	if get_tree().current_scene != null:
 		currentScene = get_tree().current_scene.name
 		removeTemporaryStats()
-		
+
 func change_scene(from, to_scene_name: String) -> void:
 	last_scene_name = from.name
 	if player != null:

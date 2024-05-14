@@ -11,11 +11,9 @@ const TILE_SIZE: int = 16
 
 @export var num_levels: int = 5
 @export var MAX_FLOORS = 2
-var player: Player 
+@onready var player : Player = get_tree().get_first_node_in_group("Player")
 
 func _ready() -> void:
-	player = get_tree().get_first_node_in_group("Player")
-	print(player.playerData.dungeonFloor)
 	if player.playerData.dungeonFloor > MAX_FLOORS:
 		print("RESETTING FLOOR")
 		player.playerData.dungeonFloor = 1

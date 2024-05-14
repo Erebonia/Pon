@@ -62,6 +62,9 @@ func set_hp(new_hp: int):
 
 func set_max_hp(new_max_hp: int):
 	max_HP = new_max_hp
+	
+func updateBaseDMG(value: int):
+	base_damage = value
 
 func get_required_experience(level: int) -> int:
 	return xp_table_data[str(level)]["need"]
