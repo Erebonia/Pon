@@ -11,18 +11,20 @@ const TILE_SIZE: int = 16
 
 @export var num_levels: int = 5
 @export var MAX_FLOORS = 2
-var player
+var player: Player
+var playerStats
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
-	if player.stats.dungeonFloor > MAX_FLOORS:
+	playerStats = player.find_child("Stats")
+	if playerStats.dungeonFloor > MAX_FLOORS:
 		print("RESETTING FLOOR")
 		player.stats.dungeonFloor = 1
 		player.stats.tempAGI = 0
 		player.stats.tempDEF = 0
 		player.stats.tempSTR = 0
 
-	if player.stats.dungeonFloor == 2:
+	if playerStats.dungeonFloor == 2:
 		num_levels = 3
 		
 	_spawn_rooms()
@@ -39,13 +41,13 @@ func _spawn_rooms() -> void:
 			room = SPAWN_ROOMS[randi() % SPAWN_ROOMS.size()].instantiate()
 			player.position = room.get_node("PlayerSpawnPos").position
 		else:
-			if i == num_levels - 1 and player.stats.dungeonFloor != MAX_FLOORS:
+			if i == num_levels - 1 and playerStats.dungeonFloor != MAX_FLOORS:
 				room = END_ROOMS[randi() % END_ROOMS.size()].instantiate()
-			elif i == num_levels - 1 and player.stats.dungeonFloor == MAX_FLOORS:
+			elif i == num_levels - 1 and playerStats.dungeonFloor == MAX_FLOORS:
 				print("MAX FLOOR DETECTED")
 				room = EXIT_ROOMS[randi() % EXIT_ROOMS.size()].instantiate() 
 			else:
-				if player.stats.dungeonFloor == 2:
+				if playerStats.dungeonFloor == 2:
 					room = SLIME_BOSS_SCENE.instantiate()
 				else:
 					if (randi() % 3 == 0 and not special_room_spawned) or (i == num_levels - 2 and not special_room_spawned):

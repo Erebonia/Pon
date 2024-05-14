@@ -8,6 +8,4 @@ var scene_folder = "res://Scenes/"
 func _on_body_entered(body):
 	if body is Player:
 		body.saveData()
-		AudioManager.get_node("Footsteps_Grass").stop()
-		AudioManager.get_node("Footsteps_Stone").stop()
 		scene_manager.change_scene(get_tree().current_scene, connected_scene)

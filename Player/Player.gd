@@ -51,7 +51,7 @@ func _ready():
 	verifySaveDirectory(save_file_path)
 	checkTime = DayAndNight.get_child(1)
 	checkTime.connect("time_tick", Callable(self, "_on_check_time"))
-	#loadSaveData()
+	loadSaveData()
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("Save"):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=28 format=3 uid="uid://jpnitqgvchnd"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_q3h4t"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_bhid6"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://biufpxc43sk0x" path="res://World/Weather/cloud.tscn" id="18_k84w4"]
 [ext_resource type="PackedScene" uid="uid://yx7eggf336rq" path="res://World/Weather/raylight.tscn" id="19_ps03t"]
 [ext_resource type="PackedScene" uid="uid://cxi06x36o4qhe" path="res://Player/Inventory/Items/weapon/battleaxe.tscn" id="22_jg4rw"]
+[ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="23_6fktw"]
+[ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="24_4r6g6"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="25_xso8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3vxf"]
@@ -28,6 +30,11 @@ size = Vector2(19, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3txoi"]
 size = Vector2(8, 103)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dc7t6"]
+resource_local_to_scene = true
+shader = ExtResource("24_4r6g6")
+shader_parameter/active = true
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -244,6 +251,9 @@ script = ExtResource("17_4oi2p")
 
 [node name="Battleaxe" parent="." instance=ExtResource("22_jg4rw")]
 position = Vector2(106, 212)
+
+[node name="Enemy_Bat" parent="." instance=ExtResource("23_6fktw")]
+material = SubResource("ShaderMaterial_dc7t6")
 
 [connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]
