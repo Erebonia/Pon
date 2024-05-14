@@ -128,14 +128,14 @@ func insertItemInSlot(slot):
 	# Apply stat changes based on the type of slot
 	if slot.index == 16:  # Assuming 16 is the helmet slot
 		$Hat_Slot/background/Hat_Slot_BG.visible = false
-		player.stats.Defense += item.inventorySlot.item.defBonus
+		player.playerData.Defense += item.inventorySlot.item.defBonus
 	elif slot.index == 17:  # Body slot
 		$Body_Slot/background/Body_Slot_BG.visible = false
-		player.stats.HP += item.inventorySlot.item.hpBonus
-		player.stats.max_HP += item.inventorySlot.item.hpBonus
+		player.playerData.HP += item.inventorySlot.item.hpBonus
+		player.playerData.max_HP += item.inventorySlot.item.hpBonus
 	elif slot.index == 18:  # Accessory slot
 		$Accessory_Slot/background/Accessory_Slot_BG.visible = false
-		player.stats.Strength += item.inventorySlot.item.attackBonus
+		player.playerData.Strength += item.inventorySlot.item.attackBonus
 		
 	inventory.check_inventory_full()
 	AudioManager.get_node("Place_Item").play()
@@ -149,14 +149,14 @@ func takeItemFromSlot(slot):
 	# Apply stat changes based on the type of slot
 	if slot.index == 16:  # Assuming 16 is the helmet slot
 		$Hat_Slot/background/Hat_Slot_BG.visible = true
-		player.stats.Defense -= itemInHand.inventorySlot.item.defBonus
+		player.playerData.Defense -= itemInHand.inventorySlot.item.defBonus
 	elif slot.index == 17:  # Body slot
 		$Body_Slot/background/Body_Slot_BG.visible = true
-		player.stats.HP -= itemInHand.inventorySlot.item.hpBonus
-		player.stats.max_HP -= itemInHand.inventorySlot.item.hpBonus
+		player.playerData.HP -= itemInHand.inventorySlot.item.hpBonus
+		player.playerData.max_HP -= itemInHand.inventorySlot.item.hpBonus
 	elif slot.index == 18:  # Accessory slot
 		$Accessory_Slot/background/Accessory_Slot_BG.visible = true
-		player.stats.Strength -= itemInHand.inventorySlot.item.attackBonus
+		player.playerData.Strength -= itemInHand.inventorySlot.item.attackBonus
 	inventory.check_inventory_full()
 	AudioManager.get_node("Pickup_Item").play()
 	

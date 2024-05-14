@@ -29,11 +29,13 @@ func change_scene(from, to_scene_name: String) -> void:
 	AudioManager.get_node("Scene_Transition").play()
 	
 func removeTemporaryStats():
-	if scene_manager.currentScene != "Dungeon_1" and player != null:
-		var playerStats = player.get_node("Stats")
-		playerStats.Strength = player.stats.Strength - player.stats.tempSTR
-		playerStats.Defense = player.stats.Defense - player.stats.tempDEF
-		playerStats.Agility = player.stats.Agility - player.stats.tempAGI
-		playerStats.tempSTR = 0
-		playerStats.tempAGI = 0
-		playerStats.tempDEF = 0
+	if scene_manager.currentScene != "Dungeon_1":
+		var player = get_tree().get_first_node_in_group("Player")
+		if player.playerData.temp_str > 0 or player.playerData.temp_def > 0 or player.playerData.temp_agi > 0:
+			print("Removing temp stats")
+			player.playerData.Strength = player.playerData.Strength - player.playerData.temp_str
+			player.playerData.Defense = player.playerData.Defense - player.playerData.temp_def
+			player.playerData.Agility = player.playerData.Agility - player.playerData.temp_agi
+			player.playerData.temp_str = 0
+			player.playerData.temp_agi = 0
+			player.playerData.temp_def = 0

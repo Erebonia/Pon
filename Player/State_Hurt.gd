@@ -17,11 +17,11 @@ class_name State_Hurt
 @onready var defaultShader = preload("res://Player/WhiteColor.gdshader")
 
 func Enter():
-	healthBar.max_value = player.stats.max_HP
-	healthBar.init_health(player.stats.HP)
+	healthBar.max_value = player.playerData.max_HP
+	healthBar.init_health(player.playerData.HP)
 	
 func Exit():
-	player.stats.disconnect("no_HP", Callable(self, "playerDead"))
+	player.playerData.disconnect("no_HP", Callable(self, "playerDead"))
 	
 func Process(_delta : float) -> State:
 	return null
@@ -38,16 +38,16 @@ func takeDamage(area):
 	if critical_chance <= 0.1:
 		is_critical = true
 		var critical_multiplier = randf_range(1.2, 2) # Crit chance between these values
-		player.stats.HP -= area.damage * critical_multiplier # Apply critical damage
+		player.playerData.HP -= area.damage * critical_multiplier # Apply critical damage
 		DamageNumbers.display_number(area.damage * critical_multiplier, damageNumbersOrigin.global_position, is_critical)
 	else:
-		player.stats.HP -= area.damage
+		player.playerData.HP -= area.damage
 		DamageNumbers.display_number(area.damage, damageNumbersOrigin.global_position, is_critical)
 	
-	healthBar.health = player.stats.HP
-	healthBar.max_value = player.stats.max_HP
+	healthBar.health = player.playerData.HP
+	healthBar.max_value = player.playerData.max_HP
 	
-	if player.stats.HP < player.stats.max_HP:
+	if player.playerData.HP < player.playerData.max_HP:
 		healthBar.visible = true
 		
 func _on_hurtbox_area_entered(area):

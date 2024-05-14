@@ -15,13 +15,13 @@ func _on_pressed():
 	var card_selection = get_tree().get_first_node_in_group("CardSelection")
 	match find_child("Card_Title").text:
 		"Gladiator":
-			player.stats.tempSTR = card_selection.strength
-			player.stats.Strength = player.stats.Strength + player.stats.tempSTR
+			player.playerData.temp_str = card_selection.strength
+			player.playerData.Strength = player.playerData.Strength + player.playerData.temp_str
 		"Fortify":
-			player.stats.tempDEF = card_selection.defense
-			player.stats.Defense = player.stats.Defense + player.stats.tempDEF
+			player.playerData.temp_def = card_selection.defense
+			player.playerData.Defense = player.playerData.Defense + player.playerData.temp_def
 		"Flash":
-			player.stats.tempAGI = card_selection.agility
-			player.stats.Agility = player.stats.Agility + player.stats.tempAGI
+			player.playerData.temp_agi = card_selection.agility
+			player.playerData.Agility = player.playerData.Agility + player.playerData.temp_agi
 	card_selection.visible = false
 	get_tree().paused = false

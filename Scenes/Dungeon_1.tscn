@@ -34,11 +34,6 @@ position = Vector2(1956, 870)
 y_sort_enabled = true
 script = ExtResource("3_kr7du")
 
-[node name="Player" parent="." instance=ExtResource("5_kom6a")]
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../World_Camera")
-
 [node name="Black_BG" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
 z_index = -10
@@ -54,5 +49,10 @@ stream = ExtResource("6_oowxi")
 
 [node name="CardSelection" parent="." instance=ExtResource("7_ckblp")]
 visible = false
+
+[node name="Player" parent="." instance=ExtResource("5_kom6a")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../World_Camera")
 
 [editable path="World_Camera"]

@@ -79,7 +79,7 @@ func _on_hurtbox_area_entered(area):
 		
 	#Knockback
 	var newDirection = ( position - area.owner.position ).normalized()
-	var knockback = newDirection * player.stats.KNOCKOUT_SPEED
+	var knockback = newDirection * player.playerData.KNOCKOUT_SPEED
 	velocity = knockback
 	
 func _on_hurtbox_invincibility_started():

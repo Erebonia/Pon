@@ -10,7 +10,6 @@ class_name Player
 @onready var playerSprite: AnimatedSprite2D = $PlayerSprite
 
 #General (Game)
-@onready var stats = $Stats
 @onready var levelUpVFX = $Misc/LevelUp
 @onready var checkTime = null
 @onready var lightSource = $Misc/Light_Source
@@ -46,8 +45,6 @@ func _ready():
 	randomize()
 	stateMachine.Initialize(self)
 	animationTree.active = true
-	stats.connect("no_HP", Callable(self, "playerDead"))
-	stats.connect("level_up", Callable(self, "_on_level_up"))
 	verifySaveDirectory(save_file_path)
 	checkTime = DayAndNight.get_child(1)
 	checkTime.connect("time_tick", Callable(self, "_on_check_time"))
@@ -55,8 +52,8 @@ func _ready():
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("Save"):
-		saveStats()
-		saveData()
+		savePlayerData()
+		saveDataToFile()
 	if Input.is_action_just_pressed("Load"):
 		loadSaveData()
 		
@@ -77,22 +74,12 @@ func setMovementDirection():
 	aim_direction = (get_global_mouse_position() - global_position).normalized() # Make player face the mouse
 	move_and_slide()
 	
-func saveStats():
+func savePlayerData():
 	#save scene?
 	#playerData.loadSavedPosition(self.position)	
-	playerData.updateHP(stats.HP)
-	playerData.updateMaxHP(stats.max_HP)
-	playerData.updateEXP(stats.current_xp)
-	playerData.updateLevel(stats.Level)
-	playerData.updateDMG(swordHitbox.damage)
-	playerData.updateSTR(stats.Strength)
-	playerData.updateAGI(stats.Agility)
-	playerData.updateMAG(stats.Magic)
-	playerData.updateDEF(stats.Defense)
 	playerData.updateInventory(inventory.slots)
-	playerData.updateDungeonFloor(stats.dungeonFloor)
 	
-func saveData():
+func saveDataToFile():
 	var save_path = save_file_path + save_file_name
 	verifySaveDirectory(save_path)
 	print("Saving to: ", save_path)
@@ -112,18 +99,12 @@ func gameStarted():
 	inventory.slots = playerData.slots
 	inventory.check_inventory_full()
 	emit_signal("updateInventoryUI")
-	#current scene load
+	
+	#Assign base damage to the sword hitbox
+	swordHitbox.damage = playerData.base_damage
+	
+	#Reload the last scene and position
 	#self.position = playerData.savedPosition
-	stats.HP = playerData.HP
-	stats.max_HP = playerData.max_HP
-	stats.current_xp = playerData.EXP
-	stats.Level = playerData.level
-	swordHitbox.damage = playerData.damage
-	stats.Strength = playerData.strength
-	stats.Agility = playerData.agility
-	stats.Magic = playerData.magic
-	stats.Defense = playerData.defense
-	stats.dungeonFloor = playerData.dungeonFloor
 	
 func verifySaveDirectory(path: String):
 	DirAccess.make_dir_absolute(path)
@@ -137,16 +118,16 @@ func _on_check_time(_day, hour, _minute):
 		lightSource.visible = false
 	
 func calculateDmg(dmgBoostStat):
-	baseCombatDMG.damage = (stats.Strength * 0.5) + dmgBoostStat
+	baseCombatDMG.damage = (playerData.Strength * 0.5) + dmgBoostStat
 		
-func _on_level_up(_Level):
+func _on_level_up():
 	levelUpVFX.play("level_up")
 	AudioManager.get_node("Level_Up").play()
 	
 func updateHealthBarUI():
-	healthBar.health = stats.HP
-	healthBar.max_value = stats.max_HP
-	if healthBar.health == stats.max_HP:
+	healthBar.health = playerData.HP
+	healthBar.max_value = playerData.max_HP
+	if healthBar.health == playerData.max_HP:
 		healthBar.visible = false
 			
 func _on_area_2d_area_entered(area):
@@ -154,7 +135,7 @@ func _on_area_2d_area_entered(area):
 		area.collect(inventory)
 		
 func increase_health(amount: int) -> void:
-	stats.HP += amount
+	playerData.HP += amount
 	
 func use_item(item: InventoryItem) -> void:
 	item.use(self)
@@ -166,9 +147,9 @@ func inventoryCheck(full):
 		inventoryIsFull = false
 
 func _on_hp_recovery_timeout():
-	if stats.HP < stats.max_HP:
+	if playerData.HP < playerData.max_HP:
 		$Combat/HpRecovery.start()
-		stats.HP += 1
+		playerData.HP += 1
 		
 func checkSelectedWeapon(): 
 	var hotbar_instance = get_tree().get_first_node_in_group("Hotbar")
@@ -189,4 +170,5 @@ func playerDead():
 	queue_free()
 	
 func _on_save_timeout():
-	saveData()
+	savePlayerData()
+	saveDataToFile()

@@ -2,18 +2,12 @@ extends Control
 
 class_name PlayerStatusUI
 
-var player: Player
-
-func _ready():
-	player = get_tree().get_first_node_in_group("Player")
-	player.stats.connect("update_stats", Callable(self, "_update_stats_ui"))
-	player.stats.connect("level_up", Callable(self, "_update_level_ui"))
-	player.stats.connect("experience_gained", Callable(self, "_update_xp_ui"))
+@onready var player : Player = get_tree().get_first_node_in_group("Player")
 	
 func _process(_delta):
-	_update_stats_ui(player.stats.HP, player.stats.max_HP, player.stats.Strength, player.stats.Magic, player.stats.Agility, player.stats.Defense)
-	_update_level_ui(player.stats.Level)
-	_update_xp_ui(player.stats.current_xp, player.stats.get_required_experience(player.stats.Level))
+	_update_stats_ui(player.playerData.HP, player.playerData.max_HP, player.playerData.Strength, player.playerData.Magic, player.playerData.Agility, player.playerData.Defense)
+	_update_level_ui(player.playerData.Level)
+	_update_xp_ui(player.playerData.current_xp, player.playerData.get_required_experience(player.playerData.Level))
 
 func _update_stats_ui(hp, max_hp, strength, magic, agility, defense):
 	%HP.text = str(hp) + "/" + str(max_hp)

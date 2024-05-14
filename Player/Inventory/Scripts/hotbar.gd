@@ -7,7 +7,7 @@ class_name Hotbar
 @onready var selector: Sprite2D = $Selector
 
 @export var currently_selected: int = 0
-@onready var player = get_tree().get_first_node_in_group("Player")
+@onready var player : Player = get_tree().get_first_node_in_group("Player")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
