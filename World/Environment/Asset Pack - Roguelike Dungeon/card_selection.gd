@@ -26,13 +26,13 @@ func _on_pressed():
 	match find_child("Card_Title").text:
 		"Gladiator":
 			player.playerData.tempSTR = strength
-			player.playerData.Strength = player.playerData.Strength + player.playerData.tempSTR
+			player.playerData.Strength += player.playerData.tempSTR
 		"Fortify":
 			player.playerData.tempDEF = defense
-			player.playerData.Defense = player.playerData.Defense + player.playerData.tempDEF
+			player.playerData.Defense += player.playerData.tempDEF
 		"Flash":
 			player.playerData.tempAGI = agility
-			player.playerData.Agility = player.playerData.Agility + player.playerData.tempAGI
+			player.playerData.Agility += player.playerData.tempAGI
 	self.visible = false
 	get_tree().paused = false
 	

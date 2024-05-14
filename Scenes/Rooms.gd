@@ -11,9 +11,11 @@ const TILE_SIZE: int = 16
 
 @export var num_levels: int = 5
 @export var MAX_FLOORS = 2
-@onready var player: Player = get_tree().get_first_node_in_group("Player")
+var player: Player 
 
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("Player")
+	print(player.playerData.dungeonFloor)
 	if player.playerData.dungeonFloor > MAX_FLOORS:
 		print("RESETTING FLOOR")
 		player.playerData.dungeonFloor = 1
@@ -26,7 +28,6 @@ func _ready() -> void:
 		num_levels = 3
 		
 	_spawn_rooms()
-
 
 func _spawn_rooms() -> void:
 	var previous_room: Node2D

@@ -33,9 +33,9 @@ func removeTemporaryStats():
 		var player = get_tree().get_first_node_in_group("Player")
 		if player.playerData.temp_str > 0 or player.playerData.temp_def > 0 or player.playerData.temp_agi > 0:
 			print("Removing temp stats")
-			player.playerData.Strength = player.playerData.Strength - player.playerData.temp_str
-			player.playerData.Defense = player.playerData.Defense - player.playerData.temp_def
-			player.playerData.Agility = player.playerData.Agility - player.playerData.temp_agi
+			player.playerData.Strength -= player.playerData.temp_str
+			player.playerData.Defense -= player.playerData.temp_def
+			player.playerData.Agility -= player.playerData.temp_agi
 			player.playerData.temp_str = 0
 			player.playerData.temp_agi = 0
 			player.playerData.temp_def = 0

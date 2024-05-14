@@ -75,7 +75,7 @@ func setMovementDirection():
 	move_and_slide()
 	
 func savePlayerData():
-	#save scene?
+	#Save Scene and Location
 	#playerData.loadSavedPosition(self.position)	
 	playerData.updateInventory(inventory.slots)
 	
