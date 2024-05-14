@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	if scene_manager.currentScene != "Dungeon_1":
+	if scene_manager.current_scene != "Dungeon_1":
 		visible = true
 	else:
 		visible = false

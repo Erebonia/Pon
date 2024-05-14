@@ -13,9 +13,9 @@ class_name State_Move
 
 func Enter():
 	player.UpdateAnimation("Run")
-	if scene_manager.currentScene == "World":
+	if scene_manager.current_scene == "World": 
 		AudioManager.get_node("Footsteps_Grass").play()
-	elif scene_manager.currentScene == "Dungeon_1":
+	elif scene_manager.current_scene == "Dungeon_1":
 		AudioManager.get_node("Footsteps_Stone").play()
 	
 func Exit():
