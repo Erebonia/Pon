@@ -34,7 +34,7 @@ var inventory_full: bool
 var input_vector : Vector2 = Vector2.ZERO
 var aim_direction : Vector2 
 
-#Changing Werapon Sprites
+#Changing Weapon Sprites
 var weapon_equipped : bool = false
 @onready var hand_sprite: Sprite2D = $Combat/Sword/SwordSprite
 

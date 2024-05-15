@@ -12,7 +12,9 @@ func _ready():
 			
 		player = scene_manager.player
 		add_child(player)
-		position_player()
+		print("Assigned the player to scene manager.")
+		
+	position_player()
 		
 func position_player() -> void:
 	var last_scene = scene_manager.last_scene_name.to_lower().replace('_', '').replace(' ', '')
