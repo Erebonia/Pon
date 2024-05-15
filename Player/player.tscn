@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_fjjot"]
 [ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Effects/Shadows/SmallShadow.png" id="2_6k4r1"]
-[ext_resource type="Script" path="res://Player/PlayerStateMachine.gd" id="2_nsk5u"]
+[ext_resource type="Script" path="res://Player/Player_State_Machine.gd" id="2_oar5y"]
 [ext_resource type="Script" path="res://Player/State_Idle.gd" id="3_l2iho"]
 [ext_resource type="PackedScene" uid="uid://bbh4m23t6e35d" path="res://Overlap/hitbox.tscn" id="3_nnp8n"]
 [ext_resource type="AudioStream" uid="uid://doug012gquv2c" path="res://Music and Sounds/General/Swipe.wav" id="4_4fl1o"]
-[ext_resource type="Script" path="res://Player/SwordHitbox.gd" id="4_ghg0u"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="4_ivow2"]
 [ext_resource type="Script" path="res://Player/State_Move.gd" id="4_m08hb"]
 [ext_resource type="PackedScene" uid="uid://bvite1qic5j1a" path="res://Overlap/hurtbox.tscn" id="5_bhnfg"]
@@ -42,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://br7ec2mf71h1u" path="res://Effects/Sword FX/Wide Area Attack Motion Blur.png" id="31_gibrd"]
 [ext_resource type="Texture2D" uid="uid://44ock017fba4" path="res://Effects/Sprites/LevelUp.png" id="32_blh2b"]
 [ext_resource type="Texture2D" uid="uid://c8y0qr80ktgg8" path="res://Player/weapon/basic_sword.png" id="35_otfcl"]
+[ext_resource type="Script" path="res://Player/Sword_Hitbox.gd" id="39_tfwnc"]
 [ext_resource type="Texture2D" uid="uid://bdj4cy6nv2g63" path="res://Effects/Shadows/light.png" id="42_8pqup"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hi7q1"]
@@ -9355,7 +9355,7 @@ collision_mask = 3
 script = ExtResource("1_fjjot")
 
 [node name="StateMachine" type="Node2D" parent="."]
-script = ExtResource("2_nsk5u")
+script = ExtResource("2_oar5y")
 
 [node name="Idle" type="Node2D" parent="StateMachine"]
 script = ExtResource("3_l2iho")
@@ -9496,7 +9496,7 @@ rotation = 1.5708
 [node name="SwordHitbox" parent="Combat/HitboxPivot" instance=ExtResource("3_nnp8n")]
 position = Vector2(17, 0.999938)
 collision_layer = 8
-script = ExtResource("4_ghg0u")
+script = ExtResource("39_tfwnc")
 damage = 3
 
 [node name="CollisionShape2D" parent="Combat/HitboxPivot/SwordHitbox" index="0"]

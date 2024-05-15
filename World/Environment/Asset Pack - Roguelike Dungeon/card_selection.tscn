@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ofi5kflovwaw"]
 
-[ext_resource type="Script" path="res://World/Environment/Asset Pack - Roguelike Dungeon/card_selection.gd" id="1_6kh1b"]
+[ext_resource type="Script" path="res://World/Environment/Asset Pack - Roguelike Dungeon/Card_Selection.gd" id="1_6kh1b"]
 [ext_resource type="Script" path="res://World/Environment/Asset Pack - Roguelike Dungeon/Card_Effect_Button.gd" id="2_d2p23"]
 [ext_resource type="Texture2D" uid="uid://drbtv5kqbqan2" path="res://UI/card_outline_white.png" id="3_c0un7"]
 [ext_resource type="Texture2D" uid="uid://bldievrlq0s0x" path="res://Player/Inventory/Art/GUI_1x_sliced.png" id="3_l4ooe"]

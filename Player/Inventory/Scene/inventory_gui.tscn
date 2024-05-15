@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://xgwv4syylx7"]
 
-[ext_resource type="Script" path="res://Player/Inventory/Scripts/inventory_gui.gd" id="1_1tk7e"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/Inventory_Gui.gd" id="1_1tk7e"]
 [ext_resource type="Texture2D" uid="uid://cxka0cb605hnd" path="res://Player/Inventory/Art/InventoryRect.png" id="1_50gxy"]
 [ext_resource type="PackedScene" uid="uid://h8e8jin0vdvx" path="res://Player/Inventory/Scene/slot_gui.tscn" id="2_7yodu"]
 [ext_resource type="Texture2D" uid="uid://uc0brcwd8h78" path="res://Player/Pixivan MC/Portrait/Side Portrait Large.png" id="4_goi0s"]

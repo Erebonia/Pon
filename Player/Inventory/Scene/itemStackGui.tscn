@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dadwitama48h1"]
 
-[ext_resource type="Script" path="res://Player/Inventory/Scripts/itemStackGui.gd" id="1_nnfv8"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/ItemStackGui.gd" id="1_nnfv8"]
 
 [node name="Panel" type="Panel"]
 script = ExtResource("1_nnfv8")

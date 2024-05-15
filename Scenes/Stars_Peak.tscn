@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b1lifm57p7pvt" path="res://Player/player.tscn" id="4_0wotw"]
 [ext_resource type="TileSet" uid="uid://dehp76qcudo5q" path="res://World/Environment.tres" id="5_g4gbo"]
 [ext_resource type="PackedScene" uid="uid://dx4gc50eoqluo" path="res://UI/user_interface.tscn" id="6_ig3ko"]
-[ext_resource type="Script" path="res://Scenes/ParallaxBackground.gd" id="7_d5phx"]
+[ext_resource type="Script" path="res://Scenes/Parallax_Background.gd" id="7_d5phx"]
 [ext_resource type="Texture2D" uid="uid://qj8dimm7y8hb" path="res://Scenes/Stars_Peak/Clouds/Clouds 3/1.png" id="7_lb6qp"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="7_lkrce"]
 [ext_resource type="Texture2D" uid="uid://qk3ddytgvs5p" path="res://Scenes/Stars_Peak/Clouds/Clouds 3/2.png" id="8_i8ql1"]

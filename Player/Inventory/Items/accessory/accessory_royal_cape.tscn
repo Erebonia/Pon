@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dekowggjojorb"]
 
-[ext_resource type="Script" path="res://Player/Inventory/Scripts/collectable.gd" id="1_8mody"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/Collectable.gd" id="1_8mody"]
 [ext_resource type="Resource" uid="uid://4bqp7chbpyeh" path="res://Player/Inventory/Items/accessory/accessory_royal_cape.tres" id="2_l26cm"]
 [ext_resource type="Texture2D" uid="uid://cmhtgct7bmbdb" path="res://Player/armor/accessory_cape_royal.png" id="3_3poyr"]
 

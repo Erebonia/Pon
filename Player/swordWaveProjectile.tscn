@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://dw2dja5a53eip"]
 
-[ext_resource type="Script" path="res://Player/arrowProjectile.gd" id="1_wkodc"]
+[ext_resource type="Script" path="res://Player/Arrow_Projectile.gd" id="1_wkodc"]
 [ext_resource type="Texture2D" uid="uid://br7ec2mf71h1u" path="res://Effects/Sword FX/Wide Area Attack Motion Blur.png" id="2_xmt1b"]
-[ext_resource type="Script" path="res://Overlap/hitbox.gd" id="3_spaa3"]
+[ext_resource type="Script" path="res://Overlap/Hitbox.gd" id="3_spaa3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w7q20"]
 atlas = ExtResource("2_xmt1b")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Enemies/Scripts/bullet.gd" id="1_kvo3x"]
 [ext_resource type="Texture2D" uid="uid://c4kfbjd42nkve" path="res://Enemies/Sprites/arm_projectile_glowing.png" id="2_l81ir"]
-[ext_resource type="Script" path="res://Overlap/hurtbox.gd" id="3_rq0wm"]
+[ext_resource type="Script" path="res://Overlap/Hurtbox.gd" id="3_rq0wm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qetdd"]
 atlas = ExtResource("2_l81ir")

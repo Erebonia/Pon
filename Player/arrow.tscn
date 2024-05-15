@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7swthxn03qi5"]
 
-[ext_resource type="Script" path="res://Player/arrowProjectile.gd" id="1_o0aka"]
+[ext_resource type="Script" path="res://Player/Arrow_Projectile.gd" id="1_o0aka"]
 [ext_resource type="Texture2D" uid="uid://b3gaesoh4imxe" path="res://Player/Pixivan MC/arrow.png" id="1_xdysb"]
-[ext_resource type="Script" path="res://Overlap/hitbox.gd" id="3_fcgx7"]
+[ext_resource type="Script" path="res://Overlap/Hitbox.gd" id="3_fcgx7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ura8u"]
 size = Vector2(14, 3)

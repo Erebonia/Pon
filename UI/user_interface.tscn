@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://xgwv4syylx7" path="res://Player/Inventory/Scene/inventory_gui.tscn" id="2_6d6xj"]
 [ext_resource type="PackedScene" uid="uid://msq4a5r2qp8n" path="res://Player/Inventory/Scene/hotbar.tscn" id="3_268fo"]
 [ext_resource type="Texture2D" uid="uid://44ock017fba4" path="res://Effects/Sprites/LevelUp.png" id="4_eg32x"]
-[ext_resource type="Script" path="res://Player/PlayerStatusUI.gd" id="4_huemg"]
+[ext_resource type="Script" path="res://Player/Player_Status_Ui.gd" id="4_huemg"]
 [ext_resource type="Texture2D" uid="uid://6eb55uah0is2" path="res://Player/Pixivan MC/Front Movement.png" id="5_0tvey"]
 [ext_resource type="Texture2D" uid="uid://bldievrlq0s0x" path="res://Player/Inventory/Art/GUI_1x_sliced.png" id="5_ych27"]
 [ext_resource type="AudioStream" uid="uid://ccwev0ttpjs0c" path="res://Music and Sounds/UI/Level up Pickup (Rpg).wav" id="7_jd5fw"]

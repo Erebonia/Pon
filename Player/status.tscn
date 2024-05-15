@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://teppcsgloipc"]
 
-[ext_resource type="Script" path="res://Player/PlayerStatusUI.gd" id="1_3ecaw"]
+[ext_resource type="Script" path="res://Player/Player_Status_Ui.gd" id="1_3ecaw"]
 [ext_resource type="Texture2D" uid="uid://6eb55uah0is2" path="res://Player/Pixivan MC/Front Movement.png" id="2_kg1rh"]
 [ext_resource type="Texture2D" uid="uid://44ock017fba4" path="res://Effects/Sprites/LevelUp.png" id="2_p1igg"]
 [ext_resource type="AudioStream" uid="uid://cqggtqsqcugk5" path="res://Music and Sounds/General/potatoscream.mp3" id="4_6vid8"]

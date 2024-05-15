@@ -17,7 +17,7 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 [autoload]
 
 scene_manager="*res://World/Scene_Manager.gd"
-DamageNumbers="*res://Overlap/DamageNumbers.gd"
+DamageNumbers="*res://Overlap/Damage_Numbers.gd"
 TransitionScene="*res://UI/transition_scene.tscn"
 AudioManager="*res://Music and Sounds/audio_manager.tscn"
 DayAndNight="*res://World/Weather/weather/daynightcycle_scene.tscn"
