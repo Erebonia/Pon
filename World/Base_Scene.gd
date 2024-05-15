@@ -6,6 +6,7 @@ class_name Base_Scene
 
 func _ready():
 	if scene_manager.player:
+		print("Deleting player")
 		if player:
 			player.queue_free()
 			
