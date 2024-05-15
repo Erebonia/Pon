@@ -1,45 +1,36 @@
-# Potato the Traveler | 2D Action RPG Game
+# Pon | 2D Action RPG Game
 
 ## What is it?
-A project I made to learn and understand the Godot Engine. I have repaired and upgraded the base project from Godot 3.7 to be compatible with the latest Godot 4.2.1 Engine.
-
-## Credit
-I learned how to create the foundation of the game through the series below. Credits to Heartbeast.
-https://youtu.be/mAbG8Oi-SvQ?list=PL9FzW-m48fn2SlrW0KoLT4n5egNdX-W9a
-
-### What's New?
-- New main character: Potato
-- New landscape / tilemap
-- Healthbars in combat and Canvas UI
-- Invincibility Frames on evasion
-- Natural HP Regen utilzing timers
-- Switching between different ingame maps
-- Boss Battle
-- Username on the player character
+Initially a project I made to learn and understand the Godot Engine turned into a full blown 2D Action RPG.
 
 ### Core Features
-- Player Movement
-- State Machine (IDLE, ROLLING, ATTACK)
-- Tilemaps, textures, and collisions
-- YSortnode in order to display player behind or in front of objects such as trees, grass, etc...
-- Enemy Wandering AI
-- Enemy has player detection and will follow to initiate combat
-- Knockback enemies on attack
-- Death Effects
-- Player Camera & Border limits
-- Sound FX / Hit Flashes
+- New main character: Pon
+- A combat system that includes 8 directional movement, dashing, and various attack combos.
+- The Depths - A procedural based dungeon with bosses every certain amount of floors.
+- Scene Manager for changing maps
+- Save system for retaining player data.
+- Inventory and hotbar system
+- Player and Enemy State machines for easy scalability.
+- Level up and RPG stats system.
+- Time based weather system
 
-#### Combat Showcase
+..and much more!
+
+#### Combat Showcase (Sword Wave Stance, dashing, and enemy combat)
 ![NVIDIA_Share_0sdWy0jFsK](https://github.com/Erebonia/Potato-the-Traveler/assets/52137104/10cb3bd1-8acc-430f-8932-417925b0687b)
 
-#### Scene Switching
+#### Dungeon Showcase
 TODO
 
-#### Boss NPC with finite state machine
+#### Inventory, Stats, and Hotbar
 TODO
 
-#### HP Regeneration
-![Godot_v4 2 1-stable_win64_iYmyUyO9wm](https://github.com/Erebonia/Potato-the-Traveler/assets/52137104/c0ad177d-c202-4729-84f8-ea76f0e2fc38)
+#### Save System
 
-#### Hitpoints State Update
-![Godot_v4 2 1-stable_win64_Laaz22QrXM](https://github.com/Erebonia/Potato-the-Traveler/assets/52137104/db0eec25-9820-47e9-bf0f-498ffa6e012f)
+#### Time-based Weather System
+
+## Honorable Mentions
+
+The game's original concept was based off this tutorial, but has since made enormous strides in development. Credits to Heartbeast for helping me understand and create the foundation of my game. Also special thanks to MakerTech and Devworm for various tutorials and information regarding Godot.
+
+https://youtu.be/mAbG8Oi-SvQ?list=PL9FzW-m48fn2SlrW0KoLT4n5egNdX-W9a
