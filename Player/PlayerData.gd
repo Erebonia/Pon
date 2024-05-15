@@ -18,7 +18,7 @@ const MAX_LEVEL = 4
 @export var base_damage: int
 
 #Rogue Dungeon
-@export var dungeonFloor: int = 1
+@export var dungeon_floor: int = 1
 @export var temp_str: int = 0
 @export var temp_def: int = 0
 @export var temp_agi: int = 0
@@ -43,7 +43,7 @@ func loadSavedPosition(value: Vector2):
 	savedPosition = value
 	
 func updateDungeonFloor(value: int):
-	dungeonFloor = value
+	dungeon_floor = value
 
 func gain_experience(amount: int):
 	if Level >= MAX_LEVEL:

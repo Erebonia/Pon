@@ -25,7 +25,7 @@ func change_scene(from, to_scene_name: String) -> void:
 	
 	#Change Scene
 	var full_path = scene_dir_path + to_scene_name + ".tscn"
-	from.get_tree().call_deferred("change_scene_to_file", full_path)
+	get_tree().call_deferred("change_scene_to_file", full_path)
 	AudioManager.get_node("Scene_Transition").play()
 	
 func removeTemporaryStats():

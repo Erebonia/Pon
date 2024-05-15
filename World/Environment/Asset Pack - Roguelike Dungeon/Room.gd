@@ -19,11 +19,10 @@ var num_enemies: int
 @onready var player_detector: Area2D = get_node("PlayerDetector")
 @onready var cardSelect = null
 
-
 func _ready() -> void:
 	num_enemies = enemy_positions_container.get_child_count()
 	cardSelect = get_tree().get_first_node_in_group("CardSelection")
-	#if Status.dungeonFloor > 1:
+	#if Status.dungeon_floor > 1:
 	cardSelect.visible = true
 
 func _on_enemy_killed() -> void:
@@ -31,17 +30,14 @@ func _on_enemy_killed() -> void:
 	if num_enemies == 0:
 		_open_doors()
 
-
 func _open_doors() -> void:
 	for door in door_container.get_children():
 		door.open()
-
 
 func _close_entrance() -> void:
 	for entry_position in entrance.get_children():
 		tilemap.set_cell(2, tilemap.local_to_map(entry_position.position), 0, Vector2i(2,7))
 		tilemap.set_cell(1, tilemap.local_to_map(entry_position.position) + Vector2i.DOWN, 0, Vector2i(7,4))
-
 
 func _spawn_enemies() -> void:
 	var boss_Spawned = false
@@ -75,5 +71,5 @@ func _on_PlayerDetector_body_entered(_body: CharacterBody2D) -> void:
 		
 func _on_increment_level_body_entered(body):
 	if body is Player:
-		body.player_data.dungeonFloor += 1
-		print("Current Floor:" + str(body.player_data.dungeonFloor))
+		body.player_data.dungeon_floor += 1
+		print("Current Floor:" + str(body.player_data.dungeon_floor))

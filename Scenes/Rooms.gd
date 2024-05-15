@@ -14,14 +14,15 @@ const TILE_SIZE: int = 16
 @onready var player : Player = get_tree().get_first_node_in_group("Player")
 
 func _ready() -> void:
-	if player.player_data.dungeonFloor > MAX_FLOORS:
+	print("Rooms.gd Player Floor: " + str(player.player_data.dungeon_floor))
+	if player.player_data.dungeon_floor > MAX_FLOORS:
 		print("RESETTING FLOOR")
-		player.player_data.dungeonFloor = 1
+		player.player_data.dungeon_floor = 1
 		player.player_data.tempAGI = 0
 		player.player_data.tempDEF = 0
 		player.player_data.tempSTR = 0
 
-	if player.player_data.dungeonFloor == 2:
+	if player.player_data.dungeon_floor == 2:
 		print("Boss Floor")
 		num_levels = 3
 		
@@ -38,13 +39,13 @@ func _spawn_rooms() -> void:
 			room = SPAWN_ROOMS[randi() % SPAWN_ROOMS.size()].instantiate()
 			player.position = room.get_node("PlayerSpawnPos").position
 		else:
-			if i == num_levels - 1 and player.player_data.dungeonFloor != MAX_FLOORS:
+			if i == num_levels - 1 and player.player_data.dungeon_floor != MAX_FLOORS:
 				room = END_ROOMS[randi() % END_ROOMS.size()].instantiate()
-			elif i == num_levels - 1 and player.player_data.dungeonFloor == MAX_FLOORS:
+			elif i == num_levels - 1 and player.player_data.dungeon_floor == MAX_FLOORS:
 				print("MAX FLOOR DETECTED")
 				room = EXIT_ROOMS[randi() % EXIT_ROOMS.size()].instantiate() 
 			else:
-				if player.player_data.dungeonFloor == 2:
+				if player.player_data.dungeon_floor == 2:
 					room = SLIME_BOSS_SCENE.instantiate()
 				else:
 					if (randi() % 3 == 0 and not special_room_spawned) or (i == num_levels - 2 and not special_room_spawned):
