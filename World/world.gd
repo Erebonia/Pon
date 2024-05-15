@@ -8,24 +8,24 @@ class_name World
 @onready var rain = $World_Camera/Rain
 @onready var fog = $Environment/FogShader
 
-var checkTime = DayAndNight.get_child(1)
-var savedDay: int
-var savedHour: int
+var check_time = DayAndNight.get_child(1)
+var saved_day: int
+var saved_hour: int
 
 func _ready():
 	super()
-	checkTime.connect("time_tick", Callable(self, "_on_check_time"))
+	check_time.connect("time_tick", Callable(self, "_on_check_time"))
 
 func _on_check_time(day, hour, _minute):
 	# Randomize Weather every 12 hours
-	if savedHour == -1 or hour == (savedHour + 12) % 24:
+	if saved_hour == -1 or hour == (saved_hour + 12) % 24:
 		#print("Hour: " + str(hour))
 		randomWeather()
-		savedHour = hour
+		saved_hour = hour
 	
-	# Update savedDay at midnight
-	if savedDay != day:
-		savedDay = day
+	# Update saved_day at midnight
+	if saved_day != day:
+		saved_day = day
 		
 	#Night Time
 	if (hour >= 19 and hour <= 23) or (hour >= 0 and hour < 6):
@@ -37,8 +37,8 @@ func _on_check_time(day, hour, _minute):
 		clouds.emitting = true 
 
 func randomWeather():
-	var randomPick = randi_range(1,3)
-	match randomPick:
+	var pick_random_weather = randi_range(1,3)
+	match pick_random_weather:
 		1:
 			#print("Leaves Day")
 			leaves.emitting = true
