@@ -254,6 +254,7 @@ position = Vector2(106, 212)
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("23_6fktw")]
 material = SubResource("ShaderMaterial_dc7t6")
+position = Vector2(62, 113)
 
 [connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]

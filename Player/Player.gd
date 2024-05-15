@@ -4,22 +4,21 @@ class_name Player
 
 #General (Script)
 @onready var state_machine : PlayerStateMachine = $StateMachine
-@onready var animation_player = $AnimationPlayer
-@onready var animation_tree = $AnimationTree
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
+@onready var animation_tree : AnimationTree = $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
 @onready var player_sprite: AnimatedSprite2D = $PlayerSprite
 
 #General (Game)
-@onready var level_up_vfx = $Misc/LevelUp
+@onready var level_up_vfx : AnimatedSprite2D = $Misc/LevelUp
 @onready var check_time = null
-@onready var light_source = $Misc/Light_Source
+@onready var light_source : PointLight2D = $Misc/Light_Source
 
 #Combat
-@onready var base_dmg = $Combat/HitboxPivot/SwordHitbox
-@onready var sword_sprite = $Combat/Sword/SwordSprite
-@onready var sword_hitbox = $Combat/HitboxPivot/SwordHitbox
-@onready var attack_timer = $Combat/AttackTimer
-@onready var health_bar = $Combat_UI/Healthbar
+@onready var sword_sprite : Sprite2D = $Combat/Sword/SwordSprite
+@onready var sword_hitbox : Node2D = $Combat/HitboxPivot/SwordHitbox
+@onready var attack_timer : Timer = $Combat/AttackTimer
+@onready var health_bar : ProgressBar = $Combat_UI/Healthbar
 
 #Debug
 @onready var debug = $Misc/debug
@@ -32,23 +31,23 @@ var inventory = preload("res://Player/Inventory/PlayerInventory.tres")
 var inventory_full: bool
 
 #Directional
-var input_vector = Vector2.ZERO
-var aim_direction = null
+var input_vector : Vector2 = Vector2.ZERO
+var aim_direction : Vector2 
 
 #Changing Werapon Sprites
 var weapon_equipped : bool = false
 @onready var hand_sprite: Sprite2D = $Combat/Sword/SwordSprite
 
 func _ready():
-	inventory.use_item.connect(use_item)
-	inventory.inventory_full.connect(inventoryCheck)
+	verifySaveDirectory(save_file_path)
+	#loadSaveData()
 	randomize()
 	state_machine.Initialize(self)
-	animation_tree.active = true
-	verifySaveDirectory(save_file_path)
+	inventory.use_item.connect(use_item)
+	inventory.inventory_full.connect(inventoryCheck)
 	check_time = DayAndNight.get_child(1)
 	check_time.connect("time_tick", Callable(self, "_on_check_time"))
-	#loadSaveData()
+	animation_tree.active = true
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("Save"):
@@ -117,7 +116,7 @@ func _on_check_time(_day, hour, _minute):
 		light_source.visible = false
 	
 func calculateDmg(dmgBoostStat):
-	base_dmg.damage = (player_data.Strength * 0.5) + dmgBoostStat
+	sword_hitbox.damage = (player_data.Strength * 0.5) + dmgBoostStat
 		
 func _on_level_up():
 	level_up_vfx.play("level_up")

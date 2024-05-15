@@ -1,4 +1,4 @@
-extends Node2D
+extends BaseScene
 
 @onready var camera = $World_Camera
 @onready var clouds = $World_Camera/Cloud
@@ -12,6 +12,7 @@ var savedDay: int
 var savedHour: int
 
 func _ready():
+	super()
 	checkTime.connect("time_tick", Callable(self, "_on_check_time"))
 
 func _on_check_time(day, hour, _minute):

@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Rooms
+
 const SPAWN_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/SpawnRoom_0.tscn")]
 const INTERMEDIATE_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/room_0.tscn"), preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/room_1.tscn")]
 const SPECIAL_ROOMS: Array = [preload("res://World/Environment/Asset Pack - Roguelike Dungeon/rooms/special_room_0.tscn")]
@@ -10,10 +12,11 @@ const SLIME_BOSS_SCENE: PackedScene = preload("res://World/Environment/Asset Pac
 const TILE_SIZE: int = 16
 
 @export var num_levels: int = 5
-@export var MAX_FLOORS = 2
-@onready var player : Player = get_tree().get_first_node_in_group("Player")
+@export var MAX_FLOORS: int = 2
+var player : Player 
 
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("Player")
 	print("Rooms.gd Player Floor: " + str(player.player_data.dungeon_floor))
 	if player.player_data.dungeon_floor > MAX_FLOORS:
 		print("RESETTING FLOOR")
