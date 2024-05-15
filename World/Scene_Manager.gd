@@ -1,14 +1,14 @@
 extends Node
-class_name SceneManager
+class_name Scene_Manager
 
-var player : Player
+var player
 var last_scene_name: String 
 var current_scene: String
 var scene_dir_path = "res://Scenes/"
 
 func change_scene(from, to_scene_name: String) -> void:
 	last_scene_name = from.name
-	print("Last Scene: " + last_scene_name)
+	print(from)
 	
 	player = from.player
 	player.get_parent().remove_child(player)

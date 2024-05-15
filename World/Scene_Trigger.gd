@@ -1,6 +1,5 @@
 extends Area2D
-
-class_name SceneTrigger
+class_name Scene_Trigger
 
 @export var connected_scene: String #Name of scene to change to
 var scene_folder = "res://Scenes/"

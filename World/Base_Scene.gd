@@ -1,6 +1,5 @@
 extends Node
-
-class_name BaseScene
+class_name Base_Scene
 
 @onready var player : Player = $Player
 @onready var entrance_markers: Node2D = $EntranceMarkers
@@ -12,7 +11,6 @@ func _ready():
 			
 		player = scene_manager.player
 		add_child(player)
-		print("Assigned the player to scene manager.")
 		
 	position_player()
 		

@@ -1,4 +1,5 @@
-extends BaseScene
+extends Base_Scene
+class_name World
 
 @onready var camera = $World_Camera
 @onready var clouds = $World_Camera/Cloud

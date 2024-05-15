@@ -17,7 +17,6 @@ var player : Player
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
-	print("Rooms.gd Player Floor: " + str(player.player_data.dungeon_floor))
 	if player.player_data.dungeon_floor > MAX_FLOORS:
 		print("RESETTING FLOOR")
 		player.player_data.dungeon_floor = 1
