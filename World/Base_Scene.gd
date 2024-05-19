@@ -5,13 +5,12 @@ class_name Base_Scene
 @onready var entrance_markers: Node2D = $EntranceMarkers
 
 func _ready():
-	if scene_manager.player:
-		print("Deleting player")
-		if player:
-			player.queue_free()
+	#if scene_manager.player:
+		#if player:
+			#player.queue_free()
 			
-		player = scene_manager.player
-		add_child(player)
+		#player = scene_manager.player
+		#add_child(player)
 		
 	position_player()
 		
