@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvq7w8jewvpm5"]
+[gd_scene load_steps=8 format=3 uid="uid://bvq7w8jewvpm5"]
 
-[ext_resource type="Script" path="res://World/Base_Scene.gd" id="1_grit8"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_orh0m"]
 [ext_resource type="Script" path="res://Scenes/Rooms.gd" id="3_kr7du"]
 [ext_resource type="PackedScene" uid="uid://dx4gc50eoqluo" path="res://UI/user_interface.tscn" id="4_6ixf6"]
@@ -12,7 +11,7 @@
 
 [node name="Dungeon_1" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_grit8")
+script = ExtResource("3_kr7du")
 
 [node name="World_Camera" parent="." instance=ExtResource("2_orh0m")]
 position = Vector2(0, 0)
@@ -29,10 +28,6 @@ position = Vector2(-280, -1436)
 position = Vector2(1956, 870)
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
-
-[node name="Rooms" type="Node2D" parent="."]
-y_sort_enabled = true
-script = ExtResource("3_kr7du")
 
 [node name="Black_BG" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)

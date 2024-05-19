@@ -73,3 +73,4 @@ func _on_increment_level_body_entered(body):
 	if body is Player:
 		body.player_data.dungeon_floor += 1
 		print("Current Floor:" + str(body.player_data.dungeon_floor))
+		body.savePlayerData()

@@ -82,7 +82,7 @@ func savePlayerData():
 func saveDataToFile():
 	var save_path = save_file_path + save_file_name
 	verifySaveDirectory(save_path)
-	print("Saving to: ", save_path)
+	#print("Saving to: ", save_path)
 	ResourceSaver.save(player_data, save_path)
 
 func loadSaveData():

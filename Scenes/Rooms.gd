@@ -16,7 +16,7 @@ const TILE_SIZE: int = 16
 @export var MAX_FLOORS: int = 2
 
 func _ready() -> void:
-	player = get_tree().get_first_node_in_group("Player")
+	super()
 	handle_floor_reset()
 	_spawn_rooms()
 
