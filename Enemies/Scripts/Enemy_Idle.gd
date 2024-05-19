@@ -2,11 +2,11 @@ extends EnemyState
 class_name Enemy_Idle
 
 @export var WANDER_TARGET_RANGE = 4
-@onready var collision = $"../../PlayerDetection/CollisionShape2D"
-@onready var overhead_health_bar = owner.find_child("Healthbar")
-@onready var wander_controller = $"../../WanderController"
-@onready var follow = $"../Follow"
-@onready var idle = $"../Idle"
+@onready var collision : CollisionShape2D = $"../../PlayerDetection/CollisionShape2D"
+@onready var overhead_health_bar : ProgressBar = owner.find_child("Healthbar")
+@onready var wander_controller : Node2D = $"../../WanderController"
+@onready var follow : Node2D = $"../Follow"
+@onready var idle : Node2D = $"../Idle"
 
 enum {
 	IDLE,

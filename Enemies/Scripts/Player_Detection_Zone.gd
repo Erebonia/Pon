@@ -1,6 +1,6 @@
 extends Area2D
 
-var player = null
+var player : Player
 
 func can_see_player():
 	return player != null

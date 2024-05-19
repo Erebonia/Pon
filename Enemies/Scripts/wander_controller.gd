@@ -1,10 +1,10 @@
 extends Node2D
 
-@export var wander_range = 32
+@export var wander_range : int = 32
 
-@onready var start_position = global_position
-@onready var target_position = global_position
-@onready var timer = $Timer
+@onready var start_position : Vector2 = global_position
+@onready var target_position : Vector2 = global_position
+@onready var timer : Timer = $Timer
 
 func _ready():
 	update_target_position()

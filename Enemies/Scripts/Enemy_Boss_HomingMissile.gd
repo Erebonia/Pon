@@ -2,7 +2,7 @@ extends EnemyState
  
 @export var bullet_node: PackedScene
 var can_transition: bool = false
-@onready var follow = $"../Follow"
+@onready var follow : Node2D = $"../Follow"
  
 func Enter():
 	animation_player.speed_scale = 0.75

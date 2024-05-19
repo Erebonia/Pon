@@ -1,8 +1,8 @@
 extends EnemyState
  
-@onready var pivot = $"../../pivot"
-@onready var dash = $"../Dash"
-@onready var follow = $"../Follow"
+@onready var pivot : Node2D = $"../../pivot"
+@onready var dash : Node2D = $"../Dash"
+@onready var follow : Node2D = $"../Follow"
 
 var can_transition: bool = false
  

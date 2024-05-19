@@ -1,11 +1,11 @@
 extends State
 class_name State_Idle
 
-@onready var run = $"../Run"
-@onready var idle = $"../Idle"
-@onready var evade = $"../Evade"
-@onready var attack = $"../Attack"
-@onready var sword_stance = $"../Sword_Stance"
+@onready var run : Node2D = $"../Run"
+@onready var idle : Node2D = $"../Idle"
+@onready var evade : Node2D = $"../Evade"
+@onready var attack : Node2D = $"../Attack"
+@onready var sword_stance : Node2D = $"../Sword_Stance"
 @onready var inventory: Inventory = preload("res://Player/Inventory/PlayerInventory.tres")
 
 func Enter():

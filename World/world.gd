@@ -1,14 +1,14 @@
 extends Base_Scene
 class_name World
 
-@onready var camera = $World_Camera
-@onready var clouds = $World_Camera/Cloud
-@onready var raylights = $World_Camera/Raylight
-@onready var leaves = $World_Camera/Leaf
-@onready var rain = $World_Camera/Rain
-@onready var fog = $Environment/FogShader
+@onready var camera : Camera2D = $World_Camera
+@onready var clouds : GPUParticles2D = $World_Camera/Cloud
+@onready var raylights : GPUParticles2D = $World_Camera/Raylight
+@onready var leaves : GPUParticles2D = $World_Camera/Leaf
+@onready var rain : GPUParticles2D = $World_Camera/Rain
+@onready var fog : ParallaxBackground = $Environment/FogShader
 
-var check_time = DayAndNight.get_child(1)
+var check_time : Node2D = DayAndNight.get_child(1)
 var saved_day: int
 var saved_hour: int
 

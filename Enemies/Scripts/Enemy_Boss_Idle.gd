@@ -1,7 +1,7 @@
 extends Enemy_Idle
 
-@onready var progress_bar = owner.find_child("BossHealthbar")
-@onready var can_attack_boss_collision = $"../../Hurtbox/CollisionShape2D"
+@onready var progress_bar : ProgressBar = owner.find_child("BossHealthbar")
+@onready var can_attack_boss_collision : CollisionShape2D = $"../../Hurtbox/CollisionShape2D"
 
 var player_entered_boss: bool = false:
 	set(value):

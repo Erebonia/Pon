@@ -1,12 +1,12 @@
 extends State
 class_name State_Evade
 
-@onready var idle = $"../Idle"
-@onready var run = $"../Run"
-@onready var hurt = $"../Hurt"
-@export var ROLL_SPEED = 90
-var evade_vector = Vector2.DOWN
-var evade_complete = false
+@onready var idle : Node2D = $"../Idle"
+@onready var run : Node2D = $"../Run"
+@onready var hurt : Node2D = $"../Hurt"
+@export var ROLL_SPEED : int = 90
+var evade_vector : Vector2 = Vector2.DOWN
+var evade_complete : bool = false
 @onready var evade_shader = preload("res://Player/evade.gdshader")
 
 func Enter():

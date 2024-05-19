@@ -1,6 +1,6 @@
 extends Enemy_MeleeAttack
 
-@onready var dash = $"../Dash"
+@onready var dash : Node2D = $"../Dash"
 
 func Enter():
 	animation_player.speed_scale = 1.5

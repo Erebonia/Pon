@@ -2,14 +2,14 @@ extends State
 class_name State_Move
 
 #Speed
-@export var ACCELERATION = 500
-@export var MAX_SPEED = 80
-@export var ROLL_SPEED = 80
-@export var FRICTION = 500
+@export var ACCELERATION : int = 500
+@export var MAX_SPEED : int = 80
+@export var ROLL_SPEED : int = 80
+@export var FRICTION : int = 500
 
-@onready var idle : State = $"../Idle"
-@onready var evade : State = $"../Evade"
-@onready var attack = $"../Attack"
+@onready var idle : Node2D = $"../Idle"
+@onready var evade : Node2D = $"../Evade"
+@onready var attack : Node2D = $"../Attack"
 
 func Enter():
 	player.UpdateAnimation("Run")

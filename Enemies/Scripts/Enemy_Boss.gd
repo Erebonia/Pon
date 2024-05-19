@@ -2,9 +2,9 @@ extends Enemy_Base
 class_name EnemyBoss
 
 #General
-@onready var boss_sprite = $Sprite2D
-@onready var boss_healthbar = $UI/BossHealthbar
-@onready var armor_buff = $FiniteStateMachine/ArmorBuff
+@onready var boss_sprite : Sprite2D = $Sprite2D
+@onready var boss_healthbar : ProgressBar = $UI/BossHealthbar
+@onready var armor_buff : Node2D = $FiniteStateMachine/ArmorBuff
  
 func _ready():
 	super._ready()

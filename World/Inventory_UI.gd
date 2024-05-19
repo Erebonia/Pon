@@ -2,9 +2,9 @@ extends CanvasLayer
 
 class_name UserInterface
 
-@onready var inventory = $InventoryGui
-@onready var hotbar = $Hotbar
-@onready var playerStatusUI = $"Status Screen"
+@onready var inventory : Inventory_gui = $InventoryGui
+@onready var hotbar : Hotbar = $Hotbar
+@onready var playerStatusUI : Player_Status_UI = $"Status Screen"
 
 func _ready():
 	inventory.close()

@@ -1,11 +1,11 @@
 extends Area2D
 
-@onready var animated_sprite = $AnimatedSprite2D
-@onready var player = get_parent().find_child("Player")
-@onready var player_last_location = null
-@onready var sprite = $AnimatedSprite2D
-@onready var animationPlayer = $AnimationPlayer
-@onready var hurtbox = $Hurtbox
+@onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var player : Player = get_parent().find_child("Player")
+@onready var player_last_location : Vector2
+@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var animationPlayer : AnimationPlayer = $AnimationPlayer
+@onready var hurtbox : Area2D = $Hurtbox
 
 @export var damage = 1
  

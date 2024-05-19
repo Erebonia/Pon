@@ -4,15 +4,15 @@ class_name State_Hurt
 @onready var inventory: Inventory = preload("res://Player/Inventory/PlayerInventory.tres")
 
 #Hurtbox
-@onready var hurtbox = $"../../Combat/Hurtbox"
-@onready var blink_animation_player = $"../../Combat/BlinkAnimationPlayer"
-@onready var damage_numbers_origin = $"../../Combat_UI/DamageNumbersOrigin"
-@onready var health_bar = $"../../Combat_UI/Healthbar"
+@onready var hurtbox : Area2D = $"../../Combat/Hurtbox"
+@onready var blink_animation_player : AnimationPlayer = $"../../Combat/BlinkAnimationPlayer"
+@onready var damage_numbers_origin : Node2D = $"../../Combat_UI/DamageNumbersOrigin"
+@onready var health_bar : ProgressBar = $"../../Combat_UI/Healthbar"
 
 # States
-@onready var hurt = $"../Hurt"
-@onready var idle = $"../Idle"
-@onready var evade = $"../Evade"
+@onready var hurt : Node2D = $"../Hurt"
+@onready var idle : Node2D = $"../Idle"
+@onready var evade : Node2D = $"../Evade"
 
 @onready var default_shader = preload("res://Player/WhiteColor.gdshader")
 

@@ -1,8 +1,8 @@
 extends EnemyState
  
 var can_transition : bool = false
-@onready var follow = $"../Follow"
-@onready var can_attack_boss_collision = $"../../Hurtbox/CollisionShape2D"
+@onready var follow : Node2D = $"../Follow"
+@onready var can_attack_boss_collision : CollisionShape2D = $"../../Hurtbox/CollisionShape2D"
 
 func Enter():
 	animation_player.speed_scale = 0.8

@@ -4,22 +4,22 @@ class_name Enemy_Base
 const Enemy_Death_Effect = preload("res://Effects/Scenes/enemy_death_effect.tscn")
 
 #Combat
-@onready var stats = $Stats
-@onready var hurtbox = $Hurtbox
-@onready var melee_attack_dir = $FiniteStateMachine/MeleeAttack/MeleeAOE
-@onready var healthbar = $Healthbar
-@onready var damage_numbers_origin = $DamageNumbersOrigin
-@onready var blink_animation_player = $BlinkAnimationPlayer
-@onready var soft_collision = $SoftCollision
-@onready var death_state = $FiniteStateMachine/Death
+@onready var stats : Stats = $Stats
+@onready var hurtbox : Area2D = $Hurtbox
+@onready var melee_attack_dir : Area2D = $FiniteStateMachine/MeleeAttack/MeleeAOE
+@onready var healthbar : ProgressBar = $Healthbar
+@onready var damage_numbers_origin : Node2D = $DamageNumbersOrigin
+@onready var blink_animation_player : AnimationPlayer = $BlinkAnimationPlayer
+@onready var soft_collision : Area2D = $SoftCollision
+@onready var death_state : Node2D = $FiniteStateMachine/Death
 
 #Direction
 var direction : Vector2
-var player_position
-@export var ACCELERATION = 300
-@export var MAX_SPEED = 50
-@export var FRICTION = 200
-@onready var start_position = get_global_transform().origin
+var player_position : Vector2
+@export var ACCELERATION : int = 300
+@export var MAX_SPEED : int = 50
+@export var FRICTION : int = 200
+@onready var start_position : Vector2 = get_global_transform().origin
 
 var player
 

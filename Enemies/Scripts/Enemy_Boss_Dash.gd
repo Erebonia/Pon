@@ -1,8 +1,8 @@
 extends EnemyState
  
-@export var DASH_SPEED = 0.8
-@onready var follow = $"../Follow"
-@onready var dash = $"../Dash"
+@export var DASH_SPEED : int = 0.8
+@onready var follow : Node2D = $"../Follow"
+@onready var dash : Node2D = $"../Dash"
  
 func Enter():
 	animation_player.play("glowing")

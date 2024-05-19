@@ -1,7 +1,7 @@
 extends Enemy_Follow
 
-@onready var homingMissile = $"../HomingMissile"
-@onready var laserBeam = $"../LaserBeam"
+@onready var homingMissile : Node2D = $"../HomingMissile"
+@onready var laserBeam : Node2D = $"../LaserBeam"
 
 func Enter():
 	animation_player.play("idle")

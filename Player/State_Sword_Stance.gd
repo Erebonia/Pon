@@ -1,21 +1,21 @@
 extends State
 class_name State_Sword_Stance
 
-@onready var run = $"../Run"
-@onready var evade = $"../Evade"
-@onready var idle = $"../Idle"
+@onready var run : Node2D = $"../Run"
+@onready var evade : Node2D = $"../Evade"
+@onready var idle : Node2D = $"../Idle"
 
 #Sword Stance
-@onready var sword_wave_projectile = $"../../Combat/SwordWaveProjectile"
-@onready var sword_wave_cooldown = $"../../Combat/SwordWaveProjectile/swordWaveCooldown"
-@onready var sword_stance_aura_fx = $"../../Combat/SwordStance_ActivateAura"
-@onready var sword_stance_animation = $"../../Combat/Sword/SwordSprite/SwordWave_FX"
-@onready var sword_stance_label = $"../../Combat/SwordStance_ActivateAura/SwordStanceLabel"
-@onready var sword_glow = $"../../Combat/Sword/SwordSprite/SwordStance_Glowing"
+@onready var sword_wave_projectile : Marker2D  = $"../../Combat/SwordWaveProjectile"
+@onready var sword_wave_cooldown : Timer = $"../../Combat/SwordWaveProjectile/swordWaveCooldown"
+@onready var sword_stance_aura_fx : AnimatedSprite2D = $"../../Combat/SwordStance_ActivateAura"
+@onready var sword_stance_animation : AnimatedSprite2D = $"../../Combat/Sword/SwordSprite/SwordWave_FX"
+@onready var sword_stance_label : Label = $"../../Combat/SwordStance_ActivateAura/SwordStanceLabel"
+@onready var sword_glow : AnimatedSprite2D = $"../../Combat/Sword/SwordSprite/SwordStance_Glowing"
 
 var sword_wave_slash = preload("res://Player/swordWaveProjectile.tscn")
-var performing_sword_wave = false
-var last_animation = "attack_combo1"  # Initialize to the first animation
+var performing_sword_wave : bool = false
+var last_animation : String = "attack_combo1"  # Initialize to the first animation
 var stance_ended: bool = false
 
 func Enter():

@@ -1,11 +1,11 @@
 extends EnemyState
 class_name Enemy_Follow
 
-@onready var follow = $"../Follow"
-@onready var melee = $"../MeleeAttack"
-@onready var idle = $"../Idle"
-@onready var player_detection_zone = $"../../PlayerDetection"
-@onready var soft_collision = $"../../SoftCollision"
+@onready var follow : Node2D = $"../Follow"
+@onready var melee : Node2D = $"../MeleeAttack"
+@onready var idle : Node2D = $"../Idle"
+@onready var player_detection_zone : Area2D = $"../../PlayerDetection"
+@onready var soft_collision : Area2D = $"../../SoftCollision"
 	
 func Physics(delta : float) -> EnemyState:
 		

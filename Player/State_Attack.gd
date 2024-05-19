@@ -1,11 +1,11 @@
 extends State
 class_name State_Attack
 
-@onready var attack_combo = $"../Attack_Combo"
-@onready var run = $"../Run"
-@onready var idle = $"../Idle"
-var bonus_dmg = 15
-var attacking = false
+@onready var attack_combo : Node2D = $"../Attack_Combo"
+@onready var run : Node2D = $"../Run"
+@onready var idle : Node2D = $"../Idle"
+var bonus_dmg: int = 15
+var attacking: bool = false
 
 func Enter():
 	player.animation_tree.set("parameters/Attack/BlendSpace2D/blend_position", player.aim_direction)

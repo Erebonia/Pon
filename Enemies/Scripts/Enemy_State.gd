@@ -2,8 +2,8 @@ extends Node2D
 class_name EnemyState
 
 @export var enemy : CharacterBody2D
-@onready var state_machine = $".."
-@onready var animation_player = owner.find_child("AnimationPlayer")
+@onready var state_machine : EnemyStateMachine = $".."
+@onready var animation_player : AnimationPlayer = owner.find_child("AnimationPlayer")
 var player
 
 func _ready():
