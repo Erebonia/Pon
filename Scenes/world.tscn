@@ -256,9 +256,6 @@ position = Vector2(106, 212)
 material = SubResource("ShaderMaterial_dc7t6")
 position = Vector2(62, 113)
 
-[connection signal="closed" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_closed"]
-[connection signal="opened" from="User_Interface/InventoryGui" to="." method="_on_inventory_gui_opened"]
-
 [editable path="World_Camera"]
 [editable path="User_Interface"]
 [editable path="User_Interface/InventoryGui"]

@@ -41,9 +41,6 @@ func updateInventory(value: Array[InventorySlot]):
 
 func loadSavedPosition(value: Vector2):
 	savedPosition = value
-	
-func updateDungeonFloor(value: int):
-	dungeon_floor = value
 
 func gain_experience(amount: int):
 	if Level >= MAX_LEVEL:

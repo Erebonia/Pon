@@ -10,8 +10,8 @@ func change_scene(from, to_scene_name: String) -> void:
 	last_scene_name = from.name
 	print(from)
 
-	player = from.player
-	player.get_parent().remove_child(player)
+	#player = from.player
+	#player.get_parent().remove_child(player)
 		
 	# Fade effect
 	TransitionScene.transition() 

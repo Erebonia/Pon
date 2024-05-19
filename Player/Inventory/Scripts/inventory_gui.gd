@@ -1,6 +1,6 @@
 extends Control
 
-class_name Inventory_gui
+class_name Inventory_Gui
 
 var isOpen: bool = false
 
