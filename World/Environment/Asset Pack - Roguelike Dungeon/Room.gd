@@ -71,6 +71,9 @@ func _on_PlayerDetector_body_entered(_body: CharacterBody2D) -> void:
 		
 func _on_increment_level_body_entered(body):
 	if body is Player:
-		body.player_data.dungeon_floor += 1
+		if body.player_data.dungeon_floor < 2:
+			body.player_data.dungeon_floor += 1
+		else:
+			body.player_data.dungeon_floor = 1
 		print("Current Floor:" + str(body.player_data.dungeon_floor))
 		body.savePlayerData()

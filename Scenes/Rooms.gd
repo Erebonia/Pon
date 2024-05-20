@@ -30,7 +30,6 @@ func handle_floor_reset() -> void:
 		num_levels = 3
 
 func reset_player_stats() -> void:
-	player.player_data.dungeon_floor = 1
 	player.player_data.temp_agi = 0
 	player.player_data.temp_def = 0
 	player.player_data.temp_str = 0
