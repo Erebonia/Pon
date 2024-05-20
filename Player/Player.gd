@@ -78,6 +78,7 @@ func savePlayerData():
 	#player_data.loadSavedPosition(self.position)	
 	player_data.updateInventory(inventory.slots)
 	player_data.updateBaseDMG(sword_hitbox.damage)
+	player_data.updateTime(DayAndNight.canvas_modulate.time)
 	
 func saveDataToFile():
 	var save_path = save_file_path + save_file_name
@@ -100,7 +101,7 @@ func gameStarted():
 	inventory.check_inventory_full()
 	emit_signal("updateInventoryUI")
 	sword_hitbox.damage = player_data.base_damage
-	
+	DayAndNight.canvas_modulate.time = player_data.time
 	#Reload the last scene and position
 	#self.position = player_data.savedPosition
 	

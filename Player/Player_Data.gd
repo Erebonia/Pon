@@ -2,6 +2,7 @@ extends Resource
 class_name PlayerData
 
 #General
+@export var time : float
 const MAX_LEVEL = 4
 @export var Level: int = 1
 @export var current_xp: int = 0
@@ -62,6 +63,9 @@ func set_max_hp(new_max_hp: int):
 	
 func updateBaseDMG(value: int):
 	base_damage = value
+	
+func updateTime(value: float):
+	time = value
 
 func get_required_experience(level: int) -> int:
 	return xp_table_data[str(level)]["need"]

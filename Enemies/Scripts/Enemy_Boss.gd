@@ -7,7 +7,7 @@ class_name EnemyBoss
 @onready var armor_buff : Node2D = $FiniteStateMachine/ArmorBuff
  
 func _ready():
-	super._ready()
+	super()
 	boss_healthbar.max_value = stats.health
 	boss_healthbar.init_health(stats.health)
  

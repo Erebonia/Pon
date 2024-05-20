@@ -22,7 +22,7 @@ func _ready() -> void:
 
 func handle_floor_reset() -> void:
 	if player.player_data.dungeon_floor > MAX_FLOORS:
-		print("Dungeon Cleared. Resetting the floors.")
+		print("Dungeon previously cleared. handle_floor_reset()")
 		reset_player_stats()
 
 	if player.player_data.dungeon_floor == 2:
@@ -31,9 +31,9 @@ func handle_floor_reset() -> void:
 
 func reset_player_stats() -> void:
 	player.player_data.dungeon_floor = 1
-	player.player_data.tempAGI = 0
-	player.player_data.tempDEF = 0
-	player.player_data.tempSTR = 0
+	player.player_data.temp_agi = 0
+	player.player_data.temp_def = 0
+	player.player_data.temp_str = 0
 
 func _spawn_rooms() -> void:
 	var previous_room: Node2D
