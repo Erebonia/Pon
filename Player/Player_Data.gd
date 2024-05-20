@@ -3,6 +3,8 @@ class_name PlayerData
 
 #General
 @export var time : float
+
+#Stats
 const MAX_LEVEL = 4
 @export var Level: int = 1
 @export var current_xp: int = 0
