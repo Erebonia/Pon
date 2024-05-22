@@ -8,8 +8,8 @@
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Idle.gd" id="7_r3t6u"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Follow.gd" id="8_d5c2s"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_MeleeAttack.gd" id="9_447wd"]
+[ext_resource type="Script" path="res://Overlap/hurtbox.gd" id="10_2dlqx"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Death.gd" id="15_6oi53"]
-[ext_resource type="Script" path="res://Overlap/Hurtbox.gd" id="16_8tpba"]
 [ext_resource type="PackedScene" uid="uid://bbh4m23t6e35d" path="res://Overlap/hitbox.tscn" id="16_rlhr6"]
 [ext_resource type="Texture2D" uid="uid://de44kldeeq4b" path="res://Effects/Shadows/SmallShadow.png" id="17_185gh"]
 [ext_resource type="PackedScene" uid="uid://cms5nxy1iwkm2" path="res://Enemies/Scenes/player_detection.tscn" id="17_kvbjh"]
@@ -193,7 +193,7 @@ script = ExtResource("15_6oi53")
 collision_layer = 0
 collision_mask = 8
 monitorable = false
-script = ExtResource("16_8tpba")
+script = ExtResource("10_2dlqx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 visible = false
