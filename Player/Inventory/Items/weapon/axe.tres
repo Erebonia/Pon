@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://by0fvah5madx6"]
 
-[ext_resource type="Script" path="res://Player/Inventory/Scripts/InventoryItem.gd" id="1_1rnaw"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/Inventory_Item.gd" id="1_1rnaw"]
 [ext_resource type="Texture2D" uid="uid://cdnskjn7h6c32" path="res://Player/weapon/axe.png" id="2_c8mus"]
 
 [resource]
