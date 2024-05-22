@@ -17,7 +17,7 @@ const TILE_SIZE: int = 16
 
 func _ready() -> void:
 	super()
-	handle_floor_reset()
+	await handle_floor_reset()
 	_spawn_rooms()
 
 func handle_floor_reset() -> void:

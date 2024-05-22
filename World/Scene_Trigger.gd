@@ -6,8 +6,8 @@ var scene_folder = "res://Scenes/"
 
 func _on_body_entered(body):
 	if body is Player:
-		body.savePlayerData()
-		body.saveDataToFile()
+		await body.savePlayerData()
+		await body.saveDataToFile()
 		scene_manager.change_scene(get_owner(), connected_scene)
 		scene_manager.current_scene = connected_scene
 
