@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbgm478fym8c8"]
 
-[ext_resource type="Script" path="res://Player/Inventory/Scripts/Hotbar_Slot.gd" id="1_6d70l"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/hotbar_slot.gd" id="1_6d70l"]
 [ext_resource type="Texture2D" uid="uid://bgkes0tmge725" path="res://Player/Inventory/Art/inventorySlot.png" id="2_o0f11"]
 [ext_resource type="PackedScene" uid="uid://dadwitama48h1" path="res://Player/Inventory/Scene/itemStackGui.tscn" id="3_ol84n"]
 
