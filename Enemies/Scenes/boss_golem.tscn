@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_ArmorBuff.gd" id="13_16nwq"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_Dash.gd" id="14_31jw8"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_Death.gd" id="15_bbn2r"]
-[ext_resource type="Script" path="res://Overlap/hurtbox.gd" id="16_h0q5a"]
+[ext_resource type="Script" path="res://Overlap/hurtbox1.gd" id="16_h0q5a"]
 [ext_resource type="PackedScene" uid="uid://dk7ckqq8mq2nr" path="res://Overlap/Stats.tscn" id="18_f152u"]
 [ext_resource type="PackedScene" uid="uid://bhv1fd4uvlhpd" path="res://Enemies/Scenes/wander_controller.tscn" id="19_08jca"]
 [ext_resource type="PackedScene" uid="uid://cms5nxy1iwkm2" path="res://Enemies/Scenes/player_detection.tscn" id="20_bq1px"]
