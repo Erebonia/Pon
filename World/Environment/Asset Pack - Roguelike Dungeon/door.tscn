@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://ddhf7b3wtualh"]
 
-[ext_resource type="Script" path="res://World/Environment/Asset Pack - Roguelike Dungeon/Door.gd" id="1_h6ca7"]
+[ext_resource type="Script" path="res://World/Environment/Asset Pack - Roguelike Dungeon/door.gd" id="1_h6ca7"]
 [ext_resource type="Texture2D" uid="uid://dlicb47ai0waq" path="res://World/Environment/Asset Pack - Roguelike Dungeon/door_spritesheet.png" id="1_mq6qo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qcfus"]
