@@ -5,7 +5,7 @@ class_name Base_Scene
 @onready var entrance_markers: Node2D = $EntranceMarkers
 
 func _ready():		
-	player.loadSaveData()
+	#player.loadSaveData()
 	removeTemporaryStats()
 	position_player()
 		

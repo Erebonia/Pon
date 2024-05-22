@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dprljwkl716el"]
+
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/Inventory_Item.gd" id="1_tudii"]
+[ext_resource type="Texture2D" uid="uid://jlgohrvwbf1t" path="res://Player/weapon/longsword.png" id="2_5nkxv"]
+
+[resource]
+script = ExtResource("1_tudii")
+name = "Katana"
+texture = ExtResource("2_5nkxv")
+max_amount_per_stack = 0
+isConsumable = false
+isWeapon = true
+isHelmet = false
+isBody = false
+isAccessory = false
+attackBonus = 9999
+defBonus = 0
+hpBonus = 9999

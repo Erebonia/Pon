@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://jpnitqgvchnd"]
+[gd_scene load_steps=29 format=3 uid="uid://jpnitqgvchnd"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_q3h4t"]
 [ext_resource type="PackedScene" uid="uid://bomv4ffuydgtf" path="res://World/Camera/camera_2d.tscn" id="2_bhid6"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cxi06x36o4qhe" path="res://Player/Inventory/Items/weapon/battleaxe.tscn" id="22_jg4rw"]
 [ext_resource type="PackedScene" uid="uid://cceqxqy5ulef0" path="res://Enemies/Scenes/enemy_bat.tscn" id="23_6fktw"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="24_4r6g6"]
+[ext_resource type="PackedScene" uid="uid://dp4dm62c6egtc" path="res://Player/Inventory/Items/weapon/master_sword.tscn" id="25_b6swq"]
 [ext_resource type="PackedScene" uid="uid://4p1lmlpi20kq" path="res://World/SceneTrigger.tscn" id="25_xso8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3vxf"]
@@ -255,6 +256,9 @@ position = Vector2(106, 212)
 [node name="Enemy_Bat" parent="." instance=ExtResource("23_6fktw")]
 material = SubResource("ShaderMaterial_dc7t6")
 position = Vector2(62, 113)
+
+[node name="Sword" parent="." instance=ExtResource("25_b6swq")]
+position = Vector2(70, 212)
 
 [editable path="World_Camera"]
 [editable path="User_Interface"]

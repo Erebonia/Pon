@@ -150,20 +150,46 @@ func _on_hp_recovery_timeout():
 		$Combat/HpRecovery.start()
 		player_data.HP += 1
 		
-func checkSelectedWeapon(): 
+var base_strength = 10  # Base strength without any weapons
+var equipped_weapon = null  # Reference to the currently equipped weapon
+
+# Assuming player_data and equipped_weapon are already defined elsewhere in your player class
+func checkSelectedWeapon():
 	var hotbar_instance = get_tree().get_first_node_in_group("Hotbar")
-	var currently_selected_index = hotbar_instance.currently_selected
+	var selected_index = hotbar_instance.currently_selected
+
+	# Reset defaults
+	hand_sprite.texture = null
+	weapon_equipped = false
 	
-	if currently_selected_index < hotbar_instance.inventory.slots.size():
-		var inventory_slot = hotbar_instance.inventory.slots[currently_selected_index]
+	# Validate index and ensure there is an item
+	if selected_index < hotbar_instance.inventory.slots.size():
+		var selected_slot = hotbar_instance.inventory.slots[selected_index]
 		
-		if inventory_slot.item != null:
-			#Set the item texture and equip weapon status
-			if inventory_slot.item.isWeapon: weapon_equipped = true
-			else: weapon_equipped = false
-			hand_sprite.texture = inventory_slot.item.texture
+		if selected_slot.item:
+			hand_sprite.texture = selected_slot.item.texture
+			weapon_equipped = selected_slot.item.isWeapon
+			
+			if weapon_equipped:
+				# Equip new weapon if different from the currently equipped weapon
+				if equipped_weapon != selected_slot.item:
+					if equipped_weapon:
+						# Remove bonus of the old weapon
+						player_data.Strength -= equipped_weapon.attackBonus
+					equipped_weapon = selected_slot.item
+					# Add bonus of the new weapon
+					player_data.Strength += equipped_weapon.attackBonus
+			else:
+				if equipped_weapon:
+					# Remove bonus if previously equipped item was a weapon and now selecting a non-weapon
+					player_data.Strength -= equipped_weapon.attackBonus
+					equipped_weapon = null
 		else:
-			hand_sprite.texture = null
+			# No item is selected, so remove bonus if any weapon was equipped
+			if equipped_weapon:
+				player_data.Strength -= equipped_weapon.attackBonus
+				equipped_weapon = null
+
 			
 func playerDead():
 	queue_free()
