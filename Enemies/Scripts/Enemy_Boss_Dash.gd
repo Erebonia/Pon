@@ -1,6 +1,6 @@
 extends EnemyState
  
-@export var DASH_SPEED : int = 0.8
+@export var DASH_SPEED : float = 0.8
 @onready var follow : Node2D = $"../Follow"
 @onready var dash : Node2D = $"../Dash"
  

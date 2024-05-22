@@ -32,7 +32,7 @@ func _physics_process(delta):
 		velocity += soft_collision.get_push_vector() * delta * 400
 	
 func _on_hurtbox_area_entered(area):
-	if stats.health <= stats.max_health / 2  and stats.DEF == 0:  # Phase two of the fight he gets tankier
+	if stats.health <= stats.max_health / 2.0 and stats.DEF == 0:  # Phase two of the fight he gets tankier
 		stats.DEF = 5
 		state_machine.ChangeState(armor_buff)
 	
