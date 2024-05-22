@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dpd31dsdqwcss"]
 
-[ext_resource type="Script" path="res://Player/Inventory/Scripts/Inventory_Item1.gd" id="1_qtt4u"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/Inventory_Item.gd" id="1_qtt4u"]
 [ext_resource type="Texture2D" uid="uid://cnach6mudq25c" path="res://Player/weapon/shortsword.png" id="2_htnte"]
 
 [resource]

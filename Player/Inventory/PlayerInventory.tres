@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player/Inventory/Scripts/Inventory_Player.gd" id="1_iy6ey"]
 [ext_resource type="Resource" uid="uid://dpd31dsdqwcss" path="res://Player/Inventory/Items/weapon/sword.tres" id="2_u5pst"]
-[ext_resource type="Script" path="res://Player/Inventory/Scripts/InventorySlot1.gd" id="3_wq0uq"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/InventorySlot.gd" id="3_wq0uq"]
 [ext_resource type="Resource" uid="uid://celpsp4adxcrb" path="res://Player/Inventory/Items/general/HP_Potion.tres" id="4_2bw4o"]
 
 [sub_resource type="Resource" id="Resource_at6lm"]
