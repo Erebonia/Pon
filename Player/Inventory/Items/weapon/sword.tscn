@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player/Inventory/Scripts/Collectable.gd" id="1_2bvdd"]
 [ext_resource type="Resource" uid="uid://dpd31dsdqwcss" path="res://Player/Inventory/Items/weapon/sword.tres" id="2_sf6dn"]
-[ext_resource type="Texture2D" uid="uid://cnach6mudq25c" path="res://Player/weapon/shortsword.png" id="3_1a3go"]
+[ext_resource type="Texture2D" uid="uid://c8y0qr80ktgg8" path="res://Player/weapon/basic_sword.png" id="3_p2bx1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gim2v"]
 
@@ -15,4 +15,4 @@ itemRes = ExtResource("2_sf6dn")
 shape = SubResource("CircleShape2D_gim2v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_1a3go")
+texture = ExtResource("3_p2bx1")
