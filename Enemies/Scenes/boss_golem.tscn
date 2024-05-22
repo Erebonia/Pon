@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://g21t8tducx7e" path="res://Enemies/Scenes/bullet.tscn" id="8_qymu3"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_MeleeAttack.gd" id="9_8gny1"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_HomingMissile.gd" id="10_utb4h"]
-[ext_resource type="Script" path="res://Overlap/hitbox69.gd" id="10_vkr34"]
+[ext_resource type="Script" path="res://Overlap/Hitbox.gd" id="10_vkr34"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_LaserBeam.gd" id="12_p8xr8"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_ArmorBuff.gd" id="13_16nwq"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_Dash.gd" id="14_31jw8"]
