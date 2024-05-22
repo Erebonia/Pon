@@ -1,6 +1,6 @@
 extends InventoryItem
 
-class_name HealthItem
+class_name Health_Item
 
 @export var health_increase: int = 1
 
