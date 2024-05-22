@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://xgwv4syylx7"]
 
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/Inventory_GUI2.gd" id="1_1tk7e"]
 [ext_resource type="Texture2D" uid="uid://cxka0cb605hnd" path="res://Player/Inventory/Art/InventoryRect.png" id="1_50gxy"]
-[ext_resource type="Script" path="res://Player/Inventory/Scripts/Inventory_Gui.gd" id="1_ybmop"]
 [ext_resource type="PackedScene" uid="uid://h8e8jin0vdvx" path="res://Player/Inventory/Scene/slot_gui.tscn" id="2_7yodu"]
 [ext_resource type="Texture2D" uid="uid://uc0brcwd8h78" path="res://Player/Pixivan MC/Portrait/Side Portrait Large.png" id="4_goi0s"]
 [ext_resource type="Texture2D" uid="uid://phuhntykfq2j" path="res://Player/Inventory/Art/_equipment_sheet.png" id="5_cht7g"]
@@ -21,7 +21,7 @@ offset_right = 89.5
 offset_bottom = 59.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ybmop")
+script = ExtResource("1_1tk7e")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
