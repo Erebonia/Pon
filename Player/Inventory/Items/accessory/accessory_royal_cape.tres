@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://4bqp7chbpyeh"]
 
-[ext_resource type="Script" path="res://Player/Inventory/Scripts/Inventory_Item.gd" id="1_s0kpc"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/Inventory_Item1.gd" id="1_s0kpc"]
 [ext_resource type="Texture2D" uid="uid://cmhtgct7bmbdb" path="res://Player/armor/accessory_cape_royal.png" id="2_cikti"]
 
 [resource]

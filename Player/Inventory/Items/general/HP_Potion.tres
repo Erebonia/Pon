@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Health_Item" load_steps=3 format=3 uid="uid://celpsp4adxcrb"]
 
-[ext_resource type="Script" path="res://Player/Inventory/Items/general/health_item.gd" id="1_rx4ha"]
+[ext_resource type="Script" path="res://Player/Inventory/Items/general/health_item1.gd" id="1_rx4ha"]
 [ext_resource type="Texture2D" uid="uid://bplwlbgroptv1" path="res://Player/Inventory/Items/general/HP_Potion.png" id="2_j6tv6"]
 
 [resource]
