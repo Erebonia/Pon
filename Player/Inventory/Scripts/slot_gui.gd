@@ -1,5 +1,7 @@
 extends Button
 
+class_name Slot_Gui
+
 @onready var backgroundSprite: Sprite2D = $background
 @onready var container: CenterContainer = $CenterContainer
 
