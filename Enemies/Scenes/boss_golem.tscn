@@ -1,10 +1,10 @@
-[gd_scene load_steps=45 format=3 uid="uid://dvbvyl1rsoiu6"]
+[gd_scene load_steps=46 format=3 uid="uid://dvbvyl1rsoiu6"]
 
 [ext_resource type="Texture2D" uid="uid://ccpgsksdod8id" path="res://Enemies/Sprites/golem_spritesheet.png" id="1_ckc57"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss.gd" id="1_ucatd"]
 [ext_resource type="Texture2D" uid="uid://ccrnr7jblswpx" path="res://Enemies/Sprites/Laser_sheet.png" id="2_r0p6b"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="3_7n1b6"]
-[ext_resource type="Script" path="res://Overlap/hitbox.gd" id="4_f6wu1"]
+[ext_resource type="Script" path="res://Overlap/Hitbox.gd" id="4_f6wu1"]
 [ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://UI/Health/healthbar_overhead.tscn" id="5_jttkw"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_Idle.gd" id="7_6aaru"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_StateMachine.gd" id="7_njdfh"]
@@ -12,11 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://g21t8tducx7e" path="res://Enemies/Scenes/bullet.tscn" id="8_qymu3"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_MeleeAttack.gd" id="9_8gny1"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_HomingMissile.gd" id="10_utb4h"]
+[ext_resource type="Script" path="res://Overlap/hitbox.gd" id="10_vkr34"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_LaserBeam.gd" id="12_p8xr8"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_ArmorBuff.gd" id="13_16nwq"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_Dash.gd" id="14_31jw8"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_Death.gd" id="15_bbn2r"]
-[ext_resource type="Script" path="res://Overlap/hurtbox.gd" id="16_6uqi4"]
+[ext_resource type="Script" path="res://Overlap/hurtbox.gd" id="16_h0q5a"]
 [ext_resource type="PackedScene" uid="uid://dk7ckqq8mq2nr" path="res://Overlap/Stats.tscn" id="18_f152u"]
 [ext_resource type="PackedScene" uid="uid://bhv1fd4uvlhpd" path="res://Enemies/Scenes/wander_controller.tscn" id="19_08jca"]
 [ext_resource type="PackedScene" uid="uid://cms5nxy1iwkm2" path="res://Enemies/Scenes/player_detection.tscn" id="20_bq1px"]
@@ -551,8 +552,7 @@ script = ExtResource("9_8gny1")
 position = Vector2(17, 6)
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("4_f6wu1")
-damage = 5
+script = ExtResource("10_vkr34")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FiniteStateMachine/MeleeAttack/MeleeAOE"]
 visible = false
@@ -580,7 +580,7 @@ script = ExtResource("15_bbn2r")
 collision_layer = 0
 collision_mask = 8
 monitorable = false
-script = ExtResource("16_6uqi4")
+script = ExtResource("16_h0q5a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 visible = false
