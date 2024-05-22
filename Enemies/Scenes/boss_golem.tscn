@@ -1,10 +1,9 @@
-[gd_scene load_steps=46 format=3 uid="uid://dvbvyl1rsoiu6"]
+[gd_scene load_steps=45 format=3 uid="uid://dvbvyl1rsoiu6"]
 
 [ext_resource type="Texture2D" uid="uid://ccpgsksdod8id" path="res://Enemies/Sprites/golem_spritesheet.png" id="1_ckc57"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss.gd" id="1_ucatd"]
 [ext_resource type="Texture2D" uid="uid://ccrnr7jblswpx" path="res://Enemies/Sprites/Laser_sheet.png" id="2_r0p6b"]
 [ext_resource type="Shader" path="res://Player/WhiteColor.gdshader" id="3_7n1b6"]
-[ext_resource type="Script" path="res://Overlap/Hitbox.gd" id="4_f6wu1"]
 [ext_resource type="PackedScene" uid="uid://cgta0wje1tnfy" path="res://UI/Health/healthbar_overhead.tscn" id="5_jttkw"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_Idle.gd" id="7_6aaru"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_StateMachine.gd" id="7_njdfh"]
@@ -12,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://g21t8tducx7e" path="res://Enemies/Scenes/bullet.tscn" id="8_qymu3"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_MeleeAttack.gd" id="9_8gny1"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_HomingMissile.gd" id="10_utb4h"]
-[ext_resource type="Script" path="res://Overlap/hitbox.gd" id="10_vkr34"]
+[ext_resource type="Script" path="res://Overlap/hitbox69.gd" id="10_vkr34"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_LaserBeam.gd" id="12_p8xr8"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_ArmorBuff.gd" id="13_16nwq"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy_Boss_Dash.gd" id="14_31jw8"]
@@ -525,7 +524,7 @@ vframes = 15
 [node name="LaserAOE" type="Area2D" parent="pivot"]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("4_f6wu1")
+script = ExtResource("10_vkr34")
 damage = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pivot/LaserAOE"]
