@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0d3pxcumfshs"]
 
-[ext_resource type="Script" path="res://Player/Inventory/Scripts/Collectable.gd" id="1_qd2ol"]
+[ext_resource type="Script" path="res://Player/Inventory/Scripts/collectable.gd" id="1_qd2ol"]
 [ext_resource type="Resource" uid="uid://w7duyvpfxemc" path="res://Player/Inventory/Items/armor/armor_traveler_robe.tres" id="2_p6meb"]
 [ext_resource type="Texture2D" uid="uid://dj5ae46x7cvem" path="res://Player/armor/armor_traveler_robe.png" id="3_sgndi"]
 
